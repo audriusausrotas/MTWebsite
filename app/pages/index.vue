@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeo("home.seoTitle", "home.seoDescription");
+</script>
 
 <template>
   <div class="bg-gray-600 h-full">
     <BaseHeroImage />
-    <!-- <h1>{{ $t("menu.home") }}</h1> -->
   </div>
 </template>
 

@@ -11,7 +11,12 @@
     "contacts": "Kontaktai",
     "shop": "Parduotuvė"
   },
-  "home": { "heroTitle": "Modernios tvoros ir vartai", "heroSubtitle": "Kokybė, kuri išlieka" },
+  "home": {
+    "heroTitle": "Modernios tvoros ir vartai",
+    "heroSubtitle": "Kokybė, kuri išlieka",
+    "seoTitle": "moderni tvora pavadinimas",
+    "seoDescription": "moderni tvora aprasymas"
+  },
   "products": {
     "laukoZaliuzes": {
       "title": "Lauko žaliuzės",

@@ -39,8 +39,6 @@ export default defineNuxtConfig({
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
     ],
 
-    vueI18n: "./i18n/i18n.config.ts",
-
     pages: {
       "lauko-zaliuzes": {
         en: "/outdoor-blinds",

@@ -13,7 +13,9 @@
   },
   "home": {
     "heroTitle": "Modern fences and gates",
-    "heroSubtitle": "Quality that lasts"
+    "heroSubtitle": "Quality that lasts",
+    "seoTitle": "moderni tvora title ",
+    "seoDescription": "moderni tvora description"
   },
   "products": {
     "laukoZaliuzes": {
