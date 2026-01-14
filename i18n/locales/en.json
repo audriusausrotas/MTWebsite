@@ -1,0 +1,24 @@
+{
+  "menu": {
+    "home": "Index",
+    "fences": "Fences",
+    "gates": "Yard gates",
+    "binds": "Outdoor blinds",
+    "calculator": "Fence calculator",
+    "gallery": "Gallery",
+    "articles": "Articles",
+    "about": "About us",
+    "contacts": "Contacts",
+    "shop": "Shop"
+  },
+  "home": {
+    "heroTitle": "Modern fences and gates",
+    "heroSubtitle": "Quality that lasts"
+  },
+  "products": {
+    "laukoZaliuzes": {
+      "title": "Outdoor blinds",
+      "description": "High-quality outdoor blinds..."
+    }
+  }
+}

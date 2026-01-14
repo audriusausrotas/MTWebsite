@@ -1,0 +1,21 @@
+{
+  "menu": {
+    "home": "Pradžia",
+    "fences": "Tvoros",
+    "gates": "Kiemo vartai",
+    "binds": "Lauko žaliuzės",
+    "calculator": "Skaičiuoklė",
+    "gallery": "Galerija",
+    "articles": "Straipsniai",
+    "about": "Apie mus",
+    "contacts": "Kontaktai",
+    "shop": "Parduotuvė"
+  },
+  "home": { "heroTitle": "Modernios tvoros ir vartai", "heroSubtitle": "Kokybė, kuri išlieka" },
+  "products": {
+    "laukoZaliuzes": {
+      "title": "Lauko žaliuzės",
+      "description": "Aukštos kokybės lauko žaliuzės..."
+    }
+  }
+}
