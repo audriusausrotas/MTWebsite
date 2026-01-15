@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  breadcrumb: "parduotuve",
+});
+</script>
 
 <template>
-  <BaseHeroImage />
+  <BaseHeroImage :name="$t('breadcrumbs.parduotuve')" />
 </template>
 
 <style scoped></style>

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   pages: true,
 
-  modules: ["@nuxtjs/i18n", "@nuxt/image"],
+  modules: ["@nuxtjs/i18n", "@nuxt/image", "@nuxt/fonts"],
 
   image: {
     format: ["webp"],
@@ -76,5 +76,16 @@ export default defineNuxtConfig({
         lt: "/parduotuve",
       },
     },
+  },
+  fonts: {
+    families: [
+      {
+        name: "Inter",
+        provider: "google",
+        weights: ["400", "500", "600", "700"],
+        styles: ["normal"],
+      },
+    ],
+    defaults: { subsets: ["latin", "latin-ext"] },
   },
 });

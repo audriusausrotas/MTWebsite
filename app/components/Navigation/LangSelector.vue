@@ -29,7 +29,7 @@ const changeLang = (code: string) => {
 
     <div
       v-if="isOpen"
-      class="absolute right-0 mt-2 w-24 bg-black/70 backdrop-blur-md rounded-md overflow-hidden shadow-lg border border-white/10"
+      class="absolute right-0 mt-2 w-24 bg-black/70 backdrop-blur-md rounded-md overflow-hidden shadow-lg"
     >
       <button
         v-for="l in locales"

@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  breadcrumb: "vartai",
+});
+</script>
 
 <template>
-  <BaseHeroImage />
+  <BaseHeroImage :name="$t('breadcrumbs.vartai')" />
 </template>
 
 <style scoped></style>

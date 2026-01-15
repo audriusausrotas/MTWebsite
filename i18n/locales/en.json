@@ -11,16 +11,84 @@
     "contacts": "Contacts",
     "shop": "Shop"
   },
+
+  "breadcrumbs": {
+    "pagrindinis": "Home",
+    "tvoros": "Fences",
+    "vartai": "Gates",
+    "zaliuzes": "Blinds",
+    "skaiciuokle": "Fence calculator",
+    "galerija": "Gallery",
+    "apie": "About us",
+    "straipsniai": "Articles",
+    "kontaktai": "Contacts",
+    "parduotuve": "Shop"
+  },
+
   "home": {
     "heroTitle": "Modern fences and gates",
     "heroSubtitle": "Quality that lasts",
     "seoTitle": "moderni tvora title ",
     "seoDescription": "moderni tvora description"
   },
-  "products": {
-    "laukoZaliuzes": {
-      "title": "Outdoor blinds",
-      "description": "High-quality outdoor blinds..."
+
+  "contacts": {
+    "ofisoTelNr": "+370 663 47011",
+    "direktoriausTelNr": "+370 690 36336",
+    "vadybininko1TelNr": "+370 675 17745",
+    "vadybininko2TelNr": "+370 600 97933",
+    "buhalterijosTelNr": "+370 611 10211",
+    "ofisoElPastas": "info",
+    "direktorius": "andrius",
+    "vadybininkas1": "audrius",
+    "vadybininkas2": "dalius",
+    "buhalte": "vaida",
+    "registracijosAdresas": "Lauko g. 5, Trakiškių k., Marijampolė",
+    "ofisoAdresas": "Kauno g. 31, Marijampolė",
+    "ofiso2Adresas": "Chemijos g. 4, Kaunas"
+  },
+
+  "about": {
+    "aprasymas": {
+      "title": "Moderni Tvora",
+      "text": "„Moderni Tvora“ is a company offering contemporary fencing solutions. Our professional team, with many years of experience, helps you choose the best fence, gate, and wicket options for your company or private plot, and carries out all installation work."
+    },
+    "box1": {
+      "title": "Why Us?",
+      "text": "„Moderni Tvora“ uses the most advanced equipment, ensuring precise project execution. Our assortment includes only the highest quality materials, guaranteeing the durability of fences, gates, and wickets for your company or home.",
+      "url": "/images/modernitvora-4688-1.jpeg"
+    },
+    "box2": {
+      "title": "Work Guarantee",
+      "text": "We guarantee the quality of our work: a 2-year warranty for installation services, a 5-10 year warranty for fences, and up to 45 years for the metal sheets we use.",
+      "url": "/images/modernitvora-5006-2.jpeg"
+    },
+    "box3": {
+      "title": "Live Consultation at the Office",
+      "text": "Visit the „Moderni Tvora“ office in Marijampolė, where you can see our materials assortment in person, consult with our specialists about your project, and receive professional advice.",
+      "url": "/images/modernitvora-4372-1.jpeg"
+    },
+    "cards": {
+      "card1": {
+        "title": "Custom Projects",
+        "text": "For non-standard plots, we prepare individual plans, taking into account the unique terrain of the area, ensuring a perfect fence fit for your property.",
+        "url": "/images/modernitvora-4372-1.jpeg"
+      },
+      "card2": {
+        "title": "Speed",
+        "text": "High-quality and fast project implementation from planning to fence installation – one of the fastest in the Lithuanian market.",
+        "url": "/images/modernitvora-5139-1.jpeg"
+      },
+      "card3": {
+        "title": "Modern Measurements",
+        "text": "Using the most innovative equipment, we create precise 3D plans of the area, reflecting the specific terrain of your plot.",
+        "url": "/images/modernitvora-5006-2.jpeg"
+      },
+      "card4": {
+        "title": "Full Project Implementation",
+        "text": "Our experienced teams ensure a smooth process, from the initial measurement to the final installation of fences, gates, and wickets.",
+        "url": "/images/modernitvora-4909-4.jpeg"
+      }
     }
   }
 }

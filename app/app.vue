@@ -63,6 +63,6 @@ useHead(() => ({
 <template>
   <NuxtRouteAnnouncer />
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtPage class="font-sans" />
   </NuxtLayout>
 </template>

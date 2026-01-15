@@ -17,7 +17,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @theme {
+  --font-sans: Inter, sans-serif;
   --color-red-main: #df0914;
+  --spacing-default: 1200px;
 }
 
 /* input[type="number"] { 

@@ -1,7 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  breadcrumb: "kontaktai",
+});
+</script>
 
 <template>
-  <BaseHeroImage />
+  <div class="flex flex-col gap-20">
+    <BaseHeroImage :name="$t('breadcrumbs.kontaktai')" />
+    <ContactsBlock />
+    <ContactsMap />
+  </div>
 </template>
 
 <style scoped></style>

@@ -11,27 +11,26 @@ const localePath = useLocalePath();
   >
     <NuxtImg
       src="/icons/logo.svg"
-      width="109"
+      width="100"
       height="50"
       @click="navigateTo(localePath('/'))"
       class="hover:cursor-pointer"
     />
 
-    <nav class="flex gap-8">
+    <nav class="flex gap-8 text-sm font-medium">
       <NuxtLinkLocale
         v-for="item in navigation"
         :key="item.to"
         :to="item.to"
         class="transition"
         :class="{
-          'text-red-500 font-semibold hover:text-red-500': route.path === localePath(item.to),
+          'text-red-500  hover:text-red-500': route.path === localePath(item.to),
           'hover:text-red-300': route.path !== localePath(item.to),
         }"
       >
         {{ t(item.name) }}
       </NuxtLinkLocale>
     </nav>
-
     <NavigationLangSelector />
   </header>
 </template>

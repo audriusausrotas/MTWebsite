@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col w-full h-svh justify-between">
+  <div class="w-full h-svh flex flex-col justify-between">
     <NavigationHeader />
-    <main class="h-full">
+    <main>
       <slot />
     </main>
     <NavigationFooter />

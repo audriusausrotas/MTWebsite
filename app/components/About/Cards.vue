@@ -1,0 +1,24 @@
+<template>
+  <div class="flex gap-4 flex-wrap">
+    <AboutCard
+      :title="$t('about.cards.card1.title')"
+      :text="$t('about.cards.card1.text')"
+      :url="$t('about.cards.card1.url')"
+    />
+    <AboutCard
+      :title="$t('about.cards.card2.title')"
+      :text="$t('about.cards.card2.text')"
+      :url="$t('about.cards.card2.url')"
+    />
+    <AboutCard
+      :title="$t('about.cards.card3.title')"
+      :text="$t('about.cards.card3.text')"
+      :url="$t('about.cards.card3.url')"
+    />
+    <AboutCard
+      :title="$t('about.cards.card4.title')"
+      :text="$t('about.cards.card4.text')"
+      :url="$t('about.cards.card4.url')"
+    />
+  </div>
+</template>
