@@ -17,17 +17,18 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="flex gap-4 justify-around items-center">
-    <div class="flex flex-col gap-12" :class="reverse ? 'order-2' : 'order-1'">
-      <h2 class="font-medium text-4xl max-w-100">{{ title }}</h2>
-      <p class="text-justify max-w-100">
+  <div class="flex gap-4 justify-between items-center">
+    <div class="flex flex-col gap-12 max-w-100" :class="reverse ? 'order-2' : 'order-1'">
+      <h2 class="font-medium text-4xl">{{ title }}</h2>
+      <p class="text-justify">
         {{ text }}
       </p>
+      <slot />
     </div>
 
     <NuxtImg
       :src="url"
-      class="max-w-130 w-full h-auto object-cover"
+      class="max-w-150 w-full h-auto object-cover"
       :class="reverse ? 'order-1' : 'order-2'"
     />
   </div>

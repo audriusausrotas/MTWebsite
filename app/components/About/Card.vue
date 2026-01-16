@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
     <div class="relative">
       <NuxtImg :src="url" />
       <div
-        class="flex items-center justify-center text-center -translate-y-1/2 bg-red-main text-white font-medium px-4 min-h-16 max-w-[80%]"
+        class="flex items-center justify-center text-center -translate-y-1/2 bg-red-main text-white font-medium px-4 min-h-16 max-w-[85%]"
       >
         {{ title }}
       </div>

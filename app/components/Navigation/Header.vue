@@ -7,7 +7,7 @@ const localePath = useLocalePath();
 
 <template>
   <header
-    class="flex w-full h-20 items-center justify-between p-8 bg-black/50 text-white fixed top-0 left-0 backdrop-blur-xs z-50"
+    class="flex w-full h-20 items-center justify-between p-8 bg-black/50 text-white absolute top-0 left-0 backdrop-blur-xs z-50"
   >
     <NuxtImg
       src="/icons/logo.svg"

@@ -3,7 +3,7 @@ const requestHandler = () => {};
 </script>
 
 <template>
-  <div class="flex justify-between gap-8 m-auto w-full max-w-default px-4">
+  <div class="flex justify-between gap-8 w-full max-w-default px-4 m-auto">
     <div class="flex flex-col gap-8 max-w-130 items-start">
       <h2 class="text-4xl font-medium">Susisiekite su mumis!</h2>
       <BaseButton @click="requestHandler">Siųsti užklausą</BaseButton>

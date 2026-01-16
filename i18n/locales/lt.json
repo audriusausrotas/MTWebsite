@@ -3,7 +3,7 @@
     "home": "Pradžia",
     "fences": "Tvoros",
     "gates": "Kiemo vartai",
-    "binds": "Lauko žaliuzės",
+    "blinds": "Lauko žaliuzės",
     "calculator": "Skaičiuoklė",
     "gallery": "Galerija",
     "articles": "Straipsniai",
@@ -24,11 +24,8 @@
     "parduotuve": "Parduotuvė"
   },
   "home": {
-    "seo": {},
-    "heroTitle": "Modernios tvoros ir vartai",
-    "heroSubtitle": "Kokybė, kuri išlieka",
-    "seoTitle": "moderni tvora pavadinimas",
-    "seoDescription": "moderni tvora aprasymas"
+    "seo": { "title": "", "description": "" },
+    "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui"
   },
   "contacts": {
     "seo": {},
