@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   pages: true,
 
-  modules: ["@nuxtjs/i18n", "@nuxt/image", "@nuxt/fonts", "vue3-carousel-nuxt"],
+  modules: ["@nuxtjs/i18n", "@nuxt/image", "@nuxt/fonts", "vue3-carousel-nuxt", "@nuxt/content"],
 
   image: {
     format: ["webp"],
