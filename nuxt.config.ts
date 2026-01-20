@@ -3,6 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
 
+  ssr: true,
+  nitro: { preset: "vercel" },
+
   devtools: { enabled: true },
 
   css: ["./app/assets/css/main.css"],
