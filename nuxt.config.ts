@@ -4,7 +4,13 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
 
   ssr: true,
-  nitro: { preset: "vercel" },
+
+  nitro: {
+    preset: "vercel",
+    prerender: {
+      crawlLinks: true,
+    },
+  },
 
   devtools: { enabled: true },
 
@@ -42,44 +48,19 @@ export default defineNuxtConfig({
     ],
 
     pages: {
-      "lauko-zaliuzes": {
-        en: "/outdoor-blinds",
-        lt: "/lauko-zaliuzes",
-      },
-      "kiemo-vartai": {
-        en: "/yard-gates",
-        lt: "/kiemo-vartai",
-      },
-      tvoros: {
-        en: "/fences",
-        lt: "/tvoros",
-      },
-      "apie-mus": {
-        en: "/about-us",
-        lt: "/apie-mus",
-      },
-      galerija: {
-        en: "/gallery",
-        lt: "/galerija",
-      },
-      kontaktai: {
-        en: "/contacts",
-        lt: "/kontaktai",
-      },
-      "tvoru-skaiciuokle": {
-        en: "/fence-calculator",
-        lt: "/tvoru-skaiciuokle",
-      },
-      straipsniai: {
-        en: "/articles",
-        lt: "/straipsniai",
-      },
-      parduotuve: {
-        en: "/shop",
-        lt: "/parduotuve",
-      },
+      "lauko-zaliuzes": { en: "/outdoor-blinds", lt: "/lauko-zaliuzes" },
+      "kiemo-vartai": { en: "/yard-gates", lt: "/kiemo-vartai" },
+      tvoros: { en: "/fences", lt: "/tvoros" },
+      "apie-mus": { en: "/about-us", lt: "/apie-mus" },
+      galerija: { en: "/gallery", lt: "/galerija" },
+      kontaktai: { en: "/contacts", lt: "/kontaktai" },
+      "tvoru-skaiciuokle": { en: "/fence-calculator", lt: "/tvoru-skaiciuokle" },
+      straipsniai: { en: "/articles", lt: "/straipsniai" },
+      "straipsniai/[slug]": { en: "/articles/[slug]", lt: "/straipsniai/[slug]" },
+      parduotuve: { en: "/shop", lt: "/parduotuve" },
     },
   },
+
   fonts: {
     families: [
       {

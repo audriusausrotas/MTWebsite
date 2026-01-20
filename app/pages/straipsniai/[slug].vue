@@ -1,9 +1,24 @@
 <script setup lang="ts">
+import type { Collections } from "@nuxt/content";
+
 const localePath = useLocalePath();
 const route = useRoute();
+const { locale } = useI18n();
+const slug = computed(() => {
+  return route.path.replace(/^\/[a-z]{2}(?=\/)/, "");
+});
 
-const { data: page } = await useAsyncData(`content:${route.path}`, () =>
-  queryCollection("content").path(route.path).first(),
+const { data: page } = await useAsyncData(
+  "page-" + slug.value,
+  async () => {
+    const collection = ("content_" + locale.value) as keyof Collections;
+    const content = await queryCollection(collection).path(slug.value).first();
+
+    return content as any;
+  },
+  {
+    watch: [locale],
+  },
 );
 
 const canonical = computed(() => `https://modernitvora.lt${route.path}`);
