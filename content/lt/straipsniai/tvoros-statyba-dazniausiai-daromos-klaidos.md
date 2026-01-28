@@ -10,7 +10,7 @@ keywords:
   - tvoros montavimas
   - tvoros tarpas
   - komunaliniai vamzdžiai
-image: "/images/tvoros/tvoros-statybos-klaidos.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Pradėjus naują projektą, ypač tokį, su kuriuo neturime patirties, natūralu nežinoti visų galimų niuansų. Tvoros statyba nėra išimtis – neturint specifinių žinių, galima padaryti klaidų, kurios vėliau kainuos brangiau nei pati tvora.  
 Aptarkime dažniausiai pasitaikančias klaidas ir kaip jų išvengti.
+
+<!--more-->
 
 ---
 

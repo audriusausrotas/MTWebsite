@@ -10,7 +10,7 @@ keywords:
   - CNC lankstymas
   - 3D sklypo projektas
   - Thyssenkrupp skarda
-image: "/images/tvoros/tvoros-gamyba-kokybe.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Renkantis sklypo aptvėrimo sprendimą, natūraliai kyla klausimas – kokias te
 Tvoros gamyba ir montavimas yra procesas, reikalaujantis tikslumo, patirties ir modernios įrangos. Nuo gamybos kokybės tiesiogiai priklauso jūsų turto saugumas, privatumas ir bendras sklypo vaizdas.
 
 Toliau apžvelgiame pagrindinius tvoros gamybos etapus ir kokybės užtikrinimo principus.
+
+<!--more-->
 
 ---
 

@@ -10,7 +10,7 @@ keywords:
   - gręžtiniai pamatai
   - pakabinami pamatai
   - tvoros montavimas
-image: "/images/tvoros/tvoros-pamatai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Planuojant tvoros įrengimą, vienas svarbiausių etapų yra tinkamai parinkti tvoros pamatus. Nuo jų priklauso tvoros stabilumas, ilgaamžiškumas ir atsparumas aplinkos poveikiui.  
 Nesvarbu, ar tvora skirta nuosavam kiemui, ar komercinei teritorijai – teisingai parinkti pamatai yra būtina sąlyga sėkmingam projektui.  
 Aptarkime, į ką būtina atsižvelgti prieš pradedant pamatų liejimo ar montavimo darbus.
+
+<!--more-->
 
 ---
 

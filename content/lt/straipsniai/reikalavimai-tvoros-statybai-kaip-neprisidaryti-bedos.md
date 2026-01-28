@@ -10,7 +10,7 @@ keywords:
   - statybos leidimas tvora
   - tvora ant sklypo ribos
   - tvoros taisyklės
-image: "/images/tvoros/reikalavimai-tvoros-statybai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Nors tvora priskiriama prie nesudėtingų statinių, jos statyba ne visada yra tokia paprasta, kaip gali pasirodyti. Tam tikrais atvejais tvoros įrengimas yra ribojamas arba turi atitikti konkrečius teisės aktų reikalavimus. Jei šių taisyklių nepaisoma, gali tekti ne tik taisyti pažeidimus, bet ir visiškai nugriauti tvorą.
 
 Todėl prieš pradedant bet kokius sklypo aptvėrimo darbus, būtina susipažinti su galiojančiais reikalavimais.
+
+<!--more-->
 
 ---
 

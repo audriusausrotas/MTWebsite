@@ -9,7 +9,7 @@ keywords:
   - skardinė tvora
   - tvoros ilgaamžiškumas
   - korozijos prevencija
-image: "/images/tvoros/skardines-tvoros-prieziura.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -17,6 +17,8 @@ date: 2026-01-28
 
 Vis daugiau žmonių ieško tvoros sprendimo, kuris būtų atsparus oro sąlygoms, nereikalautų sudėtingos priežiūros ir išliktų estetiškas daugelį metų. Skardinės tvoros šiuos lūkesčius atitinka puikiai – jos atsparios vėjui, šalčiui, karščiui, krituliams ir ultravioletiniams spinduliams.  
 Tačiau net ir tvirčiausiai skardinei tvorai reikalinga **minimali, bet reguliari priežiūra**, kad ji išlaikytų pirminę išvaizdą ir apsaugą nuo korozijos.
+
+<!--more-->
 
 ---
 

@@ -9,7 +9,7 @@ keywords:
   - segmentinė tvora
   - žaliuzi tvora
   - tvoros montavimas
-image: "/images/tvoros/tinkama-tvora-pagal-reljefa.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Tvoros pasirinkimas – tai ne tik estetinis sprendimas. Tai praktinė užduotis
 Jeigu sklypas nelygus, turi nuolydžių ar kitų iššūkių, tinkamai parinkta tvora gali ne tik pagerinti estetiką, bet ir užtikrinti maksimalų funkcionalumą.
 
 Toliau – aiškūs patarimai, kaip pasirinkti tvorą pagal jūsų sklypo reljefą.
+
+<!--more-->
 
 ---
 

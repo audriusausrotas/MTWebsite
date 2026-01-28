@@ -42,7 +42,10 @@ export default defineContentConfig({
         seoTitle: z.string().optional(),
         seoDescription: z.string().optional(),
         image: z.string().optional(),
-        excerpt: z.any().optional(),
+        excerpt: z.object({
+          type: z.string(),
+          children: z.any(),
+        }),
       }),
     }),
 
@@ -56,7 +59,10 @@ export default defineContentConfig({
         seoTitle: z.string().optional(),
         seoDescription: z.string().optional(),
         image: z.string().optional(),
-        excerpt: z.any().optional(),
+        excerpt: z.object({
+          type: z.string(),
+          children: z.any(),
+        }),
       }),
     }),
   },

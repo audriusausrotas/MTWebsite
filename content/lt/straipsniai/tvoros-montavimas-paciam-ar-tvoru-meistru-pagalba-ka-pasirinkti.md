@@ -10,7 +10,7 @@ keywords:
   - tvoros leidimai
   - tvoros stulpai
   - paviršiniai vandenys
-image: "/images/tvoros/tvoros-montavimas-paciam-ar-meistrams.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Daugelis nuosavų namų savininkų nori patys prisidėti prie savo namų ir kiemo puoselėjimo. Natūralu, kad atsiradus poreikiui įsirengti tvorą, pirmiausia kyla klausimas – ar įmanoma ją sumontuoti savarankiškai?  
 Iš pirmo žvilgsnio tvoros montavimas gali atrodyti nesudėtingas, tačiau praktikoje tai procesas, reikalaujantis žinių, tikslumo ir tinkamų įrankių.  
 Aptarkime, ką būtina žinoti prieš priimant sprendimą.
+
+<!--more-->
 
 ---
 

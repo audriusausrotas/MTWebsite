@@ -9,7 +9,7 @@ keywords:
   - tvoros įsigijimas
   - tvoros montavimas
   - finansinis lankstumas
-image: "/images/tvoros/tvora-issimoketinai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Tvoros įrengimas – tai investicija, kuri padidina jūsų sklypo vertę, saugu
 Dėl šios priežasties vis daugiau žmonių renkasi tvoros įsigijimą **išsimokėtinai** – sprendimą, leidžiantį pradėti darbus nedelsiant ir išlaidas paskirstyti patogiu grafiku.
 
 Aptarkime, kada šis pasirinkimas yra naudingas ir kokius privalumus jis suteikia.
+
+<!--more-->
 
 ---
 

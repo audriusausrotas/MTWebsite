@@ -9,7 +9,7 @@ keywords:
   - augalai tvorai
   - kiemo apželdinimas
   - dekoratyviniai augalai
-image: "/images/tvoros/tvoru-apzeldinimas-augalai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Tvoros dažnai pasirenkamos dėl privatumo, saugumo ar teritorijos ribų pažym�
 Tinkamai parinkti augalai gali suteikti jaukumo, paslėpti techninius įrenginius (pvz., šulinius) ir padėti sukurti harmoningą aplinką.
 
 Kad būtų lengviau apsispręsti, pateikiame specialistų rekomenduojamus augalus ir svarbiausius apželdinimo principus.
+
+<!--more-->
 
 ---
 

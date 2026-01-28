@@ -10,7 +10,7 @@ keywords:
   - pakabinami pamatai
   - surenkami pamatai
   - tvoros montavimas
-image: "/images/tvoros/tvoros-pamatu-tipai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Tvora – ne tik saugumo ir privatumo garantas, bet ir svarbi teritorijos estetikos dalis. Kad tvora būtų stabili, tvirta ir tarnautų ilgus metus, būtina tinkamai parinkti ir sumontuoti tvoros pamatus.  
 Pamatai yra konstrukcijos pagrindas, laikantis visą tvoros svorį, todėl jų pasirinkimas turi būti apgalvotas. Šiandien aptariame populiariausius tvoros pamatų tipus ir jų skirtumus.
+
+<!--more-->
 
 ---
 

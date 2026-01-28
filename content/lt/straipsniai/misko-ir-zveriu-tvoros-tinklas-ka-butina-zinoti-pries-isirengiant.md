@@ -10,7 +10,7 @@ keywords:
   - Tornado tinklas
   - žemės sklypo aptvėrimas
   - gyvulių apsauga
-image: "/images/tvoros/misko-zveriu-tinklas.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Turint žemės ar miško sklypą, auginant galvijus, avis, stirnas, žirgus, pri
 Tai paprastas, patikimas ir universalus būdas apsaugoti sklypą nuo įsibrovėlių – tiek gyvūnų, tiek žmonių.
 
 Tvoros tinklas išpopuliarėjo ne tik dėl žemos kainos. Skirtingi tinklo tipai leidžia pritaikyti sprendimą pagal konkrečius poreikius – nuo miško sklypų iki gyvulių aptvarų ar net statybviečių.
+
+<!--more-->
 
 ---
 

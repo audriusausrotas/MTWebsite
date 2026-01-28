@@ -57,9 +57,13 @@ useHead(() => ({
 <template>
   <div class="bg-stone-100 w-full h-full py-40">
     <div class="flex flex-col max-w-default w-full p-24 m-auto bg-white rounded-lg shadow-2xl">
-      <NuxtImg :src="page?.meta?.image as string" class="rounded-md" />
-      <article class="prose prose-lg px-4 max-w-default w-full m-auto mt-14">
-        <ContentRenderer v-if="page" :value="page" />
+      <NuxtImg :src="page?.image as string" class="rounded-md" />
+      <article>
+        <ContentRenderer
+          v-if="page"
+          :value="page"
+          class="prose prose-lg px-4 max-w-default w-full m-auto mt-14"
+        />
       </article>
       <div class="flex gap-8">
         <div class="flex flex-col gap-4 justify-between flex-1 px-4">
@@ -84,17 +88,21 @@ useHead(() => ({
 .prose :where(h1, h2, h3, h4, h5, h6)[id] a {
   pointer-events: none;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .prose :where(h1, h2, h3, h4, h5, h6)[id]::before {
   content: none;
 }
 
-.prose h1 {
+.prose :where(h1)[id] {
   font-size: 2.5rem;
 }
-.prose h2 {
-  font-size: 2.2rem;
+.prose :where(h2)[id] {
+  font-size: 2rem;
+}
+
+.prose :where(h3)[id] {
+  font-size: 1.6rem;
 }
 </style>

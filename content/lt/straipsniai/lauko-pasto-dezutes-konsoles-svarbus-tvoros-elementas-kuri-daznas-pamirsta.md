@@ -9,7 +9,7 @@ keywords:
   - pašto dėžutės konsolė
   - tvoros elementai
   - moderni tvora
-image: "/images/tvoros/lauko-pasto-dezute-konsoles.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Tvoros projektavimas dažniausiai prasideda nuo pagrindinių sprendimų – tvor
 Vienas tokių – **į tvorą integruojamos lauko pašto dėžutės-konsolės**, taip pat domofonai, vaizdo kameros ar automatiniai vartai.
 
 Kad šių sprendimų nereikėtų gailėtis jau pastačius tvorą, verta juos suplanuoti iš anksto. Pažvelkime, kodėl pašto dėžutės-konsolės tampa vis populiaresniu ir praktišku pasirinkimu.
+
+<!--more-->
 
 ---
 

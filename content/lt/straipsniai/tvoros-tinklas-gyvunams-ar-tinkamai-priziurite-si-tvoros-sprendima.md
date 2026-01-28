@@ -9,7 +9,7 @@ keywords:
   - tvoros priežiūra
   - gyvūnų aptvėrimas
   - miško tinklas
-image: "/images/tvoros/tvoros-tinklas-gyvunams.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -17,6 +17,8 @@ date: 2026-01-28
 
 Tvoros tinklas – vienas praktiškiausių ir ekonomiškiausių sprendimų didelių žemės ar miško sklypų savininkams. Jis puikiai tinka ganykloms, kuriose laikomos avys, karvės, danieliai, arkliai ar kiti gyvūnai, taip pat teritorijoms, kurias reikia apsaugoti nuo laukinių žvėrių.  
 Tačiau net ir tvirtas, kokybiškas tinklas reikalauja minimalaus, bet reguliaraus dėmesio, kad išliktų funkcionalus ir saugus.
+
+<!--more-->
 
 ---
 

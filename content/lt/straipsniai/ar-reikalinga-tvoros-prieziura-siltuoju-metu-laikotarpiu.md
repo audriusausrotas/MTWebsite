@@ -10,7 +10,7 @@ keywords:
   - tvoros valymas
   - tvoros apsauga
   - tvoros ilgaamžiškumas
-image: "/images/tvoros/tvoros-prieziura-vasara.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Atėjus vasarai, kartu su šiluma ir ilgesnėmis dienomis prasideda ir įvairūs
 Gera žinia – skardinės tvoros priežiūra yra paprasta, o kartais net tampa malonia rutina po darbo dienos.
 
 Toliau – keturios svarbiausios rekomendacijos, padėsiančios išlaikyti tvorą tvarkingą visą šiltąjį sezoną.
+
+<!--more-->
 
 ---
 

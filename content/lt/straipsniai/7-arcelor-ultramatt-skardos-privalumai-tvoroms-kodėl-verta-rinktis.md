@@ -9,7 +9,7 @@ keywords:
   - skardinės tvoros
   - UltraMatt danga
   - tvorų medžiagos
-image: "/images/tvoros/arcelor-ultramatt.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Renkantis tvorą, svarbiausia rasti sprendimą, kuris būtų ne tik gražus, bet
 Tai vienas moderniausių ir patikimiausių pasirinkimų šiuolaikinėms tvoroms, ypač tiems, kurie nori ilgalaikio rezultato be nuolatinės priežiūros.
 
 Toliau – išsamiai apie tai, kodėl ši skarda laikoma premium klasės produktu.
+
+<!--more-->
 
 ---
 

@@ -10,7 +10,7 @@ keywords:
   - metaliniai stulpai
   - mediniai stulpai
   - betoniniai stulpai
-image: "/images/tvoros/stulpai-tvorai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Tinkamai sumontuoti tvoros stulpai yra vienas svarbiausių tvoros ilgaamžiškumo ir stabilumo veiksnių. Nesvarbu, kokį tvoros tipą pasirinksite, būtent stulpai laiko visą konstrukciją, todėl net ir nedidelė montavimo klaida gali lemti, kad tvora tarnaus vos vieną sezoną.  
 Kad to išvengtumėte, pateikiame pagrindines įžvalgas, padėsiančias pasirinkti tinkamą stulpų tipą ir juos teisingai sumontuoti.
+
+<!--more-->
 
 ---
 

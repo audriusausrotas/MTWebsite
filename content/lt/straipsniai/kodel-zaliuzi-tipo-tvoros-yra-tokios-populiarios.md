@@ -10,7 +10,7 @@ keywords:
   - moderni tvora
   - privatumo tvora
   - žaliuzi tvoros privalumai
-image: "/images/tvoros/zaliuzi-tvoros-populiarumas.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Ieškant sklypo aptvėrimo sprendimo, vis daugiau žmonių renkasi ne tik saugią, bet ir modernią, prie aplinkos derančią tvorą. Estetika šiandien yra tokia pat svarbi kaip ir funkcionalumas, todėl skardinės tvoros, ypač žaliuzi tipo, sparčiai populiarėja.  
 Pažvelkime, kodėl būtent žaliuzi tvoros tapo vienu geidžiamiausių pasirinkimų.
+
+<!--more-->
 
 ---
 

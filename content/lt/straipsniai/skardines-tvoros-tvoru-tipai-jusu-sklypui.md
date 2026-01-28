@@ -11,7 +11,7 @@ keywords:
   - tvoralentės
   - skardinės tvoros tipai
   - moderni tvora
-image: "/images/tvoros/skardines-tvoros-tipai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -21,6 +21,8 @@ Minimalizmas, kuris šiandien vyrauja daugelyje gyvenimo sričių, neaplenkė ir
 Skardinė tvora gali būti ne tik praktiška, bet ir išskirtinė jūsų sklypo detalė.
 
 Toliau apžvelgiame populiariausius skardinių tvorų tipus ir jų privalumus.
+
+<!--more-->
 
 ---
 

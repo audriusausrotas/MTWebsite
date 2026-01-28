@@ -9,7 +9,7 @@ keywords:
   - tvoros medžiagos
   - Pladur Wrinkle Mat
   - ZM Ecoprotect
-image: "/images/tvoros/thyssenkrupp-skardos-privalumai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Renkantis tvorą, svarbiausia rasti sprendimą, kuris būtų ir estetiškas, ir 
 Tai medžiaga, kuri išsiskiria patvarumu, atsparumu aplinkos poveikiui ir plačiomis dizaino galimybėmis.
 
 Toliau aptariame **7 pagrindinius privalumus**, dėl kurių ši skarda yra vienas geriausių pasirinkimų jūsų tvorai.
+
+<!--more-->
 
 ---
 

@@ -11,7 +11,7 @@ keywords:
   - kiemo vartai
   - telefonspynė
   - tvorų meistrai
-image: "/images/tvoros/tvoros-statyba-ka-butina-zinoti.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 
 Naujų metų pradžia dažnai primena apie suplanuotus namų ūkio darbus, o vienas jų – tvoros statyba. Sklypo aptvėrimas yra reikšminga investicija, todėl netinkamai pasiruošus, klaidos gali kainuoti dvigubai. Internete gausu prieštaringos informacijos, todėl lengva pasiklysti ir priimti neteisingus sprendimus.  
 Kad išvengtumėte papildomų rūpesčių, dalijamės svarbiausiais patarimais, ką būtina žinoti prieš pradedant tvoros statybos darbus.
+
+<!--more-->
 
 ---
 

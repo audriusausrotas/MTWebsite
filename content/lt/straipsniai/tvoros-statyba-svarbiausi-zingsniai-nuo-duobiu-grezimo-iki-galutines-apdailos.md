@@ -9,7 +9,7 @@ keywords:
   - tvoros montavimas
   - stulpų betonavimas
   - tvoros segmentai
-image: "/images/tvoros/tvoros-statyba-zingsniai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ Skardinės tvoros šiandien yra vienas populiariausių pasirinkimų dėl savo pa
 Kad tvora tarnautų ilgus metus, būtina laikytis pagrindinių statybos etapų – nuo duobių gręžimo iki galutinės apdailos.
 
 Toliau pateikiame aiškų ir profesionalų skardinės tvoros statybos žingsnių gidą.
+
+<!--more-->
 
 ---
 

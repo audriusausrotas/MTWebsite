@@ -9,7 +9,7 @@ keywords:
   - varstomi vartai
   - kiemo vartų pasirinkimas
   - vartų automatika
-image: "/images/vartai/stumdomi-ar-atveriami-vartai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Apsisprendus įsirengti tvorą, būtina iš anksto pagalvoti ir apie kiemo vartu
 Dažniausiai pasirenkami du vartų tipai – **stumdomi (gembiniai)** ir **atveriami (varstomi)** vartai. Abu sprendimai turi savų privalumų, tačiau tinkamiausias variantas priklauso nuo jūsų kiemo išplanavimo ir poreikių.
 
 Svarbu vartų tipą nuspręsti dar prieš pradedant tvoros montavimą – gali prireikti nutiesti laidus automatikai, pakoreguoti reljefą ar pašalinti augalus, trukdančius montavimui.
+
+<!--more-->
 
 ---
 

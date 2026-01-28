@@ -10,7 +10,7 @@ keywords:
   - pramoninė tvora
   - segmentinės tvoros privalumai
   - teritorijos aptvėrimas
-image: "/images/tvoros/segmentine-tvora-verslui.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Įmonių teritorijų apsauga yra vienas svarbiausių saugumo elementų, todėl tinkamai parinkta tvora gali turėti didelę įtaką tiek saugumui, tiek įvaizdžiui.  
 Pastaraisiais metais vis daugiau verslų ir viešojo sektoriaus įstaigų renkasi **segmentinę tvorą** – dėl jos tvirtumo, universalumo ir patrauklios kainos.  
 Tai sprendimas, tinkantis tiek mažoms įmonėms, tiek dideliems logistikos ar gamybos centrams.
+
+<!--more-->
 
 ---
 

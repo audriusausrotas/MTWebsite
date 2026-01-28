@@ -9,7 +9,7 @@ keywords:
   - lietuviškos tvoros
   - tvoros elementai
   - skardinės tvoros
-image: "/images/tvoros/tvoralentes-alba.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Pradėjus planuoti tvoros statybą, natūraliai kyla klausimas – kokį tvoros 
 Pastaraisiais metais itin sparčiai populiarėja **skardinių tvoralenčių tvoros**, o vienas ryškiausių šios kategorijos sprendimų – **tvoralentės ALBA**, sukurtos ir pagamintos Lietuvoje.
 
 Tai modernus, patvarus ir universaliai pritaikomas tvoros modelis, atitinkantis tiek miesto, tiek kaimo sodybų poreikius.
+
+<!--more-->
 
 ---
 

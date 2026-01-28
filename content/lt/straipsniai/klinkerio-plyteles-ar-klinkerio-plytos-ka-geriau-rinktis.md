@@ -9,7 +9,7 @@ keywords:
   - fasado apdaila
   - klinkeris
   - Feldhaus Klinker
-image: "/images/klinkeris/klinkerio-plyteles-ar-plytos.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Pradėjus fasado apdailos ar vidaus įrengimo darbus, natūraliai ieškome spren
 Būtent dėl šių priežasčių vis dažniau pasirenkamos **klinkerio plytelės**. Tačiau daugelis svarsto – ar jos tikrai pranašesnės už tradicines **klinkerio plytas**?
 
 Aptarkime pagrindinius skirtumus ir priežastis, kodėl meistrai vis dažniau rekomenduoja būtent klinkerio plyteles.
+
+<!--more-->
 
 ---
 

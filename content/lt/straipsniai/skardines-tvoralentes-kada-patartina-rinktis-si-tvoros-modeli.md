@@ -10,7 +10,7 @@ keywords:
   - tvoros modeliai
   - privatumo tvora
   - tvoros dizainas
-image: "/images/tvoros/skardines-tvoralentes.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Apsisprendus aptverti sklypą, vis dažniau renkamasi skardinę tvorą vietoj tradicinės, daug priežiūros reikalaujančios medinės tvoros. Tai nestebina – šiuolaikiniai skardinių tvorų modeliai pasižymi ilgaamžiškumu, estetika ir praktiškumu.  
 Skardinės tvoralentės yra vienas populiariausių pasirinkimų tiek miestuose, tiek mažesniuose miesteliuose. Aptarkime, kada šis tvoros modelis yra geriausias sprendimas.
+
+<!--more-->
 
 ---
 

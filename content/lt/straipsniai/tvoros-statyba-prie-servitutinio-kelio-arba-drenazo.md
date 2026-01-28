@@ -10,7 +10,7 @@ keywords:
   - tvoros reikalavimai
   - sklypo servitutas
   - drenažo apsauga
-image: "/images/tvoros/tvora-prie-servituto.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Planuojant aptverti sklypą, dažnai nepagalvojama, kad tam tikri sklypai turi specifinių apribojimų. Vieni dažniausių atvejų – kai sklypas ribojasi su **servitutiniu keliu** arba **drenažo sistema**.  
 Netinkamai įrengta tvora gali būti priverstinai nuardyta, o neteisingai tvarkant drenažą – užlietas jūsų ar kaimynų sklypas.  
 Kad to išvengtumėte, parengėme aiškią ir praktišką atmintinę.
+
+<!--more-->
 
 ---
 

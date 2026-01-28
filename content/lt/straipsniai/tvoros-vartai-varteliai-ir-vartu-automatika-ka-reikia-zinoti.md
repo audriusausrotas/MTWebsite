@@ -12,7 +12,7 @@ keywords:
   - kiemo vartai
   - GSM modulis
   - Wi-Fi modulis
-image: "/images/tvoros/tvoros-vartai-ir-automatika.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ date: 2026-01-28
 
 Tvoros vartai, varteliai ir vartų automatika yra vieni svarbiausių elementų, užtikrinančių kiemo saugumą ir privatumą. Net moderniausios vaizdo kameros neatstos tinkamai parinktų ir sumontuotų vartų, todėl jų pasirinkimas turi būti apgalvotas.  
 Kad procesas būtų paprastesnis, aptariame svarbiausius dalykus, kuriuos būtina žinoti prieš pasirenkant vartus, vartelius ir automatiką.
+
+<!--more-->
 
 ---
 

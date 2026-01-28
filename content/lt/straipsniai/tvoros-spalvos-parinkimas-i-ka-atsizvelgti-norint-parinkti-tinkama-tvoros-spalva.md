@@ -9,7 +9,7 @@ keywords:
   - skardinė tvora
   - tvoros dizainas
   - tvoros spalvos parinkimas
-image: "/images/tvoros/tvoros-spalvos.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ Jūsų sklypas – tarsi drobė, kurioje kiekvienas elementas kuria bendrą vaiz
 Prieš pasirenkant spalvą, verta aiškiai apsibrėžti, kokio efekto siekiate – subtilaus įsiliejimo į aplinką ar ryškaus vizualinio akcento.
 
 Skardinės tvoros, tokios kaip žaliuzi, diamond, eglutės, polisadinės ar tvoralenčių tvoros, gaminamos iš ilgaamžės vokiškos **„Thyssenkrupp AG“** skardos ir dažomos milteliniu būdu pagal plačią **RAL spalvų paletę**. Tai suteikia galimybę rinktis tiek klasikines, tiek išskirtines spalvas.
+
+<!--more-->
 
 ---
 

@@ -9,7 +9,7 @@ keywords:
   - sulankstomi vartai
   - vietos taupymas kieme
   - modernūs vartai
-image: "/images/vartai/stumdomi-ir-sulankstomi-vartai.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 Nuosavas kiemas – tai vieta, kurioje norisi kuo daugiau erdvės poilsiui, automobiliams ir apželdinimui.  
 Tačiau daugelyje sklypų būtent įvažiavimo zona tampa didžiausiu iššūkiu: trūksta vietos automobiliui pastatyti, sudėtinga praeiti, o tradiciniai vartai užima per daug ploto.  
 Šiuolaikiniai **automatiniai kiemo vartai** – stumdomi ir sulankstomi – leidžia šias problemas išspręsti elegantiškai ir funkcionaliai.
+
+<!--more-->
 
 ---
 

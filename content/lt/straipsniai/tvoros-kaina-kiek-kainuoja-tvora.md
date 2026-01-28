@@ -11,7 +11,7 @@ keywords:
   - kiemo vartai
   - tvoros aukštis
   - tvoros projektas
-image: "/images/tvoros/tvoros-kaina.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -20,6 +20,8 @@ date: 2026-01-28
 Vos tik nusprendus aptverti savo sklypą, vienas pirmųjų klausimų, kuris kyla kiekvienam – **kiek kainuos tvora?**  
 Internete esančios tvoros skaičiuoklės gali padėti sužinoti preliminarius kainų rėžius, tačiau tikroji tvoros kaina priklauso nuo daugybės veiksnių.  
 Kad priimtumėte teisingą sprendimą, verta suprasti, kas iš tikrųjų lemia galutinę projekto sąmatą.
+
+<!--more-->
 
 ---
 

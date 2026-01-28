@@ -10,7 +10,7 @@ keywords:
   - tvoros aklinumas
   - kiemo saugumas
   - augintinių apsauga
-image: "/images/tvoros/tvora-kaip-apsaugos-priemone.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -18,6 +18,8 @@ date: 2026-01-28
 
 Saugios nuosavybės išlaikymas yra vienas svarbiausių dalykų norint išvengti problemų namuose. Tvora – tai ne tik estetikos elementas, bet ir efektyvi pasyvi apsaugos priemonė, kuri dažnai suteikia daugiau realios naudos nei signalizacijos ar kameros.  
 Kad tvora iš tiesų padidintų saugumą, būtina atsižvelgti į kelis esminius kriterijus.
+
+<!--more-->
 
 ---
 

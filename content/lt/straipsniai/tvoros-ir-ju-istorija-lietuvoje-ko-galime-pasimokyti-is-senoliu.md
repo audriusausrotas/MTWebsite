@@ -10,7 +10,7 @@ keywords:
   - tradicinės tvoros
   - medinės tvoros
   - pinučių tvoros
-image: "/images/tvoros/tvoru-istorija-lietuvoje.jpg"
+image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
 ---
 
@@ -19,6 +19,8 @@ date: 2026-01-28
 Tvoros Lietuvoje – tai ne tik praktinis sprendimas, bet ir svarbus kultūrinis simbolis, atspindintis skirtingų epochų gyvenimo būdą, architektūrą ir žmonių poreikius.  
 Nors šiandien tvoras dažniausiai suvokiame kaip saugumo ir privatumo priemonę, senovėje jos atliko kur kas daugiau funkcijų.  
 Pažvelkime, kaip tvoros keitėsi bėgant amžiams ir kokias idėjas galime pritaikyti savo sodybose šiandien.
+
+<!--more-->
 
 ---
 
