@@ -9,7 +9,7 @@ keywords:
   - skardinė tvora
   - tvoros ilgaamžiškumas
   - korozijos prevencija
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora7.jpg"
 date: 2026-01-28
 ---
 

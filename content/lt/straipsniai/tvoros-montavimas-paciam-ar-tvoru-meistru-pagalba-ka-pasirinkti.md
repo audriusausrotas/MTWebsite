@@ -10,7 +10,7 @@ keywords:
   - tvoros leidimai
   - tvoros stulpai
   - paviršiniai vandenys
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora4.jpg"
 date: 2026-01-28
 ---
 

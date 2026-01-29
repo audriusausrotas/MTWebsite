@@ -9,7 +9,7 @@ keywords:
   - skardinė tvora
   - tvoros dizainas
   - tvoros spalvos parinkimas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/modernitvora-4372-1.jpg"
 date: 2026-01-28
 ---
 

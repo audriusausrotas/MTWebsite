@@ -4,7 +4,7 @@ interface Props {
   name?: string;
 }
 const props = withDefaults(defineProps<Props>(), {
-  url: "/images/hero1.jpeg",
+  url: "/images/hero1.jpg",
   name: "",
 });
 </script>

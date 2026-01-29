@@ -10,7 +10,7 @@ keywords:
   - tradicinės tvoros
   - medinės tvoros
   - pinučių tvoros
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora13.jpg"
 date: 2026-01-28
 ---
 

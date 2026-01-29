@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
+  <div class="bg-stone-100">
     <BaseHeroImage :name="$t('breadcrumbs.straipsniai')" />
     <ArticlesMain />
   </div>

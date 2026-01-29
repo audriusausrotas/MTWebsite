@@ -12,7 +12,7 @@ keywords:
   - kiemo vartai
   - GSM modulis
   - Wi-Fi modulis
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora14.jpg"
 date: 2026-01-28
 ---
 

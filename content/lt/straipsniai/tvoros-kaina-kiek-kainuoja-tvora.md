@@ -11,7 +11,7 @@ keywords:
   - kiemo vartai
   - tvoros aukštis
   - tvoros projektas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora2.jpg"
 date: 2026-01-28
 ---
 

@@ -9,7 +9,7 @@ keywords:
   - surenkami pamatai
   - tvoros montavimas
   - sklypo aptvėrimas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/dilė.jpg"
 date: 2026-01-28
 ---
 

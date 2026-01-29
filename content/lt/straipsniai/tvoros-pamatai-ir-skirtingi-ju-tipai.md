@@ -10,7 +10,7 @@ keywords:
   - pakabinami pamatai
   - surenkami pamatai
   - tvoros montavimas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
 ---
 

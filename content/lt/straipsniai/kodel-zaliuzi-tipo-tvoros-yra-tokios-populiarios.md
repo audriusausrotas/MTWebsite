@@ -10,7 +10,7 @@ keywords:
   - moderni tvora
   - privatumo tvora
   - žaliuzi tvoros privalumai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/žaliuzi.jpg"
 date: 2026-01-28
 ---
 

@@ -9,7 +9,7 @@ keywords:
   - tvoros įsigijimas
   - tvoros montavimas
   - finansinis lankstumas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora15.jpg"
 date: 2026-01-28
 ---
 

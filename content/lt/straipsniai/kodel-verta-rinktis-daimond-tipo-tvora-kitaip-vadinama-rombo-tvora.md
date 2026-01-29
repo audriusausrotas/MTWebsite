@@ -9,7 +9,7 @@ keywords:
   - skardinės tvoros
   - tvoros pasirinkimas
   - tvoros privalumai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora11.jpg"
 date: 2026-01-28
 ---
 

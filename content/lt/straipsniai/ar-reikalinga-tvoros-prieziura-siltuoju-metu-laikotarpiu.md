@@ -10,7 +10,7 @@ keywords:
   - tvoros valymas
   - tvoros apsauga
   - tvoros ilgaamžiškumas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora9.jpg"
 date: 2026-01-28
 ---
 

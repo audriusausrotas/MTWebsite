@@ -9,7 +9,7 @@ keywords:
   - pigios tvoros
   - sklypo aptvėrimas
   - tvoros pasirinkimas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
 ---
 

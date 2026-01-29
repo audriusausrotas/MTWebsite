@@ -11,7 +11,7 @@ keywords:
   - kiemo vartai
   - telefonspynė
   - tvorų meistrai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/daimondvertical.jpg"
 date: 2026-01-28
 ---
 

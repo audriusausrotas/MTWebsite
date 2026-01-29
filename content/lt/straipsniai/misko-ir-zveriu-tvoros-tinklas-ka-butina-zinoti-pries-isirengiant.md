@@ -10,7 +10,7 @@ keywords:
   - Tornado tinklas
   - žemės sklypo aptvėrimas
   - gyvulių apsauga
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora6.jpg"
 date: 2026-01-28
 ---
 

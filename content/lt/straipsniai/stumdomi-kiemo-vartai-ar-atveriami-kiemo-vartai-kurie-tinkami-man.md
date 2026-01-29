@@ -9,7 +9,7 @@ keywords:
   - varstomi vartai
   - kiemo vartų pasirinkimas
   - vartų automatika
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora14.jpg"
 date: 2026-01-28
 ---
 

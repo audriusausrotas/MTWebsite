@@ -10,7 +10,7 @@ keywords:
   - CNC lankstymas
   - 3D sklypo projektas
   - Thyssenkrupp skarda
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/modernitvora-5139-1.jpg"
 date: 2026-01-28
 ---
 

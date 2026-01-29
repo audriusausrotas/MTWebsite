@@ -8,20 +8,20 @@ const localePath = useLocalePath();
     <div class="grid grid-cols-2 gap-4">
       <HomeProductCard
         :title="$t('menu.fences')"
-        url="/images/daimond6090.jpg"
+        url="/images/tvoros/daimond6090.jpg"
         :to="localePath('/tvoros')"
       />
       <HomeProductCard
         :title="$t('menu.gates')"
-        url="/images/gates.jpeg"
+        url="/images/tvoros/tvora14.jpg"
         :to="localePath('/kiemo-vartai')"
       />
       <HomeProductCard
         :title="$t('menu.blinds')"
-        url="/images/blinds.jpg"
+        url="/images/zaliuzes/blinds.jpg"
         :to="localePath('/lauko-zaliuzes')"
       />
-      <!-- <HomeProductCard :title="$t('menu.shop')" url="/images/daimond6090.jpg" :to="localePath('/parduotuve')"/> -->
+      <!-- <HomeProductCard :title="$t('menu.shop')" url="/images/tvoros/daimond6090.jpg" :to="localePath('/parduotuve')"/> -->
     </div>
   </div>
 </template>

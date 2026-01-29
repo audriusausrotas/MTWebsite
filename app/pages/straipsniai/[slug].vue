@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Collections } from "@nuxt/content";
 
+definePageMeta({
+  breadcrumb: "straipsniai",
+});
+
 const localePath = useLocalePath();
 const route = useRoute();
 const { locale } = useI18n();
@@ -8,18 +12,18 @@ const slug = computed(() => {
   return route.path.replace(/^\/[a-z]{2}(?=\/)/, "");
 });
 
-const { data: page } = await useAsyncData(
-  "page-" + slug.value,
-  async () => {
-    const collection = ("content_" + locale.value) as keyof Collections;
-    const content = await queryCollection(collection).path(slug.value).first();
+const { data: page } = await useAsyncData("page-" + slug.value, async () => {
+  const collection = ("content_" + locale.value) as keyof Collections;
+  const content = await queryCollection(collection).path(slug.value).first();
 
-    return content as any;
-  },
-  {
-    watch: [locale],
-  },
-);
+  return content as any;
+});
+
+watch(locale, (newLocale, oldLocale) => {
+  if (newLocale !== oldLocale) {
+    window.location.assign(localePath("/straipsniai"));
+  }
+});
 
 const canonical = computed(() => `https://modernitvora.lt${route.path}`);
 
@@ -56,9 +60,15 @@ useHead(() => ({
 
 <template>
   <div class="bg-stone-100 w-full h-full py-40">
-    <div class="flex flex-col max-w-default w-full p-24 m-auto bg-white rounded-lg shadow-2xl">
-      <NuxtImg :src="page?.image as string" class="rounded-md" />
+    <BaseBreadcrumbs />
+    <div
+      class="flex flex-col gap-16 max-w-default w-full p-24 m-auto bg-white rounded-lg shadow-2xl"
+    >
       <article>
+        <NuxtImg
+          :src="page?.image"
+          class="rounded-md w-full max-h-168 object-cover object-center"
+        />
         <ContentRenderer
           v-if="page"
           :value="page"
@@ -67,16 +77,14 @@ useHead(() => ({
       </article>
       <div class="flex gap-8">
         <div class="flex flex-col gap-4 justify-between flex-1 px-4">
-          <h4 class="font-semibold text-xl">Planuojate tvoros statybą?</h4>
-          <p class="text-justify leading-8">
-            Nežinote, kokią tvorą pasirinkti? Turite kitų klausimų? Susisiekite su Moderni Tvora
-            tvorų specialistais, kurie išklausę jūsų poreikius pasiūlys individualizuotą sprendimą
-            bei atliks visus darbus. Viskas vienoje vietoje nuo A iki Z.
-          </p>
-          <BaseButton @click="navigateTo(localePath('/kontaktai'))">Susisiekti</BaseButton>
+          <h4 class="font-semibold text-xl">{{ $t("articles.article.title") }}</h4>
+          <p class="text-justify leading-8">{{ $t("articles.article.text") }}</p>
+          <BaseButton @click="navigateTo(localePath('/kontaktai'))">{{
+            $t("articles.article.button-text")
+          }}</BaseButton>
         </div>
         <NuxtImg
-          src="/images/modernitvora_4909-2.jpeg"
+          src="/images/tvoros/tvora5.jpg"
           class="rounded- max-h-80 h-full flex-1 object-cover"
         />
       </div>
@@ -85,24 +93,21 @@ useHead(() => ({
 </template>
 
 <style>
-.prose :where(h1, h2, h3, h4, h5, h6)[id] a {
-  pointer-events: none;
-  text-decoration: none;
-  font-weight: 600;
+.prose :where(h1) {
+  font-size: 2.2rem;
+  font-weight: 700;
 }
-
-.prose :where(h1, h2, h3, h4, h5, h6)[id]::before {
-  content: none;
-}
-
-.prose :where(h1)[id] {
-  font-size: 2.5rem;
-}
-.prose :where(h2)[id] {
+.prose :where(h2) {
   font-size: 2rem;
 }
 
-.prose :where(h3)[id] {
+.prose :where(h3) {
   font-size: 1.6rem;
+}
+
+.prose :where(a) {
+  pointer-events: none;
+  text-decoration: none;
+  font-weight: 600;
 }
 </style>

@@ -9,7 +9,7 @@ keywords:
   - tvoros medžiagos
   - Pladur Wrinkle Mat
   - ZM Ecoprotect
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora8.jpg"
 date: 2026-01-28
 ---
 

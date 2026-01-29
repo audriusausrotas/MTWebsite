@@ -4,37 +4,37 @@ const localePath = useLocalePath();
 
 const images = [
   {
-    url: "/images/daimond6090.jpg",
+    url: "/images/tvoros/daimond6090.jpg",
   },
   {
-    url: "/images/daimond40105.jpg",
+    url: "/images/tvoros/daimond40105.jpg",
   },
   {
-    url: "/images/daimond60140.jpg",
+    url: "/images/tvoros/daimond60140.jpg",
   },
   {
-    url: "/images/daimondVertical.jpg",
+    url: "/images/tvoros/daimondVertical.jpg",
   },
   {
-    url: "/images/dilė.jpg",
+    url: "/images/tvoros/dilė.jpg",
   },
   {
-    url: "/images/dilė.jpg",
+    url: "/images/tvoros/dilė.jpg",
   },
   {
-    url: "/images/eglė.jpg",
+    url: "/images/tvoros/eglė.jpg",
   },
   {
-    url: "/images/plank.jpg",
+    url: "/images/tvoros/plank.jpg",
   },
   {
-    url: "/images/žaliuzi.jpg",
+    url: "/images/tvoros/žaliuzi.jpg",
   },
   {
-    url: "/images/blinds.jpg",
+    url: "/images/zaliuzes/blinds.jpg",
   },
   {
-    url: "/images/blinds2.jpg",
+    url: "/images/zaliuzes/blinds2.jpg",
   },
 ];
 

@@ -4,7 +4,7 @@ const localePath = useLocalePath();
 
 <template>
   <div class="flex h-100 text-white w-full max-w-default px-4 m-auto">
-    <NuxtImg src="/images/modernitvora_4909-2.jpeg" alt="" class="w-full object-cover" />
+    <NuxtImg src="/images/tvoros/tvora5.jpg" alt="" class="w-full object-cover" />
     <div class="bg-red-main p-8 max-w-100 w-full flex flex-col gap-8 justify-center">
       <div class="flex gap-4">
         <img src="/icons/calculator.svg" alt="" />

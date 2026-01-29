@@ -10,7 +10,7 @@ keywords:
   - statybos leidimas tvora
   - tvora ant sklypo ribos
   - tvoros taisyklės
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
 ---
 

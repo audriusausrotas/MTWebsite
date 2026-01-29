@@ -10,7 +10,7 @@ keywords:
   - tvoros aklinumas
   - kiemo saugumas
   - augintinių apsauga
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/eglėplus.jpg"
 date: 2026-01-28
 ---
 

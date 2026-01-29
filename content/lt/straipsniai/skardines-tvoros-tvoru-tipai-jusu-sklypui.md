@@ -11,7 +11,7 @@ keywords:
   - tvoralentės
   - skardinės tvoros tipai
   - moderni tvora
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora21.jpg"
 date: 2026-01-28
 ---
 

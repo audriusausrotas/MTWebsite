@@ -43,6 +43,23 @@
     "ofisoAdresas": "Kauno g. 31, Marijampolė",
     "ofiso2Adresas": "Chemijos g. 4, Kaunas"
   },
+
+  "articles": {
+    "article": {
+      "title": "Planuojate tvoros statybą?",
+      "text": "Nežinote, kokią tvorą pasirinkti? Turite kitų klausimų? Susisiekite su Moderni Tvora tvorų specialistais, kurie išklausę jūsų poreikius pasiūlys individualizuotą sprendimą bei atliks visus darbus. Viskas vienoje vietoje nuo A iki Z.",
+      "button-text": "Susisiekti"
+    },
+    "pagination": {
+      "previous": "Ankstesnis",
+      "next": "Kitas",
+      "page": "Puslapis",
+      "of": "iš",
+      "read-more": "Skaityti daugiau >>",
+      "articles": "Straipsniai"
+    }
+  },
+
   "about": {
     "aprasymas": {
       "title": "Moderni tvora",
@@ -51,44 +68,44 @@
     "box1": {
       "title": "Kodėl mes?",
       "text": "„Moderni Tvora“ naudojasi pačia pažangiausia įranga, užtikrinančia projektų įgyvendinimo tikslumą. Mūsų asortimente – tik kokybiškiausios medžiagos, garantuojančios tvoros, vartų ar vartelių ilgaamžiškumą jūsų įmonei ar namams.",
-      "url": "/images/modernitvora-4688-1.jpeg",
+      "url": "/images/tvoros/modernitvora-4688-1.jpg",
       "alt": ""
     },
     "box2": {
       "title": "Darbų garantija",
       "text": "„Užtikrindami kokybę, atliktiems darbams suteikiame 2 metų garantiją, tvoralentėms taikoma 5-10 metų garantija, o mūsų naudojamoms skardoms suteikiama net 45 metų garantija.",
-      "url": "/images/modernitvora-5006-2.jpeg",
+      "url": "/images/tvoros/tvora4.jpg",
       "alt": ""
     },
     "box3": {
       "title": "Gyva konsultacija biure",
       "text": "„Atvykite į „Moderni Tvora“ biurą Marijampolėje, kur galėsite gyvai apžiūrėti mūsų medžiagų asortimentą, pasikonsultuoti su specialistais dėl savo projekto ir gauti patarimų.",
-      "url": "/images/modernitvora-4372-1.jpeg",
+      "url": "/images/tvoros/modernitvora-4372-1.jpg",
       "alt": ""
     },
     "cards": {
       "card1": {
         "title": "Nestandartiniai projektai",
         "text": "Nestandartiniams sklypams paruošiame individualius planus, atsižvelgiant į unikalų teritorijos reljefą, taip užtikrindami tobulą tvoros pritaikymą jūsų valdoms.",
-        "url": "/images/modernitvora-4372-1.jpeg",
+        "url": "/images/tvoros/modernitvora-4372-1.jpg",
         "alt": ""
       },
       "card2": {
         "title": "Greitis",
         "text": "Kokybiškas ir greitas projektų įgyvendinimas nuo plano sudarymo iki tvoros sumontavimo – bene sparčiausiai Lietuvos rinkoje.",
-        "url": "/images/modernitvora-5139-1.jpeg",
+        "url": "/images/tvoros/modernitvora-5139-1.jpg",
         "alt": ""
       },
       "card3": {
         "title": "Modernus matavimas",
         "text": "Naudodami inovatyviausią įrangą, sudarome tikslius 3D formato teritorijos planus, kurie atspindi specifinį jūsų sklypo reljefą.",
-        "url": "/images/modernitvora-5006-2.jpeg",
+        "url": "/images/tvoros/tvora4.jpg",
         "alt": ""
       },
       "card4": {
         "title": "Pilnas projekto įgyvendinimas",
         "text": "Ilgametę patirtį turinčios brigados pasirūpins sklandžiu procesu, nuo pirmo pamatavimo iki galutinio tvoros, vartų ir vartelių sumontavimo.",
-        "url": "/images/modernitvora-4909-4.jpeg",
+        "url": "/images/tvoros/tvora5.jpg",
         "alt": ""
       }
     }

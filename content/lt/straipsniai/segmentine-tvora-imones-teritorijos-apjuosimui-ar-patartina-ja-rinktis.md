@@ -10,7 +10,7 @@ keywords:
   - pramoninė tvora
   - segmentinės tvoros privalumai
   - teritorijos aptvėrimas
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
 ---
 

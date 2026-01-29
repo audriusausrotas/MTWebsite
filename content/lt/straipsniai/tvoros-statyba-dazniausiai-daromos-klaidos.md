@@ -10,7 +10,7 @@ keywords:
   - tvoros montavimas
   - tvoros tarpas
   - komunaliniai vamzdžiai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora10.jpg"
 date: 2026-01-28
 ---
 

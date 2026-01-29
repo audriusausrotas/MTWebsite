@@ -12,7 +12,8 @@ export const useBreadcrumbs = () => {
       .map((r) => ({
         label: t(`breadcrumbs.${r.meta.breadcrumb}`),
         to: r.path,
-      }))
+        slug: r.path.includes("slug") ? (route.params.slug as string | null) : null,
+      })),
   );
 
   return { breadcrumbs };

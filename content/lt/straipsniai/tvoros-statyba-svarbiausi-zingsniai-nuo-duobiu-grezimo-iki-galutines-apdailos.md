@@ -9,7 +9,7 @@ keywords:
   - tvoros montavimas
   - stulpų betonavimas
   - tvoros segmentai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora4.jpg"
 date: 2026-01-28
 ---
 

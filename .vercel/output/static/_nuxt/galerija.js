@@ -1,0 +1,1 @@
+import{_ as a}from"./HeroImage.js";import{l as r,c as n,o as t}from"./entry.js";import"./NuxtImg.js";import"./NuxtLinkLocale.js";import"./nuxt-link.js";const u=r({__name:"galerija",setup(m){return(e,_)=>{const o=a;return t(),n(o,{name:e.$t("breadcrumbs.galerija")},null,8,["name"])}}});export{u as default};

@@ -9,7 +9,7 @@ keywords:
   - augalai tvorai
   - kiemo apželdinimas
   - dekoratyviniai augalai
-image: "/images/tvoros/tvora1.jpg"
+image: "/images/tvoros/tvora12.jpg"
 date: 2026-01-28
 ---
 
