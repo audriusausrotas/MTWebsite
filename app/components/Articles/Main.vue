@@ -16,7 +16,7 @@ const { data: section } = await useAsyncData(
     const nav = await queryCollectionNavigation(collection.value);
     return nav.find((item) => item.path === path.value) || null;
   },
-  { watch: [locale] },
+  { watch: [locale], server: false },
 );
 
 const { data: articles } = await useAsyncData(
