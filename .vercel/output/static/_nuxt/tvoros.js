@@ -1,1 +1,0 @@
-import{_ as t}from"./HeroImage.js";import{l as r,c as n,o as m}from"./entry.js";import"./NuxtImg.js";import"./NuxtLinkLocale.js";import"./nuxt-link.js";const l=r({__name:"tvoros",setup(a){return(o,s)=>{const e=t;return m(),n(e,{name:o.$t("breadcrumbs.tvoros")},null,8,["name"])}}});export{l as default};

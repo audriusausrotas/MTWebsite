@@ -1,1 +1,0 @@
-import{_ as a}from"./HeroImage.js";import{l as n,c as t,o as r}from"./entry.js";import"./NuxtImg.js";import"./NuxtLinkLocale.js";import"./nuxt-link.js";const l=n({__name:"lauko-zaliuzes",setup(m){return(e,s)=>{const o=a;return r(),t(o,{name:e.$t("breadcrumbs.zaliuzes")},null,8,["name"])}}});export{l as default};

@@ -1,1 +1,0 @@
-import{_ as t}from"./HeroImage.js";import{l as a,c as r,o as n}from"./entry.js";import"./NuxtImg.js";import"./NuxtLinkLocale.js";import"./nuxt-link.js";const l=a({__name:"kiemo-vartai",setup(m){return(o,_)=>{const e=t;return n(),r(e,{name:o.$t("breadcrumbs.vartai")},null,8,["name"])}}});export{l as default};

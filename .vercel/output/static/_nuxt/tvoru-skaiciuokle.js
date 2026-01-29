@@ -1,1 +1,0 @@
-import{_ as t}from"./HeroImage.js";import{l as n,c as r,o as a}from"./entry.js";import"./NuxtImg.js";import"./NuxtLinkLocale.js";import"./nuxt-link.js";const l=n({__name:"tvoru-skaiciuokle",setup(m){return(o,c)=>{const e=t;return a(),r(e,{name:o.$t("breadcrumbs.skaiciuokle")},null,8,["name"])}}});export{l as default};
