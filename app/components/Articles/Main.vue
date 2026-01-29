@@ -32,7 +32,7 @@ const { data: articles } = await useAsyncData(
         image: doc.image,
       }));
   },
-  { watch: [locale] },
+  { watch: [locale], server: false },
 );
 
 const perPage = 5;
