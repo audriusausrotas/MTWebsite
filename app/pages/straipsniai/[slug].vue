@@ -3,14 +3,17 @@ import type { Collections } from "@nuxt/content";
 
 definePageMeta({
   breadcrumb: "straipsniai",
+  middleware: ["article-redirect"],
 });
 
 const localePath = useLocalePath();
-const route = useRoute();
 const { locale } = useI18n();
+const route = useRoute();
 const slug = computed(() => {
   return route.path.replace(/^\/[a-z]{2}(?=\/)/, "");
 });
+
+const canonical = computed(() => `https://modernitvora.lt${route.path}`);
 
 const { data: page } = await useAsyncData("page-" + slug.value, async () => {
   const collection = ("content_" + locale.value) as keyof Collections;
@@ -18,14 +21,6 @@ const { data: page } = await useAsyncData("page-" + slug.value, async () => {
 
   return content as any;
 });
-
-watch(locale, (newLocale, oldLocale) => {
-  if (newLocale !== oldLocale) {
-    window.location.assign(localePath("/straipsniai"));
-  }
-});
-
-const canonical = computed(() => `https://modernitvora.lt${route.path}`);
 
 useSeoMeta({
   title: () => (page.value as any)?.seoTitle || page.value?.title,
