@@ -1,11 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
-  breadcrumb: "zaliuzes",
+  breadcrumb: "lauko-zaliuzes",
 });
 </script>
 
 <template>
-  <BaseHeroImage :name="$t('breadcrumbs.zaliuzes')" />
+  <BaseHeroImage :name="$t('breadcrumbs.lauko-zaliuzes')" />
 </template>
 
 <style scoped></style>

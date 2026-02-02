@@ -1,12 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
-  breadcrumb: "apie",
+  breadcrumb: "apie-mus",
 });
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <BaseHeroImage :name="$t('breadcrumbs.apie')" />
+    <BaseHeroImage :name="$t('breadcrumbs.apie-mus')" />
     <div class="flex flex-col gap-24 max-w-default w-full m-auto px-4 pb-28">
       <div class="flex flex-col gap-12 max-w-100 w-full">
         <h2 class="text-4xl font-medium">{{ $t("about.aprasymas.title") }}</h2>

@@ -2,6 +2,8 @@
   "menu": {
     "home": "Index",
     "fences": "Fences",
+    "skardines": "Sheet metal fence",
+    "metalines": "Metal fence",
     "gates": "Yard gates",
     "blinds": "Outdoor blinds",
     "calculator": "Fence calculator",
@@ -15,11 +17,13 @@
   "breadcrumbs": {
     "pagrindinis": "Home",
     "tvoros": "Fences",
-    "vartai": "Gates",
-    "zaliuzes": "Blinds",
-    "skaiciuokle": "Fence calculator",
+    "skardines-tvoros": "Sheet metal fence",
+    "metalines-tvoros": "Metal fence",
+    "kiemo-vartai": "Gates",
+    "lauko-zaliuzes": "Blinds",
+    "tvoru-skaiciuokle": "Fence calculator",
     "galerija": "Gallery",
-    "apie": "About us",
+    "apie-mus": "About us",
     "straipsniai": "Articles",
     "kontaktai": "Contacts",
     "parduotuve": "Shop"

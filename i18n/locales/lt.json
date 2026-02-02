@@ -2,6 +2,8 @@
   "menu": {
     "home": "Pradžia",
     "fences": "Tvoros",
+    "skardines": "Skardinės tvoros",
+    "metalines": "Metalinės tvoros",
     "gates": "Kiemo vartai",
     "blinds": "Lauko žaliuzės",
     "calculator": "Skaičiuoklė",
@@ -14,11 +16,13 @@
   "breadcrumbs": {
     "pagrindinis": "Pagrindinis",
     "tvoros": "Tvoros",
-    "vartai": "Vartai",
-    "zaliuzes": "Lauko žaliuzės",
-    "skaiciuokle": "Tvorų skaičiuoklė",
+    "skardines-tvoros": "Skardinės tvoros",
+    "metalines-tvoros": "Metalinės tvoros",
+    "kiemo-vartai": "Kiemo vartai",
+    "lauko-zaliuzes": "Lauko žaliuzės",
+    "tvoru-skaiciuokle": "Tvorų skaičiuoklė",
     "galerija": "Galerija",
-    "apie": "Apie mus",
+    "apie-mus": "Apie mus",
     "straipsniai": "Straipsniai",
     "kontaktai": "Kontaktai",
     "parduotuve": "Parduotuvė"

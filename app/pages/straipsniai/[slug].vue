@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import type { Collections } from "@nuxt/content";
-
-definePageMeta({
-  breadcrumb: "straipsniai",
-  middleware: ["article-redirect"],
-});
-
 const localePath = useLocalePath();
 const { locale } = useI18n();
 const route = useRoute();
+
+definePageMeta({
+  breadcrumb: "straipsniai",
+  slug: true,
+  middleware: ["article-redirect"],
+});
+
 const slug = computed(() => {
   return route.path.replace(/^\/[a-z]{2}(?=\/)/, "");
 });

@@ -7,18 +7,11 @@ const { breadcrumbs } = useBreadcrumbs();
     <NuxtLinkLocale to="/">{{ $t("breadcrumbs.pagrindinis") }}</NuxtLinkLocale>
     <p
       v-for="crumb in breadcrumbs"
-      :key="crumb.to"
-      :class="crumb.slug ? '' : 'last:text-red-main last:font-semibold'"
+      :key="crumb?.to"
+      :class="crumb?.slug ? '' : 'last:text-red-main last:font-semibold'"
     >
       <span class="text-red-main">> </span>
-      <NuxtLinkLocale :to="crumb.to.replace('/:slug()', '')">{{ crumb.label }}</NuxtLinkLocale>
-      <NuxtLinkLocale
-        v-if="crumb.slug"
-        :to="crumb.to.replace('/:slug()', '/') + crumb.slug"
-        class="text-red-main font-semibold"
-      >
-        > {{ crumb.slug.replaceAll("-", "  ") }}
-      </NuxtLinkLocale>
+      <NuxtLinkLocale :to="crumb?.to">{{ crumb?.label.replaceAll("-", " ") }}</NuxtLinkLocale>
     </p>
   </div>
 </template>

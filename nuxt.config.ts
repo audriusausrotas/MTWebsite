@@ -51,6 +51,11 @@ export default defineNuxtConfig({
       "lauko-zaliuzes": { en: "/outdoor-blinds", lt: "/lauko-zaliuzes" },
       "kiemo-vartai": { en: "/yard-gates", lt: "/kiemo-vartai" },
       tvoros: { en: "/fences", lt: "/tvoros" },
+      "tvoros-skardines-tvoros": {
+        en: "/fences/sheet-metal-fence",
+        lt: "/tvoros/skardines-tvoros",
+      },
+      "tvoros-metalines-tvoros": { en: "/fences/metal-fence", lt: "/tvoros/metalines-tvoros" },
       "apie-mus": { en: "/about-us", lt: "/apie-mus" },
       galerija: { en: "/gallery", lt: "/galerija" },
       kontaktai: { en: "/contacts", lt: "/kontaktai" },
