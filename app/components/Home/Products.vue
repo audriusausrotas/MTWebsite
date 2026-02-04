@@ -7,9 +7,14 @@ const localePath = useLocalePath();
     <h3 class="text-4xl font-medium">Produktai</h3>
     <div class="grid grid-cols-2 gap-4">
       <HomeProductCard
-        :title="$t('menu.fences')"
+        :title="$t('menu.skardines')"
         url="/images/tvoros/daimond6090.jpg"
-        :to="localePath('/tvoros')"
+        :to="localePath('/tvoros/skardines-tvoros')"
+      />
+      <HomeProductCard
+        :title="$t('menu.metalines')"
+        url="/images/tvoros/metalines-tvoros.jpg"
+        :to="localePath('/tvoros/metalines-tvoros')"
       />
       <HomeProductCard
         :title="$t('menu.gates')"
