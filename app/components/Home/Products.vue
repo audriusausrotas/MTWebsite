@@ -17,6 +17,11 @@ const localePath = useLocalePath();
         :to="localePath('/tvoros/metalines-tvoros')"
       />
       <HomeProductCard
+        :title="$t('menu.tvoralentes')"
+        url="/images/tvoros/dilė.jpg"
+        :to="localePath('/tvoros/tvoralentes')"
+      />
+      <HomeProductCard
         :title="$t('menu.gates')"
         url="/images/tvoros/tvora14.jpg"
         :to="localePath('/kiemo-vartai')"
@@ -26,7 +31,11 @@ const localePath = useLocalePath();
         url="/images/zaliuzes/blinds.jpg"
         :to="localePath('/lauko-zaliuzes')"
       />
-      <!-- <HomeProductCard :title="$t('menu.shop')" url="/images/tvoros/daimond6090.jpg" :to="localePath('/parduotuve')"/> -->
+      <!-- <HomeProductCard
+        :title="$t('menu.shop')"
+        url="/images/tvoros/daimond6090.jpg"
+        :to="localePath('/parduotuve')"
+      /> -->
     </div>
   </div>
 </template>

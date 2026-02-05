@@ -1,9 +1,10 @@
 {
   "menu": {
-    "home": "Index",
+    "home": "Home",
     "fences": "Fences",
     "skardines": "Sheet metal fence",
     "metalines": "Metal fence",
+    "tvoralentes": "Fence boards",
     "gates": "Yard gates",
     "blinds": "Outdoor blinds",
     "calculator": "Fence calculator",
@@ -19,6 +20,7 @@
     "tvoros": "Fences",
     "skardines-tvoros": "Sheet metal fence",
     "metalines-tvoros": "Metal fence",
+    "tvoralentes": "Fence boards",
     "kiemo-vartai": "Gates",
     "lauko-zaliuzes": "Blinds",
     "tvoru-skaiciuokle": "Fence calculator",
