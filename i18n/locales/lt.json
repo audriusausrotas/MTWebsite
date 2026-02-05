@@ -113,5 +113,9 @@
         "alt": ""
       }
     }
+  },
+  "fences": {
+    "constact": "Susisiekti",
+    "getPrice": "Paskaičiuoti kainą"
   }
 }

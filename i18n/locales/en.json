@@ -108,5 +108,9 @@
         "url": "/images/tvoros/tvora5.jpg"
       }
     }
+  },
+  "fences": {
+    "constact": "Contact us",
+    "getPrice": "Calculate price"
   }
 }

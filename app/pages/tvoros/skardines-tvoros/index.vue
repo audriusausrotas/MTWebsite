@@ -10,8 +10,12 @@ const { fences } = useData();
 <template>
   <div>
     <BaseHeroImage :name="$t('breadcrumbs.skardines-tvoros')" />
-    <div class="max-w-default w-full m-auto flex flex-col gap-8">
-      <FencesSheetFenceCard v-for="fence in fences" :key="fence._id" :fence="fence" />
+    <div class="max-w-default w-full m-auto flex flex-col gap-10 py-10">
+      <FencesSheetFenceCard
+        v-for="fence in fences.filter((f) => f.aditional?.show)"
+        :key="fence._id"
+        :fence="fence"
+      />
     </div>
   </div>
 </template>
