@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div class="flex flex-col gap-20">
-    <BaseHeroImage :name="$t('breadcrumbs.kontaktai')" />
+    <BaseHeroImage :name="$t('menu.kontaktai')" />
     <ContactsBlock />
     <ContactsMap />
   </div>

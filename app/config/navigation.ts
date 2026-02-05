@@ -1,10 +1,10 @@
 export const navigation = [
-  { name: "menu.fences", to: "/tvoros" },
-  { name: "menu.gates", to: "/kiemo-vartai" },
-  { name: "menu.blinds", to: "/lauko-zaliuzes" },
-  { name: "menu.calculator", to: "/tvoru-skaiciuokle" },
-  { name: "menu.gallery", to: "/galerija" },
-  { name: "menu.articles", to: "/straipsniai" },
-  { name: "menu.about", to: "/apie-mus" },
-  { name: "menu.contacts", to: "/kontaktai" },
+  { name: "menu.tvoros", to: "/tvoros" },
+  { name: "menu.kiemo-vartai", to: "/kiemo-vartai" },
+  { name: "menu.lauko-zaliuzes", to: "/lauko-zaliuzes" },
+  { name: "menu.tvoru-skaiciuokle", to: "/tvoru-skaiciuokle" },
+  { name: "menu.galerija", to: "/galerija" },
+  { name: "menu.straipsniai", to: "/straipsniai" },
+  { name: "menu.apie-mus", to: "/apie-mus" },
+  { name: "menu.kontaktai", to: "/kontaktai" },
 ];

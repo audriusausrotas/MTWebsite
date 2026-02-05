@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div class="bg-stone-100">
-    <BaseHeroImage :name="$t('breadcrumbs.straipsniai')" />
+    <BaseHeroImage :name="$t('menu.straipsniai')" />
     <ArticlesMain />
   </div>
 </template>

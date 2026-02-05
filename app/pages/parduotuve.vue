@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <BaseHeroImage :name="$t('breadcrumbs.parduotuve')" />
+  <BaseHeroImage :name="$t('menu.parduotuve')" />
 </template>
 
 <style scoped></style>

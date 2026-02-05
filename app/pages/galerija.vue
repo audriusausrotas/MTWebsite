@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div>
-    <BaseHeroImage :name="$t('breadcrumbs.galerija')" />
+    <BaseHeroImage :name="$t('menu.galerija')" />
     <GalleryMain />
   </div>
 </template>

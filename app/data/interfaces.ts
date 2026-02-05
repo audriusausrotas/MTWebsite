@@ -31,6 +31,7 @@ export interface AditionalFenceInformation {
 }
 
 export interface Image {
+  name: string;
   url: string;
   alt: string;
   altEN?: string;

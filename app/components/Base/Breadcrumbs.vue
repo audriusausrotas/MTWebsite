@@ -4,7 +4,7 @@ const { breadcrumbs } = useBreadcrumbs();
 
 <template>
   <div class="max-w-default m-auto h-20 flex gap-2 items-center capitalize px-4 text-sm">
-    <NuxtLinkLocale to="/">{{ $t("breadcrumbs.pagrindinis") }}</NuxtLinkLocale>
+    <NuxtLinkLocale to="/">{{ $t("menu.pagrindinis") }}</NuxtLinkLocale>
     <p
       v-for="crumb in breadcrumbs"
       :key="crumb?.to"

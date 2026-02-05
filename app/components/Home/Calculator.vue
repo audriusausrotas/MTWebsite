@@ -8,7 +8,7 @@ const localePath = useLocalePath();
     <div class="bg-red-main p-8 max-w-100 w-full flex flex-col gap-8 justify-center">
       <div class="flex gap-4">
         <img src="/icons/calculator.svg" alt="" />
-        <h3 class="text-4xl">{{ $t("menu.calculator") }}</h3>
+        <h3 class="text-4xl">{{ $t("menu.tvoru-skaiciuokle") }}</h3>
       </div>
       <p>Gaukite kainos pasiūlymą dabar!</p>
       <BaseArrowButton

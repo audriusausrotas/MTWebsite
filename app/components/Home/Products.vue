@@ -7,12 +7,12 @@ const localePath = useLocalePath();
     <h3 class="text-4xl font-medium">Produktai</h3>
     <div class="grid grid-cols-2 gap-4">
       <HomeProductCard
-        :title="$t('menu.skardines')"
+        :title="$t('menu.skardines-tvoros')"
         url="/images/tvoros/daimond6090.jpg"
         :to="localePath('/tvoros/skardines-tvoros')"
       />
       <HomeProductCard
-        :title="$t('menu.metalines')"
+        :title="$t('menu.metalines-tvoros')"
         url="/images/tvoros/metalines-tvoros.jpg"
         :to="localePath('/tvoros/metalines-tvoros')"
       />
@@ -22,20 +22,20 @@ const localePath = useLocalePath();
         :to="localePath('/tvoros/tvoralentes')"
       />
       <HomeProductCard
-        :title="$t('menu.gates')"
+        :title="$t('menu.segmentines-tvoros')"
+        url="/images/tvoros/tvora22.jpg"
+        :to="localePath('/tvoros/segmentines-tvoros')"
+      />
+      <HomeProductCard
+        :title="$t('menu.kiemo-vartai')"
         url="/images/tvoros/tvora14.jpg"
         :to="localePath('/kiemo-vartai')"
       />
       <HomeProductCard
-        :title="$t('menu.blinds')"
+        :title="$t('menu.lauko-zaliuzes')"
         url="/images/zaliuzes/blinds.jpg"
         :to="localePath('/lauko-zaliuzes')"
       />
-      <!-- <HomeProductCard
-        :title="$t('menu.shop')"
-        url="/images/tvoros/daimond6090.jpg"
-        :to="localePath('/parduotuve')"
-      /> -->
     </div>
   </div>
 </template>

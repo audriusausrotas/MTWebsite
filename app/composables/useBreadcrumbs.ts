@@ -17,13 +17,13 @@ export const useBreadcrumbs = () => {
       paths.forEach((segment) => {
         path += "/" + segment;
         temp.push({
-          label: t(`breadcrumbs.${segment}`),
+          label: t(`menu.${segment}`),
           to: path,
         });
       });
 
       temp.push({
-        label: t(`breadcrumbs.${breadcrumb}`),
+        label: t(`menu.${breadcrumb}`),
         to: path + "/" + breadcrumb,
       });
 
@@ -39,7 +39,7 @@ export const useBreadcrumbs = () => {
       const temp: any = [];
 
       temp.push({
-        label: t(`breadcrumbs.${breadcrumb}`),
+        label: t(`menu.${breadcrumb}`),
         to: "/" + breadcrumb,
       });
 
@@ -49,7 +49,6 @@ export const useBreadcrumbs = () => {
           to: "/" + breadcrumb + "/" + route.params.slug,
         });
       }
-
       return temp;
     }
   });

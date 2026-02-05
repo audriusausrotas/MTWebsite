@@ -13,6 +13,15 @@ const currentImageIndex = ref(props.currentImage);
 const modalRef = ref<HTMLElement | null>(null);
 const thumbRefs = ref<HTMLElement[]>([]);
 
+const nextImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % props.images.length;
+};
+
+const prevImage = () => {
+  currentImageIndex.value =
+    (currentImageIndex.value - 1 + props.images.length) % props.images.length;
+};
+
 watch(
   () => props.currentImage,
   (val) => (currentImageIndex.value = val),
@@ -66,6 +75,8 @@ onUnmounted(() => {
         <div class="flex justify-between bg-stone-300 py-2 px-4">
           <div class="text-lg font-semibold">{{ currentImageIndex + 1 }} / {{ images.length }}</div>
 
+          <div class="text-lg font-semibold">{{ images[currentImageIndex]?.name }}</div>
+
           <button
             @click="closeModal"
             class="hover:text-red-600 transition-all hover:cursor-pointer hover:scale-125"
@@ -81,7 +92,7 @@ onUnmounted(() => {
           </button>
         </div>
 
-        <div class="p-4">
+        <div class="p-4 relative">
           <Transition
             enter-active-class="transition-opacity duration-100"
             enter-from-class="opacity-0"
@@ -101,6 +112,34 @@ onUnmounted(() => {
               class="max-h-196 w-full h-full object-contain rounded"
             />
           </Transition>
+          <button
+            @click="prevImage"
+            class="text-black transition-all hover:scale-125 hover:cursor-pointer p-1 absolute top-1/2 left-6 -translate-y-1/2 rounded-full bg-white/60"
+          >
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            @click="nextImage"
+            class="text-black transition-all hover:scale-125 hover:cursor-pointer p-1 absolute top-1/2 right-6 -translate-y-1/2 rounded-full bg-white/70"
+          >
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+          <div></div>
         </div>
 
         <div
@@ -113,9 +152,9 @@ onUnmounted(() => {
               :ref="(el) => (thumbRefs[index] = el as HTMLElement)"
               @click="selectImage(index)"
               :class="[
-                'shrink-0 rounded-md overflow-hidden transition-all duration-200 border-2 hover:cursor-pointer',
+                'shrink-0 rounded-md overflow-hidden transition-all duration-200 border-3 hover:cursor-pointer',
                 index === currentImageIndex
-                  ? 'border-red-600'
+                  ? 'border-black-600'
                   : 'hover:scale-105 border-transparent',
               ]"
             >

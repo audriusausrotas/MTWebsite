@@ -56,6 +56,10 @@ export default defineNuxtConfig({
         lt: "/tvoros/skardines-tvoros",
       },
       "tvoros-metalines-tvoros": { en: "/fences/metal-fence", lt: "/tvoros/metalines-tvoros" },
+      "tvoros-segmentines-tvoros": {
+        en: "/fences/segment-fence",
+        lt: "/tvoros/segmentines-tvoros",
+      },
       "tvoros-tvoralentes": { en: "/fences/fenceboards", lt: "/tvoros/tvoralentes" },
       "apie-mus": { en: "/about-us", lt: "/apie-mus" },
       galerija: { en: "/gallery", lt: "/galerija" },

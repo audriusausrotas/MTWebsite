@@ -1,25 +1,10 @@
 {
   "menu": {
-    "home": "Home",
-    "fences": "Fences",
-    "skardines": "Sheet metal fence",
-    "metalines": "Metal fence",
-    "tvoralentes": "Fence boards",
-    "gates": "Yard gates",
-    "blinds": "Outdoor blinds",
-    "calculator": "Fence calculator",
-    "gallery": "Gallery",
-    "articles": "Articles",
-    "about": "About us",
-    "contacts": "Contacts",
-    "shop": "Shop"
-  },
-
-  "breadcrumbs": {
     "pagrindinis": "Home",
     "tvoros": "Fences",
     "skardines-tvoros": "Sheet metal fence",
     "metalines-tvoros": "Metal fence",
+    "segmentines-tvoros": "Segment fence",
     "tvoralentes": "Fence boards",
     "kiemo-vartai": "Gates",
     "lauko-zaliuzes": "Blinds",
