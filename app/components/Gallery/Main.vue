@@ -1,42 +1,5 @@
 <script setup lang="ts">
-const images = [
-  { url: "/images/tvoros/tvora1.jpg", alt: "", altEN: "", name: "Eglė" },
-  { url: "/images/tvoros/tvora2.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora3.jpg", alt: "", altEN: "", name: "Daimond 40/105" },
-  { url: "/images/tvoros/tvora4.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora5.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora7.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora8.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora9.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora10.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora11.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora12.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora13.jpg", alt: "", altEN: "", name: "Vartai" },
-  { url: "/images/tvoros/tvora14.jpg", alt: "", altEN: "", name: "Vartai" },
-  { url: "/images/tvoros/tvora15.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora16.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora17.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora18.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora20.jpg", alt: "", altEN: "", name: "Tvoralentė Alba" },
-  { url: "/images/tvoros/tvora21.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/tvora22.jpg", alt: "", altEN: "", name: "Segmentinė tvora" },
-  { url: "/images/tvoros/daimond6090.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  { url: "/images/tvoros/daimond40105.jpg", alt: "", altEN: "", name: "Daimond 40/105" },
-  { url: "/images/tvoros/daimond60140.jpg", alt: "", altEN: "", name: "Daimond 60/140" },
-  { url: "/images/tvoros/daimondvertical.jpg", alt: "", altEN: "", name: "Daimond Vertical" },
-  { url: "/images/tvoros/dilė.jpg", alt: "", altEN: "", name: "Dilė" },
-  { url: "/images/tvoros/eglė.jpg", alt: "", altEN: "", name: "Žaliuzi" },
-  { url: "/images/tvoros/eglėplus.jpg", alt: "", altEN: "", name: "Daimond 60/90" },
-  {
-    url: "/images/tvoros/kaip-issirinkti-tvora.jpg",
-    alt: "",
-    altEN: "",
-    name: "Tvoralentė Standard",
-  },
-  { url: "/images/tvoros/plank.jpg", alt: "", altEN: "", name: "Plank" },
-  { url: "/images/zaliuzes/blinds.jpg", alt: "", altEN: "", name: "Lauko žaliuzės" },
-  { url: "/images/zaliuzes/blinds2.jpg", alt: "", altEN: "", name: "Lauko žaliuzės" },
-];
+const { images } = useGallery();
 
 const modalOpen = ref<boolean>(false);
 const currentImage = ref<number>(0);

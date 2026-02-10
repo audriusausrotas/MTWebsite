@@ -13,7 +13,11 @@
     "straipsniai": "Straipsniai",
     "apie-mus": "Apie mus",
     "kontaktai": "Kontaktai",
-    "parduotuve": "Parduotuvė"
+    "parduotuve": "Parduotuvė",
+    "taisykles": "Taisykles",
+    "privatumo-politika": "Privatumo politika",
+    "pristatymas-ir-grazinimas": "Pristatymas ir grąžinimas",
+    "finansuojamas-projektas": "Finansuojamas projektas"
   },
   "home": {
     "seo": { "title": "", "description": "" },
