@@ -5,11 +5,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col gap-20">
-    <BaseHeroImage :name="$t('menu.kontaktai')" />
+  <BaseWrapper breadcrumb="kontaktai">
     <ContactsBlock />
     <ContactsMap />
-  </div>
+  </BaseWrapper>
 </template>
 
 <style scoped></style>

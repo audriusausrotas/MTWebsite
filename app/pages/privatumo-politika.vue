@@ -17,14 +17,9 @@ const { data: page } = await useAsyncData(
 </script>
 
 <template>
-  <div>
-    <BaseHeroImage :name="$t('menu.privatumo-politika')" />
-    <ContentRenderer
-      v-if="page"
-      :value="page"
-      class="prose prose-lg max-w-default w-full m-auto mb-12"
-    />
-  </div>
+  <BaseWrapper breadcrumb="privatumo-politika">
+    <ContentRenderer v-if="page" :value="page" class="prose prose-lg max-w-default w-full" />
+  </BaseWrapper>
 </template>
 
 <style scoped>

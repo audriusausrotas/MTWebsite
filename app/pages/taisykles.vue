@@ -17,14 +17,9 @@ const { data: page } = await useAsyncData(
 </script>
 
 <template>
-  <div>
-    <BaseHeroImage :name="$t('menu.taisykles')" />
-    <ContentRenderer
-      v-if="page"
-      :value="page"
-      class="prose prose-lg max-w-default w-full m-auto mb-12"
-    />
-  </div>
+  <BaseWrapper breadcrumb="taisykles">
+    <ContentRenderer v-if="page" :value="page" class="prose prose-lg max-w-default w-full" />
+  </BaseWrapper>
 </template>
 
 <style scoped>

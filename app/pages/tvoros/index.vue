@@ -5,8 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <BaseHeroImage :name="$t('menu.tvoros')" />
+  <BaseWrapper breadcrumb="tvoros">
     <div class="flex gap-10 max-w-default w-full flex-wrap m-auto justify-center pb-20">
       <NuxtLinkLocale
         to="/tvoros/skardines-tvoros"
@@ -32,7 +31,7 @@ definePageMeta({
     </div>
 
     <div></div>
-  </div>
+  </BaseWrapper>
 </template>
 
 <style scoped></style>

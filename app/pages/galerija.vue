@@ -5,10 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <BaseHeroImage :name="$t('menu.galerija')" />
+  <BaseWrapper breadcrumb="galerija">
     <GalleryMain />
-  </div>
+  </BaseWrapper>
 </template>
 
 <style scoped></style>

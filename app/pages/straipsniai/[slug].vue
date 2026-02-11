@@ -55,8 +55,7 @@ useHead(() => ({
 </script>
 
 <template>
-  <div class="bg-stone-100 w-full h-full py-40">
-    <BaseBreadcrumbs />
+  <BaseWrapper breadcrumb="straipsniai">
     <div
       class="flex flex-col gap-16 max-w-default w-full p-24 m-auto bg-white rounded-lg shadow-2xl"
     >
@@ -85,7 +84,7 @@ useHead(() => ({
         />
       </div>
     </div>
-  </div>
+  </BaseWrapper>
 </template>
 
 <style>

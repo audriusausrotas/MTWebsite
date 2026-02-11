@@ -5,10 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="bg-stone-100">
-    <BaseHeroImage :name="$t('menu.straipsniai')" />
+  <BaseWrapper breadcrumb="straipsniai">
     <ArticlesMain />
-  </div>
+  </BaseWrapper>
 </template>
 
 <style scoped></style>
