@@ -75,18 +75,28 @@
             </a>
           </div>
           <div class="flex flex-col gap-2">
-            <NuxtLinkLocale to="/taisykles" class="hover:text-red-600">{{
-              $t("menu.taisykles")
-            }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/pristatymas-ir-grazinimas" class="hover:text-red-600">{{
-              $t("menu.pristatymas-ir-grazinimas")
-            }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/privatumo-politika" class="hover:text-red-600">{{
-              $t("menu.privatumo-politika")
-            }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/finansuojamas-projektas" class="hover:text-red-600">{{
-              $t("menu.finansuojamas-projektas")
-            }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/taisykles" class="hover:text-red-600 flex gap-2 items-center">
+              <span class="w-2 h-2 rounded-full border-2 border-red-600"></span>
+              {{ $t("menu.taisykles") }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              to="/pristatymas-ir-grazinimas"
+              class="hover:text-red-600 flex gap-2 items-center"
+              ><span class="w-2 h-2 rounded-full border-2 border-red-600"></span
+              >{{ $t("menu.pristatymas-ir-grazinimas") }}</NuxtLinkLocale
+            >
+            <NuxtLinkLocale
+              to="/privatumo-politika"
+              class="hover:text-red-600 flex gap-2 items-center"
+              ><span class="w-2 h-2 rounded-full border-2 border-red-600"></span
+              >{{ $t("menu.privatumo-politika") }}</NuxtLinkLocale
+            >
+            <NuxtLinkLocale
+              to="/finansuojamas-projektas"
+              class="hover:text-red-600 flex gap-2 items-center"
+              ><span class="w-2 h-2 rounded-full border-2 border-red-600"></span
+              >{{ $t("menu.finansuojamas-projektas") }}</NuxtLinkLocale
+            >
           </div>
         </div>
       </div>
