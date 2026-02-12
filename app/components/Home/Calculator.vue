@@ -3,16 +3,18 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  <div class="flex h-100 text-white w-full max-w-default px-4 m-auto">
-    <NuxtImg src="/images/tvoros/tvora5.jpg" alt="" class="w-full object-cover" />
-    <div class="bg-red-main p-8 max-w-100 w-full flex flex-col gap-8 justify-center">
+  <div class="flex lg:flex-row flex-col text-white w-full max-w-default px-4 m-auto">
+    <NuxtImg src="/images/tvoros/tvora5.jpg" alt="" class="w-full object-cover max-h-100" />
+    <div
+      class="bg-red-main p-8 lg:max-w-100 w-full flex flex-col gap-8 justify-center max-w-[calc(100%-32px)] mx-auto -mt-40 lg:m-0"
+    >
       <div class="flex gap-4">
         <img src="/icons/calculator.svg" alt="" />
-        <h3 class="text-4xl">{{ $t("menu.tvoru-skaiciuokle") }}</h3>
+        <h3 class="text-4xl">{{ $t("skaiciuokle.title") }}</h3>
       </div>
-      <p>Gaukite kainos pasiūlymą dabar!</p>
+      <p>{{ $t("skaiciuokle.text") }}</p>
       <BaseArrowButton
-        name="SKAIČIUOTI"
+        :name="$t('skaiciuokle.button')"
         variant="secondary"
         :to="localePath('/tvoru-skaiciuokle')"
       />

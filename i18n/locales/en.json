@@ -22,7 +22,19 @@
 
   "home": {
     "seo": { "title": "", "description": "" },
-    "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui"
+    "title": "Contemporary fence solutions for your home privacy",
+    "projects": "Projects",
+    "products": "Products",
+    "reviews": "Reviews",
+    "search": "Search",
+    "seeMore": "See more",
+    "more": "More"
+  },
+
+  "skaiciuokle": {
+    "title": "Fence calculator",
+    "text": "Get a price quote now!",
+    "button": "Calculate"
   },
 
   "contacts": {

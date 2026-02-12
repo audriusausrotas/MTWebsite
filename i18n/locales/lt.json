@@ -21,8 +21,21 @@
   },
   "home": {
     "seo": { "title": "", "description": "" },
-    "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui"
+    "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui",
+    "projects": "Projektai",
+    "products": "Produktai",
+    "reviews": "Atsiliepimai",
+    "search": "Paieška",
+    "seeMore": "Pamatyti daugiau",
+    "more": "Daugiau"
   },
+
+  "skaiciuokle": {
+    "title": "Skaičiuoklė",
+    "text": "Gaukite kainos pasiūlymą dabar!",
+    "button": "Skaičiuoti"
+  },
+
   "contacts": {
     "seo": {},
     "ofisoTelNr": "+370 663 47011",

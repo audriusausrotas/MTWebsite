@@ -5,11 +5,13 @@ interface Props {
   name?: string;
   variant?: Variant;
   to?: string;
+  customText?: string;
 }
 const props = withDefaults(defineProps<Props>(), {
   name: "",
   variant: "primary",
   to: "#",
+  customText: "",
 });
 
 const variants = {
@@ -62,7 +64,7 @@ const variants = {
       </svg>
     </div>
 
-    <p class="text-sm font-semibold" :class="variants[variant].text">
+    <p class="text-sm font-semibold" :class="[variants[variant].text, customText]">
       {{ name }}
     </p>
   </NuxtLink>

@@ -4,8 +4,8 @@ const localePath = useLocalePath();
 
 <template>
   <div class="w-full max-w-default px-4 m-auto flex flex-col gap-10">
-    <h3 class="text-4xl font-medium">Produktai</h3>
-    <div class="grid grid-cols-2 gap-4">
+    <h3 class="text-4xl font-medium text-center sm:text-left">{{ $t("home.products") }}</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <HomeProductCard
         :title="$t('menu.skardines-tvoros')"
         url="/images/tvoros/daimond6090.jpg"

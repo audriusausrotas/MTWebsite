@@ -86,17 +86,28 @@ const reviews = [
     </section>
 
     <section class="flex flex-col gap-10 max-w-default px-4 m-auto">
-      <div class="flex justify-between">
-        <h3 class="text-4xl font-medium">Projektai</h3>
-        <BaseArrowButton name="PAMATYTI DAUGIAU" :to="localePath('/galerija')" />
+      <div class="flex sm:justify-between justify-center flex-wrap gap-8 items-center">
+        <h3 class="text-4xl font-medium">{{ $t("home.projects") }}</h3>
+        <BaseArrowButton
+          :name="$t('home.seeMore')"
+          :to="localePath('/galerija')"
+          custom-text="hidden sm:block"
+        />
       </div>
       <HomeCrousel :arr="images" />
     </section>
 
     <section class="flex flex-col gap-20 w-full max-w-default px-4 m-auto">
-      <AboutBlock title="Apie mus" :text="$t('about.aprasymas.text')" :url="$t('about.box1.url')">
-        <BaseArrowButton name="PLAČIAU" :to="localePath('/apie-mus')" />
+      <AboutBlock
+        :title="$t('menu.apie-mus')"
+        :text="$t('about.aprasymas.text')"
+        :url="$t('about.box1.url')"
+      >
+        <BaseArrowButton :name="$t('home.more')" :to="localePath('/apie-mus')" />
       </AboutBlock>
+    </section>
+
+    <section class="max-w-default w-full m-auto px-4">
       <AboutCards />
     </section>
 
@@ -104,8 +115,8 @@ const reviews = [
       <ContactsBlock />
     </section>
 
-    <section class="flex flex-col gap-10 max-w-default w-full px-4 m-auto">
-      <h3 class="text-4xl font-medium">Atsiliepimai</h3>
+    <section class="hidden md:flex flex-col gap-10 max-w-default w-full px-4 m-auto h-fit">
+      <h3 class="text-4xl font-medium">{{ $t("home.reviews") }}</h3>
       <HomeCrousel :arr="reviews" :images="false" :speed="5000" :gap="50" />
     </section>
 

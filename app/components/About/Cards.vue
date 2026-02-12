@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4 flex-wrap">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
     <AboutCard
       :title="$t('about.cards.card1.title')"
       :text="$t('about.cards.card1.text')"

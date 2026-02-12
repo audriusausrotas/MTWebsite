@@ -2,16 +2,18 @@
 
 <template>
   <footer class="flex justify-center text-white bg-black py-8 print:hidden w-full">
-    <div class="max-w-370 w-full">
+    <div class="max-w-default w-full">
       <div class="flex flex-col items-center gap-8">
         <div class="flex flex-col gap-2 items-center">
           <img src="/icons/logo.svg" alt="Moderni Tvora logotipas" width="100" height="60" />
           <p>©2024. Visos teisės saugomos.</p>
         </div>
 
-        <div class="border border-red-full w-full"></div>
+        <div class="border border-red-600 w-full"></div>
 
-        <div class="flex lg:justify-between justify-center flex-wrap w-full gap-6 py-2 px-4">
+        <div
+          class="flex sm:flex-row flex-col lg:justify-between justify-center flex-wrap w-fit sm:w-full gap-6 py-2 px-4"
+        >
           <div class="flex flex-col gap-2">
             <div class="flex gap-2 hover:text-red-600">
               <img src="/icons/business.svg" alt="Moderni Tvora logotipas" width="20" height="20" />

@@ -3,16 +3,16 @@ const requestHandler = () => {};
 </script>
 
 <template>
-  <div class="flex justify-between gap-8 w-full max-w-default px-4 m-auto">
-    <div class="flex flex-col gap-8 max-w-130 items-start">
-      <h2 class="text-4xl font-medium">Susisiekite su mumis!</h2>
-      <BaseButton @click="requestHandler">Siųsti užklausą</BaseButton>
-      <p class="text-justify max-w-100">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-default m-auto">
+    <div class="flex flex-col gap-8">
+      <h2 class="text-4xl font-medium text-center md:text-left">Susisiekite su mumis!</h2>
+      <p class="text-justify w-full md:max-w-100">
         Mūsų profesionalų komanda atsakys į visus jums rūpimus klausimus, pakonsultuos ir pateiks
         individualų pasiūlymą, atitinkantį jūsų poreikius.
       </p>
+      <BaseButton @click="requestHandler" width="w-full md:w-48">Siųsti užklausą</BaseButton>
     </div>
-    <div class="flex flex-col gap-8 max-w-130 text-xl">
+    <div class="flex flex-col gap-8 text-xl w-fit md:w-full md:m-0 m-auto">
       <a :href="`tel:${$t('contacts.ofisoTelNr')}`" class="flex gap-4 items-center group">
         <img src="/icons/phone.svg" alt="" />
         <span class="group-hover:border-black border-b-2 border-transparent transition-colors">{{

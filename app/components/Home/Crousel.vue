@@ -35,8 +35,8 @@ const carouselConfig = {
     :transition="500"
     class="rounded overflow-hidden"
   >
-    <Slide v-for="(slide, index) in arr" :key=" images? slide.url : (slide.name! + index)">
-      <div class="min-h-80 h-fit w-full">
+    <Slide v-for="(slide, index) in arr" :key="images ? slide.url : slide.name! + index">
+      <div class="h-fit w-full">
         <NuxtImg v-if="images" :src="slide.url" class="w-full h-full object-cover rounded" />
         <div class="flex flex-col gap-4">
           <h6 class="text-2xl font-medium">{{ slide.name }}</h6>

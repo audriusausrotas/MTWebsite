@@ -7,7 +7,7 @@ const localePath = useLocalePath();
 
 <template>
   <header
-    class="flex w-full h-20 items-center justify-between p-8 bg-black/50 text-white absolute top-0 left-0 backdrop-blur-xs z-50"
+    class="hidden lg:flex gap-4 w-full m-auto px-4 h-20 items-center justify-between text-white bg-black/50 absolute top-0 left-0 backdrop-blur-xs z-50"
   >
     <NuxtImg
       src="/icons/logo.svg"
@@ -17,7 +17,7 @@ const localePath = useLocalePath();
       class="hover:cursor-pointer"
     />
 
-    <nav class="flex gap-8 text-sm font-medium">
+    <nav class="flex gap-4 xl:gap-8 text-sm font-medium items-center text-center">
       <NuxtLinkLocale
         v-for="item in navigation"
         :key="item.to"
@@ -31,7 +31,18 @@ const localePath = useLocalePath();
         {{ t(item.name) }}
       </NuxtLinkLocale>
     </nav>
-    <NavigationLangSelector />
+    <div class="flex gap-8">
+      <NuxtImg
+        src="/icons/search.svg"
+        width="20"
+        height="20"
+        decoding="auto"
+        loading="lazy"
+        :ismap="true"
+        class="text-white"
+      />
+      <NavigationLangSelector />
+    </div>
   </header>
 </template>
 
