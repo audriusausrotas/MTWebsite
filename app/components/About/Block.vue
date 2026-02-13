@@ -18,7 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-    <div class="flex flex-col gap-12 w-full sm:max-w-100" :class="reverse ? 'order-2' : 'order-1'">
+    <div
+      class="flex flex-col gap-12 w-full sm:max-w-100"
+      :class="reverse ? 'sm:order-2' : 'sm:order-1'"
+    >
       <h2 class="font-medium text-4xl text-center sm:text-left">{{ title }}</h2>
       <p class="text-justify">
         {{ text }}

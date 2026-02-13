@@ -57,7 +57,7 @@ useHead(() => ({
 <template>
   <BaseWrapper breadcrumb="straipsniai">
     <div
-      class="flex flex-col gap-16 max-w-default w-full p-24 m-auto bg-white rounded-lg shadow-2xl"
+      class="flex flex-col gap-8 md:gap-16 max-w-default w-full p-4 md:p-24 m-auto bg-white rounded-lg shadow-2xl"
     >
       <article>
         <NuxtImg
@@ -70,17 +70,19 @@ useHead(() => ({
           class="prose prose-lg px-4 max-w-default w-full m-auto mt-14"
         />
       </article>
-      <div class="flex gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="flex flex-col gap-4 justify-between flex-1 px-4">
-          <h4 class="font-semibold text-xl">{{ $t("articles.article.title") }}</h4>
+          <h4 class="font-semibold text-xl text-center md:text-left">
+            {{ $t("articles.article.title") }}
+          </h4>
           <p class="text-justify leading-8">{{ $t("articles.article.text") }}</p>
-          <BaseButton @click="navigateTo(localePath('/kontaktai'))">{{
+          <BaseButton @click="navigateTo(localePath('/kontaktai'))" width="w-full md:w-48">{{
             $t("articles.article.button-text")
           }}</BaseButton>
         </div>
         <NuxtImg
           src="/images/tvoros/tvora5.jpg"
-          class="rounded- max-h-80 h-full flex-1 object-cover"
+          class="rounded w-full max-h-80 h-full object-cover"
         />
       </div>
     </div>
@@ -92,12 +94,35 @@ useHead(() => ({
   font-size: 2.2rem;
   font-weight: 700;
 }
-.prose :where(h2) {
-  font-size: 2rem;
+
+@media (max-width: 600px) {
+  .prose :where(h1) {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  .prose :where(h2) {
+    font-size: 1.4rem;
+  }
+
+  .prose :where(h3) {
+    font-size: 1.2rem;
+  }
 }
 
-.prose :where(h3) {
-  font-size: 1.6rem;
+@media (min-width: 600px) {
+  .prose :where(h1) {
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+
+  .prose :where(h2) {
+    font-size: 2rem;
+  }
+
+  .prose :where(h3) {
+    font-size: 1.2rem;
+  }
 }
 
 .prose :where(a) {
