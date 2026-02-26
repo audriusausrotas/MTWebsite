@@ -1,33 +1,8 @@
 <script setup lang="ts">
-const { fences } = useData();
-const { images } = useGallery();
-const { funded } = useFunded();
+import getData from "~/utils/getData";
 
-if (!fences.value.length) {
-  try {
-    const response: any = await request.get("getFences");
-    response.success && (fences.value = response.data);
-  } catch (error) {
-    console.log("Serverio klaida: " + error);
-  }
-}
-
-if (!images.value.length) {
-  try {
-    const response: any = await request.get("getGallery");
-    response.success && (images.value = response.data);
-  } catch (error) {
-    console.log("Serverio klaida: " + error);
-  }
-}
-
-if (!funded.value.length) {
-  try {
-    const response: any = await request.get("getFunded");
-    response.success && (funded.value = response.data);
-  } catch (error) {
-    console.log("Serverio klaida: " + error);
-  }
+if (import.meta.server) {
+  await getData();
 }
 </script>
 

@@ -5,7 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="kontaktai"> </BaseWrapper>
+  <BaseWrapper breadcrumb="kontaktai">
+    <CalculatorMain />
+  </BaseWrapper>
 </template>
 
 <style scoped></style>

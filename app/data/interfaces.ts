@@ -76,3 +76,35 @@ export interface SeeThroughPrice {
   priceRetail: number;
   priceWholesale: number;
 }
+
+export interface Product {
+  _id?: Types.ObjectId;
+  name: string;
+  prices: SeeThroughPrice;
+  profit: Profit;
+  category: string;
+  aditional: AditionalFenceInformation;
+}
+
+export interface AditionalFenceInformation {
+  show: boolean;
+  description: string;
+  descriptionEn: string;
+  seoTitle: string;
+  seoTitleEn: string;
+  seoDescription: string;
+  seoDescriptionEn: string;
+  images: Image[];
+}
+
+export interface Profit {
+  retail: number;
+  wholesale: number;
+}
+
+export interface Client {
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+}

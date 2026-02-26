@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "tvoralentes",
 });
 
-const { fenceboards } = useData();
+const { fenceboards } = useFences();
 </script>
 
 <template>

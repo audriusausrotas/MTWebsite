@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "metalines-tvoros",
 });
 
-const { metalFences } = useData();
+const { metalFences } = useFences();
 </script>
 
 <template>

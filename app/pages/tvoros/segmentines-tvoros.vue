@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "segmentines-tvoros",
 });
 
-const { segmentFences } = useData();
+const { segmentFences } = useFences();
 </script>
 
 <template>

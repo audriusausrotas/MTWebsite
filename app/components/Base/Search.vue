@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { fences } = useData();
+const { fences } = useFences();
 
 const input = ref<string>("");
 
