@@ -1,1 +1,0 @@
-import{_ as a,a as e}from"./CrHfVXVn.js";import{_ as c}from"./Blq-OXRY.js";import{u as s}from"./VWj2hxkg.js";import{d as p,e as r,w as m,o as u,a as o}from"./Dc0Zbi09.js";const C=p({__name:"kontaktai",setup(i){return s("kontaktai"),(f,k)=>{const t=a,n=e,_=c;return u(),r(_,null,{default:m(()=>[o(t),o(n)]),_:1})}}});export{C as default};

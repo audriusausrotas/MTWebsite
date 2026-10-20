@@ -1,1 +1,0 @@
-import{d as s,q as t}from"./Dc0Zbi09.js";const e=n=>s({name:`Heading${n.toUpperCase()}`,setup(a,{attrs:d,slots:o}){return()=>t(n,d,o.default?.())}}),p={h1:e("h2"),h2:e("h3"),h3:e("h4")};export{p as d};

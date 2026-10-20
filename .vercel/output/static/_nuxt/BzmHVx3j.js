@@ -1,1 +1,0 @@
-import{_ as o}from"./CIadZcm7.js";import{d as e,e as n,o as a}from"./Dc0Zbi09.js";import"./DRuXrMvq.js";import"./Blq-OXRY.js";import"./C7IULbhB.js";import"./DlAUqK2U.js";const l=e({__name:"taisykles",setup(s){return(p,r)=>{const t=o;return a(),n(t,{path:"/tekstai/taisykles"})}}});export{l as default};

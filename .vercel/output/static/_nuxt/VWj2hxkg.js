@@ -1,1 +1,0 @@
-import{O as o,$ as i}from"./Dc0Zbi09.js";function r(t,s){const{t:e}=o();i({title:()=>e(`seo.${t}.title`),description:()=>e(`seo.${t}.description`),ogTitle:()=>e(`seo.${t}.title`),ogDescription:()=>e(`seo.${t}.description`)})}export{r as u};
