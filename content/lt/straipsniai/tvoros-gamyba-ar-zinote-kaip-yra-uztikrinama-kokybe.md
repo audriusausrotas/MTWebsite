@@ -12,6 +12,7 @@ keywords:
   - Thyssenkrupp skarda
 image: "/images/tvoros/modernitvora-5139-1.jpg"
 date: 2026-01-28
+translation: "/articles/fence-production-do-you-know-how-quality-is-ensured"
 ---
 
 # Tvoros gamyba: ar žinote, kaip yra užtikrinama kokybė?

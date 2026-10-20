@@ -12,6 +12,7 @@ keywords:
   - tvoros montavimas
 image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
+translation: "/articles/fence-foundations-what-to-know-before-starting-concrete-work"
 ---
 
 # Tvoros pamatai – ką būtina žinoti prieš pradedant liejimo darbus?

@@ -12,6 +12,7 @@ keywords:
   - animal protection
 image: "/images/tvoros/tvora6.jpg"
 date: 2026-01-28
+translation: "/straipsniai/misko-ir-zveriu-tvoros-tinklas-ka-butina-zinoti-pries-isirengiant"
 ---
 
 # Forest and Wildlife Fence Netting – What to Know Before Installing?

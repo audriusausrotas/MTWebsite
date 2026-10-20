@@ -1,63 +1,40 @@
 <script setup lang="ts">
-import type { Collections } from "@nuxt/content";
+import type { ArticleListItem } from "#shared/types/website";
 
 const localePath = useLocalePath();
 const { locale } = useI18n();
+const route = useRoute();
 
-const getSlug = (item: any) => item?.path?.split("/").pop() ?? "";
+const getSlug = (path: string) => path.split("/").pop() ?? "";
 
-const path = computed(() => (locale.value === "lt" ? "/straipsniai" : "/articles"));
-const collection = computed(() => ("content_" + locale.value) as keyof Collections);
-
-const { data: section } = await useAsyncData(
-  "straipsniai-nav",
-  async () => {
-    const nav = await queryCollectionNavigation(collection.value);
-    return nav.find((item) => item.path === path.value) || null;
-  },
-  { watch: [locale], server: false },
-);
-
-const { data: articles } = await useAsyncData(
-  "straipsniai-list",
-  async () => {
-    const docs = await queryCollection(collection.value).all();
-    return docs
-      .filter((doc) => doc.path.startsWith(path.value + "/"))
-      .map((doc) => ({
-        title: doc.title,
-        path: doc.path,
-        excerpt: doc.excerpt,
-        image: doc.image,
-      }));
-  },
-  { watch: [locale], server: false },
-);
-
-const perPage = 5;
-const currentPage = ref(1);
-const totalPages = computed(() => Math.ceil((articles.value?.length ?? 0) / perPage));
-
-const pagedArticles = computed(() => {
-  if (!articles.value) return [];
-  const start = (currentPage.value - 1) * perPage;
-  return articles.value.slice(start, start + perPage).filter((i) => i?.path);
+// Sąrašas per serverio API (naršyklei nereikia content duomenų bazės)
+const { data: articles } = await useFetch<ArticleListItem[]>("/api/articles", {
+  key: `articles-${locale.value}`,
+  query: { locale },
+  default: () => [],
 });
 
-const validChildren = computed(() => section.value?.children?.filter((i) => i?.path) || []);
+const perPage = 5;
+const totalPages = computed(() => Math.max(1, Math.ceil(articles.value.length / perPage)));
 
-const nextPage = () => {
-  stollToTop();
-  if (currentPage.value < totalPages.value) currentPage.value++;
-};
-const prevPage = () => {
-  stollToTop();
-  if (currentPage.value > 1) currentPage.value--;
-};
+// Puslapis laikomas adrese (?page=2) – „atgal“ grąžina į tą patį puslapį
+const currentPage = computed(() => {
+  const page = Number.parseInt(String(route.query.page ?? "1"), 10);
+  return Number.isFinite(page) ? Math.min(Math.max(page, 1), totalPages.value) : 1;
+});
 
-const stollToTop = () => {
+const pagedArticles = computed(() => {
+  const start = (currentPage.value - 1) * perPage;
+  return articles.value.slice(start, start + perPage);
+});
+
+const goToPage = async (page: number) => {
+  await navigateTo({ query: { ...route.query, page: page > 1 ? page : undefined } });
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+const nextPage = () => currentPage.value < totalPages.value && goToPage(currentPage.value + 1);
+const prevPage = () => currentPage.value > 1 && goToPage(currentPage.value - 1);
 </script>
 
 <template>
@@ -71,26 +48,28 @@ const stollToTop = () => {
         <NuxtImg
           v-if="item.image"
           :src="item.image"
+          :alt="item.title"
+          sizes="sm:100vw md:100vw lg:800px"
           class="w-full rounded max-h-134 object-cover object-center"
         />
         <ContentRenderer
           v-if="item.excerpt"
           :value="item.excerpt"
           :excerpt="true"
+          :components="demotedHeadings"
           class="prose text-justify"
         />
         <NuxtLink
-          v-if="item.path"
-          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item) } })"
+          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item.path) } })"
           class="font-bold text-red-600 mt-2 inline-block"
         >
           {{ $t("articles.pagination.read-more") }}
         </NuxtLink>
       </div>
 
-      <!-- Paddington -->
+      <!-- Puslapiavimas -->
 
-      <div class="flex justify-center gap-4 mt-6" v-if="articles && articles.length > perPage">
+      <div class="flex justify-center gap-4 mt-6" v-if="articles.length > perPage">
         <BaseButton @click="prevPage" :disabled="currentPage === 1" class="bg-white">
           {{ $t("articles.pagination.previous") }}
         </BaseButton>
@@ -111,15 +90,15 @@ const stollToTop = () => {
     <div
       class="hidden lg:flex flex-col w-full max-w-96 min-w-80 gap-6 bg-white rounded-lg shadow-xl p-6 max-h-fit"
     >
-      <h1 class="font-semibold text-4xl text-center">
+      <h2 class="font-semibold text-4xl text-center">
         {{ $t("articles.pagination.articles") }}
-      </h1>
-      <div v-for="item in validChildren" :key="item.path" class="">
+      </h2>
+      <div v-for="item in articles" :key="item.path">
         <NuxtLink
-          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item) } })"
+          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item.path) } })"
           class="hover:text-red-600"
         >
-          <h2 class="font-medium">{{ item.title }}</h2>
+          <span class="font-medium">{{ item.title }}</span>
         </NuxtLink>
       </div>
     </div>
@@ -128,19 +107,26 @@ const stollToTop = () => {
 
 <style scoped>
 @media (max-width: 600px) {
-  .prose :where(h1) {
+  .prose :where(h2) {
     font-weight: 500;
     font-size: 1.4rem;
   }
 }
 
 @media (min-width: 600px) {
-  .prose :where(h1) {
+  .prose :where(h2) {
     font-weight: 500;
     font-size: 1.8rem;
   }
 }
 .prose {
   max-width: 100%;
+}
+.prose :where(h2) {
+  text-align: left;
+}
+.prose :where(h2) a {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

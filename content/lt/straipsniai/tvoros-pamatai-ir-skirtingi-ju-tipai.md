@@ -12,6 +12,7 @@ keywords:
   - tvoros montavimas
 image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
+translation: "/articles/fence-foundations-and-their-different-types"
 ---
 
 # Tvoros pamatai ir skirtingi jų tipai

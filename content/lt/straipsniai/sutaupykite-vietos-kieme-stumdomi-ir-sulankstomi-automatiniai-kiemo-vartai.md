@@ -11,6 +11,7 @@ keywords:
   - modernūs vartai
 image: "/images/tvoros/tvora13.jpg"
 date: 2026-01-28
+translation: "/articles/save-space-in-yard-sliding-and-folding-automatic-yard-gates"
 ---
 
 # Sutaupykite vietos kieme: stumdomi ir sulankstomi automatiniai kiemo vartai

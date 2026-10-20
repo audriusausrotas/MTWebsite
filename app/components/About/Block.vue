@@ -31,6 +31,9 @@ const props = withDefaults(defineProps<Props>(), {
 
     <NuxtImg
       :src="url"
+      :alt="alt || title"
+      sizes="sm:100vw md:50vw lg:600px"
+      loading="lazy"
       class="max-w-150 w-full h-auto object-cover"
       :class="reverse ? 'order-1' : 'order-2'"
     />

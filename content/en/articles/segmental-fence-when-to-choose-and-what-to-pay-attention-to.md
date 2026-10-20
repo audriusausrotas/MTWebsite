@@ -11,6 +11,7 @@ keywords:
   - fence selection
 image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
+translation: "/straipsniai/segmentine-tvora-kada-patartina-ja-rinktis-ir-i-ka-atkreipti-demesi"
 ---
 
 # Segmental Fence: When to Choose It and What to Pay Attention To?

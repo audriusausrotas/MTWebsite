@@ -12,6 +12,7 @@ keywords:
   - fence installation
 image: "/images/tvoros/tvora1.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-pamatai-ka-butina-zinoti-pries-pradedant-liejimo-darbus"
 ---
 
 # Fence Foundations – What to Know Before Starting Concrete Work?

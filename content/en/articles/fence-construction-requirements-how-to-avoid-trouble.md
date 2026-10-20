@@ -12,6 +12,7 @@ keywords:
   - fence rules
 image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
+translation: "/straipsniai/reikalavimai-tvoros-statybai-kaip-neprisidaryti-bedos"
 ---
 
 # Fence Construction Requirements – How to Avoid Trouble?

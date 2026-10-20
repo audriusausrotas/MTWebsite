@@ -1,75 +1,25 @@
-# Nuxt Minimal Starter
+# MTWebsite – modernitvora.lt
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nauja „Moderni Tvora“ svetainė (Nuxt 4, Tailwind 4, @nuxtjs/i18n, @nuxt/content). Talpinama Vercel.
 
-## Setup
-
-Make sure to install dependencies:
+## Paleidimas
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run dev      # http://localhost:3000, duomenys iš http://localhost:3001 (MTSoftServer)
+npm run build    # produkcinis build'as (Vercel preset)
 ```
 
-## Development Server
+MTSoft API adresą galima perrašyti per `NUXT_API_BASE` (numatyta: dev – `http://localhost:3001`, prod – `https://mtsoft.lt`).
 
-Start the development server on `http://localhost:3000`:
+## Kas iš kur
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **Kalbos:** lietuvių be priešdėlio, anglų – `/en`. Išversti adresai – `nuxt.config.ts` → `i18n.pages`. Tekstai – `i18n/locales/*.json`, puslapių SEO – raktas `seo.<puslapis>`.
+- **Straipsniai ir teisiniai tekstai:** `content/lt/straipsniai`, `content/en/articles`, `content/<kalba>/tekstai`. Frontmatter: `title`, `description`, `seoTitle`, `seoDescription`, `image`, `date`; `<!--more-->` atskiria ištrauką sąrašui.
+- **Tvoros, galerija, finansuojamas projektas:** valdomi MTSoft'e (Tinklapio nustatymai, tvorų nustatymai „Rodyti tinklapyje“). Svetainės serveris juos ima per `server/api/site-data.get.ts` → `server/utils/siteData.ts`:
+  - iš `getFences` paliekami tik vieši laukai (be kainų ir savikainos), tik tvoros su „Rodyti tinklapyje“;
+  - atsakymas kešuojamas 10 min. (pakeitimai MTSoft'e svetainėje matomi per ≤10 min.);
+  - jei mtsoft.lt nepasiekiamas, svetainė veikia toliau, tik be šių duomenų.
+  - Nuotraukų failai (`/images/...`) turi būti šio projekto `public/` aplanke.
+- **Paieška:** `server/api/search.get.ts` (tvorų pavadinimai + straipsnių pavadinimai/aprašymai).
+- **SEO:** canonical, hreflang, og ir `titleTemplate` – `app/app.vue`; `sitemap.xml` – `server/routes/sitemap.xml.ts`; neužbaigti puslapiai turi `definePageMeta({ noindex: true })` ir nėra sitemap'e.

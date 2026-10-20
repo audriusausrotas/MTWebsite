@@ -13,6 +13,7 @@ keywords:
   - fence masters
 image: "/images/tvoros/daimondvertical.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-statyba-ka-butina-zinoti-pries-pradedant-darbus"
 ---
 
 # Fence Construction – What to Know Before Starting Work?

@@ -13,6 +13,7 @@ keywords:
   - tvorų meistrai
 image: "/images/tvoros/daimondvertical.jpg"
 date: 2026-01-28
+translation: "/articles/fence-construction-what-to-know-before-starting-work"
 ---
 
 # Tvoros statyba – ką būtina žinoti prieš pradedant darbus?

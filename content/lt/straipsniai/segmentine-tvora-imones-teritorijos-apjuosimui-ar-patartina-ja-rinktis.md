@@ -12,6 +12,7 @@ keywords:
   - teritorijos aptvėrimas
 image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
+translation: "/articles/segmental-fence-for-business-territory-enclosure-is-it-worth-choosing"
 ---
 
 # Segmentinė tvora įmonės teritorijos apjuosimui – ar patartina ją rinktis?

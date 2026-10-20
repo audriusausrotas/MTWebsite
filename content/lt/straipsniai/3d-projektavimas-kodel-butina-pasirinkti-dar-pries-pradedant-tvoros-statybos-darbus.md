@@ -11,6 +11,7 @@ keywords:
   - tvoros montavimas
 image: "/images/tvoros/tvora11.jpg"
 date: 2026-01-28
+translation: "/articles/3d-design-why-choose-before-starting-fence-construction"
 ---
 
 # 3D projektavimas – kodėl būtina pasirinkti dar prieš pradedant tvoros statybos darbus?

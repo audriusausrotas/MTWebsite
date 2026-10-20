@@ -12,6 +12,7 @@ keywords:
   - betoniniai stulpai
 image: "/images/tvoros/plank.jpg"
 date: 2026-01-28
+translation: "/articles/fence-posts-how-to-install-correctly"
 ---
 
 # Stulpai tvorai – kaip teisingai montuoti?

@@ -12,6 +12,7 @@ keywords:
   - pinučių tvoros
 image: "/images/tvoros/tvora13.jpg"
 date: 2026-01-28
+translation: "/articles/fences-and-their-history-in-lithuania-what-can-we-learn-from-ancestors"
 ---
 
 # Tvoros ir jų istorija Lietuvoje: ko galime pasimokyti iš senolių?

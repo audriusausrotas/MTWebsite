@@ -12,6 +12,7 @@ keywords:
   - territory enclosure
 image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
+translation: "/straipsniai/segmentine-tvora-imones-teritorijos-apjuosimui-ar-patartina-ja-rinktis"
 ---
 
 # Segmental Fence for Business Territory Enclosure – Is It Worth Choosing?

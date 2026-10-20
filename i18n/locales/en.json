@@ -19,9 +19,7 @@
     "pristatymas-ir-grazinimas": "Shipping and return",
     "finansuojamas-projektas": "Funded project"
   },
-
   "home": {
-    "seo": { "title": "", "description": "" },
     "title": "Contemporary fence solutions for your home privacy",
     "projects": "Projects",
     "products": "Products",
@@ -30,13 +28,11 @@
     "seeMore": "See more",
     "more": "More"
   },
-
   "skaiciuokle": {
     "title": "Fence calculator",
     "text": "Get a price quote now!",
     "button": "Calculate"
   },
-
   "contacts": {
     "ofisoTelNr": "+370 663 47011",
     "direktoriausTelNr": "+370 690 36336",
@@ -48,11 +44,13 @@
     "vadybininkas1": "audrius",
     "vadybininkas2": "dalius",
     "buhalte": "vaida",
-    "registracijosAdresas": "Lauko g. 5, Trakiškių k., Marijampolė",
-    "ofisoAdresas": "Kauno g. 31, Marijampolė",
-    "ofiso2Adresas": "Chemijos g. 4, Kaunas"
+    "registracijosAdresas": "Lauko g. 1, Trakiškių k., Marijampolės sav.",
+    "ofiso2Adresas": "Chemijos g. 4D, Kaunas",
+    "title": "Contact us!",
+    "text": "Our team of professionals will answer all your questions, advise you and prepare an individual offer that meets your needs.",
+    "button": "Send an inquiry",
+    "emailSubject": "Inquiry from the website"
   },
-
   "articles": {
     "article": {
       "title": "Planning fence construction?",
@@ -68,7 +66,6 @@
       "articles": "Articles"
     }
   },
-
   "about": {
     "aprasymas": {
       "title": "Moderni Tvora",
@@ -115,5 +112,104 @@
   "fences": {
     "constact": "Contact us",
     "getPrice": "Calculate price"
+  },
+  "seo": {
+    "home": {
+      "title": "Fences, yard gates and installation",
+      "description": "Moderni Tvora – sheet metal and segment fences, fence boards, yard gates and outdoor blinds. Production, 3D measuring and installation – all in one place."
+    },
+    "tvoros": {
+      "title": "Fences – sheet metal, metal, segment, fence boards",
+      "description": "Choose a fence for your plot: sheet metal fences, metal fences, fence boards and segment fences. Production and installation by Moderni Tvora."
+    },
+    "skardines-tvoros": {
+      "title": "Sheet metal fences",
+      "description": "Sheet metal fences Daimond, Plank, Eglė, Žaliuzi and other profiles – solid or see-through, in various RAL colours, with installation."
+    },
+    "metalines-tvoros": {
+      "title": "Metal fences",
+      "description": "Metal fences for your plot – durable and good-looking solutions with production and installation."
+    },
+    "tvoralentes": {
+      "title": "Fence boards",
+      "description": "Metal fence boards Dilė, Alba and others – one-sided or two-sided installation, long-lasting coating and professional installation."
+    },
+    "segmentines-tvoros": {
+      "title": "Segment fences",
+      "description": "Segment fences for private plots and business premises – various heights, galvanized and painted, with installation."
+    },
+    "kiemo-vartai": {
+      "title": "Yard gates",
+      "description": "Sliding and swing yard gates, wickets and gate automation – production and installation."
+    },
+    "lauko-zaliuzes": {
+      "title": "Outdoor blinds",
+      "description": "Outdoor blinds for homes and terraces – protection from the sun and prying eyes."
+    },
+    "tvoru-skaiciuokle": {
+      "title": "Fence calculator",
+      "description": "Get a preliminary fence price and request an offer."
+    },
+    "galerija": {
+      "title": "Gallery – completed projects",
+      "description": "Photos of fences, gates and fence boards installed by Moderni Tvora. Get ideas for your plot."
+    },
+    "straipsniai": {
+      "title": "Articles about fences",
+      "description": "Advice on choosing a fence, foundations, installation, maintenance and price."
+    },
+    "apie-mus": {
+      "title": "About us",
+      "description": "Moderni Tvora – a fence production and installation company. 3D measuring, quality materials and experienced installation teams."
+    },
+    "kontaktai": {
+      "title": "Contacts",
+      "description": "Contact Moderni Tvora: +370 663 47011, info{'@'}modernitvora.lt. Offices in Marijampolė and Kaunas."
+    },
+    "finansuojamas-projektas": {
+      "title": "Funded project",
+      "description": "Information about the funded project of Moderni Tvora."
+    },
+    "parduotuve": {
+      "title": "Shop",
+      "description": "Fence materials and accessories."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "companyCode": "Company code",
+    "vatCode": "VAT code",
+    "bank": "Bank",
+    "account": "Bank account"
+  },
+  "search": {
+    "open": "Search",
+    "placeholder": "Search fences and articles",
+    "noResults": "Nothing found",
+    "fences": "Fences",
+    "articles": "Articles"
+  },
+  "nav": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "home": "Moderni Tvora – home",
+    "breadcrumbs": "Breadcrumb"
+  },
+  "gallery": {
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "close": "Close"
+  },
+  "error": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "This page does not exist or has been moved.",
+    "title": "Something went wrong",
+    "text": "Please try again a little later.",
+    "back": "Back to home page"
+  },
+  "map": {
+    "google": "Open in Google Maps",
+    "waze": "Open in Waze"
   }
 }

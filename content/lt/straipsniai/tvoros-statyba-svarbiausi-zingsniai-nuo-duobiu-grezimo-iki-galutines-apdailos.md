@@ -11,6 +11,7 @@ keywords:
   - tvoros segmentai
 image: "/images/tvoros/tvora4.jpg"
 date: 2026-01-28
+translation: "/articles/fence-construction-most-important-steps-from-hole-drilling-to-final-finishing"
 ---
 
 # Tvoros statyba: svarbiausi žingsniai nuo duobių gręžimo iki galutinės apdailos

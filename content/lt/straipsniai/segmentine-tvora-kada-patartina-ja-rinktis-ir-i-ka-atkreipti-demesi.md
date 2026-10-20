@@ -11,6 +11,7 @@ keywords:
   - tvoros pasirinkimas
 image: "/images/tvoros/tvora22.jpg"
 date: 2026-01-28
+translation: "/articles/segmental-fence-when-to-choose-and-what-to-pay-attention-to"
 ---
 
 # Segmentinė tvora: kada patartina ją rinktis ir į ką atkreipti dėmesį?

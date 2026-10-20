@@ -12,6 +12,7 @@ keywords:
   - drenažo apsauga
 image: "/images/tvoros/tvora3.jpg"
 date: 2026-01-28
+translation: "/articles/fence-construction-near-servitude-road-or-drainage"
 ---
 
 # Tvoros statyba prie servitutinio kelio arba drenažo

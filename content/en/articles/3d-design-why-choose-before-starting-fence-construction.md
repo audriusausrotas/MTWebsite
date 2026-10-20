@@ -11,6 +11,7 @@ keywords:
   - fence installation
 image: "/images/tvoros/tvora11.jpg"
 date: 2026-01-28
+translation: "/straipsniai/3d-projektavimas-kodel-butina-pasirinkti-dar-pries-pradedant-tvoros-statybos-darbus"
 ---
 
 # 3D Design – Why Choose It Before Starting Fence Construction?

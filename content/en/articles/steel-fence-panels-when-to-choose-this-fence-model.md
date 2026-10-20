@@ -12,6 +12,7 @@ keywords:
   - fence design
 image: "/images/tvoros/tvora20.jpg"
 date: 2026-01-28
+translation: "/straipsniai/skardines-tvoralentes-kada-patartina-rinktis-si-tvoros-modeli"
 ---
 
 # Steel Fence Panels – When to Choose This Fence Model?

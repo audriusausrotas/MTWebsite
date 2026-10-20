@@ -1,0 +1,1 @@
+import{_ as o}from"./CIadZcm7.js";import{d as a,e,o as r}from"./Dc0Zbi09.js";import"./DRuXrMvq.js";import"./Blq-OXRY.js";import"./C7IULbhB.js";import"./DlAUqK2U.js";const d=a({__name:"pristatymas-ir-grazinimas",setup(n){return(p,s)=>{const t=o;return r(),e(t,{path:"/tekstai/pristatymas"})}}});export{d as default};

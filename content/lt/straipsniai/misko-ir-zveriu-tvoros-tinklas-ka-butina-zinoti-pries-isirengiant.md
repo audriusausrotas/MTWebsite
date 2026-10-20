@@ -12,6 +12,7 @@ keywords:
   - gyvulių apsauga
 image: "/images/tvoros/tvora6.jpg"
 date: 2026-01-28
+translation: "/articles/forest-and-wildlife-fence-netting-what-to-know-before-installing"
 ---
 
 # Miško ir žvėrių tvoros tinklas – ką būtina žinoti prieš įsirengiant?

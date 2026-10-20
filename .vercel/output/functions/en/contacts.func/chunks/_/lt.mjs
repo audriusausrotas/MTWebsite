@@ -1,0 +1,241 @@
+var menu = {
+	pagrindinis: "Pradžia",
+	tvoros: "Tvoros",
+	"skardines-tvoros": "Skardinės tvoros",
+	"metalines-tvoros": "Metalinės tvoros",
+	"segmentines-tvoros": "Segmentinės tvoros",
+	tvoralentes: "Tvoralentės",
+	"kiemo-vartai": "Kiemo vartai",
+	"lauko-zaliuzes": "Lauko žaliuzės",
+	"tvoru-skaiciuokle": "Tvorų skaičiuoklė",
+	galerija: "Galerija",
+	straipsniai: "Straipsniai",
+	"apie-mus": "Apie mus",
+	kontaktai: "Kontaktai",
+	parduotuve: "Parduotuvė",
+	taisykles: "Taisyklės",
+	"privatumo-politika": "Privatumo politika",
+	"pristatymas-ir-grazinimas": "Pristatymas ir grąžinimas",
+	"finansuojamas-projektas": "Finansuojamas projektas"
+};
+var home = {
+	title: "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui",
+	projects: "Projektai",
+	products: "Produktai",
+	reviews: "Atsiliepimai",
+	search: "Paieška",
+	seeMore: "Pamatyti daugiau",
+	more: "Daugiau"
+};
+var skaiciuokle = {
+	title: "Skaičiuoklė",
+	text: "Gaukite kainos pasiūlymą dabar!",
+	button: "Skaičiuoti"
+};
+var contacts = {
+	seo: {
+	},
+	ofisoTelNr: "+370 663 47011",
+	direktoriausTelNr: "+370 690 36336",
+	vadybininko1TelNr: "+370 675 17745",
+	vadybininko2TelNr: "+370 600 97933",
+	buhalterijosTelNr: "+370 611 10211",
+	ofisoElPastas: "info",
+	direktorius: "andrius",
+	vadybininkas1: "audrius",
+	vadybininkas2: "dalius",
+	buhalte: "vaida",
+	registracijosAdresas: "Lauko g. 1, Trakiškių k., Marijampolės sav.",
+	ofiso2Adresas: "Chemijos g. 4D, Kaunas",
+	title: "Susisiekite su mumis!",
+	text: "Mūsų profesionalų komanda atsakys į visus jums rūpimus klausimus, pakonsultuos ir pateiks individualų pasiūlymą, atitinkantį jūsų poreikius.",
+	button: "Siųsti užklausą",
+	emailSubject: "Užklausa iš svetainės"
+};
+var articles = {
+	article: {
+		title: "Planuojate tvoros statybą?",
+		text: "Nežinote, kokią tvorą pasirinkti? Turite kitų klausimų? Susisiekite su Moderni Tvora tvorų specialistais, kurie išklausę jūsų poreikius pasiūlys individualizuotą sprendimą bei atliks visus darbus. Viskas vienoje vietoje nuo A iki Z.",
+		"button-text": "Susisiekti"
+	},
+	pagination: {
+		previous: "Ankstesnis",
+		next: "Kitas",
+		page: "Puslapis",
+		of: "iš",
+		"read-more": "Skaityti daugiau >>",
+		articles: "Straipsniai"
+	}
+};
+var about = {
+	aprasymas: {
+		title: "Moderni tvora",
+		text: "„Moderni Tvora“ – šiuolaikiškus tvorų sprendimus siūlanti įmonė. Ilgametę patirtį turinti profesionalų komanda padeda išsirinkti geriausią tvoros, vartų ir vartelių variantą jūsų įmonės ar privačiam sklypui bei atlieka visus montavimo darbus."
+	},
+	box1: {
+		title: "Kodėl mes?",
+		text: "„Moderni Tvora“ naudojasi pačia pažangiausia įranga, užtikrinančia projektų įgyvendinimo tikslumą. Mūsų asortimente – tik kokybiškiausios medžiagos, garantuojančios tvoros, vartų ar vartelių ilgaamžiškumą jūsų įmonei ar namams.",
+		url: "/images/tvoros/modernitvora-4688-1.jpg",
+		alt: ""
+	},
+	box2: {
+		title: "Darbų garantija",
+		text: "„Užtikrindami kokybę, atliktiems darbams suteikiame 2 metų garantiją, tvoralentėms taikoma 5-10 metų garantija, o mūsų naudojamoms skardoms suteikiama net 45 metų garantija.",
+		url: "/images/tvoros/tvora4.jpg",
+		alt: ""
+	},
+	box3: {
+		title: "Gyva konsultacija biure",
+		text: "„Atvykite į „Moderni Tvora“ biurą Marijampolėje, kur galėsite gyvai apžiūrėti mūsų medžiagų asortimentą, pasikonsultuoti su specialistais dėl savo projekto ir gauti patarimų.",
+		url: "/images/tvoros/modernitvora-4372-1.jpg",
+		alt: ""
+	},
+	cards: {
+		card1: {
+			title: "Nestandartiniai projektai",
+			text: "Nestandartiniams sklypams paruošiame individualius planus, atsižvelgiant į unikalų teritorijos reljefą, taip užtikrindami tobulą tvoros pritaikymą jūsų valdoms.",
+			url: "/images/tvoros/modernitvora-4372-1.jpg",
+			alt: ""
+		},
+		card2: {
+			title: "Greitis",
+			text: "Kokybiškas ir greitas projektų įgyvendinimas nuo plano sudarymo iki tvoros sumontavimo – bene sparčiausiai Lietuvos rinkoje.",
+			url: "/images/tvoros/modernitvora-5139-1.jpg",
+			alt: ""
+		},
+		card3: {
+			title: "Modernus matavimas",
+			text: "Naudodami inovatyviausią įrangą, sudarome tikslius 3D formato teritorijos planus, kurie atspindi specifinį jūsų sklypo reljefą.",
+			url: "/images/tvoros/tvora4.jpg",
+			alt: ""
+		},
+		card4: {
+			title: "Pilnas projekto įgyvendinimas",
+			text: "Ilgametę patirtį turinčios brigados pasirūpins sklandžiu procesu, nuo pirmo pamatavimo iki galutinio tvoros, vartų ir vartelių sumontavimo.",
+			url: "/images/tvoros/tvora5.jpg",
+			alt: ""
+		}
+	}
+};
+var fences = {
+	constact: "Susisiekti",
+	getPrice: "Paskaičiuoti kainą"
+};
+var seo = {
+	home: {
+		title: "Tvoros, kiemo vartai ir jų montavimas",
+		description: "Moderni Tvora – skardinės ir segmentinės tvoros, tvoralentės, kiemo vartai ir lauko žaliuzės. Gamyba, 3D matavimas ir montavimas – viskas vienoje vietoje."
+	},
+	tvoros: {
+		title: "Tvoros – skardinės, metalinės, segmentinės, tvoralentės",
+		description: "Išsirinkite tvorą savo sklypui: skardinės tvoros, metalinės tvoros, tvoralentės ir segmentinės tvoros. Gamyba ir montavimas – Moderni Tvora."
+	},
+	"skardines-tvoros": {
+		title: "Skardinės tvoros",
+		description: "Skardinės tvoros Daimond, Plank, Eglė, Žaliuzi ir kiti profiliai – aklinos ir pramatomos, įvairių RAL spalvų, su montavimu."
+	},
+	"metalines-tvoros": {
+		title: "Metalinės tvoros",
+		description: "Metalinės tvoros jūsų sklypui – patvarūs ir estetiški sprendimai su gamyba ir montavimu."
+	},
+	tvoralentes: {
+		title: "Tvoralentės",
+		description: "Metalinės tvoralentės Dilė, Alba ir kitos – vienpusis ar dvipusis montavimas, ilgaamžė danga ir profesionalus montavimas."
+	},
+	"segmentines-tvoros": {
+		title: "Segmentinės tvoros",
+		description: "Segmentinės tvoros privatiems sklypams ir įmonių teritorijoms – įvairūs aukščiai, cinkuotos ir dažytos, su montavimu."
+	},
+	"kiemo-vartai": {
+		title: "Kiemo vartai",
+		description: "Stumdomi ir atveriami kiemo vartai, varteliai ir vartų automatika – gamyba ir montavimas."
+	},
+	"lauko-zaliuzes": {
+		title: "Lauko žaliuzės",
+		description: "Lauko žaliuzės namams ir terasoms – apsauga nuo saulės ir smalsių akių."
+	},
+	"tvoru-skaiciuokle": {
+		title: "Tvorų skaičiuoklė",
+		description: "Preliminariai apskaičiuokite tvoros kainą ir gaukite pasiūlymą."
+	},
+	galerija: {
+		title: "Galerija – įgyvendinti projektai",
+		description: "Moderni Tvora sumontuotų tvorų, vartų ir tvoralenčių nuotraukos. Pasisemkite idėjų savo sklypui."
+	},
+	straipsniai: {
+		title: "Straipsniai apie tvoras",
+		description: "Patarimai apie tvoros pasirinkimą, pamatus, montavimą, priežiūrą ir kainą."
+	},
+	"apie-mus": {
+		title: "Apie mus",
+		description: "Moderni Tvora – tvorų gamybos ir montavimo įmonė. 3D matavimas, kokybiškos medžiagos ir patyrusios montavimo brigados."
+	},
+	kontaktai: {
+		title: "Kontaktai",
+		description: "Susisiekite su Moderni Tvora: +370 663 47011, info{'@'}modernitvora.lt. Biurai Marijampolėje ir Kaune."
+	},
+	"finansuojamas-projektas": {
+		title: "Finansuojamas projektas",
+		description: "Informacija apie Moderni Tvora finansuojamą projektą."
+	},
+	parduotuve: {
+		title: "Parduotuvė",
+		description: "Tvorų medžiagos ir priedai."
+	}
+};
+var footer = {
+	rights: "Visos teisės saugomos.",
+	companyCode: "Įmonės kodas",
+	vatCode: "PVM kodas",
+	bank: "Bankas",
+	account: "Banko sąskaita"
+};
+var search = {
+	open: "Paieška",
+	placeholder: "Ieškokite tvorų ir straipsnių",
+	noResults: "Nieko nerasta",
+	fences: "Tvoros",
+	articles: "Straipsniai"
+};
+var nav = {
+	openMenu: "Atidaryti meniu",
+	closeMenu: "Uždaryti meniu",
+	language: "Kalba",
+	home: "Moderni Tvora – pradžia",
+	breadcrumbs: "Naršymo kelias"
+};
+var gallery = {
+	previous: "Ankstesnė nuotrauka",
+	next: "Kita nuotrauka",
+	close: "Uždaryti"
+};
+var error = {
+	notFoundTitle: "Puslapis nerastas",
+	notFoundText: "Tokio puslapio nėra arba jis buvo perkeltas.",
+	title: "Įvyko klaida",
+	text: "Bandykite dar kartą šiek tiek vėliau.",
+	back: "Grįžti į pradžią"
+};
+var map = {
+	google: "Atidaryti Google Maps",
+	waze: "Atidaryti Waze"
+};
+const lt = {
+	menu: menu,
+	home: home,
+	skaiciuokle: skaiciuokle,
+	contacts: contacts,
+	articles: articles,
+	about: about,
+	fences: fences,
+	seo: seo,
+	footer: footer,
+	search: search,
+	nav: nav,
+	gallery: gallery,
+	error: error,
+	map: map
+};
+
+export { about, articles, contacts, lt as default, error, fences, footer, gallery, home, map, menu, nav, search, seo, skaiciuokle };
+//# sourceMappingURL=lt.mjs.map

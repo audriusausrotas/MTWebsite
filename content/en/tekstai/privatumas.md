@@ -183,7 +183,7 @@ Data is used solely to prepare and send a detailed response to your inquiry and 
 ## Contact
 
 MB “Moderni tvora”  
-Bardauskų g. 18, LT‑70319 Bardauskai, Lithuania  
+Lauko g. 1, Trakiškiai village, LT-69492 Marijampolė municipality, Lithuania  
 Tel. +370 663 47011
 
 ---

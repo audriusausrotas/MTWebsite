@@ -17,7 +17,13 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <div class="flex flex-col flex-1 min-w-48 h-full">
     <div class="relative">
-      <NuxtImg :src="url" class="object-cover w-full" />
+      <NuxtImg
+        :src="url"
+        :alt="alt || title"
+        sizes="sm:100vw md:50vw lg:300px"
+        loading="lazy"
+        class="object-cover w-full"
+      />
       <div
         class="flex items-center justify-center text-center -translate-y-1/2 bg-red-main text-white font-medium px-4 min-h-16 max-w-[85%]"
       >

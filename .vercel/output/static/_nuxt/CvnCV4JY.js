@@ -1,0 +1,1 @@
+import{_ as o}from"./CIadZcm7.js";import{d as e,e as a,o as p}from"./Dc0Zbi09.js";import"./DRuXrMvq.js";import"./Blq-OXRY.js";import"./C7IULbhB.js";import"./DlAUqK2U.js";const k=e({__name:"privatumo-politika",setup(n){return(r,m)=>{const t=o;return p(),a(t,{path:"/tekstai/privatumas"})}}});export{k as default};

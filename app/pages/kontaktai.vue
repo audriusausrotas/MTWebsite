@@ -2,13 +2,13 @@
 definePageMeta({
   breadcrumb: "kontaktai",
 });
+
+useSeo("kontaktai");
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="kontaktai">
+  <BaseWrapper>
     <ContactsBlock />
     <ContactsMap />
   </BaseWrapper>
 </template>
-
-<style scoped></style>

@@ -1,41 +1,47 @@
 <script setup lang="ts">
-useSeo("home.seo.title", "home.seo.description");
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "#shared/site";
+
+useSeo("home");
 const localePath = useLocalePath();
 
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        name: SITE_NAME,
+        legalName: "MB „Moderni tvora“",
+        url: SITE_URL,
+        logo: SITE_URL + "/images/logo.png",
+        image: SITE_URL + DEFAULT_OG_IMAGE,
+        telephone: "+37066347011",
+        email: "info@modernitvora.lt",
+        vatID: "LT100013165913",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Lauko g. 1",
+          addressLocality: "Trakiškių k., Marijampolės sav.",
+          addressCountry: "LT",
+        },
+        sameAs: ["https://www.facebook.com/ModerniTvora"],
+      }),
+    },
+  ],
+});
+
 const images = [
-  {
-    url: "/images/tvoros/daimond6090.jpg",
-  },
-  {
-    url: "/images/tvoros/daimond40105.jpg",
-  },
-  {
-    url: "/images/tvoros/daimond60140.jpg",
-  },
-  {
-    url: "/images/tvoros/daimondVertical.jpg",
-  },
-  {
-    url: "/images/tvoros/dilė.jpg",
-  },
-  {
-    url: "/images/tvoros/dilė.jpg",
-  },
-  {
-    url: "/images/tvoros/eglė.jpg",
-  },
-  {
-    url: "/images/tvoros/plank.jpg",
-  },
-  {
-    url: "/images/tvoros/žaliuzi.jpg",
-  },
-  {
-    url: "/images/zaliuzes/blinds.jpg",
-  },
-  {
-    url: "/images/zaliuzes/blinds2.jpg",
-  },
+  { url: "/images/tvoros/daimond6090.jpg" },
+  { url: "/images/tvoros/daimond40105.jpg" },
+  { url: "/images/tvoros/daimond60140.jpg" },
+  { url: "/images/tvoros/daimondvertical.jpg" },
+  { url: "/images/tvoros/dilė.jpg" },
+  { url: "/images/tvoros/eglė.jpg" },
+  { url: "/images/tvoros/plank.jpg" },
+  { url: "/images/tvoros/žaliuzi.jpg" },
+  { url: "/images/zaliuzes/blinds.jpg" },
+  { url: "/images/zaliuzes/blinds2.jpg" },
 ];
 
 const reviews = [

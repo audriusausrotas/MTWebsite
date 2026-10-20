@@ -12,6 +12,7 @@ keywords:
   - tvoros taisyklės
 image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
+translation: "/articles/fence-construction-requirements-how-to-avoid-trouble"
 ---
 
 # Reikalavimai tvoros statybai – kaip neprisidaryti bėdos?

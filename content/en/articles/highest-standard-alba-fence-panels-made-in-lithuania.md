@@ -11,6 +11,7 @@ keywords:
   - steel fences
 image: "/images/tvoros/tvora20.jpg"
 date: 2026-01-28
+translation: "/straipsniai/auksciausiais-standartais-sukurtos-ir-lietuvoje-pagamintos-tvoralentes-alba"
 ---
 
 # Highest Standard ALBA Fence Panels Created and Made in Lithuania

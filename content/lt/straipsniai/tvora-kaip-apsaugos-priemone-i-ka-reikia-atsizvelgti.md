@@ -12,6 +12,7 @@ keywords:
   - augintinių apsauga
 image: "/images/tvoros/eglėplus.jpg"
 date: 2026-01-28
+translation: "/articles/fence-as-protection-measure-what-to-consider"
 ---
 
 # Tvora kaip apsaugos priemonė: į ką reikia atsižvelgti?

@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import type { Image } from "~/data/interfaces";
 
-const props = defineProps<{ images: Image[] }>();
+const props = defineProps<{ images: Image[]; fallbackAlt?: string }>();
 
 const { locale } = useI18n();
 const currentImageIndex = ref<number>(0);
 const thumbRefs = ref<HTMLElement[]>([]);
 const modalOpen = ref<boolean>(false);
+
+const altOf = (image?: Image) =>
+  (locale.value === "en" ? image?.altEN : image?.alt) || props.fallbackAlt || image?.name || "";
 
 watch(currentImageIndex, (i) => {
   const el = thumbRefs.value[i];
@@ -19,10 +22,7 @@ watch(currentImageIndex, (i) => {
 </script>
 
 <template>
-  <div
-    @contextmenu.prevent
-    class="flex flex-col gap-4 justify-between max-w-default w-full h-140 select-none"
-  >
+  <div class="flex flex-col gap-4 justify-between w-full select-none">
     <Transition
       enter-active-class="transition-opacity duration-100"
       enter-from-class="opacity-0"
@@ -36,16 +36,18 @@ watch(currentImageIndex, (i) => {
         @click="modalOpen = true"
         :key="currentImageIndex"
         :src="images[currentImageIndex]?.url"
-        :alt="locale === 'lt' ? images[currentImageIndex]?.alt : images[currentImageIndex]?.altEN"
+        :alt="altOf(images[currentImageIndex])"
+        sizes="sm:100vw md:600px"
         class="w-full h-full max-h-108 object-contain hover:cursor-pointer"
       />
     </Transition>
 
-    <div class="flex overflow-hidden max-w-[calc(theme(maxWidth.default)/2)] rounded-lg">
+    <div v-if="images.length > 1" class="flex overflow-x-auto max-w-full rounded-lg">
       <div class="flex gap-2 scroll-smooth">
         <button
           v-for="(image, index) in images"
           :key="`thumb-${index}`"
+          type="button"
           :ref="(el) => (thumbRefs[index] = el as HTMLElement)"
           @click="() => (currentImageIndex = index)"
           :class="[
@@ -56,7 +58,10 @@ watch(currentImageIndex, (i) => {
           <NuxtImg
             v-if="image.url"
             :src="image.url"
-            :alt="locale === 'lt' ? image.alt : image.altEN"
+            :alt="altOf(image)"
+            width="112"
+            height="112"
+            fit="cover"
             class="w-28 h-28 object-cover"
           />
         </button>
@@ -70,5 +75,3 @@ watch(currentImageIndex, (i) => {
     />
   </div>
 </template>
-
-<style scoped></style>

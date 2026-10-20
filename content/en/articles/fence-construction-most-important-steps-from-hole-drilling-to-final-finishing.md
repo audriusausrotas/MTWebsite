@@ -11,6 +11,7 @@ keywords:
   - fence segments
 image: "/images/tvoros/tvora4.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-statyba-svarbiausi-zingsniai-nuo-duobiu-grezimo-iki-galutines-apdailos"
 ---
 
 # Fence Construction: Most Important Steps from Hole Drilling to Final Finishing

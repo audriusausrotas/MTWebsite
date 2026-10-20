@@ -11,6 +11,7 @@ keywords:
   - plot enclosure
 image: "/images/tvoros/dilė.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-pakabinami-pamatai"
 ---
 
 # Fence Hanging Foundations – Why Do You Need Them?

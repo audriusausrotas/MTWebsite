@@ -12,10 +12,12 @@ const closeHandler = () => {
   searchOpen.value = false;
 };
 
-const homeHandler = () => {
-  closeHandler();
-  navigateTo(localePath("/"));
+const isActive = (to: string) => {
+  const path = localePath(to);
+  return route.path === path || route.path.startsWith(path + "/");
 };
+
+watch(() => route.fullPath, closeHandler);
 </script>
 
 <template>
@@ -23,34 +25,23 @@ const homeHandler = () => {
     <div
       class="flex items-center fixed w-full z-50 bg-stone-900 p-4 gap-4 lg:hidden justify-between"
     >
-      <NuxtImg
-        v-if="!menuOpen"
-        @click="menuOpen = true"
-        src="/icons/hamburger.svg"
-        width="40"
-        height="40"
-        decoding="auto"
-        loading="lazy"
-        :ismap="true"
-      />
-      <NuxtImg
-        v-else
-        @click="closeHandler"
-        src="/icons/close.svg"
-        width="40"
-        height="40"
-        decoding="auto"
-        loading="lazy"
-        :ismap="true"
-      />
+      <button
+        type="button"
+        :aria-label="menuOpen ? t('nav.closeMenu') : t('nav.openMenu')"
+        :aria-expanded="menuOpen"
+        @click="menuOpen ? closeHandler() : (menuOpen = true)"
+      >
+        <img
+          :src="menuOpen ? '/icons/close.svg' : '/icons/hamburger.svg'"
+          alt=""
+          width="40"
+          height="40"
+        />
+      </button>
 
-      <NuxtImg
-        src="/icons/logo.svg"
-        width="100"
-        height="50"
-        @click="homeHandler"
-        class="hover:cursor-pointer"
-      />
+      <NuxtLinkLocale to="/" :aria-label="t('nav.home')" @click="closeHandler">
+        <img src="/icons/logo.svg" :alt="t('nav.home')" width="100" height="50" />
+      </NuxtLinkLocale>
 
       <NavigationLangSelector class="text-white" />
     </div>
@@ -65,38 +56,30 @@ const homeHandler = () => {
     >
       <nav
         v-if="menuOpen"
-        class="lg:hidden flex flex-col gap-4 items-center w-full h-full text-white bg-stone-900 py-8 top-19 z-40 fixed"
+        class="lg:hidden flex flex-col gap-4 items-center w-full h-full text-white bg-stone-900 py-8 px-4 top-19 z-40 fixed"
       >
-        <div @click="searchOpen = !searchOpen" class="flex items-center gap-2">
-          <NuxtImg
-            src="/icons/search.svg"
-            width="20"
-            height="20"
-            decoding="auto"
-            loading="lazy"
-            :ismap="true"
-            class="text-white"
-          />
-          {{ t("home.search") }}
-        </div>
-        <BaseSearch v-if="searchOpen" />
-        <NuxtLinkLocale
-          v-if="!searchOpen"
-          v-for="item in navigation"
-          :key="item.to"
-          :to="item.to"
-          @click="closeHandler"
-          class="transition"
-          :class="{
-            'text-red-500  hover:text-red-500': route.path === localePath(item.to),
-            'hover:text-red-300': route.path !== localePath(item.to),
-          }"
+        <button
+          type="button"
+          class="flex items-center gap-2"
+          :aria-expanded="searchOpen"
+          @click="searchOpen = !searchOpen"
         >
-          {{ t(item.name) }}
-        </NuxtLinkLocale>
+          <img src="/icons/search.svg" alt="" width="20" height="20" />
+          {{ t("search.open") }}
+        </button>
+        <BaseSearch v-if="searchOpen" dark @navigate="closeHandler" />
+        <template v-else>
+          <NuxtLinkLocale
+            v-for="item in navigation"
+            :key="item.to"
+            :to="item.to"
+            class="transition"
+            :class="isActive(item.to) ? 'text-red-500 hover:text-red-500' : 'hover:text-red-300'"
+          >
+            {{ t(item.name) }}
+          </NuxtLinkLocale>
+        </template>
       </nav>
     </Transition>
   </div>
 </template>
-
-<style scoped></style>

@@ -2,10 +2,14 @@
 definePageMeta({
   breadcrumb: "galerija",
 });
+
+useSeo("galerija");
+
+await loadSiteData("gallery");
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="galerija">
+  <BaseWrapper>
     <GalleryMain />
   </BaseWrapper>
 </template>

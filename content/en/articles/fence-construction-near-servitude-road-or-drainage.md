@@ -12,6 +12,7 @@ keywords:
   - drainage protection
 image: "/images/tvoros/tvora3.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-statyba-prie-servitutinio-kelio-arba-drenazo"
 ---
 
 # Fence Construction Near Servitude Road or Drainage

@@ -14,13 +14,12 @@
     "apie-mus": "Apie mus",
     "kontaktai": "Kontaktai",
     "parduotuve": "Parduotuvė",
-    "taisykles": "Taisykles",
+    "taisykles": "Taisyklės",
     "privatumo-politika": "Privatumo politika",
     "pristatymas-ir-grazinimas": "Pristatymas ir grąžinimas",
     "finansuojamas-projektas": "Finansuojamas projektas"
   },
   "home": {
-    "seo": { "title": "", "description": "" },
     "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui",
     "projects": "Projektai",
     "products": "Produktai",
@@ -29,13 +28,11 @@
     "seeMore": "Pamatyti daugiau",
     "more": "Daugiau"
   },
-
   "skaiciuokle": {
     "title": "Skaičiuoklė",
     "text": "Gaukite kainos pasiūlymą dabar!",
     "button": "Skaičiuoti"
   },
-
   "contacts": {
     "seo": {},
     "ofisoTelNr": "+370 663 47011",
@@ -48,11 +45,13 @@
     "vadybininkas1": "audrius",
     "vadybininkas2": "dalius",
     "buhalte": "vaida",
-    "registracijosAdresas": "Lauko g. 5, Trakiškių k., Marijampolė",
-    "ofisoAdresas": "Kauno g. 31, Marijampolė",
-    "ofiso2Adresas": "Chemijos g. 4, Kaunas"
+    "registracijosAdresas": "Lauko g. 1, Trakiškių k., Marijampolės sav.",
+    "ofiso2Adresas": "Chemijos g. 4D, Kaunas",
+    "title": "Susisiekite su mumis!",
+    "text": "Mūsų profesionalų komanda atsakys į visus jums rūpimus klausimus, pakonsultuos ir pateiks individualų pasiūlymą, atitinkantį jūsų poreikius.",
+    "button": "Siųsti užklausą",
+    "emailSubject": "Užklausa iš svetainės"
   },
-
   "articles": {
     "article": {
       "title": "Planuojate tvoros statybą?",
@@ -68,7 +67,6 @@
       "articles": "Straipsniai"
     }
   },
-
   "about": {
     "aprasymas": {
       "title": "Moderni tvora",
@@ -122,5 +120,104 @@
   "fences": {
     "constact": "Susisiekti",
     "getPrice": "Paskaičiuoti kainą"
+  },
+  "seo": {
+    "home": {
+      "title": "Tvoros, kiemo vartai ir jų montavimas",
+      "description": "Moderni Tvora – skardinės ir segmentinės tvoros, tvoralentės, kiemo vartai ir lauko žaliuzės. Gamyba, 3D matavimas ir montavimas – viskas vienoje vietoje."
+    },
+    "tvoros": {
+      "title": "Tvoros – skardinės, metalinės, segmentinės, tvoralentės",
+      "description": "Išsirinkite tvorą savo sklypui: skardinės tvoros, metalinės tvoros, tvoralentės ir segmentinės tvoros. Gamyba ir montavimas – Moderni Tvora."
+    },
+    "skardines-tvoros": {
+      "title": "Skardinės tvoros",
+      "description": "Skardinės tvoros Daimond, Plank, Eglė, Žaliuzi ir kiti profiliai – aklinos ir pramatomos, įvairių RAL spalvų, su montavimu."
+    },
+    "metalines-tvoros": {
+      "title": "Metalinės tvoros",
+      "description": "Metalinės tvoros jūsų sklypui – patvarūs ir estetiški sprendimai su gamyba ir montavimu."
+    },
+    "tvoralentes": {
+      "title": "Tvoralentės",
+      "description": "Metalinės tvoralentės Dilė, Alba ir kitos – vienpusis ar dvipusis montavimas, ilgaamžė danga ir profesionalus montavimas."
+    },
+    "segmentines-tvoros": {
+      "title": "Segmentinės tvoros",
+      "description": "Segmentinės tvoros privatiems sklypams ir įmonių teritorijoms – įvairūs aukščiai, cinkuotos ir dažytos, su montavimu."
+    },
+    "kiemo-vartai": {
+      "title": "Kiemo vartai",
+      "description": "Stumdomi ir atveriami kiemo vartai, varteliai ir vartų automatika – gamyba ir montavimas."
+    },
+    "lauko-zaliuzes": {
+      "title": "Lauko žaliuzės",
+      "description": "Lauko žaliuzės namams ir terasoms – apsauga nuo saulės ir smalsių akių."
+    },
+    "tvoru-skaiciuokle": {
+      "title": "Tvorų skaičiuoklė",
+      "description": "Preliminariai apskaičiuokite tvoros kainą ir gaukite pasiūlymą."
+    },
+    "galerija": {
+      "title": "Galerija – įgyvendinti projektai",
+      "description": "Moderni Tvora sumontuotų tvorų, vartų ir tvoralenčių nuotraukos. Pasisemkite idėjų savo sklypui."
+    },
+    "straipsniai": {
+      "title": "Straipsniai apie tvoras",
+      "description": "Patarimai apie tvoros pasirinkimą, pamatus, montavimą, priežiūrą ir kainą."
+    },
+    "apie-mus": {
+      "title": "Apie mus",
+      "description": "Moderni Tvora – tvorų gamybos ir montavimo įmonė. 3D matavimas, kokybiškos medžiagos ir patyrusios montavimo brigados."
+    },
+    "kontaktai": {
+      "title": "Kontaktai",
+      "description": "Susisiekite su Moderni Tvora: +370 663 47011, info{'@'}modernitvora.lt. Biurai Marijampolėje ir Kaune."
+    },
+    "finansuojamas-projektas": {
+      "title": "Finansuojamas projektas",
+      "description": "Informacija apie Moderni Tvora finansuojamą projektą."
+    },
+    "parduotuve": {
+      "title": "Parduotuvė",
+      "description": "Tvorų medžiagos ir priedai."
+    }
+  },
+  "footer": {
+    "rights": "Visos teisės saugomos.",
+    "companyCode": "Įmonės kodas",
+    "vatCode": "PVM kodas",
+    "bank": "Bankas",
+    "account": "Banko sąskaita"
+  },
+  "search": {
+    "open": "Paieška",
+    "placeholder": "Ieškokite tvorų ir straipsnių",
+    "noResults": "Nieko nerasta",
+    "fences": "Tvoros",
+    "articles": "Straipsniai"
+  },
+  "nav": {
+    "openMenu": "Atidaryti meniu",
+    "closeMenu": "Uždaryti meniu",
+    "language": "Kalba",
+    "home": "Moderni Tvora – pradžia",
+    "breadcrumbs": "Naršymo kelias"
+  },
+  "gallery": {
+    "previous": "Ankstesnė nuotrauka",
+    "next": "Kita nuotrauka",
+    "close": "Uždaryti"
+  },
+  "error": {
+    "notFoundTitle": "Puslapis nerastas",
+    "notFoundText": "Tokio puslapio nėra arba jis buvo perkeltas.",
+    "title": "Įvyko klaida",
+    "text": "Bandykite dar kartą šiek tiek vėliau.",
+    "back": "Grįžti į pradžią"
+  },
+  "map": {
+    "google": "Atidaryti Google Maps",
+    "waze": "Atidaryti Waze"
   }
 }

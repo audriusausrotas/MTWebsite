@@ -11,6 +11,7 @@ keywords:
   - ZM Ecoprotect
 image: "/images/tvoros/tvora8.jpg"
 date: 2026-01-28
+translation: "/articles/7-thyssenkrupp-steel-advantages-for-fences-why-worth-choosing"
 ---
 
 # 7 „Thyssenkrupp“ skardos privalumai tvoroms: kodėl verta rinktis?

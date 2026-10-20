@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import "vue3-carousel/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { Carousel, Slide, Navigation } from "vue3-carousel";
 
 interface Array {
   name?: string;
@@ -22,8 +22,12 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const carouselConfig = {
-  itemsToShow: 2.5,
+  itemsToShow: 1.2,
   wrapAround: true,
+  breakpoints: {
+    640: { itemsToShow: 2 },
+    1024: { itemsToShow: 2.5 },
+  },
 };
 </script>
 
@@ -37,7 +41,14 @@ const carouselConfig = {
   >
     <Slide v-for="(slide, index) in arr" :key="images ? slide.url : slide.name! + index">
       <div class="h-fit w-full">
-        <NuxtImg v-if="images" :src="slide.url" class="w-full h-full object-cover rounded" />
+        <NuxtImg
+          v-if="images"
+          :src="slide.url"
+          alt=""
+          sizes="sm:100vw md:500px"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
         <div class="flex flex-col gap-4">
           <h6 class="text-2xl font-medium">{{ slide.name }}</h6>
           <p class="text-justify">{{ slide.text }}</p>
@@ -47,7 +58,6 @@ const carouselConfig = {
 
     <template #addons>
       <Navigation />
-      <!-- <Pagination /> -->
     </template>
   </Carousel>
 </template>

@@ -11,6 +11,7 @@ keywords:
   - dekoratyviniai augalai
 image: "/images/tvoros/tvora12.jpg"
 date: 2026-01-28
+translation: "/articles/fence-greening-which-plants-do-specialists-recommend"
 ---
 
 # Tvorų apželdinimas – kokius augalus rekomenduoja specialistai?
@@ -66,13 +67,14 @@ Tinka, jei norite greito ir tankaus apželdinimo.
 
 ---
 
-### **Lapagerija**
+### **Raganė (klematis)**
 
-Ryškiais, dideliais raudonais žiedais žydintis augalas.
+Daugiametis vijoklinis augalas dideliais, ryškiais žiedais – nuo baltų iki violetinių ir raudonų.
 
-- natūraliai auga Čilėje, JAV ir Švedijoje,
-- puikiai prisitaiko prie Lietuvos klimato,
-- nereikalauja sudėtingos priežiūros.
+- gerai žiemoja Lietuvoje,
+- mėgsta, kad šaknys būtų pavėsyje, o lapai ir žiedai – saulėje,
+- reikia atramos, į kurią augalas kabinasi lapkočiais,
+- priklausomai nuo veislės žydi nuo vasaros pradžios iki rudens.
 
 Tai išskirtinis pasirinkimas, suteikiantis tvorai prabangos įspūdį.
 
@@ -96,7 +98,7 @@ Vienas universaliausių vijoklinių augalų.
 
 - gali šliaužti žeme arba kilti į viršų,
 - puikiai slepia neišvaizdžias vietas,
-- žydi visą sezoną,
+- visą sezoną dekoratyvus vešlia lapija (žiedai nedideli ir nepastebimi),
 - rudenį nusidažo ryškiomis spalvomis,
 - pirmus metus auga lėtai, vėliau – itin sparčiai.
 

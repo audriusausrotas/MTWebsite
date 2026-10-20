@@ -12,6 +12,7 @@ keywords:
   - tvoros dizainas
 image: "/images/tvoros/tvora20.jpg"
 date: 2026-01-28
+translation: "/articles/steel-fence-panels-when-to-choose-this-fence-model"
 ---
 
 # Skardinės tvoralentės – kada patartina rinktis šį tvoros modelį?

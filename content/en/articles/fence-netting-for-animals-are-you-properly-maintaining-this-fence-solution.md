@@ -11,6 +11,7 @@ keywords:
   - forest netting
 image: "/images/tvoros/tvora6.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-tinklas-gyvunams-ar-tinkamai-priziurite-si-tvoros-sprendima"
 ---
 
 # Fence Netting for Animals – Are You Properly Maintaining This Fence Solution?

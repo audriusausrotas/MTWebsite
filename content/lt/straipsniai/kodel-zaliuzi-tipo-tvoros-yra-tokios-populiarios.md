@@ -12,6 +12,7 @@ keywords:
   - žaliuzi tvoros privalumai
 image: "/images/tvoros/žaliuzi.jpg"
 date: 2026-01-28
+translation: "/articles/why-are-louvre-type-fences-so-popular"
 ---
 
 # Kodėl žaliuzi tipo tvoros yra tokios populiarios?

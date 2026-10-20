@@ -12,6 +12,7 @@ keywords:
   - wicker fences
 image: "/images/tvoros/tvora13.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-ir-ju-istorija-lietuvoje-ko-galime-pasimokyti-is-senoliu"
 ---
 
 # Fences and Their History in Lithuania: What Can We Learn from Ancestors?

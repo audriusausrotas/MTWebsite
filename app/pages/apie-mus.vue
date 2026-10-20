@@ -2,10 +2,12 @@
 definePageMeta({
   breadcrumb: "apie-mus",
 });
+
+useSeo("apie-mus");
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="apie-mus" customStyles="gap-20">
+  <BaseWrapper customStyles="gap-20">
     <div class="flex flex-col gap-12 max-w-100 w-full">
       <h2 class="text-4xl font-medium">{{ $t("about.aprasymas.title") }}</h2>
       <p>

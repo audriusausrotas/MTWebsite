@@ -12,6 +12,7 @@ keywords:
   - Thyssenkrupp steel
 image: "/images/tvoros/modernitvora-5139-1.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-gamyba-ar-zinote-kaip-yra-uztikrinama-kokybe"
 ---
 
 # Fence Production: Do You Know How Quality Is Ensured?

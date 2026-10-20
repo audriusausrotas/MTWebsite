@@ -12,6 +12,7 @@ keywords:
   - fence installation
 image: "/images/tvoros/tvora18.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-pamatai-ir-skirtingi-ju-tipai"
 ---
 
 # Fence Foundations and Their Different Types

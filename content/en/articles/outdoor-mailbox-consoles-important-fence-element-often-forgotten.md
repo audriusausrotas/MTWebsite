@@ -11,6 +11,7 @@ keywords:
   - modern fence
 image: "/images/tvoros/tvora21.jpg"
 date: 2026-01-28
+translation: "/straipsniai/lauko-pasto-dezutes-konsoles-svarbus-tvoros-elementas-kuri-daznas-pamirsta"
 ---
 
 # Outdoor Mailbox Consoles: Important Fence Element Often Forgotten?

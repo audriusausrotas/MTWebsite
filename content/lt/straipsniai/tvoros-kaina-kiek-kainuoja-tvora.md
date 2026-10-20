@@ -13,6 +13,7 @@ keywords:
   - tvoros projektas
 image: "/images/tvoros/tvora2.jpg"
 date: 2026-01-28
+translation: "/articles/fence-price-how-much-does-a-fence-cost"
 ---
 
 # Tvoros kaina – kiek kainuoja tvora?

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { images } = useGallery();
+const { locale } = useI18n();
 
 const modalOpen = ref<boolean>(false);
 const currentImage = ref<number>(0);
@@ -18,7 +19,9 @@ const openModal = (index: number) => {
       v-for="(image, index) in images"
       :key="image.url"
       :src="image.url"
-      :alt="image.alt"
+      :alt="(locale === 'en' ? image.altEN : image.alt) || image.name"
+      sizes="sm:100vw md:50vw lg:600px"
+      loading="lazy"
       class="gallery-item hover:scale-105 hover:cursor-pointer w-full h-50 object-cover rounded transition-transform duration-300 nth-[3n]:row-span-2 nth-[3n]:h-104 nth-[7n]:col-span-2 nth-[7n]:row-span-2 nth-[7n]:h-104"
       @click="openModal(index)"
     />

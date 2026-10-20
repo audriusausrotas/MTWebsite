@@ -11,6 +11,7 @@ keywords:
   - tvoros privalumai
 image: "/images/tvoros/tvora11.jpg"
 date: 2026-01-28
+translation: "/articles/why-choose-diamond-type-fence-also-called-rhombus-fence"
 ---
 
 # Kodėl verta rinktis „Diamond“ tipo tvorą, kitaip vadinamą „Rombo“ tvora?

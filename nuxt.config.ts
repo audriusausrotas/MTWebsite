@@ -14,6 +14,11 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  // MTSoft API adresas (naudojamas tik serveryje). Galima perrašyti per NUXT_API_BASE.
+  runtimeConfig: {
+    apiBase: process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://mtsoft.lt",
+  },
+
   css: ["./app/assets/css/main.css"],
 
   vite: {
@@ -35,12 +40,8 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     customRoutes: "config",
 
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: "i18n_redirected",
-      redirectOn: "root",
-      alwaysRedirect: false,
-    },
+    // visada atidaroma lietuviška versija, kalbą lankytojas keičia pats
+    detectBrowserLanguage: false,
 
     locales: [
       { code: "lt", iso: "lt-LT", name: "Lietuvių", file: "lt.json" },

@@ -11,6 +11,7 @@ keywords:
   - finansinis lankstumas
 image: "/images/tvoros/tvora15.jpg"
 date: 2026-01-28
+translation: "/articles/fences-on-installment-is-it-worth-choosing-this-acquisition-method"
 ---
 
 # Tvoros išsimokėtinai – ar verta pasirinkti šį tvoros įsigijimo būdą?

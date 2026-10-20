@@ -24,7 +24,7 @@ The Contractor – MB “Moderni tvora”, which undertakes to manufacture and d
 
 1.3. Production deadlines are indicated in the Commercial Offer and are calculated from the date of the advance payment. The advance amount is specified in the Commercial Offer. Payment of the advance also confirms that the Client has reviewed and agrees with the offered service and price.
 
-1.4. The Client must pay the remaining amount before collecting the Product from the Contractor’s warehouse (Bardauskų g. 18, Bardauskai) or before the Product is delivered to the Client’s specified address (an additional service).
+1.4. The Client must pay the remaining amount before collecting the Product from the Contractor’s warehouse (Lauko g. 1, Trakiškiai village, Marijampolė municipality) or before the Product is delivered to the Client’s specified address (an additional service).
 
 1.5. Ownership rights to the Product transfer to the Client only after full payment. If the full amount specified in the Commercial Offer is not paid, the fence equipment remains the property of the Contractor.
 

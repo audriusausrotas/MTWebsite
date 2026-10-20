@@ -11,6 +11,7 @@ keywords:
   - corrosion prevention
 image: "/images/tvoros/tvora7.jpg"
 date: 2026-01-28
+translation: "/straipsniai/ar-reikalinga-skardines-tvoros-prieziura"
 ---
 
 # Is Steel Fence Maintenance Required?

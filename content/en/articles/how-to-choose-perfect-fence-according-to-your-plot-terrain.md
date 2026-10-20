@@ -11,6 +11,7 @@ keywords:
   - fence installation
 image: "/images/tvoros/kaip-issirinkti-tvora.jpg"
 date: 2026-01-28
+translation: "/straipsniai/kaip-issirinkti-idealia-tvora-pagal-jusu-sklypo-reljefa"
 ---
 
 # How to Choose the Perfect Fence According to Your Plot Terrain?

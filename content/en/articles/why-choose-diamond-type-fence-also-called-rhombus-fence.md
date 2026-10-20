@@ -11,6 +11,7 @@ keywords:
   - fence advantages
 image: "/images/tvoros/tvora11.jpg"
 date: 2026-01-28
+translation: "/straipsniai/kodel-verta-rinktis-daimond-tipo-tvora-kitaip-vadinama-rombo-tvora"
 ---
 
 # Why Choose Diamond Type Fence, Also Called Rhombus Fence?

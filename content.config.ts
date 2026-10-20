@@ -13,6 +13,10 @@ export default defineContentConfig({
         seoTitle: z.string().optional(),
         seoDescription: z.string().optional(),
         image: z.string().optional(),
+        date: z.date().optional(),
+        // kitos kalbos straipsnio content kelias, pvz. /articles/... arba /straipsniai/...
+        translation: z.string().optional(),
+        keywords: z.array(z.string()).optional(),
         excerpt: z.object({
           type: z.string(),
           children: z.any(),
@@ -30,6 +34,10 @@ export default defineContentConfig({
         seoTitle: z.string().optional(),
         seoDescription: z.string().optional(),
         image: z.string().optional(),
+        date: z.date().optional(),
+        // kitos kalbos straipsnio content kelias, pvz. /articles/... arba /straipsniai/...
+        translation: z.string().optional(),
+        keywords: z.array(z.string()).optional(),
         excerpt: z.object({
           type: z.string(),
           children: z.any(),

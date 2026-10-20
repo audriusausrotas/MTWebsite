@@ -13,6 +13,8 @@ const currentImageIndex = ref(props.currentImage);
 const modalRef = ref<HTMLElement | null>(null);
 const thumbRefs = ref<HTMLElement[]>([]);
 
+const altOf = (image?: Image) => (locale.value === "en" ? image?.altEN : image?.alt) || image?.name || "";
+
 const nextImage = () => {
   currentImageIndex.value = (currentImageIndex.value + 1) % props.images.length;
 };
@@ -65,19 +67,25 @@ onUnmounted(() => {
     <div
       ref="modalRef"
       tabindex="0"
+      role="dialog"
+      aria-modal="true"
       class="fixed inset-0 z-50 bg-black/70 flex items-center justify-center select-none"
-      @keydown.prevent.stop.esc="closeModal"
+      @keydown.esc.prevent.stop="closeModal"
+      @keydown.left.prevent="prevImage"
+      @keydown.right.prevent="nextImage"
       @click.self="closeModal"
     >
       <div
         class="flex flex-col overflow-hidden justify-between max-w-default w-full max-h-250 h-full bg-white rounded-md"
       >
-        <div class="flex justify-between bg-stone-300 py-2 px-4">
+        <div class="flex justify-between gap-4 bg-stone-300 py-2 px-4">
           <div class="text-lg font-semibold">{{ currentImageIndex + 1 }} / {{ images.length }}</div>
 
           <div class="text-lg font-semibold">{{ images[currentImageIndex]?.name }}</div>
 
           <button
+            type="button"
+            :aria-label="$t('gallery.close')"
             @click="closeModal"
             class="hover:text-red-600 transition-all hover:cursor-pointer hover:scale-125"
           >
@@ -92,7 +100,7 @@ onUnmounted(() => {
           </button>
         </div>
 
-        <div class="p-4 relative">
+        <div class="p-4 relative min-h-0 flex-1">
           <Transition
             enter-active-class="transition-opacity duration-100"
             enter-from-class="opacity-0"
@@ -103,16 +111,16 @@ onUnmounted(() => {
             mode="out-in"
           >
             <NuxtImg
-              @contextmenu.prevent
               :key="currentImageIndex"
               :src="images[currentImageIndex]?.url"
-              :alt="
-                locale === 'lt' ? images[currentImageIndex]?.alt : images[currentImageIndex]?.altEN
-              "
+              :alt="altOf(images[currentImageIndex])"
+              sizes="sm:100vw md:100vw lg:1200px"
               class="max-h-196 w-full h-full object-contain rounded"
             />
           </Transition>
           <button
+            type="button"
+            :aria-label="$t('gallery.previous')"
             @click="prevImage"
             class="text-black transition-all hover:scale-125 hover:cursor-pointer p-1 absolute top-1/2 left-6 -translate-y-1/2 rounded-full bg-white/60"
           >
@@ -127,6 +135,8 @@ onUnmounted(() => {
           </button>
 
           <button
+            type="button"
+            :aria-label="$t('gallery.next')"
             @click="nextImage"
             class="text-black transition-all hover:scale-125 hover:cursor-pointer p-1 absolute top-1/2 right-6 -translate-y-1/2 rounded-full bg-white/70"
           >
@@ -139,29 +149,30 @@ onUnmounted(() => {
               />
             </svg>
           </button>
-          <div></div>
         </div>
 
-        <div
-          class="flex overflow-hidden mx-4 mb-4 max-w-[calc(theme(maxWidth.default)-20px)] rounded-lg"
-        >
-          <div @contextmenu.prevent class="flex gap-2 scroll-smooth">
+        <div class="flex overflow-x-auto mx-4 mb-4 rounded-lg shrink-0">
+          <div class="flex gap-2 scroll-smooth">
             <button
               v-for="(image, index) in images"
               :key="`thumb-${index}`"
+              type="button"
               :ref="(el) => (thumbRefs[index] = el as HTMLElement)"
               @click="selectImage(index)"
               :class="[
                 'shrink-0 rounded-md overflow-hidden transition-all duration-200 border-3 hover:cursor-pointer',
                 index === currentImageIndex
-                  ? 'border-black-600'
+                  ? 'border-black'
                   : 'hover:scale-105 border-transparent',
               ]"
             >
               <NuxtImg
                 v-if="image.url"
                 :src="image.url"
-                :alt="locale === 'lt' ? image.alt : image.altEN"
+                :alt="altOf(image)"
+                width="112"
+                height="112"
+                fit="cover"
                 class="w-28 h-28 object-cover"
               />
             </button>

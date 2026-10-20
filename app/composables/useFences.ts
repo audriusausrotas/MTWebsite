@@ -1,5 +1,7 @@
+import type { WebsiteFence } from "#shared/types/website";
+
 export const useFences = () => {
-  const fences = useState("fences", () => [] as any[]);
+  const fences = useState("fences", () => [] as WebsiteFence[]);
 
   const segmentFences = computed(() => fences.value.filter((f) => f.category === "Segmentas"));
 

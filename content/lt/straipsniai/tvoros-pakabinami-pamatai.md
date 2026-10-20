@@ -11,6 +11,7 @@ keywords:
   - sklypo aptvėrimas
 image: "/images/tvoros/dilė.jpg"
 date: 2026-01-28
+translation: "/articles/fence-hanging-foundations-why-do-you-need-them"
 ---
 
 # Tvoros pakabinami pamatai – kodėl jums jų reikia?

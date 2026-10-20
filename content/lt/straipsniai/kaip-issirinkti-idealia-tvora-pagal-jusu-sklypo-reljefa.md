@@ -11,6 +11,7 @@ keywords:
   - tvoros montavimas
 image: "/images/tvoros/kaip-issirinkti-tvora.jpg"
 date: 2026-01-28
+translation: "/articles/how-to-choose-perfect-fence-according-to-your-plot-terrain"
 ---
 
 # Kaip išsirinkti idealią tvorą pagal jūsų sklypo reljefą?

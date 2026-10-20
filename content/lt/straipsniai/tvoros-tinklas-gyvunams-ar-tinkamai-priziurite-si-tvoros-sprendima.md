@@ -11,6 +11,7 @@ keywords:
   - miško tinklas
 image: "/images/tvoros/tvora6.jpg"
 date: 2026-01-28
+translation: "/articles/fence-netting-for-animals-are-you-properly-maintaining-this-fence-solution"
 ---
 
 # Tvoros tinklas gyvūnams – ar tinkamai prižiūrite šį tvoros sprendimą?

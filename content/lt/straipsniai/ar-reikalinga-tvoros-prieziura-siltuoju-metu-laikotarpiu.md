@@ -12,6 +12,7 @@ keywords:
   - tvoros ilgaamžiškumas
 image: "/images/tvoros/tvora9.jpg"
 date: 2026-01-28
+translation: "/articles/fence-maintenance-during-warm-season"
 ---
 
 # Ar reikalinga tvoros priežiūra šiltuoju metų laikotarpiu?

@@ -13,6 +13,7 @@ keywords:
   - fence project
 image: "/images/tvoros/tvora2.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-kaina-kiek-kainuoja-tvora"
 ---
 
 # Fence Price – How Much Does a Fence Cost?

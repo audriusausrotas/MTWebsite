@@ -181,7 +181,7 @@ Duomenys naudojami tik užklausos įvykdymui ir saugomi iki 1 metų.
 ## Kontaktas
 
 MB „Moderni tvora“  
-Bardauskų g. 18, LT‑70319 Bardauskai, Lietuva  
+Lauko g. 1, Trakiškių k., LT-69492 Marijampolės sav., Lietuva  
 Tel. +370 663 47011
 
 ---

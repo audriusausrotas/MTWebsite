@@ -12,6 +12,7 @@ keywords:
   - utility pipes
 image: "/images/tvoros/tvora10.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-statyba-dazniausiai-daromos-klaidos"
 ---
 
 # Fence Construction: Most Common Mistakes

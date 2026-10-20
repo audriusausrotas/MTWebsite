@@ -11,6 +11,7 @@ keywords:
   - Feldhaus Klinker
 image: "/images/tvoros/tvora15.jpg"
 date: 2026-01-28
+translation: "/articles/clinker-tiles-or-clinker-bricks-which-is-better-to-choose"
 ---
 
 # Klinkerio plytelės ar klinkerio plytos – ką geriau rinktis?

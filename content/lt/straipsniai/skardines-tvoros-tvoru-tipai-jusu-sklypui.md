@@ -13,6 +13,7 @@ keywords:
   - moderni tvora
 image: "/images/tvoros/tvora21.jpg"
 date: 2026-01-28
+translation: "/articles/steel-fences-types-for-your-plot"
 ---
 
 # Skardinės tvoros – tvorų tipai jūsų sklypui

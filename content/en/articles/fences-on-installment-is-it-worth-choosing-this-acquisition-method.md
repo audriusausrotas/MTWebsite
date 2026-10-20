@@ -11,6 +11,7 @@ keywords:
   - financial flexibility
 image: "/images/tvoros/tvora15.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvoros-issimoketinai-ar-verta-pasirinkti-si-tvoros-isigijimo-buda"
 ---
 
 # Fences on Installment – Is It Worth Choosing This Acquisition Method?

@@ -1,2 +1,4 @@
-User-Agent: *
-Allow: *
+User-agent: *
+Allow: /
+
+Sitemap: https://modernitvora.lt/sitemap.xml

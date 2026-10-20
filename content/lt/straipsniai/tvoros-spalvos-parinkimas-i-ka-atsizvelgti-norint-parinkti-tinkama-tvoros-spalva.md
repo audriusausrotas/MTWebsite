@@ -11,6 +11,7 @@ keywords:
   - tvoros spalvos parinkimas
 image: "/images/tvoros/modernitvora-4372-1.jpg"
 date: 2026-01-28
+translation: "/articles/fence-colors-selection-what-to-consider-when-choosing-suitable-fence-color"
 ---
 
 # Tvoros spalvos parinkimas: į ką atsižvelgti norint parinkti tinkamą tvoros spalvą?

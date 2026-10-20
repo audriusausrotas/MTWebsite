@@ -11,6 +11,7 @@ keywords:
   - moderni tvora
 image: "/images/tvoros/tvora21.jpg"
 date: 2026-01-28
+translation: "/articles/outdoor-mailbox-consoles-important-fence-element-often-forgotten"
 ---
 
 # Lauko pašto dėžutės-konsolės: svarbus tvoros elementas, kurį dažnas pamiršta?

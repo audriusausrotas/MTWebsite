@@ -11,6 +11,7 @@ keywords:
   - gate automation
 image: "/images/tvoros/tvora14.jpg"
 date: 2026-01-28
+translation: "/straipsniai/stumdomi-kiemo-vartai-ar-atveriami-kiemo-vartai-kurie-tinkami-man"
 ---
 
 # Sliding or Swing Yard Gates – Which Are Suitable for Me?

@@ -12,6 +12,7 @@ keywords:
   - fence durability
 image: "/images/tvoros/tvora9.jpg"
 date: 2026-01-28
+translation: "/straipsniai/ar-reikalinga-tvoros-prieziura-siltuoju-metu-laikotarpiu"
 ---
 
 # Is Fence Maintenance Required During the Warm Season?

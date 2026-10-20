@@ -12,6 +12,7 @@ keywords:
   - pet protection
 image: "/images/tvoros/eglėplus.jpg"
 date: 2026-01-28
+translation: "/straipsniai/tvora-kaip-apsaugos-priemone-i-ka-reikia-atsizvelgti"
 ---
 
 # Fence as Protection Measure: What to Consider?

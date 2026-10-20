@@ -2,10 +2,12 @@
 definePageMeta({
   breadcrumb: "straipsniai",
 });
+
+useSeo("straipsniai");
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="straipsniai">
+  <BaseWrapper>
     <ArticlesMain />
   </BaseWrapper>
 </template>

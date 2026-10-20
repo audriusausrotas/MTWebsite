@@ -11,6 +11,7 @@ keywords:
   - korozijos prevencija
 image: "/images/tvoros/tvora7.jpg"
 date: 2026-01-28
+translation: "/articles/is-steel-fence-maintenance-required"
 ---
 
 # Ar reikalinga skardinės tvoros priežiūra?

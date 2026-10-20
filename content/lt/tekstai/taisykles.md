@@ -24,7 +24,7 @@ Rangovas – MB „Moderni tvora“, priimanti įsipareigojimą pagaminti ir per
 
 1.3. Gamybos terminai yra nurodomi Komerciniame pasiūlyme ir skaičiuojami nuo avansinio mokėjimo datos. Avanso suma yra nurodyta komerciniame pasiūlyme. Avanso mokėjimas taip pat yra šių sąlygų patvirtinimas, kad Užsakovas susipažino ir sutinka su pasiūlyta paslauga ir kaina.
 
-1.4. Užsakovas privalo atlikti likusį užsakymo apmokėjimą iki Produkcijos atsiėmimo iš Rangovo sandėlio (Bardauskų g. 18, Bardauskai) arba prieš Produkcijos pristatymą Užsakovo nurodytu adresu (papildomai užsakoma paslauga).
+1.4. Užsakovas privalo atlikti likusį užsakymo apmokėjimą iki Produkcijos atsiėmimo iš Rangovo sandėlio (Lauko g. 1, Trakiškių k., Marijampolės sav.) arba prieš Produkcijos pristatymą Užsakovo nurodytu adresu (papildomai užsakoma paslauga).
 
 1.5. Produkcijos nuosavybės teisė Užsakovui pereina tik po pilno atsiskaitymo už ją. Neapmokėjus pilnos Komerciniame pasiūlyme nustatytos užsakymo sumos, tvoros įranga laikoma Rangovo nuosavybe.
 

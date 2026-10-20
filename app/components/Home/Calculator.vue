@@ -4,7 +4,13 @@ const localePath = useLocalePath();
 
 <template>
   <div class="flex lg:flex-row flex-col text-white w-full max-w-default px-4 m-auto">
-    <NuxtImg src="/images/tvoros/tvora5.jpg" alt="" class="w-full object-cover max-h-100" />
+    <NuxtImg
+      src="/images/tvoros/tvora5.jpg"
+      alt=""
+      sizes="sm:100vw md:100vw lg:800px"
+      loading="lazy"
+      class="w-full object-cover max-h-100"
+    />
     <div
       class="bg-red-main p-8 lg:max-w-100 w-full flex flex-col gap-8 justify-center max-w-[calc(100%-32px)] mx-auto -mt-40 lg:m-0"
     >

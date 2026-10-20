@@ -11,6 +11,7 @@ keywords:
   - skardinės tvoros
 image: "/images/tvoros/tvora20.jpg"
 date: 2026-01-28
+translation: "/articles/highest-standard-alba-fence-panels-made-in-lithuania"
 ---
 
 # Aukščiausiais standartais sukurtos ir Lietuvoje pagamintos tvoralentės ALBA

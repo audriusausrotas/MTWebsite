@@ -12,6 +12,7 @@ keywords:
   - concrete posts
 image: "/images/tvoros/plank.jpg"
 date: 2026-01-28
+translation: "/straipsniai/stulpai-tvorai-kaip-teisingai-montuoti"
 ---
 
 # Fence Posts – How to Install Correctly?

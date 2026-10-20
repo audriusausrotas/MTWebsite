@@ -12,6 +12,7 @@ keywords:
   - paviršiniai vandenys
 image: "/images/tvoros/tvora4.jpg"
 date: 2026-01-28
+translation: "/articles/fence-installation-diy-or-with-masters-help-what-to-choose"
 ---
 
 # Tvoros montavimas pačiam ar tvorų meistrų pagalba: ką pasirinkti?

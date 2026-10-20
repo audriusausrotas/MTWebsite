@@ -14,6 +14,7 @@ keywords:
   - Wi-Fi modulis
 image: "/images/tvoros/tvora14.jpg"
 date: 2026-01-28
+translation: "/articles/fence-gates-wickets-and-gate-automation-what-you-need-to-know"
 ---
 
 # Tvoros vartai, varteliai ir vartų automatika – ką reikia žinoti?
@@ -55,8 +56,8 @@ Jie:
 - gali būti ilgesni ir tvirtesni.
 
 Tačiau būtina užtikrinti, kad šalia tvoros būtų pakankamai vietos vartams nuslinkti.  
-Stumdomiems vartams reikia **dvigubai daugiau laisvos vietos**, nei yra jų ilgis.  
-Pvz., 5 m vartams reikia apie **7 m laisvos zonos** palei tvorą.
+Stumdomiems vartams reikia **maždaug pusantro karto daugiau laisvos vietos**, nei yra jų ilgis (vartų ilgis × 1,5).  
+Pvz., 5 m vartams reikia apie **7,5 m laisvos zonos** palei tvorą.
 
 Svarbu: patvorė neturi būti apželdinta ar užstatyta.
 

@@ -2,42 +2,8 @@
 definePageMeta({
   breadcrumb: "pristatymas-ir-grazinimas",
 });
-
-const { locale } = useI18n();
-
-const filePath = `/tekstai/pristatymas`;
-
-const { data: page } = await useAsyncData(
-  filePath,
-  () => {
-    return queryCollection(`content_${locale.value}`).path(filePath).first();
-  },
-  { watch: [locale], server: false },
-);
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="pristatymas-ir-grazinimas">
-    <ContentRenderer v-if="page" :value="page" class="prose prose-lg max-w-default w-full" />
-  </BaseWrapper>
+  <BaseContentPage path="/tekstai/pristatymas" />
 </template>
-
-<style scoped>
-.prose :where(h1) {
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-.prose :where(h2) {
-  font-size: 2rem;
-}
-
-.prose :where(h3) {
-  font-size: 1.6rem;
-}
-
-.prose :where(a) {
-  pointer-events: none;
-  text-decoration: none;
-  font-weight: 600;
-}
-</style>

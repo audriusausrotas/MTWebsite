@@ -2,10 +2,12 @@
 definePageMeta({
   breadcrumb: "tvoros",
 });
+
+useSeo("tvoros");
 </script>
 
 <template>
-  <BaseWrapper breadcrumb="tvoros">
+  <BaseWrapper>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <NuxtLinkLocale
         to="/tvoros/skardines-tvoros"
@@ -29,9 +31,5 @@ definePageMeta({
         >{{ $t("menu.segmentines-tvoros") }}</NuxtLinkLocale
       >
     </div>
-
-    <div></div>
   </BaseWrapper>
 </template>
-
-<style scoped></style>

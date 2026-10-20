@@ -13,6 +13,7 @@ keywords:
   - modern fence
 image: "/images/tvoros/tvora21.jpg"
 date: 2026-01-28
+translation: "/straipsniai/skardines-tvoros-tvoru-tipai-jusu-sklypui"
 ---
 
 # Steel Fences – Fence Types for Your Plot

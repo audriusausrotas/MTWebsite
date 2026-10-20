@@ -12,6 +12,7 @@ keywords:
   - komunaliniai vamzdžiai
 image: "/images/tvoros/tvora10.jpg"
 date: 2026-01-28
+translation: "/articles/fence-construction-most-common-mistakes"
 ---
 
 # Tvoros statyba: dažniausiai daromos klaidos

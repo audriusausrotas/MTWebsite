@@ -11,6 +11,7 @@ keywords:
   - vartų automatika
 image: "/images/tvoros/tvora14.jpg"
 date: 2026-01-28
+translation: "/articles/sliding-or-swing-yard-gates-which-are-suitable-for-me"
 ---
 
 # Stumdomi kiemo vartai ar atveriami kiemo vartai – kurie tinkami man?

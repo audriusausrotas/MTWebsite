@@ -1,0 +1,218 @@
+const resource = {
+  "menu": {
+    "pagrindinis": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Home" } },
+    "tvoros": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fences" } },
+    "skardines-tvoros": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Sheet metal fence" } },
+    "metalines-tvoros": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Metal fence" } },
+    "segmentines-tvoros": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Segment fence" } },
+    "tvoralentes": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence boards" } },
+    "kiemo-vartai": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Gates" } },
+    "lauko-zaliuzes": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Blinds" } },
+    "tvoru-skaiciuokle": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence calculator" } },
+    "galerija": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Gallery" } },
+    "apie-mus": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "About us" } },
+    "straipsniai": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Articles" } },
+    "kontaktai": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contacts" } },
+    "parduotuve": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Shop" } },
+    "taisykles": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Rules" } },
+    "privatumo-politika": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Privacy policy" } },
+    "pristatymas-ir-grazinimas": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Shipping and return" } },
+    "finansuojamas-projektas": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Funded project" } }
+  },
+  "home": {
+    "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contemporary fence solutions for your home privacy" } },
+    "projects": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Projects" } },
+    "products": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Products" } },
+    "reviews": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Reviews" } },
+    "search": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Search" } },
+    "seeMore": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "See more" } },
+    "more": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "More" } }
+  },
+  "skaiciuokle": {
+    "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence calculator" } },
+    "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Get a price quote now!" } },
+    "button": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Calculate" } }
+  },
+  "contacts": {
+    "ofisoTelNr": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "+370 663 47011" } },
+    "direktoriausTelNr": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "+370 690 36336" } },
+    "vadybininko1TelNr": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "+370 675 17745" } },
+    "vadybininko2TelNr": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "+370 600 97933" } },
+    "buhalterijosTelNr": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "+370 611 10211" } },
+    "ofisoElPastas": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "info" } },
+    "direktorius": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "andrius" } },
+    "vadybininkas1": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "audrius" } },
+    "vadybininkas2": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "dalius" } },
+    "buhalte": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "vaida" } },
+    "registracijosAdresas": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Lauko g. 1, Trakiškių k., Marijampolės sav." } },
+    "ofiso2Adresas": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Chemijos g. 4D, Kaunas" } },
+    "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contact us!" } },
+    "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Our team of professionals will answer all your questions, advise you and prepare an individual offer that meets your needs." } },
+    "button": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Send an inquiry" } },
+    "emailSubject": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Inquiry from the website" } }
+  },
+  "articles": {
+    "article": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Planning fence construction?" } },
+      "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Don't know which fence to choose? Have other questions? Contact Moderni Tvora fence specialists who, having listened to your needs, will offer an individualized solution and perform all work. Everything in one place from A to Z." } },
+      "button-text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contact" } }
+    },
+    "pagination": {
+      "previous": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Previous" } },
+      "next": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Next" } },
+      "page": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Page" } },
+      "of": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "of" } },
+      "read-more": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Read more >>" } },
+      "articles": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Articles" } }
+    }
+  },
+  "about": {
+    "aprasymas": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Moderni Tvora" } },
+      "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "„Moderni Tvora“ is a company offering contemporary fencing solutions. Our professional team, with many years of experience, helps you choose the best fence, gate, and wicket options for your company or private plot, and carries out all installation work." } }
+    },
+    "box1": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Why Us?" } },
+      "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "„Moderni Tvora“ uses the most advanced equipment, ensuring precise project execution. Our assortment includes only the highest quality materials, guaranteeing the durability of fences, gates, and wickets for your company or home." } },
+      "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/modernitvora-4688-1.jpg" } }
+    },
+    "box2": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Work Guarantee" } },
+      "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "We guarantee the quality of our work: a 2-year warranty for installation services, a 5-10 year warranty for fences, and up to 45 years for the metal sheets we use." } },
+      "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/tvora4.jpg" } }
+    },
+    "box3": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Live Consultation at the Office" } },
+      "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Visit the „Moderni Tvora“ office in Marijampolė, where you can see our materials assortment in person, consult with our specialists about your project, and receive professional advice." } },
+      "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/modernitvora-4372-1.jpg" } }
+    },
+    "cards": {
+      "card1": {
+        "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Custom Projects" } },
+        "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "For non-standard plots, we prepare individual plans, taking into account the unique terrain of the area, ensuring a perfect fence fit for your property." } },
+        "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/modernitvora-4372-1.jpg" } }
+      },
+      "card2": {
+        "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Speed" } },
+        "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "High-quality and fast project implementation from planning to fence installation – one of the fastest in the Lithuanian market." } },
+        "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/modernitvora-5139-1.jpg" } }
+      },
+      "card3": {
+        "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Modern Measurements" } },
+        "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Using the most innovative equipment, we create precise 3D plans of the area, reflecting the specific terrain of your plot." } },
+        "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/tvora4.jpg" } }
+      },
+      "card4": {
+        "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Full Project Implementation" } },
+        "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Our experienced teams ensure a smooth process, from the initial measurement to the final installation of fences, gates, and wickets." } },
+        "url": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "/images/tvoros/tvora5.jpg" } }
+      }
+    }
+  },
+  "fences": {
+    "constact": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contact us" } },
+    "getPrice": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Calculate price" } }
+  },
+  "seo": {
+    "home": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fences, yard gates and installation" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Moderni Tvora – sheet metal and segment fences, fence boards, yard gates and outdoor blinds. Production, 3D measuring and installation – all in one place." } }
+    },
+    "tvoros": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fences – sheet metal, metal, segment, fence boards" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Choose a fence for your plot: sheet metal fences, metal fences, fence boards and segment fences. Production and installation by Moderni Tvora." } }
+    },
+    "skardines-tvoros": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Sheet metal fences" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Sheet metal fences Daimond, Plank, Eglė, Žaliuzi and other profiles – solid or see-through, in various RAL colours, with installation." } }
+    },
+    "metalines-tvoros": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Metal fences" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Metal fences for your plot – durable and good-looking solutions with production and installation." } }
+    },
+    "tvoralentes": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence boards" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Metal fence boards Dilė, Alba and others – one-sided or two-sided installation, long-lasting coating and professional installation." } }
+    },
+    "segmentines-tvoros": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Segment fences" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Segment fences for private plots and business premises – various heights, galvanized and painted, with installation." } }
+    },
+    "kiemo-vartai": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Yard gates" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Sliding and swing yard gates, wickets and gate automation – production and installation." } }
+    },
+    "lauko-zaliuzes": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Outdoor blinds" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Outdoor blinds for homes and terraces – protection from the sun and prying eyes." } }
+    },
+    "tvoru-skaiciuokle": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence calculator" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Get a preliminary fence price and request an offer." } }
+    },
+    "galerija": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Gallery – completed projects" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Photos of fences, gates and fence boards installed by Moderni Tvora. Get ideas for your plot." } }
+    },
+    "straipsniai": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Articles about fences" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Advice on choosing a fence, foundations, installation, maintenance and price." } }
+    },
+    "apie-mus": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "About us" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Moderni Tvora – a fence production and installation company. 3D measuring, quality materials and experienced installation teams." } }
+    },
+    "kontaktai": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Contacts" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }, { "t": 9 }, { "t": 3 }], "s": "Contact Moderni Tvora: +370 663 47011, info@modernitvora.lt. Offices in Marijampolė and Kaunas." } }
+    },
+    "finansuojamas-projektas": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Funded project" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Information about the funded project of Moderni Tvora." } }
+    },
+    "parduotuve": {
+      "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Shop" } },
+      "description": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fence materials and accessories." } }
+    }
+  },
+  "footer": {
+    "rights": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "All rights reserved." } },
+    "companyCode": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Company code" } },
+    "vatCode": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "VAT code" } },
+    "bank": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Bank" } },
+    "account": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Bank account" } }
+  },
+  "search": {
+    "open": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Search" } },
+    "placeholder": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Search fences and articles" } },
+    "noResults": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Nothing found" } },
+    "fences": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Fences" } },
+    "articles": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Articles" } }
+  },
+  "nav": {
+    "openMenu": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Open menu" } },
+    "closeMenu": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Close menu" } },
+    "language": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Language" } },
+    "home": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Moderni Tvora – home" } },
+    "breadcrumbs": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Breadcrumb" } }
+  },
+  "gallery": {
+    "previous": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Previous photo" } },
+    "next": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Next photo" } },
+    "close": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Close" } }
+  },
+  "error": {
+    "notFoundTitle": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Page not found" } },
+    "notFoundText": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "This page does not exist or has been moved." } },
+    "title": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Something went wrong" } },
+    "text": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Please try again a little later." } },
+    "back": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Back to home page" } }
+  },
+  "map": {
+    "google": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Open in Google Maps" } },
+    "waze": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Open in Waze" } }
+  }
+};
+
+export { resource as default };
+//# sourceMappingURL=en-Bt3ht59h.mjs.map

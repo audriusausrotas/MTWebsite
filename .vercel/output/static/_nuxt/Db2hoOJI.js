@@ -1,0 +1,1 @@
+import{_ as e}from"./Blq-OXRY.js";import{u as t}from"./VWj2hxkg.js";import{d as a,e as r,o as n}from"./Dc0Zbi09.js";const u=a({__name:"kiemo-vartai",setup(_){return t("kiemo-vartai"),(m,p)=>{const o=e;return n(),r(o)}}});export{u as default};
