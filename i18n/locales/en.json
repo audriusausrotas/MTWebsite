@@ -8,7 +8,7 @@
     "tvoralentes": "Fence boards",
     "kiemo-vartai": "Gates",
     "lauko-zaliuzes": "Blinds",
-    "tvoru-skaiciuokle": "Fence calculator",
+    "tvoru-skaiciuokle": "Calculator",
     "galerija": "Gallery",
     "apie-mus": "About us",
     "straipsniai": "Articles",
@@ -51,7 +51,17 @@
     "title": "Contact us!",
     "text": "Our team of professionals will answer all your questions, advise you and prepare an individual offer that meets your needs.",
     "button": "Send an inquiry",
-    "emailSubject": "Inquiry from the website"
+    "emailSubject": "Inquiry from the website",
+    "teamTitle": "Our team",
+    "roles": {
+      "director": "Director",
+      "manager": "Sales manager",
+      "accountant": "Accountant"
+    },
+    "offices": {
+      "marijampole": "Marijampolė",
+      "kaunas": "Kaunas"
+    }
   },
   "articles": {
     "article": {
@@ -66,7 +76,8 @@
       "of": "of",
       "read-more": "Read more >>",
       "articles": "Articles"
-    }
+    },
+    "related": "More articles"
   },
   "about": {
     "aprasymas": {
@@ -109,7 +120,8 @@
         "text": "Our experienced teams ensure a smooth process, from the initial measurement to the final installation of fences, gates, and wickets.",
         "url": "/images/tvoros/tvora5.jpg"
       }
-    }
+    },
+    "awardsAlt": "Moderni Tvora awards: Stipriausi Lietuvoje (Strongest in Lithuania) and European Business Masters"
   },
   "fences": {
     "constact": "Contact us",
@@ -328,7 +340,7 @@
     }
   },
   "calc": {
-    "intro": "Put your fence together in a few steps and see a preliminary price right away. No contact details needed.",
+    "intro": "Put your fence together in a few steps and see a preliminary estimate right away. No contact details needed.",
     "unavailable": "The calculator is unavailable right now. Write or call us and we will calculate the price ourselves.",
     "photos": "Photos",
     "steps": {
@@ -338,7 +350,9 @@
       "size": "Height and length",
       "sizeGates": "Gate height",
       "gates": "Gates and wickets",
-      "install": "Installation"
+      "install": "Installation",
+      "blinds": "Blinds",
+      "openings": "Opening sizes"
     },
     "scope": {
       "fence": "Fence",
@@ -346,7 +360,9 @@
       "both": "Fence and gates",
       "bothText": "Fence with a gate or wickets",
       "gates": "Gates only",
-      "gatesText": "A gate or wicket for an existing fence"
+      "gatesText": "A gate or wicket for an existing fence",
+      "blinds": "Outdoor blinds",
+      "blindsText": "Blinds for a terrace or pergola"
     },
     "model": {
       "hint": "Click “Photos” to see how the fence looks on real sites.",
@@ -404,19 +420,20 @@
       "zinc": "Galvanised"
     },
     "size": {
-      "height": "Height",
-      "other": "Other",
-      "customHeight": "Height, cm",
-      "heightHint": "From {min} to {max} cm",
-      "length": "Total fence length, m",
-      "lengthHint": "Length of all sides without gates and wickets. From {min} to {max} m, half metres allowed, e.g. 25.5.",
+      "height": "Fence height, cm",
+      "heightHint": "From {min} to {max} cm.",
       "parts": "What is included",
       "full": "With posts and base panels",
       "fullText": "Complete set",
       "poles": "With posts only",
       "polesText": "No base panels",
       "none": "No posts or base panels",
-      "noneText": "Fence infill only"
+      "noneText": "Fence infill only",
+      "gateHeight": "Gate height, cm",
+      "suggested": "Heights for the chosen profile and privacy level (slat pitch {step} cm):",
+      "segmentHeights": "Segment heights, cm:",
+      "length": "Total fence length, m",
+      "lengthHint": "Length of all sides of this fence without gates and wickets. From {min} to {max} m, half metres allowed, e.g. 25.5."
     },
     "gates": {
       "gate": "Driveway gate",
@@ -429,7 +446,15 @@
       "withAutomatics": "With automation",
       "withoutAutomatics": "Without automation",
       "wickets": "Wickets",
-      "wicketsHint": "The standard wicket width is 1 m."
+      "wicketsHint": "The standard wicket width is 1 m.",
+      "made": "Made to order",
+      "madeText": "A frame with your fence infill, made to the exact width.",
+      "kit": "Ready-made kit",
+      "kitText": "Factory-made segment gates – swing only.",
+      "segment": "Segment swing gate",
+      "wicketType": "Wicket type",
+      "wicketMade": "Made to order",
+      "wicketKit": "Segment (kit)"
     },
     "install": {
       "yes": "With installation",
@@ -439,19 +464,16 @@
     },
     "summary": {
       "title": "Your selection",
-      "price": "Preliminary price incl. VAT",
-      "range": "{from} – {to} €",
+      "price": "Estimate incl. VAT",
       "materials": "Fence and materials",
       "gates": "Gates and wickets",
       "works": "Work and transport",
-      "about": "about {value} €",
-      "note": "The price is preliminary: it is calculated from the total length, so the exact amount is known after the plot is measured.",
+      "note": "The price is preliminary: it is calculated from the total length, and the exact estimate is prepared after the plot is measured.",
       "calculating": "Calculating…",
       "manual": "A manager will calculate the price for this option – get in touch and we will reply quickly.",
       "error": "The price could not be calculated. Try again or contact us.",
       "chooseModel": "Choose a fence model",
       "chooseColor": "Choose a colour",
-      "chooseHeight": "Choose a height",
       "enterLength": "Enter the fence length",
       "chooseGates": "Choose a gate or wickets",
       "cta": "Get an exact offer",
@@ -463,7 +485,41 @@
       "gateLine": "{type} gate {width} m × {count}, {automatics}",
       "wicketLine": "Wickets × {count}",
       "lengthLine": "{value} m",
-      "heightLine": "{value} m high"
+      "heightLine": "{value} cm high",
+      "total": "{value} €",
+      "net": "excl. VAT – {value} €",
+      "part": "{value} €",
+      "enterHeight": "Enter the fence height",
+      "chooseBlindType": "Choose a blind type",
+      "enterOpening": "Enter the opening sizes",
+      "inFence": "Fence {n}: {text}",
+      "segmentGateLine": "Segment swing gate {width} m × {count}",
+      "wicketKitLine": "Segment wickets × {count}",
+      "openingLine": "{width} × {height} cm × {count}",
+      "blindMaterials": "Blinds and materials",
+      "blindNote": "The price is preliminary: the exact estimate is prepared after the openings are measured."
+    },
+    "fences": {
+      "tab": "Fence {n}",
+      "gatesTab": "Gate {n}",
+      "add": "Add another fence",
+      "addGates": "Add another gate",
+      "remove": "Remove",
+      "hint": "If you want different fences on different sides of the plot, add each one separately."
+    },
+    "blinds": {
+      "type": "Blind type",
+      "direction": "Direction",
+      "Horizontali": "Horizontal",
+      "Vertikali": "Vertical",
+      "openingsHint": "Enter the width and height of each opening in centimetres. Use “Quantity” for identical openings.",
+      "opening": "Opening {n}",
+      "width": "Width, cm",
+      "height": "Height, cm",
+      "count": "Quantity",
+      "add": "Add opening",
+      "remove": "Remove opening",
+      "range": "Width from {wmin} to {wmax} cm, height from {hmin} to {hmax} cm."
     }
   },
   "blinds": {
@@ -615,7 +671,10 @@
     "companyCode": "Company code",
     "vatCode": "VAT code",
     "bank": "Bank",
-    "account": "Bank account"
+    "account": "Bank account",
+    "menu": "Menu",
+    "details": "Company details",
+    "info": "Information"
   },
   "search": {
     "open": "Search",
@@ -635,7 +694,9 @@
     "previous": "Previous photo",
     "next": "Next photo",
     "close": "Close",
-    "enlarge": "Enlarge photo"
+    "enlarge": "Enlarge photo",
+    "all": "All",
+    "showMore": "Show more"
   },
   "error": {
     "notFoundTitle": "Page not found",
@@ -647,5 +708,9 @@
   "map": {
     "google": "Open in Google Maps",
     "waze": "Open in Waze"
+  },
+  "shop": {
+    "title": "The shop is on its way",
+    "text": "We are still building the online shop. In the meantime you can order fences, gates and outdoor blinds by contacting us – we will advise you and prepare an offer."
   }
 }

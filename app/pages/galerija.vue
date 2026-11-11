@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   breadcrumb: "galerija",
+  hero: "/images/tvoros/tvora12.jpg",
 });
 
 useSeo("galerija");
@@ -10,7 +11,7 @@ await loadSiteData("gallery");
 
 <template>
   <BaseWrapper>
-    <GalleryMain />
+    <GalleryMain filters />
   </BaseWrapper>
 </template>
 

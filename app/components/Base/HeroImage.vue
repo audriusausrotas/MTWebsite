@@ -4,30 +4,35 @@ interface Props {
   name?: string;
   heading?: boolean;
   breadcrumbs?: boolean;
+  // ilgas pavadinimas (pvz. straipsnio) – mažesnis šriftas
+  small?: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
   url: "/images/hero1.jpg",
   name: "",
   heading: true,
   breadcrumbs: true,
+  small: false,
 });
 </script>
 
 <template>
   <div>
-    <div class="relative w-full h-80">
+    <!-- pavadinimas prispaustas prie apačios: ilgas pavadinimas auga į viršų, o ne išlenda iš juostos -->
+    <div class="relative w-full min-h-80 flex items-end overflow-hidden">
       <NuxtImg
         :src="url"
         alt=""
         sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-        class="w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative max-w-default w-full m-auto">
+      <div class="absolute inset-0 bg-linear-to-t from-black/75 via-black/50 to-black/40"></div>
+      <div class="relative max-w-default w-full mx-auto px-4 pt-28 pb-12">
         <component
           :is="heading ? 'h1' : 'p'"
-          class="absolute -top-24 left-4 text-4xl font-medium text-white tracking-wide"
+          class="font-medium text-white tracking-wide text-balance max-w-220"
+          :class="small ? 'text-2xl sm:text-3xl md:text-4xl md:leading-tight' : 'text-4xl md:text-5xl'"
         >
           {{ name }}
         </component>

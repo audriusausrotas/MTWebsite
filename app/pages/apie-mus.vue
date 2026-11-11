@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   breadcrumb: "apie-mus",
+  hero: "/images/tvoros/tvora11.jpg",
 });
 
 useSeo("apie-mus");
@@ -8,11 +9,21 @@ useSeo("apie-mus");
 
 <template>
   <BaseWrapper customStyles="gap-20">
-    <div class="flex flex-col gap-12 max-w-100 w-full">
-      <h2 class="text-4xl font-medium">{{ $t("about.aprasymas.title") }}</h2>
-      <p>
-        {{ $t("about.aprasymas.text") }}
-      </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <div class="flex flex-col gap-8">
+        <h2 class="text-4xl font-medium text-center md:text-left">
+          {{ $t("about.aprasymas.title") }}
+        </h2>
+        <p>
+          {{ $t("about.aprasymas.text") }}
+        </p>
+      </div>
+      <NuxtImg
+        src="/images/sertifikatai/stipriausi.jpg"
+        :alt="$t('about.awardsAlt')"
+        sizes="sm:100vw md:50vw lg:600px"
+        class="w-full h-auto rounded-lg"
+      />
     </div>
     <BaseVideo />
     <AboutBlock

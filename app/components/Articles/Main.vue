@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import type { ArticleListItem } from "#shared/types/website";
 
-const localePath = useLocalePath();
 const { locale } = useI18n();
 const route = useRoute();
-
-const getSlug = (path: string) => path.split("/").pop() ?? "";
 
 // Sąrašas per serverio API (naršyklei nereikia content duomenų bazės)
 const { data: articles } = await useFetch<ArticleListItem[]>("/api/articles", {
@@ -14,7 +11,7 @@ const { data: articles } = await useFetch<ArticleListItem[]>("/api/articles", {
   default: () => [],
 });
 
-const perPage = 5;
+const perPage = 9;
 const totalPages = computed(() => Math.max(1, Math.ceil(articles.value.length / perPage)));
 
 // Puslapis laikomas adrese (?page=2) – „atgal“ grąžina į tą patį puslapį
@@ -29,104 +26,64 @@ const pagedArticles = computed(() => {
 });
 
 const goToPage = async (page: number) => {
+  if (page < 1 || page > totalPages.value || page === currentPage.value) return;
   await navigateTo({ query: { ...route.query, page: page > 1 ? page : undefined } });
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
-
-const nextPage = () => currentPage.value < totalPages.value && goToPage(currentPage.value + 1);
-const prevPage = () => currentPage.value > 1 && goToPage(currentPage.value - 1);
 </script>
 
 <template>
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="flex flex-col gap-8 col-span-2">
-      <div
-        v-for="item in pagedArticles"
-        :key="item.path"
-        class="flex flex-col gap-4 p-8 rounded-lg shadow-xl bg-white"
-      >
-        <NuxtImg
-          v-if="item.image"
-          :src="item.image"
-          :alt="item.title"
-          sizes="sm:100vw md:100vw lg:800px"
-          class="w-full rounded max-h-134 object-cover object-center"
-        />
-        <ContentRenderer
-          v-if="item.excerpt"
-          :value="item.excerpt"
-          :excerpt="true"
-          :components="demotedHeadings"
-          class="prose text-justify"
-        />
-        <NuxtLink
-          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item.path) } })"
-          class="font-bold text-red-600 mt-2 inline-block"
-        >
-          {{ $t("articles.pagination.read-more") }}
-        </NuxtLink>
-      </div>
-
-      <!-- Puslapiavimas -->
-
-      <div class="flex justify-center gap-4 mt-6" v-if="articles.length > perPage">
-        <BaseButton @click="prevPage" :disabled="currentPage === 1" class="bg-white">
-          {{ $t("articles.pagination.previous") }}
-        </BaseButton>
-
-        <span class="px-4 py-2"
-          >{{ $t("articles.pagination.page") }} {{ currentPage }} {{ $t("articles.pagination.of") }}
-          {{ totalPages }}</span
-        >
-
-        <BaseButton @click="nextPage" :disabled="currentPage === totalPages" class="bg-white">
-          {{ $t("articles.pagination.next") }}
-        </BaseButton>
-      </div>
+  <div class="flex flex-col gap-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ArticlesCard v-for="item in pagedArticles" :key="item.path" :article="item" />
     </div>
 
-    <!-- Navigation -->
-
-    <div
-      class="hidden lg:flex flex-col w-full max-w-96 min-w-80 gap-6 bg-white rounded-lg shadow-xl p-6 max-h-fit"
+    <!-- Puslapiavimas -->
+    <nav
+      v-if="totalPages > 1"
+      :aria-label="$t('articles.pagination.articles')"
+      class="flex flex-wrap justify-center items-center gap-2"
     >
-      <h2 class="font-semibold text-4xl text-center">
-        {{ $t("articles.pagination.articles") }}
-      </h2>
-      <div v-for="item in articles" :key="item.path">
-        <NuxtLink
-          :to="localePath({ name: 'straipsniai-slug', params: { slug: getSlug(item.path) } })"
-          class="hover:text-red-600"
-        >
-          <span class="font-medium">{{ item.title }}</span>
-        </NuxtLink>
-      </div>
-    </div>
+      <button
+        type="button"
+        :disabled="currentPage === 1"
+        :aria-label="$t('articles.pagination.previous')"
+        class="w-12 h-12 flex items-center justify-center border-2 border-red-main text-red-main transition-colors hover:cursor-pointer hover:bg-red-main hover:text-white disabled:opacity-40 disabled:cursor-default disabled:hover:bg-transparent disabled:hover:text-red-main"
+        @click="goToPage(currentPage - 1)"
+      >
+        <svg class="w-6 h-6 fill-none stroke-current stroke-2 rotate-180" viewBox="0 0 24 24">
+          <path d="M12 6 l8 6 -8 6 M4 12 h14" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        type="button"
+        :aria-label="`${$t('articles.pagination.page')} ${page}`"
+        :aria-current="page === currentPage ? 'page' : undefined"
+        class="w-12 h-12 flex items-center justify-center border-2 font-bold transition-colors hover:cursor-pointer"
+        :class="
+          page === currentPage
+            ? 'border-red-main bg-red-main text-white'
+            : 'border-gray-200 hover:border-red-main hover:text-red-main'
+        "
+        @click="goToPage(page)"
+      >
+        {{ page }}
+      </button>
+
+      <button
+        type="button"
+        :disabled="currentPage === totalPages"
+        :aria-label="$t('articles.pagination.next')"
+        class="w-12 h-12 flex items-center justify-center border-2 border-red-main text-red-main transition-colors hover:cursor-pointer hover:bg-red-main hover:text-white disabled:opacity-40 disabled:cursor-default disabled:hover:bg-transparent disabled:hover:text-red-main"
+        @click="goToPage(currentPage + 1)"
+      >
+        <svg class="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <path d="M12 6 l8 6 -8 6 M4 12 h14" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </nav>
   </div>
 </template>
-
-<style scoped>
-@media (max-width: 600px) {
-  .prose :where(h2) {
-    font-weight: 500;
-    font-size: 1.4rem;
-  }
-}
-
-@media (min-width: 600px) {
-  .prose :where(h2) {
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
-}
-.prose {
-  max-width: 100%;
-}
-.prose :where(h2) {
-  text-align: left;
-}
-.prose :where(h2) a {
-  color: inherit;
-  text-decoration: none;
-}
-</style>

@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
       :class="reverse ? 'sm:order-2' : 'sm:order-1'"
     >
       <h2 class="font-medium text-4xl text-center sm:text-left">{{ title }}</h2>
-      <p class="text-justify">
+      <p>
         {{ text }}
       </p>
       <slot />

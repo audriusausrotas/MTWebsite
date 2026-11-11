@@ -18,7 +18,7 @@ const others = computed(() => FENCE_CATEGORIES.filter((item) => item.key !== pro
       <h2 class="text-4xl font-medium text-center sm:text-left">
         {{ $t(`fences.categories.${category}.title`) }}
       </h2>
-      <p class="text-justify max-w-200">{{ $t(`fences.categories.${category}.text`) }}</p>
+      <p class="max-w-200">{{ $t(`fences.categories.${category}.text`) }}</p>
 
       <!-- greitos nuorodos į modelius -->
       <nav

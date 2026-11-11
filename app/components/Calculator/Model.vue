@@ -4,7 +4,9 @@ import type { CalculatorCategory, CalculatorModel } from "#shared/types/calculat
 // Tvoros modelis (kortelės su objektų nuotraukomis) ir nuo jo priklausantys pasirinkimai:
 // skarda, pramatomumas, tvoralenčių montavimas, spalva
 const { t, locale } = useI18n();
-const { config, selection, model, colors, selectModel, selectSteel } = useCalculator();
+const { config, fence, model, colorsOf, selectModel, selectSteel } = useCalculator();
+
+const colors = computed(() => colorsOf(fence.value));
 
 const GROUPS: { category: CalculatorCategory; title: string }[] = [
   { category: "Tvora", title: "menu.skardines-tvoros" },
@@ -38,12 +40,6 @@ const SEE_THROUGH_IMAGES: Record<string, string> = {
   pramatoma50: "/images/tvoros/tvora17.jpg",
 };
 
-// Spalvų pavyzdžiai – public/images/colors; kitoms – apytikslė RAL spalva
-const COLOR_IMAGES = ["3009", "6020", "7016", "7024", "8004", "8017", "8019", "9005"];
-const COLOR_HEX: Record<string, string> = { "6005": "#114232", Zn: "#c4c8cc" };
-
-const colorLabel = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `RAL ${color}`);
-
 const showTable = ref(false);
 </script>
 
@@ -59,7 +55,7 @@ const showTable = ref(false);
           :image="item.images[0]?.url"
           :alt="altOf(item)"
           :placeholder="!item.images.length"
-          :selected="selection.modelId === item.id"
+          :selected="fence.modelId === item.id"
           @select="selectModel(item.id)"
         >
           <button
@@ -85,14 +81,14 @@ const showTable = ref(false);
           <CalculatorCard
             :title="$t('calc.steel.premium')"
             :text="$t('calc.steel.premiumText')"
-            :selected="selection.steel === 'premium'"
+            :selected="fence.steel === 'premium'"
             @select="selectSteel('premium')"
           />
           <CalculatorCard
             v-if="model.eco"
             :title="$t('calc.steel.eco')"
             :text="$t('calc.steel.ecoText')"
-            :selected="selection.steel === 'eco'"
+            :selected="fence.steel === 'eco'"
             @select="selectSteel('eco')"
           />
         </div>
@@ -116,8 +112,8 @@ const showTable = ref(false);
             :title="$t(`calc.seeThrough.${key}`)"
             :image="SEE_THROUGH_IMAGES[key]"
             :placeholder="!SEE_THROUGH_IMAGES[key]"
-            :selected="selection.seeThrough === key"
-            @select="selection.seeThrough = key"
+            :selected="fence.seeThrough === key"
+            @select="fence.seeThrough = key"
           />
         </div>
       </div>
@@ -128,49 +124,22 @@ const showTable = ref(false);
           <CalculatorCard
             :title="$t('calc.boards.oneSided')"
             image="/images/tvoros/dilė.jpg"
-            :selected="!selection.twoSided"
-            @select="selection.twoSided = false"
+            :selected="!fence.twoSided"
+            @select="fence.twoSided = false"
           />
           <CalculatorCard
             :title="$t('calc.boards.twoSided')"
             image="/images/tvoros/tvora20.jpg"
-            :selected="selection.twoSided"
-            @select="selection.twoSided = true"
+            :selected="fence.twoSided"
+            @select="fence.twoSided = true"
           />
         </div>
       </div>
 
       <div class="flex flex-col gap-4">
         <h3 class="text-xl font-medium">{{ $t("calc.color.title") }}</h3>
-        <div class="flex flex-wrap gap-3">
-          <button
-            v-for="color in colors"
-            :key="color"
-            type="button"
-            :aria-pressed="selection.color === color"
-            class="flex flex-col items-center gap-1 p-1 border-2 rounded-lg transition-colors hover:cursor-pointer"
-            :class="selection.color === color ? 'border-red-main' : 'border-transparent hover:border-gray-300'"
-            @click="selection.color = color"
-          >
-            <!-- pavyzdžio kampe – gamintojo užrašas, todėl rodoma priartinta apatinė dalis -->
-            <span v-if="COLOR_IMAGES.includes(color)" class="block w-24 h-16 overflow-hidden rounded-md">
-              <NuxtImg
-                :src="`/images/colors/${color}.png`"
-                alt=""
-                width="192"
-                height="128"
-                class="w-full h-full object-cover scale-[2] origin-bottom-right"
-              />
-            </span>
-            <span
-              v-else
-              class="w-24 h-16 rounded-md border border-gray-200"
-              :style="{ backgroundColor: COLOR_HEX[color] ?? '#9ca3af' }"
-            ></span>
-            <span class="text-sm font-semibold">{{ colorLabel(color) }}</span>
-          </button>
-        </div>
-        <p v-if="model.steel && selection.steel === 'eco'" class="text-sm text-gray-600">
+        <CalculatorColors v-model="fence.color" :colors="colors" />
+        <p v-if="model.steel && fence.steel === 'eco'" class="text-sm text-gray-600">
           {{ $t("calc.color.ecoNote") }}
         </p>
       </div>

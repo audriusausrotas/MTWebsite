@@ -39,10 +39,11 @@ export interface SearchResult {
   path?: string;
 }
 
-// Straipsnis sąraše (content kelias: /straipsniai/... arba /articles/...; excerpt – tekstas iki <!--more-->)
+// Straipsnis sąraše (content kelias: /straipsniai/... arba /articles/...; date – YYYY-MM-DD, tik rikiavimui)
 export interface ArticleListItem {
   title: string;
   path: string;
   image?: string;
-  excerpt?: unknown;
+  description?: string;
+  date?: string;
 }

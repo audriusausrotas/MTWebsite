@@ -4,7 +4,7 @@ import type { EstimateResponse } from "#shared/types/calculator";
 // Naršyklė į MTSoft tiesiogiai nesikreipia.
 export default defineEventHandler(async (event): Promise<EstimateResponse> => {
   const body = await readBody(event);
-  if (!body || typeof body !== "object" || JSON.stringify(body).length > 4000) {
+  if (!body || typeof body !== "object" || JSON.stringify(body).length > 8000) {
     return { status: "invalid", message: "" };
   }
 
@@ -17,14 +17,13 @@ export default defineEventHandler(async (event): Promise<EstimateResponse> => {
 
     return {
       status: "ok",
-      priceFrom: Number(data.priceFrom) || 0,
-      priceTo: Number(data.priceTo) || 0,
+      price: Number(data.price) || 0,
+      priceNet: Number(data.priceNet) || 0,
       parts: {
         materials: Number(data.parts?.materials) || 0,
         gates: Number(data.parts?.gates) || 0,
         works: Number(data.parts?.works) || 0,
       },
-      area: Number(data.area) || 0,
     };
   } catch (error) {
     console.error("Nepavyko paskaičiuoti kainos MTSoft'e:", error);

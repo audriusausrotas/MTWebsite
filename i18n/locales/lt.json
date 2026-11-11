@@ -8,7 +8,7 @@
     "tvoralentes": "Tvoralentės",
     "kiemo-vartai": "Kiemo vartai",
     "lauko-zaliuzes": "Lauko žaliuzės",
-    "tvoru-skaiciuokle": "Tvorų skaičiuoklė",
+    "tvoru-skaiciuokle": "Skaičiuoklė",
     "galerija": "Galerija",
     "straipsniai": "Straipsniai",
     "apie-mus": "Apie mus",
@@ -52,7 +52,17 @@
     "title": "Susisiekite su mumis!",
     "text": "Mūsų profesionalų komanda atsakys į visus jums rūpimus klausimus, pakonsultuos ir pateiks individualų pasiūlymą, atitinkantį jūsų poreikius.",
     "button": "Siųsti užklausą",
-    "emailSubject": "Užklausa iš svetainės"
+    "emailSubject": "Užklausa iš svetainės",
+    "teamTitle": "Mūsų komanda",
+    "roles": {
+      "director": "Direktorius",
+      "manager": "Vadybininkas",
+      "accountant": "Buhalterė"
+    },
+    "offices": {
+      "marijampole": "Marijampolė",
+      "kaunas": "Kaunas"
+    }
   },
   "articles": {
     "article": {
@@ -67,7 +77,8 @@
       "of": "iš",
       "read-more": "Skaityti daugiau >>",
       "articles": "Straipsniai"
-    }
+    },
+    "related": "Kiti straipsniai"
   },
   "about": {
     "aprasymas": {
@@ -82,13 +93,13 @@
     },
     "box2": {
       "title": "Darbų garantija",
-      "text": "„Užtikrindami kokybę, atliktiems darbams suteikiame 2 metų garantiją, tvoralentėms taikoma 5-10 metų garantija, o mūsų naudojamoms skardoms suteikiama net 45 metų garantija.",
+      "text": "Užtikrindami kokybę, atliktiems darbams suteikiame 2 metų garantiją, tvoralentėms taikoma 5-10 metų garantija, o mūsų naudojamoms skardoms suteikiama net 45 metų garantija.",
       "url": "/images/tvoros/tvora4.jpg",
       "alt": ""
     },
     "box3": {
       "title": "Gyva konsultacija biure",
-      "text": "„Atvykite į „Moderni Tvora“ biurą Marijampolėje, kur galėsite gyvai apžiūrėti mūsų medžiagų asortimentą, pasikonsultuoti su specialistais dėl savo projekto ir gauti patarimų.",
+      "text": "Atvykite į „Moderni Tvora“ biurą Marijampolėje, kur galėsite gyvai apžiūrėti mūsų medžiagų asortimentą, pasikonsultuoti su specialistais dėl savo projekto ir gauti patarimų.",
       "url": "/images/tvoros/modernitvora-4372-1.jpg",
       "alt": ""
     },
@@ -117,7 +128,8 @@
         "url": "/images/tvoros/tvora5.jpg",
         "alt": ""
       }
-    }
+    },
+    "awardsAlt": "Moderni Tvora įvertinimai: „Stipriausi Lietuvoje“ ir „European Business Masters“"
   },
   "fences": {
     "constact": "Susisiekti",
@@ -336,7 +348,7 @@
     }
   },
   "calc": {
-    "intro": "Susidėliokite tvorą keliais žingsniais ir iškart pamatykite preliminarią kainą. Kontaktų palikti nereikia.",
+    "intro": "Susidėliokite tvorą keliais žingsniais ir iškart pamatykite preliminarią sąmatos kainą. Kontaktų palikti nereikia.",
     "unavailable": "Skaičiuoklė šiuo metu nepasiekiama. Parašykite arba paskambinkite – kainą paskaičiuosime patys.",
     "photos": "Nuotraukos",
     "steps": {
@@ -346,7 +358,9 @@
       "size": "Aukštis ir ilgis",
       "sizeGates": "Vartų aukštis",
       "gates": "Vartai ir varteliai",
-      "install": "Montavimas"
+      "install": "Montavimas",
+      "blinds": "Žaliuzės",
+      "openings": "Angų matmenys"
     },
     "scope": {
       "fence": "Tvora",
@@ -354,7 +368,9 @@
       "both": "Tvora ir vartai",
       "bothText": "Tvora su vartais ar varteliais",
       "gates": "Tik vartai",
-      "gatesText": "Vartai ar varteliai prie esamos tvoros"
+      "gatesText": "Vartai ar varteliai prie esamos tvoros",
+      "blinds": "Lauko žaliuzės",
+      "blindsText": "Žaliuzės terasai ar pavėsinei"
     },
     "model": {
       "hint": "Paspauskite „Nuotraukos“, kad pamatytumėte, kaip tvora atrodo objektuose.",
@@ -412,19 +428,20 @@
       "zinc": "Cinkuota"
     },
     "size": {
-      "height": "Aukštis",
-      "other": "Kitas",
-      "customHeight": "Aukštis, cm",
-      "heightHint": "Nuo {min} iki {max} cm",
-      "length": "Bendras tvoros ilgis, m",
-      "lengthHint": "Visų kraštinių ilgis be vartų ir vartelių. Nuo {min} iki {max} m, galima nurodyti pusmetrius, pvz. 25,5.",
+      "height": "Tvoros aukštis, cm",
+      "heightHint": "Nuo {min} iki {max} cm.",
       "parts": "Komplektacija",
       "full": "Su stulpais ir pamatėliais",
       "fullText": "Pilnas komplektas",
       "poles": "Tik su stulpais",
       "polesText": "Be pamatėlių (bortelių)",
       "none": "Be stulpų ir pamatėlių",
-      "noneText": "Tik tvoros užpildas"
+      "noneText": "Tik tvoros užpildas",
+      "gateHeight": "Vartų aukštis, cm",
+      "suggested": "Aukščiai pagal pasirinktą profilį ir pramatomumą (lamelių žingsnis {step} cm):",
+      "segmentHeights": "Segmentų aukščiai, cm:",
+      "length": "Bendras tvoros ilgis, m",
+      "lengthHint": "Visų šios tvoros kraštinių ilgis be vartų ir vartelių. Nuo {min} iki {max} m, galima nurodyti pusmetrius, pvz. 25,5."
     },
     "gates": {
       "gate": "Įvažiavimo vartai",
@@ -437,7 +454,15 @@
       "withAutomatics": "Su automatika",
       "withoutAutomatics": "Be automatikos",
       "wickets": "Varteliai",
-      "wicketsHint": "Standartinis vartelių plotis – 1 m."
+      "wicketsHint": "Standartinis vartelių plotis – 1 m.",
+      "made": "Gaminami pagal užsakymą",
+      "madeText": "Rėmas su jūsų tvoros užpildu, tikslaus pločio.",
+      "kit": "Gatavas komplektas",
+      "kitText": "Gamykliniai segmentiniai vartai – tik varstomi.",
+      "segment": "Segmentiniai varstomi",
+      "wicketType": "Vartelių tipas",
+      "wicketMade": "Gaminami pagal užsakymą",
+      "wicketKit": "Segmentiniai (komplektas)"
     },
     "install": {
       "yes": "Su montavimu",
@@ -447,19 +472,16 @@
     },
     "summary": {
       "title": "Jūsų pasirinkimas",
-      "price": "Preliminari kaina su PVM",
-      "range": "{from} – {to} €",
+      "price": "Sąmatos kaina su PVM",
       "materials": "Tvora ir medžiagos",
       "gates": "Vartai ir varteliai",
       "works": "Darbai ir transportas",
-      "about": "apie {value} €",
-      "note": "Kaina preliminari: skaičiuojama pagal bendrą ilgį, todėl tiksli suma paaiškėja pamatavus sklypą.",
+      "note": "Kaina preliminari: skaičiuojama pagal bendrą ilgį, tiksli sąmata sudaroma pamatavus sklypą.",
       "calculating": "Skaičiuojama…",
       "manual": "Šiam variantui kainą paskaičiuos vadybininkas – susisiekite, atsakysime greitai.",
       "error": "Nepavyko paskaičiuoti. Pabandykite dar kartą arba susisiekite su mumis.",
       "chooseModel": "Pasirinkite tvoros modelį",
       "chooseColor": "Pasirinkite spalvą",
-      "chooseHeight": "Pasirinkite aukštį",
       "enterLength": "Įveskite tvoros ilgį",
       "chooseGates": "Pasirinkite vartus arba vartelius",
       "cta": "Gauti tikslų pasiūlymą",
@@ -471,7 +493,41 @@
       "gateLine": "{type} vartai {width} m × {count}, {automatics}",
       "wicketLine": "Varteliai × {count}",
       "lengthLine": "{value} m",
-      "heightLine": "{value} m aukščio"
+      "heightLine": "{value} cm aukščio",
+      "total": "{value} €",
+      "net": "be PVM – {value} €",
+      "part": "{value} €",
+      "enterHeight": "Įveskite tvoros aukštį",
+      "chooseBlindType": "Pasirinkite žaliuzių tipą",
+      "enterOpening": "Įveskite angų matmenis",
+      "inFence": "Tvora {n}: {text}",
+      "segmentGateLine": "Segmentiniai varstomi vartai {width} m × {count}",
+      "wicketKitLine": "Segmentiniai varteliai × {count}",
+      "openingLine": "{width} × {height} cm × {count}",
+      "blindMaterials": "Žaliuzės ir medžiagos",
+      "blindNote": "Kaina preliminari: tiksli sąmata sudaroma pamatavus angas."
+    },
+    "fences": {
+      "tab": "Tvora {n}",
+      "gatesTab": "Vartai {n}",
+      "add": "Pridėti kitą tvorą",
+      "addGates": "Pridėti kitus vartus",
+      "remove": "Pašalinti",
+      "hint": "Jei skirtingose sklypo pusėse norite skirtingų tvorų, pridėkite kiekvieną atskirai."
+    },
+    "blinds": {
+      "type": "Žaliuzių tipas",
+      "direction": "Kryptis",
+      "Horizontali": "Horizontalios",
+      "Vertikali": "Vertikalios",
+      "openingsHint": "Įveskite kiekvienos angos plotį ir aukštį centimetrais. Vienodų angų kiekį nurodykite stulpelyje „Kiekis“.",
+      "opening": "Anga {n}",
+      "width": "Plotis, cm",
+      "height": "Aukštis, cm",
+      "count": "Kiekis",
+      "add": "Pridėti angą",
+      "remove": "Pašalinti angą",
+      "range": "Plotis nuo {wmin} iki {wmax} cm, aukštis nuo {hmin} iki {hmax} cm."
     }
   },
   "blinds": {
@@ -623,7 +679,10 @@
     "companyCode": "Įmonės kodas",
     "vatCode": "PVM kodas",
     "bank": "Bankas",
-    "account": "Banko sąskaita"
+    "account": "Banko sąskaita",
+    "menu": "Meniu",
+    "details": "Rekvizitai",
+    "info": "Informacija"
   },
   "search": {
     "open": "Paieška",
@@ -643,7 +702,9 @@
     "previous": "Ankstesnė nuotrauka",
     "next": "Kita nuotrauka",
     "close": "Uždaryti",
-    "enlarge": "Padidinti nuotrauką"
+    "enlarge": "Padidinti nuotrauką",
+    "all": "Visos",
+    "showMore": "Rodyti daugiau"
   },
   "error": {
     "notFoundTitle": "Puslapis nerastas",
@@ -655,5 +716,9 @@
   "map": {
     "google": "Atidaryti Google Maps",
     "waze": "Atidaryti Waze"
+  },
+  "shop": {
+    "title": "Parduotuvė jau ruošiama",
+    "text": "Internetinę parduotuvę dar kuriame. Kol kas tvoras, vartus ir lauko žaliuzes galite užsisakyti susisiekę su mumis – pakonsultuosime ir parengsime pasiūlymą."
   }
 }

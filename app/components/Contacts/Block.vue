@@ -14,7 +14,7 @@ const inquiryLink = computed(
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-default m-auto">
     <div class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center md:text-left">{{ $t("contacts.title") }}</h2>
-      <p class="text-justify w-full md:max-w-100">{{ $t("contacts.text") }}</p>
+      <p class="w-full md:max-w-100">{{ $t("contacts.text") }}</p>
       <BaseButton :href="inquiryLink" width="w-full md:w-48">{{ $t("contacts.button") }}</BaseButton>
     </div>
     <div class="flex flex-col gap-8 text-xl w-fit md:w-full md:m-0 m-auto">

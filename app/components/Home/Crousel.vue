@@ -52,7 +52,7 @@ const carouselConfig = {
         />
         <div v-else class="flex flex-col gap-4">
           <p class="text-2xl font-medium">{{ slide.name }}</p>
-          <p class="text-justify">{{ slide.text }}</p>
+          <p>{{ slide.text }}</p>
         </div>
       </div>
     </Slide>

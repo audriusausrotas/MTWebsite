@@ -3,6 +3,7 @@ import type { Image } from "~/data/interfaces";
 
 definePageMeta({
   breadcrumb: "lauko-zaliuzes",
+  hero: "/images/zaliuzes/blinds2.jpg",
 });
 
 // Turinys – pagal MTSoft viešą žaliuzių pasiūlymą (mtsoft.lt/zaliuzes), tik be kainų.
@@ -100,7 +101,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("blinds.models.title") }}</h2>
-      <p class="text-justify max-w-200">{{ $t("blinds.models.text") }}</p>
+      <p class="max-w-200">{{ $t("blinds.models.text") }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <article
           v-for="model in models"
@@ -135,7 +136,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("blinds.steel.title") }}</h2>
-      <p class="text-justify max-w-200">{{ $t("blinds.steel.text") }}</p>
+      <p class="max-w-200">{{ $t("blinds.steel.text") }}</p>
       <dl class="max-w-200 flex flex-col divide-y divide-gray-200 border-y border-gray-200">
         <div
           v-for="row in steel"
@@ -168,7 +169,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("blinds.more.title") }}</h2>
-      <p class="text-justify max-w-200">{{ $t("blinds.more.text") }}</p>
+      <p class="max-w-200">{{ $t("blinds.more.text") }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <button
           v-for="(sheet, index) in sheets"

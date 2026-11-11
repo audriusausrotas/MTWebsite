@@ -15,6 +15,8 @@ export interface CalculatorModel {
   steel: boolean;
   eco: boolean;
   seeThrough: string[];
+  // lamelių žingsnis cm pagal pramatomumą (horizontalioms skardinėms tvoroms): aukštis = lamelių skaičius × žingsnis
+  steps: Record<string, number>;
   twoSided: boolean;
   colors: string[];
   ecoColors: string[];
@@ -22,52 +24,79 @@ export interface CalculatorModel {
   variants: { name: string; height: number }[];
 }
 
+export interface CalculatorBlinds {
+  types: { name: string; material: string }[];
+  directions: string[];
+  colors: string[];
+  // cm
+  widthRange: { min: number; max: number };
+  heightRange: { min: number; max: number };
+  maxOpenings: number;
+  maxCount: number;
+}
+
 export interface CalculatorConfig {
   models: CalculatorModel[];
   // cm
-  heights: number[];
   heightRange: { min: number; max: number };
   // m
   lengthRange: { min: number; max: number };
+  maxFences: number;
   gates: {
-    // galimi pločiai cm
+    // gaminami pagal užsakymą: galimi pločiai cm
     sliding: number[];
     swing: number[];
     wicket: boolean;
+    // gatavi segmentiniai komplektai (tik varstomi, tik segmentinei tvorai): plotis × aukštis cm
+    segment: { width: number; height: number }[];
+    segmentWickets: number[];
     maxGates: number;
     maxWickets: number;
   };
+  // null – lauko žaliuzės neskaičiuojamos
+  blinds: CalculatorBlinds | null;
 }
 
-export type CalculatorScope = "fence" | "both" | "gates";
+export type CalculatorScope = "fence" | "both" | "gates" | "blinds";
+export type GateType = "sliding" | "swing" | "segment";
+
+export interface EstimateFence {
+  name: string;
+  steel: "premium" | "eco";
+  seeThrough?: string;
+  twoSided?: boolean;
+  color: string;
+  // cm
+  height: number;
+  // m
+  length?: number;
+  parts?: "full" | "poles" | "none";
+  gate?: { type: GateType; width: number; automatics: boolean; count: number } | null;
+  wickets?: number;
+  wicketType?: "made" | "segment";
+}
 
 export interface EstimateRequest {
   scope: CalculatorScope;
-  fence: {
-    name: string;
-    steel: "premium" | "eco";
-    seeThrough?: string;
-    twoSided?: boolean;
+  fences?: EstimateFence[];
+  blinds?: {
+    type: string;
+    direction: string;
     color: string;
     // cm
-    height: number;
-    // m
-    length?: number;
-    parts?: "full" | "poles" | "none";
+    openings: { width: number; height: number; count: number }[];
   };
-  gate?: { type: "sliding" | "swing"; width: number; automatics: boolean; count: number } | null;
-  wickets?: number;
   installation: boolean;
 }
 
 export type EstimateResponse =
   | {
       status: "ok";
-      // eurais su PVM
-      priceFrom: number;
-      priceTo: number;
+      // eurais: sąmatos suma su PVM ir be PVM
+      price: number;
+      priceNet: number;
+      // dalys su PVM
       parts: { materials: number; gates: number; works: number };
-      area: number;
     }
   // kainą paskaičiuos vadybininkas (kainyne kažko nerasta)
   | { status: "manual" }

@@ -13,5 +13,6 @@ export const toListItem = (doc: any): ArticleListItem => ({
   title: doc.title,
   path: doc.path,
   image: doc.image,
-  excerpt: doc.excerpt,
+  description: doc.description,
+  date: doc.date ? new Date(doc.date).toISOString().slice(0, 10) : undefined,
 });

@@ -139,7 +139,7 @@ useHead(() => ({
               class="w-4 shrink-0 transition-transform duration-300 group-open:rotate-180"
             />
           </summary>
-          <p class="pt-4 text-justify">{{ item.a }}</p>
+          <p class="pt-4">{{ item.a }}</p>
         </details>
       </div>
     </section>

@@ -25,23 +25,24 @@ useSeoMeta({
       v-if="page"
       :value="page"
       :components="demotedHeadings"
-      class="prose prose-lg max-w-default w-full"
+      class="prose max-w-200 w-full"
     />
   </BaseWrapper>
 </template>
 
 <style scoped>
+/* teisiniai tekstai: siauresnis stulpelis ir saikingos antraštės, kad būtų patogu skaityti */
 .prose :where(h2) {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 .prose :where(h3) {
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .prose :where(h4) {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
 }
 
 .prose :where(a) {

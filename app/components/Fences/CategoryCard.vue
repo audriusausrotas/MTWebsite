@@ -36,7 +36,7 @@ defineProps<{
         </svg>
       </span>
     </div>
-    <p v-if="text" class="text-justify">{{ text }}</p>
+    <p v-if="text">{{ text }}</p>
     <p v-if="models?.length" class="text-sm text-gray-600">
       <span class="font-semibold text-black">{{ $t("fences.models") }}:</span>
       {{ models.join(" · ") }}

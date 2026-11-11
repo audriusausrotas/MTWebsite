@@ -51,7 +51,7 @@ const visibleCount = computed(() => {
         </ul>
       </div>
 
-      <div v-if="text.length" class="flex flex-col gap-4 text-justify">
+      <div v-if="text.length" class="flex flex-col gap-4">
         <p v-for="(item, index) in text" v-show="index < visibleCount || expanded" :key="index">
           {{ item }}
         </p>

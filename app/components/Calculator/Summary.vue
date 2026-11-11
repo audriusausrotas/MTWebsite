@@ -1,7 +1,10 @@
 <script setup lang="ts">
-// Santrauka su preliminaria kaina. Kol nėra užklausų formos, „Gauti pasiūlymą“ atidaro laišką su pasirinkimais.
+import type { FenceSelection } from "~/composables/useCalculator";
+
+// Santrauka su sąmatos kaina. Kol nėra užklausų formos, „Gauti pasiūlymą“ atidaro laišką su pasirinkimais.
 const { t, locale } = useI18n();
-const { selection, model, result, loading, missing, hasFence, hasGates } = useCalculator();
+const { selection, result, loading, missing, hasFence, hasGates, isBlinds, modelOf, heightOf, lengthOf, wicketAvailable } =
+  useCalculator();
 
 const EMAIL = "info@modernitvora.lt";
 
@@ -12,55 +15,105 @@ const number = (value: number, digits = 0) =>
   }).format(value);
 
 const meters = (cm: number) => number(cm / 100, 2);
+const colorName = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `RAL ${color}`);
 
-// Pasirinkimų eilutės (tos pačios keliauja ir į laišką)
-const lines = computed(() => {
-  const value = selection.value;
-  const item = model.value;
-  const list: string[] = [t(`calc.scope.${value.scope}`)];
+// Vienos tvoros pasirinkimų eilutės
+const fenceLines = (item: FenceSelection) => {
+  const entry = modelOf(item);
+  const list: string[] = [];
 
-  if (item) {
+  if (entry) {
     const details = [
-      item.steel ? t(`calc.steel.${value.steel}`) : "",
-      item.seeThrough.length ? t(`calc.seeThrough.${value.seeThrough}`) : "",
-      item.twoSided ? t(value.twoSided ? "calc.boards.twoSided" : "calc.boards.oneSided") : "",
-      value.color ? (value.color === "Zn" ? t("calc.color.zinc") : `RAL ${value.color}`) : "",
+      entry.steel ? t(`calc.steel.${item.steel}`) : "",
+      entry.seeThrough.length ? t(`calc.seeThrough.${item.seeThrough}`) : "",
+      entry.twoSided ? t(item.twoSided ? "calc.boards.twoSided" : "calc.boards.oneSided") : "",
+      item.color ? colorName(item.color) : "",
     ].filter(Boolean);
-    const name = item.category === "Segmentas" ? t("calc.model.segment") : item.name;
+    const name = entry.category === "Segmentas" ? t("calc.model.segment") : entry.name;
     list.push([name, ...details].join(", "));
   }
 
+  const height = heightOf(item);
+  const length = lengthOf(item);
   const size = [
-    value.height ? t("calc.summary.heightLine", { value: meters(value.height) }) : "",
-    hasFence.value && value.length ? t("calc.summary.lengthLine", { value: number(value.length, 1) }) : "",
+    height ? t("calc.summary.heightLine", { value: height }) : "",
+    hasFence.value && length ? t("calc.summary.lengthLine", { value: number(length, 1) }) : "",
   ].filter(Boolean);
   if (size.length) list.push(size.join(", "));
 
-  if (hasFence.value) list.push(t(`calc.size.${value.parts}`));
+  if (hasFence.value) list.push(t(`calc.size.${item.parts}`));
 
   if (hasGates.value) {
-    if (value.gateType !== "none" && value.gateWidth) {
+    if (item.gateType === "segment" && item.gateWidth) {
+      list.push(t("calc.summary.segmentGateLine", { width: meters(item.gateWidth), count: item.gateCount }));
+    } else if (item.gateType !== "none" && item.gateWidth) {
       list.push(
         t("calc.summary.gateLine", {
-          type: t(`calc.gates.${value.gateType}`),
-          width: meters(value.gateWidth),
-          count: value.gateCount,
-          automatics: t(value.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase(),
+          type: t(`calc.gates.${item.gateType}`),
+          width: meters(item.gateWidth),
+          count: item.gateCount,
+          automatics: t(item.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase(),
         }),
       );
     }
-    if (value.wickets > 0) list.push(t("calc.summary.wicketLine", { count: value.wickets }));
+    if (item.wickets > 0 && wicketAvailable(item)) {
+      list.push(
+        t(item.wicketType === "segment" ? "calc.summary.wicketKitLine" : "calc.summary.wicketLine", {
+          count: item.wickets,
+        }),
+      );
+    }
   }
 
-  list.push(t(value.installation ? "calc.install.yes" : "calc.install.no"));
   return list;
+};
+
+// Santraukos grupės: po vieną kiekvienai tvorai (pavadinimas rodomas, kai tvorų kelios) arba žaliuzėms
+const groups = computed(() => {
+  const value = selection.value;
+
+  if (isBlinds.value) {
+    const blinds = value.blinds;
+    return [
+      {
+        title: "",
+        lines: [
+          [blinds.type, t(`calc.blinds.${blinds.direction}`), blinds.color ? colorName(blinds.color) : ""]
+            .filter(Boolean)
+            .join(", "),
+          ...blinds.openings
+            .filter((opening) => opening.widthText.trim() && opening.heightText.trim())
+            .map((opening) =>
+              t("calc.summary.openingLine", {
+                width: opening.widthText.trim(),
+                height: opening.heightText.trim(),
+                count: opening.count,
+              }),
+            ),
+        ].filter(Boolean),
+      },
+    ];
+  }
+
+  return value.fences.map((item, index) => ({
+    title:
+      value.fences.length > 1 ? t(hasFence.value ? "calc.fences.tab" : "calc.fences.gatesTab", { n: index + 1 }) : "",
+    lines: fenceLines(item),
+  }));
+});
+
+const scopeLine = computed(() => t(`calc.scope.${selection.value.scope}`));
+const installLine = computed(() => t(selection.value.installation ? "calc.install.yes" : "calc.install.no"));
+
+const missingText = computed(() => {
+  if (!missing.value) return "";
+  const text = t(`calc.summary.${missing.value.key}`);
+  return missing.value.fence ? t("calc.summary.inFence", { n: missing.value.fence, text }) : text;
 });
 
 const price = computed(() => (result.value?.status === "ok" ? result.value : null));
 
-const priceText = computed(() =>
-  price.value ? t("calc.summary.range", { from: number(price.value.priceFrom), to: number(price.value.priceTo) }) : "",
-);
+const priceText = computed(() => (price.value ? t("calc.summary.total", { value: number(price.value.price) }) : ""));
 
 const parts = computed(() =>
   !price.value
@@ -68,8 +121,8 @@ const parts = computed(() =>
     : (["materials", "gates", "works"] as const)
         .filter((key) => price.value!.parts[key] > 0)
         .map((key) => ({
-          label: t(`calc.summary.${key}`),
-          value: t("calc.summary.about", { value: number(price.value!.parts[key]) }),
+          label: t(key === "materials" && isBlinds.value ? "calc.summary.blindMaterials" : `calc.summary.${key}`),
+          value: t("calc.summary.part", { value: number(price.value!.parts[key]) }),
         })),
 );
 
@@ -82,7 +135,13 @@ const offerLink = computed(() =>
     [
       t("calc.summary.emailIntro"),
       "",
-      ...lines.value.map((line) => `- ${line}`),
+      scopeLine.value,
+      ...groups.value.flatMap((group) => [
+        ...(group.title ? ["", `${group.title}:`] : []),
+        ...group.lines.map((line) => `- ${line}`),
+      ]),
+      "",
+      installLine.value,
       ...(priceText.value ? ["", `${t("calc.summary.price")}: ${priceText.value}`] : []),
       "",
     ].join("\n"),
@@ -98,28 +157,36 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
   <aside id="calc-summary" class="flex flex-col gap-5 p-6 border border-gray-200 rounded-lg shadow-lg bg-white">
     <h2 class="text-2xl font-bold">{{ $t("calc.summary.title") }}</h2>
 
-    <ul class="flex flex-col gap-2">
-      <li v-for="line in lines" :key="line" class="flex gap-3">
-        <span class="mt-2 w-2 h-2 shrink-0 bg-red-main"></span>
-        <span>{{ line }}</span>
-      </li>
-    </ul>
+    <div class="flex flex-col gap-4">
+      <p class="font-bold">{{ scopeLine }}</p>
+      <div v-for="(group, index) in groups" :key="index" class="flex flex-col gap-2">
+        <p v-if="group.title" class="text-sm font-bold uppercase tracking-wide text-red-main">{{ group.title }}</p>
+        <ul class="flex flex-col gap-2">
+          <li v-for="line in group.lines" :key="line" class="flex gap-3">
+            <span class="mt-2 w-2 h-2 shrink-0 bg-red-main"></span>
+            <span>{{ line }}</span>
+          </li>
+        </ul>
+      </div>
+      <p class="font-medium">{{ installLine }}</p>
+    </div>
 
     <div class="flex flex-col gap-3 pt-5 border-t border-gray-200" aria-live="polite">
-      <p v-if="missing" class="font-medium text-gray-600">{{ $t(`calc.summary.${missing}`) }}</p>
+      <p v-if="missing" class="font-medium text-gray-600">{{ missingText }}</p>
 
       <template v-else-if="price">
         <p class="text-sm text-gray-600">{{ $t("calc.summary.price") }}</p>
-        <p class="text-3xl font-bold transition-opacity" :class="loading ? 'opacity-40' : ''">
+        <p class="text-4xl font-bold transition-opacity" :class="loading ? 'opacity-40' : ''">
           {{ priceText }}
         </p>
+        <p class="text-sm text-gray-600 -mt-2">{{ $t("calc.summary.net", { value: number(price.priceNet) }) }}</p>
         <dl class="flex flex-col gap-1 text-sm">
           <div v-for="part in parts" :key="part.label" class="flex justify-between gap-4">
             <dt class="text-gray-600">{{ part.label }}</dt>
             <dd class="font-semibold whitespace-nowrap">{{ part.value }}</dd>
           </div>
         </dl>
-        <p class="text-xs text-gray-500">{{ $t("calc.summary.note") }}</p>
+        <p class="text-xs text-gray-500">{{ $t(isBlinds ? "calc.summary.blindNote" : "calc.summary.note") }}</p>
       </template>
 
       <p v-else-if="loading || !result" class="font-medium text-gray-600">

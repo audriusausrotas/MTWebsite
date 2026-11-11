@@ -3,10 +3,12 @@ import type { CalculatorScope, EstimateResponse } from "#shared/types/calculator
 
 // Skaičiuoklė: žingsniai kairėje, santrauka su kaina dešinėje (telefone – juosta apačioje).
 // Kaina perskaičiuojama po kiekvieno pasirinkimo (MTSoft, per /api/estimate).
+// Viename skaičiavime gali būti kelios tvoros – žingsniai rodomi pasirinktai (aktyviai) tvorai.
 const { t, locale } = useI18n();
 const {
   config,
   selection,
+  fence,
   model,
   result,
   loading,
@@ -14,24 +16,44 @@ const {
   request,
   hasFence,
   hasGates,
+  isBlinds,
+  modelOf,
+  heightOf,
+  heightValid,
+  heightOptions,
+  lengthValid,
+  gateWidthsOf,
+  segmentGateWidths,
+  segmentWicket,
+  wicketAvailable,
+  setHeight,
   selectScope,
   selectGate,
+  addFence,
+  removeFence,
 } = useCalculator();
 
-const SCOPES: { key: CalculatorScope; image: string; contain?: boolean }[] = [
-  { key: "fence", image: "/images/tvoros/daimond6090.jpg" },
-  { key: "both", image: "/images/tvoros/tvora14.jpg" },
-  { key: "gates", image: "/images/vartai/stumdomi-vartai.png", contain: true },
-];
+const SCOPES = computed(() =>
+  (
+    [
+      { key: "fence", image: "/images/tvoros/daimond6090.jpg" },
+      { key: "both", image: "/images/tvoros/tvora14.jpg" },
+      { key: "gates", image: "/images/vartai/stumdomi-vartai.png", contain: true },
+      { key: "blinds", image: "/images/zaliuzes/blinds.jpg" },
+    ] as { key: CalculatorScope; image: string; contain?: boolean }[]
+  ).filter((scope) => scope.key !== "blinds" || config.value?.blinds),
+);
 
 const GATE_IMAGES = {
   sliding: "/images/vartai/stumdomi-vartai.png",
   swing: "/images/vartai/varstomi-vartai.png",
 } as const;
 
-// Žingsnių numeriai priklauso nuo to, ar yra vartų žingsnis
+// Žingsnių numeriai priklauso nuo to, kas skaičiuojama
 const steps = computed(() => {
-  const list = ["scope", "model", "size", ...(hasGates.value ? ["gates"] : []), "install"];
+  const list = isBlinds.value
+    ? ["scope", "blinds", "install"]
+    : ["scope", "model", "size", ...(hasGates.value ? ["gates"] : []), "install"];
   return Object.fromEntries(list.map((key, index) => [key, index + 1])) as Record<string, number>;
 });
 
@@ -39,59 +61,34 @@ const number = (value: number, digits = 2) =>
   new Intl.NumberFormat(locale.value === "en" ? "en-GB" : "lt-LT", { maximumFractionDigits: digits }).format(value);
 const meters = (cm: number) => `${number(cm / 100)} m`;
 
+// ---------- tvorų kortelės
+
+const tabName = (index: number) => {
+  const item = selection.value.fences[index]!;
+  const entry = modelOf(item);
+  const label = t(hasFence.value ? "calc.fences.tab" : "calc.fences.gatesTab", { n: index + 1 });
+  const name = entry ? (entry.category === "Segmentas" ? t("calc.model.segment") : entry.name) : "";
+  return name ? `${label} · ${name}` : label;
+};
+
+const canAdd = computed(() => !!config.value && selection.value.fences.length < config.value.maxFences);
+
 // ---------- aukštis ir ilgis
 
-const heights = computed(() =>
-  model.value?.variants.length ? model.value.variants.map((variant) => variant.height) : (config.value?.heights ?? []),
-);
 const fixedHeights = computed(() => Boolean(model.value?.variants.length));
+const heights = computed(() => heightOptions(fence.value));
+const step = computed(() => model.value?.steps[fence.value.seeThrough] ?? 0);
 
-const selectHeight = (height: number) => {
-  selection.value.height = height;
-  selection.value.customHeight = false;
-};
-
-const customHeight = () => {
-  selection.value.customHeight = true;
-};
-
-const onCustomHeight = (event: Event) => {
-  const value = Math.round(Number((event.target as HTMLInputElement).value));
-  selection.value.height = Number.isFinite(value) && value > 0 ? value : null;
-};
-
-// ilgis – tekstinis laukas: priimamas ir kablelis, ir taškas
-const lengthText = ref(selection.value.length ? String(selection.value.length).replace(".", ",") : "");
-
-const onLength = (event: Event) => {
-  lengthText.value = (event.target as HTMLInputElement).value;
-  const value = Number(lengthText.value.replace(",", ".").trim());
-  selection.value.length = lengthText.value.trim() && Number.isFinite(value) && value > 0 ? value : null;
-};
-
-const lengthInvalid = computed(
-  () =>
-    !!config.value &&
-    selection.value.length !== null &&
-    (selection.value.length < config.value.lengthRange.min || selection.value.length > config.value.lengthRange.max),
-);
-
-const heightInvalid = computed(
-  () =>
-    !!config.value &&
-    selection.value.customHeight &&
-    selection.value.height !== null &&
-    (selection.value.height < config.value.heightRange.min || selection.value.height > config.value.heightRange.max),
-);
+const heightInvalid = computed(() => !!fence.value.heightText.trim() && !!model.value && !heightValid(fence.value));
+const lengthInvalid = computed(() => !!fence.value.lengthText.trim() && !lengthValid(fence.value));
 
 // ---------- vartai
 
-const gateTypes = computed(() =>
-  (["sliding", "swing"] as const).filter((type) => (config.value?.gates[type].length ?? 0) > 0),
+const madeTypes = computed(() =>
+  (["sliding", "swing"] as const).filter((type) => gateWidthsOf(fence.value, type).length > 0),
 );
-const gateWidths = computed(() =>
-  selection.value.gateType === "none" ? [] : (config.value?.gates[selection.value.gateType] ?? []),
-);
+const hasKit = computed(() => segmentGateWidths(fence.value).length > 0);
+const gateWidths = computed(() => gateWidthsOf(fence.value));
 const counts = (max: number, from = 1) => Array.from({ length: max - from + 1 }, (_, index) => index + from);
 
 // ---------- kaina
@@ -130,14 +127,15 @@ onMounted(() => {
 
 onBeforeUnmount(() => clearTimeout(timer));
 
+const missingText = computed(() => {
+  if (!missing.value) return "";
+  const text = t(`calc.summary.${missing.value.key}`);
+  return missing.value.fence ? t("calc.summary.inFence", { n: missing.value.fence, text }) : text;
+});
+
 const barText = computed(() => {
-  if (missing.value) return t(`calc.summary.${missing.value}`);
-  if (result.value?.status === "ok") {
-    return t("calc.summary.range", {
-      from: number(result.value.priceFrom, 0),
-      to: number(result.value.priceTo, 0),
-    });
-  }
+  if (missing.value) return missingText.value;
+  if (result.value?.status === "ok") return t("calc.summary.total", { value: number(result.value.price, 0) });
   if (loading.value || !result.value) return t("calc.summary.calculating");
   return t("calc.summary.show");
 });
@@ -149,10 +147,11 @@ const barText = computed(() => {
       <p class="text-lg -mb-6">{{ $t("calc.intro") }}</p>
 
       <CalculatorStep :number="steps.scope!" :title="$t('calc.steps.scope')">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 gap-2 sm:gap-4" :class="SCOPES.length > 3 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'">
           <CalculatorCard
             v-for="scope in SCOPES"
             :key="scope.key"
+            compact
             :title="$t(`calc.scope.${scope.key}`)"
             :text="$t(`calc.scope.${scope.key}Text`)"
             :image="scope.image"
@@ -163,163 +162,262 @@ const barText = computed(() => {
         </div>
       </CalculatorStep>
 
-      <CalculatorStep
-        :number="steps.model!"
-        :title="$t(hasFence ? 'calc.steps.model' : 'calc.steps.modelGates')"
-        :hint="$t(hasFence ? 'calc.model.hint' : 'calc.model.hintGates')"
-      >
-        <CalculatorModel />
-      </CalculatorStep>
+      <template v-if="isBlinds">
+        <CalculatorStep :number="steps.blinds!" :title="$t('calc.steps.blinds')">
+          <CalculatorBlinds />
+        </CalculatorStep>
+      </template>
 
-      <CalculatorStep :number="steps.size!" :title="$t(hasFence ? 'calc.steps.size' : 'calc.steps.sizeGates')">
-        <div class="flex flex-col gap-4">
-          <h3 class="text-xl font-medium">{{ $t("calc.size.height") }}</h3>
-          <div class="flex flex-wrap gap-3">
-            <CalculatorChip
-              v-for="height in heights"
-              :key="height"
-              :selected="!selection.customHeight && selection.height === height"
-              @select="selectHeight(height)"
+      <template v-else>
+        <!-- kelios tvoros: žemiau esantys žingsniai – pasirinktai tvorai -->
+        <div class="flex flex-col gap-3 -mb-6">
+          <div class="flex flex-wrap gap-2" role="tablist">
+            <div
+              v-for="(item, index) in selection.fences"
+              :key="item.id"
+              class="flex items-stretch border-2 transition-colors"
+              :class="selection.active === index ? 'border-red-main bg-red-main text-white' : 'border-gray-300 bg-white'"
             >
-              {{ meters(height) }}
-            </CalculatorChip>
-            <CalculatorChip v-if="!fixedHeights" :selected="selection.customHeight" @select="customHeight">
-              {{ $t("calc.size.other") }}
-            </CalculatorChip>
-          </div>
-          <div v-if="selection.customHeight && !fixedHeights" class="flex flex-col gap-1 w-full sm:w-72">
-            <label for="calc-height" class="text-sm font-medium">{{ $t("calc.size.customHeight") }}</label>
-            <input
-              id="calc-height"
-              type="number"
-              inputmode="numeric"
-              :min="config.heightRange.min"
-              :max="config.heightRange.max"
-              :value="selection.height ?? ''"
-              class="h-12 px-4 border-2 bg-white focus:outline-none focus:border-red-main"
-              :class="heightInvalid ? 'border-red-main' : 'border-gray-300'"
-              @input="onCustomHeight"
-            />
-            <p class="text-sm" :class="heightInvalid ? 'text-red-main' : 'text-gray-600'">
-              {{ $t("calc.size.heightHint", config.heightRange) }}
-            </p>
-          </div>
-        </div>
-
-        <div v-if="hasFence" class="flex flex-col gap-2 w-full sm:w-72">
-          <label for="calc-length" class="text-xl font-medium">{{ $t("calc.size.length") }}</label>
-          <input
-            id="calc-length"
-            type="text"
-            inputmode="decimal"
-            autocomplete="off"
-            :value="lengthText"
-            placeholder="25,5"
-            class="h-12 px-4 border-2 bg-white text-lg focus:outline-none focus:border-red-main"
-            :class="lengthInvalid ? 'border-red-main' : 'border-gray-300'"
-            @input="onLength"
-          />
-        </div>
-        <p v-if="hasFence" class="text-sm -mt-4" :class="lengthInvalid ? 'text-red-main' : 'text-gray-600'">
-          {{ $t("calc.size.lengthHint", config.lengthRange) }}
-        </p>
-
-        <div v-if="hasFence" class="flex flex-col gap-4">
-          <h3 class="text-xl font-medium">{{ $t("calc.size.parts") }}</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <CalculatorCard
-              v-for="parts in ['full', 'poles', 'none'] as const"
-              :key="parts"
-              :title="$t(`calc.size.${parts}`)"
-              :text="$t(`calc.size.${parts}Text`)"
-              :selected="selection.parts === parts"
-              @select="selection.parts = parts"
-            />
-          </div>
-        </div>
-      </CalculatorStep>
-
-      <CalculatorStep v-if="hasGates" :number="steps.gates!" :title="$t('calc.steps.gates')">
-        <div class="flex flex-col gap-4">
-          <h3 class="text-xl font-medium">{{ $t("calc.gates.gate") }}</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <CalculatorCard
-              v-for="type in gateTypes"
-              :key="type"
-              :title="$t(`calc.gates.${type}`)"
-              :image="GATE_IMAGES[type]"
-              contain
-              :selected="selection.gateType === type"
-              @select="selectGate(type)"
-            />
-            <CalculatorCard
-              :title="$t('calc.gates.none')"
-              placeholder
-              :selected="selection.gateType === 'none'"
-              @select="selectGate('none')"
-            />
-          </div>
-        </div>
-
-        <template v-if="selection.gateType !== 'none'">
-          <div class="flex flex-col gap-4">
-            <h3 class="text-xl font-medium">{{ $t("calc.gates.width") }}</h3>
-            <div class="flex flex-wrap gap-3">
-              <CalculatorChip
-                v-for="width in gateWidths"
-                :key="width"
-                :selected="selection.gateWidth === width"
-                @select="selection.gateWidth = width"
+              <button
+                type="button"
+                role="tab"
+                :aria-selected="selection.active === index"
+                class="h-12 px-4 font-bold hover:cursor-pointer"
+                @click="selection.active = index"
               >
-                {{ meters(width) }}
-              </CalculatorChip>
+                {{ tabName(index) }}
+              </button>
+              <button
+                v-if="selection.fences.length > 1"
+                type="button"
+                class="px-3 border-l border-current/30 text-xl leading-none hover:cursor-pointer"
+                :aria-label="`${$t('calc.fences.remove')}: ${tabName(index)}`"
+                :title="$t('calc.fences.remove')"
+                @click="removeFence(index)"
+              >
+                ×
+              </button>
             </div>
+            <button
+              v-if="canAdd"
+              type="button"
+              class="h-12 px-4 border-2 border-dashed border-gray-400 font-bold text-gray-700 hover:border-red-main hover:text-red-main hover:cursor-pointer"
+              @click="addFence"
+            >
+              + {{ $t(hasFence ? "calc.fences.add" : "calc.fences.addGates") }}
+            </button>
           </div>
+          <p v-if="hasFence" class="text-sm text-gray-600">{{ $t("calc.fences.hint") }}</p>
+        </div>
 
-          <div class="flex flex-wrap gap-x-12 gap-y-6">
-            <div class="flex flex-col gap-4">
-              <h3 class="text-xl font-medium">{{ $t("calc.gates.automatics") }}</h3>
-              <div class="flex flex-wrap gap-3">
-                <CalculatorChip :selected="selection.automatics" @select="selection.automatics = true">
-                  {{ $t("calc.gates.withAutomatics") }}
-                </CalculatorChip>
-                <CalculatorChip :selected="!selection.automatics" @select="selection.automatics = false">
-                  {{ $t("calc.gates.withoutAutomatics") }}
-                </CalculatorChip>
-              </div>
-            </div>
+        <CalculatorStep
+          :number="steps.model!"
+          :title="$t(hasFence ? 'calc.steps.model' : 'calc.steps.modelGates')"
+          :hint="$t(hasFence ? 'calc.model.hint' : 'calc.model.hintGates')"
+        >
+          <CalculatorModel :key="fence.id" />
+        </CalculatorStep>
 
-            <div v-if="config.gates.maxGates > 1" class="flex flex-col gap-4">
-              <h3 class="text-xl font-medium">{{ $t("calc.gates.count") }}</h3>
+        <CalculatorStep :number="steps.size!" :title="$t(hasFence ? 'calc.steps.size' : 'calc.steps.sizeGates')">
+          <div class="flex flex-col gap-3">
+            <template v-if="fixedHeights">
+              <h3 class="text-xl font-medium">{{ $t("calc.size.segmentHeights") }}</h3>
               <div class="flex flex-wrap gap-3">
                 <CalculatorChip
-                  v-for="count in counts(config.gates.maxGates)"
-                  :key="count"
-                  :selected="selection.gateCount === count"
-                  @select="selection.gateCount = count"
+                  v-for="height in heights"
+                  :key="height"
+                  :selected="heightOf(fence) === height"
+                  @select="setHeight(String(height))"
                 >
-                  {{ count }}
+                  {{ height }}
+                </CalculatorChip>
+              </div>
+            </template>
+
+            <template v-else>
+              <label :for="`calc-height-${fence.id}`" class="text-xl font-medium">
+                {{ $t(hasFence ? "calc.size.height" : "calc.size.gateHeight") }}
+              </label>
+              <input
+                :id="`calc-height-${fence.id}`"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                :value="fence.heightText"
+                placeholder="170"
+                class="h-12 w-full sm:w-72 px-4 border-2 bg-white text-lg focus:outline-none focus:border-red-main"
+                :class="heightInvalid ? 'border-red-main' : 'border-gray-300'"
+                @input="setHeight(($event.target as HTMLInputElement).value)"
+              />
+              <p class="text-sm" :class="heightInvalid ? 'text-red-main' : 'text-gray-600'">
+                {{ $t("calc.size.heightHint", config.heightRange) }}
+              </p>
+              <template v-if="heights.length">
+                <p class="text-sm text-gray-600">{{ $t("calc.size.suggested", { step: number(step) }) }}</p>
+                <div class="flex flex-wrap gap-2">
+                  <CalculatorChip
+                    v-for="height in heights"
+                    :key="height"
+                    :selected="heightOf(fence) === height"
+                    @select="setHeight(String(height))"
+                  >
+                    {{ height }}
+                  </CalculatorChip>
+                </div>
+              </template>
+            </template>
+          </div>
+
+          <div v-if="hasFence" class="flex flex-col gap-3">
+            <label :for="`calc-length-${fence.id}`" class="text-xl font-medium">{{ $t("calc.size.length") }}</label>
+            <input
+              :id="`calc-length-${fence.id}`"
+              v-model="fence.lengthText"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="25,5"
+              class="h-12 w-full sm:w-72 px-4 border-2 bg-white text-lg focus:outline-none focus:border-red-main"
+              :class="lengthInvalid ? 'border-red-main' : 'border-gray-300'"
+            />
+            <p class="text-sm" :class="lengthInvalid ? 'text-red-main' : 'text-gray-600'">
+              {{ $t("calc.size.lengthHint", config.lengthRange) }}
+            </p>
+          </div>
+
+          <div v-if="hasFence" class="flex flex-col gap-4">
+            <h3 class="text-xl font-medium">{{ $t("calc.size.parts") }}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <CalculatorCard
+                v-for="parts in ['full', 'poles', 'none'] as const"
+                :key="parts"
+                :title="$t(`calc.size.${parts}`)"
+                :text="$t(`calc.size.${parts}Text`)"
+                :selected="fence.parts === parts"
+                @select="fence.parts = parts"
+              />
+            </div>
+          </div>
+        </CalculatorStep>
+
+        <CalculatorStep v-if="hasGates" :number="steps.gates!" :title="$t('calc.steps.gates')">
+          <div class="flex flex-col gap-6">
+            <h3 class="text-xl font-medium">{{ $t("calc.gates.gate") }}</h3>
+
+            <!-- gaminami pagal užsakymą ir gatavi komplektai – aiškiai atskirti -->
+            <div v-if="madeTypes.length" class="flex flex-col gap-3">
+              <div>
+                <p class="font-bold">{{ $t("calc.gates.made") }}</p>
+                <p class="text-sm text-gray-600">{{ $t("calc.gates.madeText") }}</p>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <CalculatorCard
+                  v-for="type in madeTypes"
+                  :key="type"
+                  :title="$t(`calc.gates.${type}`)"
+                  :image="GATE_IMAGES[type]"
+                  contain
+                  :selected="fence.gateType === type"
+                  @select="selectGate(type)"
+                />
+              </div>
+            </div>
+
+            <div v-if="hasKit" class="flex flex-col gap-3">
+              <div>
+                <p class="font-bold">{{ $t("calc.gates.kit") }}</p>
+                <p class="text-sm text-gray-600">{{ $t("calc.gates.kitText") }}</p>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <CalculatorCard
+                  :title="$t('calc.gates.segment')"
+                  :image="model?.images[0]?.url"
+                  :placeholder="!model?.images.length"
+                  :selected="fence.gateType === 'segment'"
+                  @select="selectGate('segment')"
+                />
+              </div>
+            </div>
+
+            <CalculatorChip class="self-start" :selected="fence.gateType === 'none'" @select="selectGate('none')">
+              {{ $t("calc.gates.none") }}
+            </CalculatorChip>
+          </div>
+
+          <template v-if="fence.gateType !== 'none'">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-xl font-medium">{{ $t("calc.gates.width") }}</h3>
+              <div class="flex flex-wrap gap-3">
+                <CalculatorChip
+                  v-for="width in gateWidths"
+                  :key="width"
+                  :selected="fence.gateWidth === width"
+                  @select="fence.gateWidth = width"
+                >
+                  {{ meters(width) }}
                 </CalculatorChip>
               </div>
             </div>
-          </div>
-        </template>
 
-        <div v-if="config.gates.wicket" class="flex flex-col gap-4">
-          <h3 class="text-xl font-medium">{{ $t("calc.gates.wickets") }}</h3>
-          <div class="flex flex-wrap gap-3">
-            <CalculatorChip
-              v-for="count in counts(config.gates.maxWickets, 0)"
-              :key="count"
-              :selected="selection.wickets === count"
-              @select="selection.wickets = count"
-            >
-              {{ count === 0 ? $t("calc.gates.none") : count }}
-            </CalculatorChip>
+            <div class="flex flex-wrap gap-x-12 gap-y-6">
+              <!-- gatavas komplektas – be automatikos pasirinkimo -->
+              <div v-if="fence.gateType !== 'segment'" class="flex flex-col gap-4">
+                <h3 class="text-xl font-medium">{{ $t("calc.gates.automatics") }}</h3>
+                <div class="flex flex-wrap gap-3">
+                  <CalculatorChip :selected="fence.automatics" @select="fence.automatics = true">
+                    {{ $t("calc.gates.withAutomatics") }}
+                  </CalculatorChip>
+                  <CalculatorChip :selected="!fence.automatics" @select="fence.automatics = false">
+                    {{ $t("calc.gates.withoutAutomatics") }}
+                  </CalculatorChip>
+                </div>
+              </div>
+
+              <div v-if="config.gates.maxGates > 1" class="flex flex-col gap-4">
+                <h3 class="text-xl font-medium">{{ $t("calc.gates.count") }}</h3>
+                <div class="flex flex-wrap gap-3">
+                  <CalculatorChip
+                    v-for="count in counts(config.gates.maxGates)"
+                    :key="count"
+                    :selected="fence.gateCount === count"
+                    @select="fence.gateCount = count"
+                  >
+                    {{ count }}
+                  </CalculatorChip>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <div v-if="config.gates.wicket || segmentWicket(fence)" class="flex flex-col gap-4">
+            <h3 class="text-xl font-medium">{{ $t("calc.gates.wickets") }}</h3>
+
+            <div v-if="config.gates.wicket && segmentWicket(fence)" class="flex flex-col gap-2">
+              <p class="text-sm font-medium">{{ $t("calc.gates.wicketType") }}</p>
+              <div class="flex flex-wrap gap-3">
+                <CalculatorChip :selected="fence.wicketType === 'made'" @select="fence.wicketType = 'made'">
+                  {{ $t("calc.gates.wicketMade") }}
+                </CalculatorChip>
+                <CalculatorChip :selected="fence.wicketType === 'segment'" @select="fence.wicketType = 'segment'">
+                  {{ $t("calc.gates.wicketKit") }}
+                </CalculatorChip>
+              </div>
+            </div>
+
+            <div v-if="wicketAvailable(fence)" class="flex flex-wrap gap-3">
+              <CalculatorChip
+                v-for="count in counts(config.gates.maxWickets, 0)"
+                :key="count"
+                :selected="fence.wickets === count"
+                @select="fence.wickets = count"
+              >
+                {{ count === 0 ? $t("calc.gates.none") : count }}
+              </CalculatorChip>
+            </div>
+            <p class="text-sm text-gray-600">{{ $t("calc.gates.wicketsHint") }}</p>
           </div>
-          <p class="text-sm text-gray-600">{{ $t("calc.gates.wicketsHint") }}</p>
-        </div>
-      </CalculatorStep>
+        </CalculatorStep>
+      </template>
 
       <CalculatorStep :number="steps.install!" :title="$t('calc.steps.install')">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

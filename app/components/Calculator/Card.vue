@@ -12,8 +12,10 @@ withDefaults(
     contain?: boolean;
     // vietoje nuotraukos – tuščias langelis (kai kitos tos pačios eilės kortelės nuotraukas turi)
     placeholder?: boolean;
+    // kelios kortelės vienoje eilėje ir telefone – aprašymas ten slepiamas
+    compact?: boolean;
   }>(),
-  { text: "", image: "", alt: "", selected: false, contain: false, placeholder: false },
+  { text: "", image: "", alt: "", selected: false, contain: false, placeholder: false, compact: false },
 );
 
 defineEmits<{ select: [] }>();
@@ -57,7 +59,7 @@ defineEmits<{ select: [] }>();
       </div>
       <div class="flex flex-col gap-1 p-3">
         <span class="font-bold" :class="selected ? 'text-red-main' : ''">{{ title }}</span>
-        <span v-if="text" class="text-sm text-gray-600">{{ text }}</span>
+        <span v-if="text" class="text-sm text-gray-600" :class="compact ? 'hidden sm:block' : ''">{{ text }}</span>
       </div>
     </button>
     <slot />

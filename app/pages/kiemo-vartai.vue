@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   breadcrumb: "kiemo-vartai",
+  hero: "/images/vartai/varstomi-vartai-kieme.jpg",
 });
 
 // Galerija ir pakeisti puslapio vaizdai valdomi MTSoft'e (Tinklapio nustatymai → Vartų puslapis).
@@ -176,7 +177,7 @@ useHead(() => ({
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("gates.infill.title") }}</h2>
-      <p class="text-justify max-w-200">{{ $t("gates.infill.text") }}</p>
+      <p class="max-w-200">{{ $t("gates.infill.text") }}</p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <NuxtLink
           v-for="infill in infills"
@@ -202,7 +203,7 @@ useHead(() => ({
       <h2 class="text-4xl font-medium text-center sm:text-left">
         {{ $t("gates.automation.title") }}
       </h2>
-      <p class="text-justify max-w-200">{{ $t("gates.automation.text") }}</p>
+      <p class="max-w-200">{{ $t("gates.automation.text") }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           v-for="brand in brands"
@@ -270,7 +271,7 @@ useHead(() => ({
               class="w-4 shrink-0 transition-transform duration-300 group-open:rotate-180"
             />
           </summary>
-          <p class="pt-4 text-justify">{{ item.a }}</p>
+          <p class="pt-4">{{ item.a }}</p>
         </details>
       </div>
     </section>

@@ -16,3 +16,8 @@ export const demotedHeadings = {
   h2: headingAs("h3"),
   h3: headingAs("h4"),
 };
+
+// Straipsniui: pavadinimas (#) rodomas hero juostoje kaip <h1>, todėl tekste jis praleidžiamas
+export const withoutTitle = {
+  h1: defineComponent({ name: "HiddenTitle", render: () => null }),
+};

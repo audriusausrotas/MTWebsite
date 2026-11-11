@@ -24,7 +24,7 @@ defineProps<{
     </div>
     <div class="flex flex-col gap-6">
       <h3 class="text-3xl font-medium text-center md:text-left">{{ title }}</h3>
-      <p class="text-justify">{{ text }}</p>
+      <p>{{ text }}</p>
       <ul class="flex flex-col gap-3 font-medium">
         <li v-for="point in points" :key="point" class="flex gap-3">
           <span class="mt-2 w-2 h-2 shrink-0 bg-red-main"></span>
