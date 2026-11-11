@@ -119,7 +119,114 @@
   },
   "fences": {
     "constact": "Susisiekti",
-    "getPrice": "Paskaičiuoti kainą"
+    "getPrice": "Paskaičiuoti kainą",
+    "models": "Modeliai",
+    "variants": "Galimi variantai",
+    "readMore": "Skaityti daugiau",
+    "readLess": "Rodyti mažiau",
+    "other": "Kitos tvoros",
+    "intro": {
+      "title": "Tvoros jūsų namams ir verslui",
+      "text": "Gaminame ir montuojame skardines bei metalines tvoras, tvoralentes ir segmentines tvoras – privatiems kiemams ir įmonių teritorijoms. Padedame išsirinkti modelį ir spalvą, sklypą išmatuojame 3D įranga ir pasirūpiname visais darbais – nuo pirmo matavimo iki sumontuotos tvoros.",
+      "alt": "Skardinė tvora ir varteliai prie šiuolaikinio namo"
+    },
+    "types": {
+      "title": "Tvorų tipai"
+    },
+    "categories": {
+      "skardines-tvoros": {
+        "short": "Plieno profilių tvoros – aklinos ir pramatomos, įvairių RAL spalvų. Šiuolaikiškas sprendimas tiems, kam svarbus privatumas.",
+        "title": "Skardinės tvoros – privatumas ir šiuolaikiškas vaizdas",
+        "text": "Skardinės tvoros surenkamos iš cinkuoto ir milteliniu būdu dažyto plieno profilių, todėl yra atsparios korozijai ir nereikalauja sudėtingos priežiūros. Profiliai skiriasi forma ir pralaidumu – nuo rombo formos Daimond iki langų žaliuzes primenančios Žaliuzi tvoros, tad galite rinktis, kiek privatumo ir šviesos norite savo kieme."
+      },
+      "metalines-tvoros": {
+        "short": "Patvarios ir estetiškos metalo tvoros tiems, kam svarbiausia tvirtumas ir ilgaamžiškumas.",
+        "title": "Metalinės tvoros – tvirtas ir ilgaamžis sprendimas",
+        "text": "Metalinės tvoros – patvarus ir estetiškas sprendimas privatiems sklypams ir įmonių teritorijoms. Padėsime parinkti konstrukciją, aukštį ir spalvą, pagaminsime tvorą ir ją sumontuosime."
+      },
+      "tvoralentes": {
+        "short": "Metalinės tvoralentės – lentų tvoros vaizdas be dažymo ir priežiūros rūpesčių. Montuojamos vienpusiai arba dvipusiai.",
+        "title": "Tvoralentės – lentų tvoros vaizdas be priežiūros rūpesčių",
+        "text": "Tvoralentės gaminamos iš cinkuoto ir dažyto metalo, todėl nerūdija, neblunka ir nereikalauja priežiūros. Jos montuojamos vienpusiai arba dvipusiai – taip pasirenkate, kiek tvora bus pralaidi žvilgsniams ir vėjui."
+      },
+      "segmentines-tvoros": {
+        "short": "Suvirinto tinklo segmentai – ekonomiškas ir lengvai sumontuojamas aptvėrimas sklypams ir įmonių teritorijoms.",
+        "title": "Segmentinės tvoros – patikimas ir ekonomiškas aptvėrimas",
+        "text": "Segmentinė tvora surenkama iš suvirinto tinklo segmentų, padengtų cinku ir milteliniais dažais. Tai ekonomiškas ir lengvai sumontuojamas sprendimas privatiems sklypams, įmonių teritorijoms ar aikštelėms – segmentus siūlome kelių aukščių."
+      }
+    },
+    "empty": {
+      "title": "Modelių sąrašas ruošiamas",
+      "text": "Susisiekite su mumis – papasakosime apie galimus sprendimus, parodysime pavyzdžius ir parengsime pasiūlymą."
+    },
+    "why": {
+      "title": "Kodėl „Moderni Tvora“",
+      "w1": {
+        "title": "Viskas vienoje vietoje",
+        "text": "Gamyba, matavimas ir montavimas – vienose rankose, todėl jums nereikia derinti kelių rangovų darbų."
+      },
+      "w2": {
+        "title": "Tikslus 3D matavimas",
+        "text": "Naudodami modernią įrangą sudarome tikslų 3D sklypo planą, atspindintį jo reljefą."
+      },
+      "w3": {
+        "title": "Ilgaamžės medžiagos",
+        "text": "Tvoras gaminame iš cinkuoto ir milteliniu būdu dažyto plieno, atsparaus korozijai ir UV spinduliams."
+      },
+      "w4": {
+        "title": "Nestandartiniai sklypai",
+        "text": "Nelygaus reljefo ar netaisyklingos formos sklypams paruošiame individualų tvoros planą."
+      }
+    },
+    "steps": {
+      "title": "Kaip vyksta darbai",
+      "s1": {
+        "title": "Konsultacija ir matavimas",
+        "text": "Aptariame jūsų poreikius, išmatuojame sklypą ir patariame, kuri tvora jam tinka geriausiai."
+      },
+      "s2": {
+        "title": "Pasiūlymas",
+        "text": "Parengiame pasiūlymą su tvoros modeliu, aukščiu, spalva, vartais ir varteliais."
+      },
+      "s3": {
+        "title": "Gamyba",
+        "text": "Tvora pagaminama pagal tikslius jūsų sklypo matmenis."
+      },
+      "s4": {
+        "title": "Montavimas",
+        "text": "Įrengiame pamatus ir stulpus, sumontuojame tvorą, vartus ir vartelius."
+      }
+    },
+    "faq": {
+      "title": "Dažniausi klausimai",
+      "q1": {
+        "q": "Kiek kainuoja tvora?",
+        "a": "Kaina priklauso nuo tvoros modelio, aukščio ir ilgio, sklypo reljefo bei pasirinktų vartų ir vartelių. Tikslų pasiūlymą parengiame išmatavę sklypą – susisiekite ir pakonsultuosime."
+      },
+      "q2": {
+        "q": "Kurią tvorą rinktis?",
+        "a": "Jei svarbiausia privatumas – rinkitės skardinę tvorą arba tvoralentes. Jei reikia ekonomiško teritorijos aptvėrimo – segmentinę tvorą. Atvykę pamatuoti patarsime, kas geriausiai tinka jūsų sklypui ir namo architektūrai."
+      },
+      "q3": {
+        "q": "Ar prie tvoros galima užsakyti vartus ir vartelius?",
+        "a": "Taip. Gaminame stumdomus ir varstomus kiemo vartus bei vartelius, užpildytus tuo pačiu profiliu ir ta pačia spalva kaip tvora, todėl visas aptvėrimas atrodo vientisas."
+      },
+      "q4": {
+        "q": "Kokia garantija suteikiama?",
+        "a": "Atliktiems darbams suteikiame 2 metų garantiją, tvoralentėms taikoma 5–10 metų garantija, o mūsų naudojamoms skardoms – net 45 metų garantija."
+      }
+    },
+    "articles": {
+      "title": "Plačiau apie tvoras",
+      "a1": "Tvoros kaina – kiek kainuoja tvora?",
+      "a2": "Skardinės tvoros – tvorų tipai jūsų sklypui",
+      "a3": "Kaip išsirinkti idealią tvorą pagal jūsų sklypo reljefą?"
+    },
+    "cta": {
+      "title": "Planuojate tvoros statybą?",
+      "text": "Parašykite arba paskambinkite – pakonsultuosime, atvyksime pamatuoti ir parengsime pasiūlymą.",
+      "button": "Gauti pasiūlymą"
+    }
   },
   "gates": {
     "intro": {
@@ -226,6 +333,93 @@
       "text": "Parašykite arba paskambinkite – pakonsultuosime, atvyksime pamatuoti ir parengsime pasiūlymą."
     }
   },
+  "blinds": {
+    "intro": {
+      "title": "Lauko žaliuzės terasoms, pavėsinėms ir fasadams",
+      "text": "Lauko žaliuzės – skardinės mentės, iš kurių surenkamos terasų ir pavėsinių sienelės, stogeliai bei fasadų uždangos. Jos saugo nuo saulės, vėjo ir pašalinių žvilgsnių, o atvėrus mentes praleidžia šviesą ir orą. Žaliuzes gaminame iš „Arcelor Ultramatt“ skardos pagal jūsų nurodytus ilgius, todėl jas lengva pritaikyti konkrečiai angai ir priderinti prie tvoros ar namo fasado.",
+      "alt": "Terasos pavėsinė su lauko žaliuzėmis",
+      "contact": "Gauti pasiūlymą"
+    },
+    "info": {
+      "title": "Bendra informacija",
+      "i1": {
+        "title": "1–2 savaitės",
+        "text": "Žaliuzių gamybos terminas"
+      },
+      "i2": {
+        "title": "Pagal jūsų ilgius",
+        "text": "Žaliuzės gaminamos pagal užsakovo nurodytus ilgius"
+      },
+      "i3": {
+        "title": "Visoje Lietuvoje",
+        "text": "Pristatome į bet kurią Lietuvos vietą"
+      }
+    },
+    "calculator": {
+      "title": "Žaliuzių skaičiuoklė",
+      "text": "Įveskite angų matmenis – skaičiuoklė apskaičiuos, kiek ir kokio ilgio žaliuzių bei laikiklių jums reikės.",
+      "button": "Atidaryti skaičiuoklę"
+    },
+    "models": {
+      "title": "Žaliuzių modeliai",
+      "text": "Gaminame dviejų storių skardines žaliuzes. Abi skirtos apsaugai nuo saulės ir vėjo bei privatumui, skiriasi tik mentės storis ir jai tinkantys laikikliai.",
+      "name": "Lauko žaliuzė {name}",
+      "m1Alt": "Pavėsinė su 20x100 lauko žaliuzėmis",
+      "m2Alt": "Terasos stogelis ir sienelė iš 18x100 lauko žaliuzių",
+      "thickness": "Storis",
+      "width": "Plotis",
+      "length": "Ilgis",
+      "weight": "Svoris",
+      "lengthValue": "pagal užsakymą, iki 2000 mm",
+      "weightValue": "apie 1 kg/m"
+    },
+    "features": {
+      "f1": "Mentės su grioveliais, kuriais lietaus vanduo nuteka į galus",
+      "f2": "Dvisluoksne technologija dažyta skarda, atspari UV spinduliams",
+      "f3": "Rinkinyje – žaliuzės, varžtai ir fiksavimo skląsčiai",
+      "f4": "Laikikliai iš polipropileno su 30 % stiklo pluošto, parduodami poromis",
+      "f5": "Laikikliai atlaiko vėją iki 110 km/h",
+      "f6": "Laikiklių spalvos – juoda (RAL 9005) ir pilka (RAL 7016)"
+    },
+    "steel": {
+      "title": "Skardos informacija",
+      "text": "Žaliuzėms naudojame tik „Premium“ klasės skardą – tą pačią, iš kurios gaminame skardines tvoras.",
+      "type": "Skardos tipas",
+      "manufacturer": "Gamintojas",
+      "country": "Gamintojo šalis",
+      "countryValue": "Belgija",
+      "techWarranty": "Techninė garantija",
+      "techWarrantyValue": "50 metų",
+      "colorWarranty": "Spalvos garantija",
+      "colorWarrantyValue": "20 metų",
+      "thickness": "Skardos storis",
+      "sameShade": "Identiško atspalvio garantija",
+      "yes": "Taip",
+      "recommendedLength": "Rekomenduojamas elemento ilgis",
+      "coatingMass": "Metalinės dangos masė",
+      "coating": "Padengimas",
+      "coatingValue": "min. 35 mikronai"
+    },
+    "colors": {
+      "title": "Standartinės spalvos",
+      "note": "Nestandartinės spalvos ir dangos – teiraukitės.",
+      "alt": "Spalva RAL {code}"
+    },
+    "more": {
+      "title": "Papildoma informacija",
+      "text": "Laikiklių ir žaliuzių matmenys, sudėtis, priedai ir montavimo patarimai. Paspauskite lapą, kad jį padidintumėte.",
+      "s1": "Laikikliai 18 mm žaliuzėms",
+      "s2": "Laikikliai 20 mm žaliuzėms",
+      "s3": "Skardinės žaliuzės, 18 mm storio",
+      "s4": "Skardinės žaliuzės, 20 mm storio",
+      "s5": "Priedai",
+      "zoom": "Padidinti"
+    },
+    "cta": {
+      "title": "Reikia lauko žaliuzių?",
+      "text": "Parašykite arba paskambinkite – pakonsultuosime, padėsime apskaičiuoti kiekį ir parengsime pasiūlymą."
+    }
+  },
   "seo": {
     "home": {
       "title": "Tvoros, kiemo vartai ir jų montavimas",
@@ -257,7 +451,7 @@
     },
     "lauko-zaliuzes": {
       "title": "Lauko žaliuzės",
-      "description": "Lauko žaliuzės namams ir terasoms – apsauga nuo saulės ir smalsių akių."
+      "description": "Skardinės lauko žaliuzės terasoms, pavėsinėms ir fasadams – gaminamos pagal jūsų ilgius per 1–2 savaites, pristatomos visoje Lietuvoje. Žaliuzių skaičiuoklė."
     },
     "tvoru-skaiciuokle": {
       "title": "Tvorų skaičiuoklė",
@@ -312,7 +506,8 @@
   "gallery": {
     "previous": "Ankstesnė nuotrauka",
     "next": "Kita nuotrauka",
-    "close": "Uždaryti"
+    "close": "Uždaryti",
+    "enlarge": "Padidinti nuotrauką"
   },
   "error": {
     "notFoundTitle": "Puslapis nerastas",

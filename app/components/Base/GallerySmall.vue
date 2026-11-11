@@ -22,47 +22,59 @@ watch(currentImageIndex, (i) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 justify-between w-full select-none">
-    <Transition
-      enter-active-class="transition-opacity duration-100"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity duration-100"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-      mode="out-in"
+  <div class="flex flex-col gap-3 w-full select-none">
+    <!-- Vaizdas visada rodomas visas (object-contain): nuotraukos 3:2 užpildo langelį,
+         o aukšti brėžiniai telpa nenukirpti. mix-blend-multiply baltą brėžinio foną sulieja su langelio fonu -->
+    <button
+      type="button"
+      :aria-label="$t('gallery.enlarge')"
+      class="relative w-full aspect-3/2 bg-gray-100 rounded-lg overflow-hidden hover:cursor-zoom-in"
+      @click="modalOpen = true"
     >
-      <NuxtImg
-        @click="modalOpen = true"
-        :key="currentImageIndex"
-        :src="images[currentImageIndex]?.url"
-        :alt="altOf(images[currentImageIndex])"
-        sizes="sm:100vw md:600px"
-        class="w-full h-full max-h-108 object-contain hover:cursor-pointer"
-      />
-    </Transition>
+      <Transition
+        enter-active-class="transition-opacity duration-100"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition-opacity duration-100"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+        mode="out-in"
+      >
+        <NuxtImg
+          :key="currentImageIndex"
+          :src="images[currentImageIndex]?.url"
+          :alt="altOf(images[currentImageIndex])"
+          sizes="sm:100vw md:600px"
+          class="absolute inset-0 w-full h-full object-contain mix-blend-multiply"
+        />
+      </Transition>
+    </button>
 
-    <div v-if="images.length > 1" class="flex overflow-x-auto max-w-full rounded-lg">
+    <div v-if="images.length > 1" class="flex overflow-x-auto max-w-full">
       <div class="flex gap-2 scroll-smooth">
         <button
           v-for="(image, index) in images"
           :key="`thumb-${index}`"
           type="button"
           :ref="(el) => (thumbRefs[index] = el as HTMLElement)"
+          :aria-label="altOf(image)"
+          :aria-current="index === currentImageIndex"
           @click="() => (currentImageIndex = index)"
           :class="[
-            'shrink-0 rounded-md overflow-hidden transition-all duration-200 border-2 hover:cursor-pointer',
-            index === currentImageIndex ? 'border-red-600' : 'hover:scale-105 border-transparent',
+            'shrink-0 w-30 h-20 bg-gray-100 rounded-md overflow-hidden transition-colors duration-200 border-2 hover:cursor-pointer',
+            index === currentImageIndex ? 'border-red-main' : 'border-transparent hover:border-gray-300',
           ]"
         >
+          <!-- fit="inside": serveris vaizdą sumažina, bet neapkerpa -->
           <NuxtImg
             v-if="image.url"
             :src="image.url"
-            :alt="altOf(image)"
-            width="112"
-            height="112"
-            fit="cover"
-            class="w-28 h-28 object-cover"
+            alt=""
+            width="240"
+            height="160"
+            fit="inside"
+            loading="lazy"
+            class="w-full h-full object-contain mix-blend-multiply"
           />
         </button>
       </div>
@@ -71,6 +83,7 @@ watch(currentImageIndex, (i) => {
       v-if="modalOpen"
       :images="images"
       :currentImage="currentImageIndex"
+      contain-thumbs
       @closeModal="modalOpen = false"
     />
   </div>

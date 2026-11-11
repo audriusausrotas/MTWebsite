@@ -4,6 +4,8 @@ import type { Image } from "~/data/interfaces";
 const props = defineProps<{
   images: Image[];
   currentImage: number;
+  // miniatiūros rodomos visos, neapkirptos (tvorų brėžiniams); numatyta – užpildo langelį
+  containThumbs?: boolean;
 }>();
 
 const emit = defineEmits<{ closeModal: [] }>();
@@ -167,7 +169,16 @@ onUnmounted(() => {
               ]"
             >
               <NuxtImg
-                v-if="image.url"
+                v-if="image.url && containThumbs"
+                :src="image.url"
+                :alt="altOf(image)"
+                width="224"
+                height="224"
+                fit="inside"
+                class="w-28 h-28 object-contain bg-white"
+              />
+              <NuxtImg
+                v-else-if="image.url"
                 :src="image.url"
                 :alt="altOf(image)"
                 width="112"

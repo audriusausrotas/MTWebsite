@@ -111,7 +111,114 @@
   },
   "fences": {
     "constact": "Contact us",
-    "getPrice": "Calculate price"
+    "getPrice": "Calculate price",
+    "models": "Models",
+    "variants": "Available options",
+    "readMore": "Read more",
+    "readLess": "Show less",
+    "other": "Other fences",
+    "intro": {
+      "title": "Fences for your home and business",
+      "text": "We manufacture and install sheet metal and metal fences, fence boards and segment fences – for private yards and business premises. We help you choose the model and colour, measure the plot with 3D equipment and take care of all the work – from the first measurement to the installed fence.",
+      "alt": "Sheet metal fence and wicket next to a modern house"
+    },
+    "types": {
+      "title": "Fence types"
+    },
+    "categories": {
+      "skardines-tvoros": {
+        "short": "Steel profile fences – solid or see-through, in various RAL colours. A modern solution for those who value privacy.",
+        "title": "Sheet metal fences – privacy and a modern look",
+        "text": "Sheet metal fences are assembled from galvanized and powder-coated steel profiles, so they resist corrosion and need no complicated maintenance. The profiles differ in shape and openness – from the diamond-shaped Daimond to the Žaliuzi fence that resembles window louvres – so you can choose how much privacy and light you want in your yard."
+      },
+      "metalines-tvoros": {
+        "short": "Durable and good-looking metal fences for those who value strength and a long service life above all.",
+        "title": "Metal fences – a strong and long-lasting solution",
+        "text": "Metal fences are a durable and good-looking solution for private plots and business premises. We will help you choose the construction, height and colour, then manufacture the fence and install it."
+      },
+      "tvoralentes": {
+        "short": "Metal fence boards – the look of a board fence without painting or maintenance. Installed one-sided or two-sided.",
+        "title": "Fence boards – the look of a board fence without the upkeep",
+        "text": "Fence boards are made of galvanized and painted metal, so they do not rust, fade or need maintenance. They are installed one-sided or two-sided – this is how you choose how open the fence is to views and wind."
+      },
+      "segmentines-tvoros": {
+        "short": "Welded mesh panels – a cost-effective, easily installed enclosure for plots and business premises.",
+        "title": "Segment fences – a reliable and cost-effective enclosure",
+        "text": "A segment fence is assembled from welded mesh panels with a galvanized and powder-coated finish. It is a cost-effective and easily installed solution for private plots, business premises or car parks – the panels are available in several heights."
+      }
+    },
+    "empty": {
+      "title": "The model list is being prepared",
+      "text": "Get in touch – we will tell you about the available solutions, show examples and prepare an offer."
+    },
+    "why": {
+      "title": "Why Moderni Tvora",
+      "w1": {
+        "title": "Everything in one place",
+        "text": "Production, measuring and installation are handled by one team, so you do not have to coordinate several contractors."
+      },
+      "w2": {
+        "title": "Precise 3D measuring",
+        "text": "Using modern equipment, we create a precise 3D plan of your plot that reflects its terrain."
+      },
+      "w3": {
+        "title": "Long-lasting materials",
+        "text": "We make fences from galvanized and powder-coated steel that resists corrosion and UV rays."
+      },
+      "w4": {
+        "title": "Non-standard plots",
+        "text": "For plots with uneven terrain or an irregular shape, we prepare an individual fence plan."
+      }
+    },
+    "steps": {
+      "title": "How it works",
+      "s1": {
+        "title": "Consultation and measuring",
+        "text": "We discuss your needs, measure the plot and advise which fence suits it best."
+      },
+      "s2": {
+        "title": "Offer",
+        "text": "We prepare an offer with the fence model, height, colour, gates and wickets."
+      },
+      "s3": {
+        "title": "Production",
+        "text": "The fence is made to the exact measurements of your plot."
+      },
+      "s4": {
+        "title": "Installation",
+        "text": "We build the foundations and posts, and install the fence, gates and wickets."
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "q": "How much does a fence cost?",
+        "a": "The price depends on the fence model, height and length, the terrain of the plot and the gates and wickets you choose. We prepare an exact offer after measuring the plot – get in touch and we will advise you."
+      },
+      "q2": {
+        "q": "Which fence should I choose?",
+        "a": "If privacy matters most, choose a sheet metal fence or fence boards. If you need a cost-effective enclosure, choose a segment fence. When we come to measure, we will advise what suits your plot and the architecture of your house best."
+      },
+      "q3": {
+        "q": "Can I order gates and wickets together with the fence?",
+        "a": "Yes. We make sliding and swing yard gates and wickets filled with the same profile and in the same colour as the fence, so the whole enclosure looks consistent."
+      },
+      "q4": {
+        "q": "What warranty do you provide?",
+        "a": "We provide a 2-year warranty for the work carried out, fence boards come with a 5–10 year warranty, and the sheet metal we use is covered by a warranty of as much as 45 years."
+      }
+    },
+    "articles": {
+      "title": "More about fences",
+      "a1": "Fence price – how much does a fence cost?",
+      "a2": "Steel fences – fence types for your plot",
+      "a3": "How to choose the perfect fence according to your plot terrain?"
+    },
+    "cta": {
+      "title": "Planning to build a fence?",
+      "text": "Write or call us – we will advise you, come to measure and prepare an offer.",
+      "button": "Get an offer"
+    }
   },
   "gates": {
     "intro": {
@@ -218,6 +325,93 @@
       "text": "Write or call us – we will advise you, come to measure and prepare an offer."
     }
   },
+  "blinds": {
+    "intro": {
+      "title": "Outdoor blinds for terraces, pergolas and facades",
+      "text": "Outdoor blinds are sheet metal blades used to build walls and roofs for terraces and pergolas, and screens for facades. They protect from the sun, the wind and prying eyes, and let light and air through when the blades are opened. We make the blinds from Arcelor Ultramatt steel to the lengths you specify, so they are easy to fit to a particular opening and to match with your fence or the facade of your house.",
+      "alt": "Terrace pergola with outdoor blinds",
+      "contact": "Get an offer"
+    },
+    "info": {
+      "title": "General information",
+      "i1": {
+        "title": "1–2 weeks",
+        "text": "Production time for blinds"
+      },
+      "i2": {
+        "title": "Made to your lengths",
+        "text": "Blinds are made to the lengths specified by the customer"
+      },
+      "i3": {
+        "title": "All over Lithuania",
+        "text": "We deliver anywhere in Lithuania"
+      }
+    },
+    "calculator": {
+      "title": "Blinds calculator",
+      "text": "Enter the dimensions of your openings – the calculator works out how many blinds and brackets you need and how long the blinds should be.",
+      "button": "Open the calculator"
+    },
+    "models": {
+      "title": "Blind models",
+      "text": "We make sheet metal blinds in two thicknesses. Both are designed for sun and wind protection and for privacy; they differ only in the thickness of the blade and the brackets that fit it.",
+      "name": "Outdoor blind {name}",
+      "m1Alt": "Pergola with 20x100 outdoor blinds",
+      "m2Alt": "Terrace roof and wall made of 18x100 outdoor blinds",
+      "thickness": "Thickness",
+      "width": "Width",
+      "length": "Length",
+      "weight": "Weight",
+      "lengthValue": "made to order, up to 2000 mm",
+      "weightValue": "about 1 kg/m"
+    },
+    "features": {
+      "f1": "Blades with grooves that drain rainwater to the ends",
+      "f2": "Steel painted with a two-layer technology, UV resistant",
+      "f3": "The set includes blinds, screws and locking latches",
+      "f4": "Brackets made of polypropylene with 30% glass fibre, sold in pairs",
+      "f5": "Brackets withstand wind of up to 110 km/h",
+      "f6": "Bracket colours – black (RAL 9005) and grey (RAL 7016)"
+    },
+    "steel": {
+      "title": "Steel information",
+      "text": "For blinds we use only Premium grade steel – the same steel our sheet metal fences are made of.",
+      "type": "Steel type",
+      "manufacturer": "Manufacturer",
+      "country": "Country of manufacture",
+      "countryValue": "Belgium",
+      "techWarranty": "Technical warranty",
+      "techWarrantyValue": "50 years",
+      "colorWarranty": "Colour warranty",
+      "colorWarrantyValue": "20 years",
+      "thickness": "Steel thickness",
+      "sameShade": "Identical shade warranty",
+      "yes": "Yes",
+      "recommendedLength": "Recommended element length",
+      "coatingMass": "Metal coating mass",
+      "coating": "Coating",
+      "coatingValue": "min. 35 microns"
+    },
+    "colors": {
+      "title": "Standard colours",
+      "note": "Non-standard colours and coatings are available on request.",
+      "alt": "Colour RAL {code}"
+    },
+    "more": {
+      "title": "Additional information",
+      "text": "Dimensions and composition of the brackets and blinds, accessories and installation tips (the sheets are in Lithuanian). Click a sheet to enlarge it.",
+      "s1": "Brackets for 18 mm blinds",
+      "s2": "Brackets for 20 mm blinds",
+      "s3": "Sheet metal blinds, 18 mm thick",
+      "s4": "Sheet metal blinds, 20 mm thick",
+      "s5": "Accessories",
+      "zoom": "Enlarge"
+    },
+    "cta": {
+      "title": "Need outdoor blinds?",
+      "text": "Write or call us – we will advise you, help you work out the quantity and prepare an offer."
+    }
+  },
   "seo": {
     "home": {
       "title": "Fences, yard gates and installation",
@@ -249,7 +443,7 @@
     },
     "lauko-zaliuzes": {
       "title": "Outdoor blinds",
-      "description": "Outdoor blinds for homes and terraces – protection from the sun and prying eyes."
+      "description": "Sheet metal outdoor blinds for terraces, pergolas and facades – made to your lengths in 1–2 weeks and delivered all over Lithuania. Blinds calculator."
     },
     "tvoru-skaiciuokle": {
       "title": "Fence calculator",
@@ -304,7 +498,8 @@
   "gallery": {
     "previous": "Previous photo",
     "next": "Next photo",
-    "close": "Close"
+    "close": "Close",
+    "enlarge": "Enlarge photo"
   },
   "error": {
     "notFoundTitle": "Page not found",

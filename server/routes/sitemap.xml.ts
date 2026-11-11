@@ -1,8 +1,8 @@
 import { queryCollection } from "@nuxt/content/server";
 import { SITE_URL } from "#shared/site";
 
-// Puslapiai su abiem kalbomis [lt, en]. Neužbaigti puslapiai (lauko žaliuzės,
-// parduotuvė, skaičiuoklė) čia neįtraukti ir turi noindex – įtraukti, kai bus turinys.
+// Puslapiai su abiem kalbomis [lt, en]. Neužbaigti puslapiai (parduotuvė,
+// skaičiuoklė) čia neįtraukti ir turi noindex – įtraukti, kai bus turinys.
 const PAGES: [string, string][] = [
   ["/", "/en"],
   ["/tvoros", "/en/fences"],
@@ -11,6 +11,7 @@ const PAGES: [string, string][] = [
   ["/tvoros/tvoralentes", "/en/fences/fenceboards"],
   ["/tvoros/segmentines-tvoros", "/en/fences/segment-fence"],
   ["/kiemo-vartai", "/en/yard-gates"],
+  ["/lauko-zaliuzes", "/en/outdoor-blinds"],
   ["/galerija", "/en/gallery"],
   ["/straipsniai", "/en/articles"],
   ["/apie-mus", "/en/about-us"],
