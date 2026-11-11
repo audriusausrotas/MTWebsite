@@ -488,11 +488,6 @@
         "text": "We deliver anywhere in Lithuania"
       }
     },
-    "calculator": {
-      "title": "Blinds calculator",
-      "text": "Enter the dimensions of your openings – the calculator works out how many blinds and brackets you need and how long the blinds should be.",
-      "button": "Open the calculator"
-    },
     "models": {
       "title": "Blind models",
       "text": "We make sheet metal blinds in two thicknesses. Both are designed for sun and wind protection and for privacy; they differ only in the thickness of the blade and the brackets that fit it.",
@@ -584,7 +579,7 @@
     },
     "lauko-zaliuzes": {
       "title": "Outdoor blinds",
-      "description": "Sheet metal outdoor blinds for terraces, pergolas and facades – made to your lengths in 1–2 weeks and delivered all over Lithuania. Blinds calculator."
+      "description": "Sheet metal outdoor blinds for terraces, pergolas and facades – made to your lengths in 1–2 weeks and delivered all over Lithuania."
     },
     "tvoru-skaiciuokle": {
       "title": "Fence calculator – instant fence price",

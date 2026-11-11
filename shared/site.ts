@@ -10,9 +10,5 @@ export const FENCE_CATEGORY_PAGES: Record<string, string> = {
   Segmentas: "/tvoros/segmentines-tvoros",
 };
 
-// Lauko žaliuzių skaičiuoklė – MTSoft programoje (skaičiuoklės režimas „Lauko žaliuzės"), atidaroma naujame lange.
-// MTSoft'e šis puslapis pasiekiamas tik prisijungus.
-export const BLINDS_CALCULATOR_URL = "https://mtsoft.lt/skaiciuokle";
-
 export const absoluteUrl =(path: string) => (/^https?:\/\//.test(path) ? path : SITE_URL + path);
 

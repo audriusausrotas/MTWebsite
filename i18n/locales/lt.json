@@ -496,11 +496,6 @@
         "text": "Pristatome į bet kurią Lietuvos vietą"
       }
     },
-    "calculator": {
-      "title": "Žaliuzių skaičiuoklė",
-      "text": "Įveskite angų matmenis – skaičiuoklė apskaičiuos, kiek ir kokio ilgio žaliuzių bei laikiklių jums reikės.",
-      "button": "Atidaryti skaičiuoklę"
-    },
     "models": {
       "title": "Žaliuzių modeliai",
       "text": "Gaminame dviejų storių skardines žaliuzes. Abi skirtos apsaugai nuo saulės ir vėjo bei privatumui, skiriasi tik mentės storis ir jai tinkantys laikikliai.",
@@ -592,7 +587,7 @@
     },
     "lauko-zaliuzes": {
       "title": "Lauko žaliuzės",
-      "description": "Skardinės lauko žaliuzės terasoms, pavėsinėms ir fasadams – gaminamos pagal jūsų ilgius per 1–2 savaites, pristatomos visoje Lietuvoje. Žaliuzių skaičiuoklė."
+      "description": "Skardinės lauko žaliuzės terasoms, pavėsinėms ir fasadams – gaminamos pagal jūsų ilgius per 1–2 savaites, pristatomos visoje Lietuvoje."
     },
     "tvoru-skaiciuokle": {
       "title": "Tvorų skaičiuoklė – tvoros kaina iškart",

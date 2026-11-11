@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Image } from "~/data/interfaces";
-import { BLINDS_CALCULATOR_URL } from "#shared/site";
 
 definePageMeta({
   breadcrumb: "lauko-zaliuzes",
@@ -82,14 +81,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
       :url="introImage"
       :alt="$t('blinds.intro.alt')"
     >
-      <div class="flex flex-col gap-6">
-        <BaseArrowButton
-          :name="$t('blinds.calculator.title')"
-          :to="BLINDS_CALCULATOR_URL"
-          target="_blank"
-        />
-        <BaseArrowButton :name="$t('blinds.intro.contact')" :to="localePath('/kontaktai')" />
-      </div>
+      <BaseArrowButton :name="$t('blinds.intro.contact')" :to="localePath('/kontaktai')" />
     </AboutBlock>
 
     <section class="flex flex-col gap-8">
@@ -104,25 +96,6 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
           <span>{{ item.text }}</span>
         </li>
       </ul>
-    </section>
-
-    <section
-      class="bg-red-main text-white p-8 md:p-12 flex flex-col md:flex-row gap-8 md:items-center md:justify-between"
-    >
-      <div class="flex flex-col gap-4 max-w-150">
-        <div class="flex items-center gap-4">
-          <img src="/icons/calculator.svg" alt="" class="shrink-0" />
-          <h2 class="text-4xl font-medium">{{ $t("blinds.calculator.title") }}</h2>
-        </div>
-        <p>{{ $t("blinds.calculator.text") }}</p>
-      </div>
-      <BaseArrowButton
-        :name="$t('blinds.calculator.button')"
-        variant="secondary"
-        :to="BLINDS_CALCULATOR_URL"
-        target="_blank"
-        class="shrink-0"
-      />
     </section>
 
     <section class="flex flex-col gap-8">

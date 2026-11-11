@@ -27,6 +27,6 @@ MTSoft API adresą galima perrašyti per `NUXT_API_BASE` (numatyta: dev – `htt
   - atsakymas kešuojamas 10 min. (pakeitimai MTSoft'e svetainėje matomi per ≤10 min.);
   - jei mtsoft.lt nepasiekiamas, svetainė veikia toliau, tik be šių duomenų.
   - Nuotraukų failai (`/images/...`) turi būti šio projekto `public/` aplanke.
-- **Lauko žaliuzės:** `app/pages/lauko-zaliuzes.vue`, tekstai – i18n raktas `blinds` (be kainų). Skaičiuoklės nuoroda – `BLINDS_CALCULATOR_URL` (`shared/site.ts`), veda į MTSoft skaičiuoklę.
+- **Lauko žaliuzės:** `app/pages/lauko-zaliuzes.vue`, tekstai – i18n raktas `blinds` (be kainų). Nuorodos į MTSoft skaičiuoklę nėra (MTSoft – privatus); žaliuzių skaičiuoklė bus prie tvorų skaičiuoklės.
 - **Paieška:** `server/api/search.get.ts` (tvorų pavadinimai + straipsnių pavadinimai/aprašymai).
 - **SEO:** canonical, hreflang, og ir `titleTemplate` – `app/app.vue`; `sitemap.xml` – `server/routes/sitemap.xml.ts`; neužbaigti puslapiai turi `definePageMeta({ noindex: true })` ir nėra sitemap'e.
