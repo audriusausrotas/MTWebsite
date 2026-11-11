@@ -168,6 +168,22 @@ export const useCalculator = () => {
     return config.value.gates.segment.filter((kit) => kit.height === kitHeight(height)).map((kit) => kit.width);
   };
 
+  // ar pasirinktam segmentiniam komplektui kainyne yra automatika
+  const kitAutomation = (item: FenceSelection) => {
+    const height = heightOf(item);
+    return (
+      item.gateType === "segment" &&
+      !!height &&
+      !!config.value?.gates.segment.some(
+        (kit) => kit.width === item.gateWidth && kit.height === kitHeight(height) && kit.automation,
+      )
+    );
+  };
+
+  // automatikos pasirinkimas: gaminamiems vartams – visada, komplektui – tik jei ji yra
+  const hasAutomatics = (item: FenceSelection) =>
+    item.gateType !== "none" && (item.gateType !== "segment" || kitAutomation(item));
+
   const segmentWicket = (item: FenceSelection) => {
     const height = heightOf(item);
     return (
@@ -399,6 +415,7 @@ export const useCalculator = () => {
     gateWidthsOf,
     segmentGateWidths,
     segmentWicket,
+    hasAutomatics,
     wicketAvailable,
     openingValid,
     selectModel,

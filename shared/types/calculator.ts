@@ -47,8 +47,9 @@ export interface CalculatorConfig {
     sliding: number[];
     swing: number[];
     wicket: boolean;
-    // gatavi segmentiniai komplektai (tik varstomi, tik segmentinei tvorai): plotis × aukštis cm
-    segment: { width: number; height: number }[];
+    // gatavi segmentiniai komplektai (tik varstomi, tik segmentinei tvorai): plotis × aukštis cm;
+    // automation – ar komplektui galima automatika
+    segment: { width: number; height: number; automation: boolean }[];
     segmentWickets: number[];
     maxGates: number;
     maxWickets: number;

@@ -25,6 +25,7 @@ const {
   gateWidthsOf,
   segmentGateWidths,
   segmentWicket,
+  hasAutomatics,
   wicketAvailable,
   setHeight,
   selectScope,
@@ -360,8 +361,8 @@ const barText = computed(() => {
             </div>
 
             <div class="flex flex-wrap gap-x-12 gap-y-6">
-              <!-- gatavas komplektas – be automatikos pasirinkimo -->
-              <div v-if="fence.gateType !== 'segment'" class="flex flex-col gap-4">
+              <!-- gatavam komplektui – tik jei kainyne jam yra automatika -->
+              <div v-if="hasAutomatics(fence)" class="flex flex-col gap-4">
                 <h3 class="text-xl font-medium">{{ $t("calc.gates.automatics") }}</h3>
                 <div class="flex flex-wrap gap-3">
                   <CalculatorChip :selected="fence.automatics" @select="fence.automatics = true">

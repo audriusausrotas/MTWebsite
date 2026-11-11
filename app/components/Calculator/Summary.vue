@@ -3,8 +3,20 @@ import type { FenceSelection } from "~/composables/useCalculator";
 
 // Santrauka su sąmatos kaina. Kol nėra užklausų formos, „Gauti pasiūlymą“ atidaro laišką su pasirinkimais.
 const { t, locale } = useI18n();
-const { selection, result, loading, missing, hasFence, hasGates, isBlinds, modelOf, heightOf, lengthOf, wicketAvailable } =
-  useCalculator();
+const {
+  selection,
+  result,
+  loading,
+  missing,
+  hasFence,
+  hasGates,
+  isBlinds,
+  modelOf,
+  heightOf,
+  lengthOf,
+  hasAutomatics,
+  wicketAvailable,
+} = useCalculator();
 
 const EMAIL = "info@modernitvora.lt";
 
@@ -45,7 +57,9 @@ const fenceLines = (item: FenceSelection) => {
 
   if (hasGates.value) {
     if (item.gateType === "segment" && item.gateWidth) {
-      list.push(t("calc.summary.segmentGateLine", { width: meters(item.gateWidth), count: item.gateCount }));
+      const line = t("calc.summary.segmentGateLine", { width: meters(item.gateWidth), count: item.gateCount });
+      const automatics = t(item.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase();
+      list.push(hasAutomatics(item) ? `${line}, ${automatics}` : line);
     } else if (item.gateType !== "none" && item.gateWidth) {
       list.push(
         t("calc.summary.gateLine", {
