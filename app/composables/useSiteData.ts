@@ -2,8 +2,14 @@ import type { SiteData } from "#shared/types/website";
 
 type Part = keyof SiteData;
 
-// useFences / useGallery / useFunded būsenų raktai
-const STATE_KEY: Record<Part, string> = { fences: "fences", gallery: "images", funded: "funded" };
+// useFences / useGallery / useFunded / useGates būsenų raktai
+const STATE_KEY: Record<Part, string> = {
+  fences: "fences",
+  gallery: "images",
+  funded: "funded",
+  gates: "gateImages",
+  gateSlots: "gateSlots",
+};
 
 // Puslapis, kuriam reikia MTSoft duomenų, įsikelia tik savo dalį (kitų puslapių HTML jų neneša).
 // Vieną kartą: serveryje – per užklausą, naršyklėje – kai pirmą kartą atidaromas toks puslapis.

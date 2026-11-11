@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const { images } = useGallery();
+import type { Image } from "~/data/interfaces";
+
+// be `images` rodoma bendra galerija (useGallery)
+const props = defineProps<{ images?: Image[] }>();
+
+const gallery = useGallery();
+const images = computed(() => props.images ?? gallery.images.value);
 const { locale } = useI18n();
 
 const modalOpen = ref<boolean>(false);

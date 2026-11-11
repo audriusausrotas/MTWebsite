@@ -113,6 +113,111 @@
     "constact": "Contact us",
     "getPrice": "Calculate price"
   },
+  "gates": {
+    "intro": {
+      "title": "Yard gates and wickets that match your fence",
+      "text": "The gate is the first thing you see when you come home and the first thing your guests notice. We offer sliding and swing yard gates and wickets, made to your measurements and filled with the same profile as your fence. We take care of everything – from measuring and foundations to installation and setting up the automation.",
+      "alt": "Sliding yard gate and wicket with vertical infill",
+      "cta": "Get an offer"
+    },
+    "types": {
+      "title": "Gate types"
+    },
+    "sliding": {
+      "title": "Sliding gates",
+      "text": "A sliding gate opens by moving along the fence, so it takes no space in the yard or on the street. It is the most popular choice when the driveway is short, slopes upwards or the car is parked right behind the gate.",
+      "p1": "No room needed for the leaves to swing – convenient in winter when snow builds up at the gate",
+      "p2": "The gate runs on rollers fixed to a foundation, with no rail across the driveway",
+      "p3": "Easy to automate and control with a remote or a phone",
+      "alt": "Sliding yard gate"
+    },
+    "swing": {
+      "title": "Swing gates",
+      "text": "A swing gate is the classic two-leaf solution. It suits places where there is no room along the fence for a sliding gate to travel, while the yard has enough space for the leaves to open.",
+      "p1": "Simple and reliable construction",
+      "p2": "No free space needed along the fence",
+      "p3": "Can be automated right away or later",
+      "alt": "Two-leaf swing yard gate"
+    },
+    "wicket": {
+      "title": "Wickets",
+      "text": "Wickets are made in the same style as the gate and the fence, so the entrance to your yard looks consistent. They can be installed next to the gate or anywhere else in the fence line.",
+      "p1": "Mechanical or electric lock",
+      "p2": "Can be connected to an intercom or a keypad",
+      "p3": "Width and height chosen to fit your entrance",
+      "alt": "Yard wicket with a lock"
+    },
+    "infill": {
+      "title": "The same infill as your fence",
+      "text": "The gate and wicket frames are filled with the same profile and in the same colour as the fence, so the whole enclosure looks like one product. You can choose from our entire fence range.",
+      "boards": "Fence boards",
+      "segment": "Segment"
+    },
+    "automation": {
+      "title": "Gate automation",
+      "text": "We supply gates with automation from the trusted Italian manufacturers ROGER Technology and CAME. We choose the operator according to the gate type, weight and how often it is used, then install it, program it and show you how to use it.",
+      "rogerText": "Quiet, smooth operators for everyday use – for both sliding and swing gates.",
+      "cameText": "One of the best-known gate automation manufacturers in the world, with a wide choice of operators for gates of different sizes and weights.",
+      "forSliding": "For sliding gates",
+      "forSwing": "For swing gates",
+      "f1": "Remote control, and phone control with an optional module",
+      "f2": "Safety photocells and a warning light",
+      "f3": "Soft start and stop",
+      "f4": "Manual release during a power cut",
+      "altSliding": "{brand} sliding gate automation kit",
+      "altSwing": "{brand} swing gate automation kit"
+    },
+    "steps": {
+      "title": "How it works",
+      "s1": {
+        "title": "Consultation and measuring",
+        "text": "We discuss your needs, measure the driveway and advise which gate type suits it best."
+      },
+      "s2": {
+        "title": "Offer",
+        "text": "We prepare an offer with the gate dimensions, infill, colour and automation."
+      },
+      "s3": {
+        "title": "Production",
+        "text": "The gate is made to the exact measurements of your driveway."
+      },
+      "s4": {
+        "title": "Installation and start-up",
+        "text": "We build the foundation, install the gate, and connect and program the automation."
+      }
+    },
+    "gallery": {
+      "title": "Gates we have installed"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "q": "Sliding or swing gate – which should I choose?",
+        "a": "A sliding gate is more convenient day to day and takes no space in the yard, but it needs free space along the fence – a little more than the width of the driveway. A swing gate does not need that space, but there must be room for the leaves to open. When we come to measure, we will advise what suits your plot best."
+      },
+      "q2": {
+        "q": "Will the gate match my fence?",
+        "a": "Yes. Gates and wickets are filled with the same profile and in the same colour as the fence, so the enclosure looks consistent."
+      },
+      "q3": {
+        "q": "Can automation be installed later?",
+        "a": "Yes, but it is easier to plan for it from the start – the power cables are laid and the fixing points prepared when the gate is installed, so the paving does not have to be lifted later."
+      },
+      "q4": {
+        "q": "Can I order just a gate, without a fence?",
+        "a": "Yes, gates and wickets can be ordered separately – we will match the infill and colour to your existing fence."
+      }
+    },
+    "articles": {
+      "title": "More about gates",
+      "a1": "Sliding or swing yard gates – which are suitable for me?",
+      "a2": "Fence gates, wickets and gate automation – what you need to know"
+    },
+    "cta": {
+      "title": "Would you like a gate for your yard?",
+      "text": "Write or call us – we will advise you, come to measure and prepare an offer."
+    }
+  },
   "seo": {
     "home": {
       "title": "Fences, yard gates and installation",
@@ -140,7 +245,7 @@
     },
     "kiemo-vartai": {
       "title": "Yard gates",
-      "description": "Sliding and swing yard gates, wickets and gate automation – production and installation."
+      "description": "Sliding and swing yard gates, wickets and gate automation – made to measure, with infill matching your fence, and installed."
     },
     "lauko-zaliuzes": {
       "title": "Outdoor blinds",

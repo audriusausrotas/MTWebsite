@@ -56,15 +56,21 @@ const valueOf = <T>(result: PromiseSettledResult<T>, path: string): T | null => 
 // Jei MTSoft nepasiekiamas, svetainė veikia toliau, tik be tvorų / galerijos duomenų.
 export const getSiteData = defineCachedFunction(
   async (): Promise<SiteData & { complete: boolean }> => {
-    const [fencesResult, galleryResult, fundedResult] = await Promise.allSettled([
-      fetchList("getFences"),
-      fetchList("getGallery"),
-      fetchList("getFunded"),
-    ]);
+    const [fencesResult, galleryResult, fundedResult, gatesResult, gateSlotsResult] =
+      await Promise.allSettled([
+        fetchList("getFences"),
+        fetchList("getGallery"),
+        fetchList("getFunded"),
+        fetchList("getGateImages"),
+        fetchList("getGateSlots"),
+      ]);
 
     const fences = valueOf(fencesResult, "getFences");
     const gallery = valueOf(galleryResult, "getGallery");
     const funded = valueOf(fundedResult, "getFunded");
+    // vartų puslapio nuotraukos neprivalomos – be jų atsakymas vis tiek laikomas pilnu ir kešuojamas
+    const gates = valueOf(gatesResult, "getGateImages");
+    const gateSlots = valueOf(gateSlotsResult, "getGateSlots");
 
     return {
       complete: Boolean(fences && gallery && funded),
@@ -73,6 +79,8 @@ export const getSiteData = defineCachedFunction(
         .map(toWebsiteFence),
       gallery: toImages(gallery),
       funded: toImages(funded),
+      gates: toImages(gates),
+      gateSlots: toImages(gateSlots),
     };
   },
   {

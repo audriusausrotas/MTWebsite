@@ -1,7 +1,7 @@
 import { queryCollection } from "@nuxt/content/server";
 import { SITE_URL } from "#shared/site";
 
-// Puslapiai su abiem kalbomis [lt, en]. Neužbaigti puslapiai (kiemo vartai, lauko žaliuzės,
+// Puslapiai su abiem kalbomis [lt, en]. Neužbaigti puslapiai (lauko žaliuzės,
 // parduotuvė, skaičiuoklė) čia neįtraukti ir turi noindex – įtraukti, kai bus turinys.
 const PAGES: [string, string][] = [
   ["/", "/en"],
@@ -10,6 +10,7 @@ const PAGES: [string, string][] = [
   ["/tvoros/metalines-tvoros", "/en/fences/metal-fence"],
   ["/tvoros/tvoralentes", "/en/fences/fenceboards"],
   ["/tvoros/segmentines-tvoros", "/en/fences/segment-fence"],
+  ["/kiemo-vartai", "/en/yard-gates"],
   ["/galerija", "/en/gallery"],
   ["/straipsniai", "/en/articles"],
   ["/apie-mus", "/en/about-us"],

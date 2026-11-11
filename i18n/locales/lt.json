@@ -121,6 +121,111 @@
     "constact": "Susisiekti",
     "getPrice": "Paskaičiuoti kainą"
   },
+  "gates": {
+    "intro": {
+      "title": "Kiemo vartai ir varteliai, derantys prie jūsų tvoros",
+      "text": "Vartai – pirmas dalykas, kurį mato grįžtantys namo ir atvykstantys svečiai. Siūlome stumdomus ir varstomus kiemo vartus bei vartelius, pagamintus pagal individualius matmenis ir užpildytus tuo pačiu profiliu kaip jūsų tvora. Pasirūpiname viskuo – nuo matavimo ir pamatų iki montavimo bei automatikos paleidimo.",
+      "alt": "Stumdomi kiemo vartai ir varteliai su vertikaliu užpildu",
+      "cta": "Gauti pasiūlymą"
+    },
+    "types": {
+      "title": "Vartų tipai"
+    },
+    "sliding": {
+      "title": "Stumdomi vartai",
+      "text": "Stumdomi vartai atsidaro slinkdami išilgai tvoros, todėl neužima vietos nei kieme, nei gatvėje. Tai populiariausias pasirinkimas, kai įvažiavimas trumpas, kyla į kalną ar automobilis statomas prie pat vartų.",
+      "p1": "Nereikia vietos varčioms atsidaryti – patogu žiemą, kai prie vartų susikaupia sniegas",
+      "p2": "Vartai juda ant pamato sumontuotais ratukais, be bėgio važiuojamojoje dalyje",
+      "p3": "Lengvai automatizuojami ir valdomi pulteliu ar telefonu",
+      "alt": "Stumdomi kiemo vartai"
+    },
+    "swing": {
+      "title": "Varstomi vartai",
+      "text": "Varstomi (atveriami) vartai – klasikinis dviejų varčių sprendimas. Jie tinka ten, kur išilgai tvoros nėra vietos stumdomų vartų sąvarai nuvažiuoti, o kieme pakanka erdvės varčioms atsidaryti.",
+      "p1": "Paprasta ir patikima konstrukcija",
+      "p2": "Nereikia laisvos vietos išilgai tvoros",
+      "p3": "Galima automatizuoti iš karto arba vėliau",
+      "alt": "Varstomi dviejų varčių kiemo vartai"
+    },
+    "wicket": {
+      "title": "Varteliai",
+      "text": "Varteliai gaminami to paties stiliaus kaip vartai ir tvora, todėl įėjimas į kiemą atrodo vientisas. Juos galima montuoti šalia vartų arba atskiroje tvoros vietoje.",
+      "p1": "Mechaninė arba elektrinė spyna",
+      "p2": "Galimybė prijungti telefonspynę ar kodinę klaviatūrą",
+      "p3": "Plotis ir aukštis parenkami pagal jūsų įėjimą",
+      "alt": "Kiemo varteliai su spyna"
+    },
+    "infill": {
+      "title": "Užpildas – toks pat kaip tvoros",
+      "text": "Vartų ir vartelių rėmas užpildomas tuo pačiu profiliu ir ta pačia spalva kaip tvora, todėl visas aptvėrimas atrodo kaip vienas gaminys. Rinktis galite iš viso mūsų tvorų asortimento.",
+      "boards": "Tvoralentės",
+      "segment": "Segmentas"
+    },
+    "automation": {
+      "title": "Vartų automatika",
+      "text": "Vartus komplektuojame su patikimų Italijos gamintojų ROGER Technology ir CAME automatika. Pavarą parenkame pagal vartų tipą, svorį ir naudojimo intensyvumą, ją sumontuojame, suprogramuojame ir parodome, kaip naudotis.",
+      "rogerText": "Tylios, sklandžiai veikiančios pavaros kasdieniam naudojimui – tiek stumdomiems, tiek varstomiems vartams.",
+      "cameText": "Vienas žinomiausių vartų automatikos gamintojų pasaulyje – platus pavarų pasirinkimas įvairaus dydžio ir svorio vartams.",
+      "forSliding": "Stumdomiems vartams",
+      "forSwing": "Varstomiems vartams",
+      "f1": "Valdymas pulteliu, o pasirinkus papildomą modulį – ir telefonu",
+      "f2": "Saugos fotoelementai ir signalinė lempa",
+      "f3": "Sklandus pajudėjimas ir sustojimas",
+      "f4": "Rankinis atrakinimas dingus elektrai",
+      "altSliding": "{brand} stumdomų vartų automatikos komplektas",
+      "altSwing": "{brand} varstomų vartų automatikos komplektas"
+    },
+    "steps": {
+      "title": "Kaip vyksta darbai",
+      "s1": {
+        "title": "Konsultacija ir matavimas",
+        "text": "Aptariame jūsų poreikius, išmatuojame įvažiavimą ir patariame, kurio tipo vartai tinka geriausiai."
+      },
+      "s2": {
+        "title": "Pasiūlymas",
+        "text": "Parengiame pasiūlymą su vartų matmenimis, užpildu, spalva ir automatika."
+      },
+      "s3": {
+        "title": "Gamyba",
+        "text": "Vartai pagaminami pagal tikslius jūsų įvažiavimo matmenis."
+      },
+      "s4": {
+        "title": "Montavimas ir paleidimas",
+        "text": "Įrengiame pamatą, sumontuojame vartus, prijungiame ir suprogramuojame automatiką."
+      }
+    },
+    "gallery": {
+      "title": "Mūsų sumontuoti vartai"
+    },
+    "faq": {
+      "title": "Dažniausi klausimai",
+      "q1": {
+        "q": "Ką rinktis – stumdomus ar varstomus vartus?",
+        "a": "Stumdomi vartai patogesni kasdien ir neužima vietos kieme, bet jiems reikia laisvos vietos išilgai tvoros – šiek tiek daugiau nei įvažiavimo plotis. Varstomiems vartams tokios vietos nereikia, tačiau turi likti erdvės varčioms atsidaryti. Atvykę pamatuoti patarsime, kas geriau tinka jūsų sklypui."
+      },
+      "q2": {
+        "q": "Ar vartai derės prie mano tvoros?",
+        "a": "Taip. Vartai ir varteliai užpildomi tuo pačiu profiliu ir ta pačia spalva kaip tvora, todėl atrodo kaip vientisas aptvėrimas."
+      },
+      "q3": {
+        "q": "Ar automatiką galima sumontuoti vėliau?",
+        "a": "Galima, tačiau patogiau tai numatyti iš karto – montuojant vartus atvedami elektros kabeliai ir paruošiamos tvirtinimo vietos, todėl vėliau nereikia ardyti dangos."
+      },
+      "q4": {
+        "q": "Ar galima užsakyti tik vartus, be tvoros?",
+        "a": "Taip, vartus ir vartelius galima užsakyti ir atskirai – užpildą bei spalvą priderinsime prie jau esamos tvoros."
+      }
+    },
+    "articles": {
+      "title": "Plačiau apie vartus",
+      "a1": "Stumdomi ar atveriami kiemo vartai – kurie tinkami man?",
+      "a2": "Tvoros vartai, varteliai ir vartų automatika – ką reikia žinoti"
+    },
+    "cta": {
+      "title": "Norite vartų savo kiemui?",
+      "text": "Parašykite arba paskambinkite – pakonsultuosime, atvyksime pamatuoti ir parengsime pasiūlymą."
+    }
+  },
   "seo": {
     "home": {
       "title": "Tvoros, kiemo vartai ir jų montavimas",
@@ -148,7 +253,7 @@
     },
     "kiemo-vartai": {
       "title": "Kiemo vartai",
-      "description": "Stumdomi ir atveriami kiemo vartai, varteliai ir vartų automatika – gamyba ir montavimas."
+      "description": "Stumdomi ir varstomi kiemo vartai, varteliai ir vartų automatika – pagal individualius matmenis, su tvora derančiu užpildu ir montavimu."
     },
     "lauko-zaliuzes": {
       "title": "Lauko žaliuzės",

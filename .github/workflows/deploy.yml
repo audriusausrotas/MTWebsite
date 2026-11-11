@@ -1,0 +1,64 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      # Naujas build – į tuščią .output-new (rm: išvalomas prieš įkeliant), ne ant seno .output: scp failų netrina,
+      # todėl senų versijų failai kauptųsi. Sukeitimas – kitame žingsnyje. (Tas pats principas kaip MTSoft.)
+      - name: Upload to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: ".output,package.json"
+          target: "/var/www/modernitvora/.output-new"
+          rm: true
+
+      - name: Restart website
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/modernitvora
+
+            # build įkeltas pilnai – kitaip nieko nekeičiam, veikia senas
+            test -f .output-new/.output/server/index.mjs
+
+            mv -f .output-new/package.json package.json
+
+            # sukeičiam: senas .output → .output-old, naujas → .output (serveryje lieka tik dabartinis build)
+            rm -rf .output-old
+            if [ -d .output ]; then mv .output .output-old; fi
+            mv .output-new/.output .output
+            rm -rf .output-new
+
+            # klausosi tik 127.0.0.1:7000 – viešai pasiekiama per Caddy (modernitvora.mtsoft.lt)
+            pm2 reload moderni-tvora-website || HOST=127.0.0.1 PORT=7000 pm2 start .output/server/index.mjs --name moderni-tvora-website
+            pm2 save
+
+            rm -rf .output-old

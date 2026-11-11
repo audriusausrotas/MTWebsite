@@ -25,6 +25,10 @@ export interface SiteData {
   fences: WebsiteFence[];
   gallery: SiteImage[];
   funded: SiteImage[];
+  // vartų puslapio nuotraukos
+  gates: SiteImage[];
+  // vartų puslapio fiksuoti vaizdai: name – vietos raktas (intro, sliding, ...)
+  gateSlots: SiteImage[];
 }
 
 export interface SearchResult {

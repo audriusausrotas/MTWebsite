@@ -5,10 +5,12 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  // Preset'as nenurodomas: Vercel'yje parenkamas „vercel", GitHub Actions build'e (savas serveris) – „node-server".
+  // Savame serveryje puslapiai generuojami užklausos metu (MTSoft duomenys – su 10 min. kešu),
+  // todėl išankstinis generavimas paliktas tik Vercel'iui.
   nitro: {
-    preset: "vercel",
     prerender: {
-      crawlLinks: true,
+      crawlLinks: Boolean(process.env.VERCEL),
     },
   },
 
