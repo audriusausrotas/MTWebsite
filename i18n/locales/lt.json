@@ -679,10 +679,7 @@
     "companyCode": "Įmonės kodas",
     "vatCode": "PVM kodas",
     "bank": "Bankas",
-    "account": "Banko sąskaita",
-    "menu": "Meniu",
-    "details": "Rekvizitai",
-    "info": "Informacija"
+    "account": "Banko sąskaita"
   },
   "search": {
     "open": "Paieška",

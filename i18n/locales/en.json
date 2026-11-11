@@ -671,10 +671,7 @@
     "companyCode": "Company code",
     "vatCode": "VAT code",
     "bank": "Bank",
-    "account": "Bank account",
-    "menu": "Menu",
-    "details": "Company details",
-    "info": "Information"
+    "account": "Bank account"
   },
   "search": {
     "open": "Search",
