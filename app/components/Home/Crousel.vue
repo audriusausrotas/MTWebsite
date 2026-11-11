@@ -41,16 +41,17 @@ const carouselConfig = {
   >
     <Slide v-for="(slide, index) in arr" :key="images ? slide.url : slide.name! + index">
       <div class="h-fit w-full">
+        <!-- visos skaidrės vienodo aukščio (3:2), nepriklausomai nuo nuotraukos proporcijų -->
         <NuxtImg
           v-if="images"
           :src="slide.url"
-          alt=""
+          :alt="slide.name || ''"
           sizes="sm:100vw md:500px"
           loading="lazy"
-          class="w-full h-full object-cover rounded"
+          class="w-full aspect-3/2 object-cover rounded"
         />
-        <div class="flex flex-col gap-4">
-          <h6 class="text-2xl font-medium">{{ slide.name }}</h6>
+        <div v-else class="flex flex-col gap-4">
+          <p class="text-2xl font-medium">{{ slide.name }}</p>
           <p class="text-justify">{{ slide.text }}</p>
         </div>
       </div>

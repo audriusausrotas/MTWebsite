@@ -13,7 +13,7 @@ const isActive = (to: string) => {
 
 <template>
   <header
-    class="hidden lg:flex fixed top-0 left-0 z-50 w-full h-20 px-6 items-center justify-between gap-6 text-white bg-black/40 backdrop-blur-xs"
+    class="hidden lg:flex fixed top-0 left-0 z-50 w-full h-20 px-6 items-center justify-between gap-6 text-white bg-black/75 backdrop-blur-md"
   >
     <NuxtLinkLocale to="/" :aria-label="t('nav.home')" class="shrink-0">
       <img src="/icons/logo.svg" :alt="t('nav.home')" width="100" height="50" />

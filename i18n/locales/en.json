@@ -21,6 +21,8 @@
   },
   "home": {
     "title": "Contemporary fence solutions for your home privacy",
+    "subtitle": "Production and installation of fences, yard gates and wickets – all in one place.",
+    "viewFences": "View fences",
     "projects": "Projects",
     "products": "Products",
     "reviews": "Reviews",
@@ -325,6 +327,145 @@
       "text": "Write or call us – we will advise you, come to measure and prepare an offer."
     }
   },
+  "calc": {
+    "intro": "Put your fence together in a few steps and see a preliminary price right away. No contact details needed.",
+    "unavailable": "The calculator is unavailable right now. Write or call us and we will calculate the price ourselves.",
+    "photos": "Photos",
+    "steps": {
+      "scope": "What do you need?",
+      "model": "Fence model",
+      "modelGates": "Gate infill",
+      "size": "Height and length",
+      "sizeGates": "Gate height",
+      "gates": "Gates and wickets",
+      "install": "Installation"
+    },
+    "scope": {
+      "fence": "Fence",
+      "fenceText": "Fence only, no gates",
+      "both": "Fence and gates",
+      "bothText": "Fence with a gate or wickets",
+      "gates": "Gates only",
+      "gatesText": "A gate or wicket for an existing fence"
+    },
+    "model": {
+      "hint": "Click “Photos” to see how the fence looks on real sites.",
+      "hintGates": "Gates and wickets are filled with the chosen fence profile.",
+      "segment": "Segment fence"
+    },
+    "steel": {
+      "title": "Steel",
+      "premium": "Premium",
+      "premiumText": "Arcelor Ultramatt (Belgium). 50-year technical warranty, 20-year colour warranty. All colours, identical shade guaranteed.",
+      "eco": "Eco",
+      "ecoText": "The more affordable choice. 20-year technical warranty, 5-year colour warranty. Three colours: RAL 7016, 8019 and 8017.",
+      "compare": "Compare steel types",
+      "hide": "Hide comparison",
+      "type": "Steel type",
+      "rows": {
+        "maker": "Manufacturer",
+        "country": "Country of origin",
+        "warranty": "Technical warranty",
+        "colorWarranty": "Colour warranty",
+        "thickness": "Sheet thickness",
+        "shade": "Identical shade guarantee",
+        "zinc": "Metallic coating mass",
+        "coating": "Coating"
+      },
+      "values": {
+        "belgium": "Belgium",
+        "ukraine": "Ukraine",
+        "years50": "50 years",
+        "years20": "20 years",
+        "years5": "5 years",
+        "yes": "Yes",
+        "no": "No",
+        "min35": "min. 35 microns",
+        "mic35": "35 microns"
+      }
+    },
+    "seeThrough": {
+      "title": "Privacy level",
+      "aklina": "Solid",
+      "nepramatoma": "Not see-through",
+      "vidutiniska": "Medium",
+      "pramatoma": "See-through",
+      "pramatoma25": "25 % see-through",
+      "pramatoma50": "50 % see-through"
+    },
+    "boards": {
+      "title": "Fence board mounting",
+      "oneSided": "One-sided",
+      "twoSided": "Two-sided"
+    },
+    "color": {
+      "title": "Colour",
+      "ecoNote": "Eco steel comes in three colours. More colours are available with Premium steel.",
+      "zinc": "Galvanised"
+    },
+    "size": {
+      "height": "Height",
+      "other": "Other",
+      "customHeight": "Height, cm",
+      "heightHint": "From {min} to {max} cm",
+      "length": "Total fence length, m",
+      "lengthHint": "Length of all sides without gates and wickets. From {min} to {max} m, half metres allowed, e.g. 25.5.",
+      "parts": "What is included",
+      "full": "With posts and base panels",
+      "fullText": "Complete set",
+      "poles": "With posts only",
+      "polesText": "No base panels",
+      "none": "No posts or base panels",
+      "noneText": "Fence infill only"
+    },
+    "gates": {
+      "gate": "Driveway gate",
+      "none": "Not needed",
+      "sliding": "Sliding",
+      "swing": "Swing",
+      "width": "Gate width",
+      "count": "Quantity",
+      "automatics": "Automation",
+      "withAutomatics": "With automation",
+      "withoutAutomatics": "Without automation",
+      "wickets": "Wickets",
+      "wicketsHint": "The standard wicket width is 1 m."
+    },
+    "install": {
+      "yes": "With installation",
+      "yesText": "We deliver and install",
+      "no": "Materials only",
+      "noText": "You install it yourself"
+    },
+    "summary": {
+      "title": "Your selection",
+      "price": "Preliminary price incl. VAT",
+      "range": "{from} – {to} €",
+      "materials": "Fence and materials",
+      "gates": "Gates and wickets",
+      "works": "Work and transport",
+      "about": "about {value} €",
+      "note": "The price is preliminary: it is calculated from the total length, so the exact amount is known after the plot is measured.",
+      "calculating": "Calculating…",
+      "manual": "A manager will calculate the price for this option – get in touch and we will reply quickly.",
+      "error": "The price could not be calculated. Try again or contact us.",
+      "chooseModel": "Choose a fence model",
+      "chooseColor": "Choose a colour",
+      "chooseHeight": "Choose a height",
+      "enterLength": "Enter the fence length",
+      "chooseGates": "Choose a gate or wickets",
+      "cta": "Get an exact offer",
+      "custom": "My case is non-standard",
+      "show": "Summary",
+      "emailSubject": "Enquiry from the fence calculator",
+      "emailCustomSubject": "Non-standard enquiry",
+      "emailIntro": "Hello, I would like to get an offer:",
+      "gateLine": "{type} gate {width} m × {count}, {automatics}",
+      "wicketLine": "Wickets × {count}",
+      "lengthLine": "{value} m",
+      "heightLine": "{value} m high"
+    }
+  },
   "blinds": {
     "intro": {
       "title": "Outdoor blinds for terraces, pergolas and facades",
@@ -446,8 +587,8 @@
       "description": "Sheet metal outdoor blinds for terraces, pergolas and facades – made to your lengths in 1–2 weeks and delivered all over Lithuania. Blinds calculator."
     },
     "tvoru-skaiciuokle": {
-      "title": "Fence calculator",
-      "description": "Get a preliminary fence price and request an offer."
+      "title": "Fence calculator – instant fence price",
+      "description": "Choose the fence model, height, length and gates and see a preliminary price with installation right away. No registration or contact details."
     },
     "galerija": {
       "title": "Gallery – completed projects",

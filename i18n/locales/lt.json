@@ -21,6 +21,8 @@
   },
   "home": {
     "title": "Šiuolaikiški tvorų sprendimai Jūsų namų privatumui",
+    "subtitle": "Tvorų, kiemo vartų ir vartelių gamyba bei montavimas – viskas vienoje vietoje.",
+    "viewFences": "Peržiūrėti tvoras",
     "projects": "Projektai",
     "products": "Produktai",
     "reviews": "Atsiliepimai",
@@ -333,6 +335,145 @@
       "text": "Parašykite arba paskambinkite – pakonsultuosime, atvyksime pamatuoti ir parengsime pasiūlymą."
     }
   },
+  "calc": {
+    "intro": "Susidėliokite tvorą keliais žingsniais ir iškart pamatykite preliminarią kainą. Kontaktų palikti nereikia.",
+    "unavailable": "Skaičiuoklė šiuo metu nepasiekiama. Parašykite arba paskambinkite – kainą paskaičiuosime patys.",
+    "photos": "Nuotraukos",
+    "steps": {
+      "scope": "Ko jums reikia?",
+      "model": "Tvoros modelis",
+      "modelGates": "Vartų užpildas",
+      "size": "Aukštis ir ilgis",
+      "sizeGates": "Vartų aukštis",
+      "gates": "Vartai ir varteliai",
+      "install": "Montavimas"
+    },
+    "scope": {
+      "fence": "Tvora",
+      "fenceText": "Tik tvora, be vartų",
+      "both": "Tvora ir vartai",
+      "bothText": "Tvora su vartais ar varteliais",
+      "gates": "Tik vartai",
+      "gatesText": "Vartai ar varteliai prie esamos tvoros"
+    },
+    "model": {
+      "hint": "Paspauskite „Nuotraukos“, kad pamatytumėte, kaip tvora atrodo objektuose.",
+      "hintGates": "Vartai ir varteliai užpildomi pasirinktu tvoros profiliu.",
+      "segment": "Segmentinė tvora"
+    },
+    "steel": {
+      "title": "Skarda",
+      "premium": "Premium",
+      "premiumText": "Arcelor Ultramatt (Belgija). Techninė garantija 50 metų, spalvos – 20 metų. Visos spalvos, identiško atspalvio garantija.",
+      "eco": "Eco",
+      "ecoText": "Pigesnis pasirinkimas. Techninė garantija 20 metų, spalvos – 5 metai. Trys spalvos: RAL 7016, 8019 ir 8017.",
+      "compare": "Palyginti skardas",
+      "hide": "Slėpti palyginimą",
+      "type": "Skardos tipas",
+      "rows": {
+        "maker": "Gamintojas",
+        "country": "Gamintojo šalis",
+        "warranty": "Techninė garantija",
+        "colorWarranty": "Spalvos garantija",
+        "thickness": "Skardos storis",
+        "shade": "Identiško atspalvio garantija",
+        "zinc": "Metalinės dangos masė",
+        "coating": "Padengimas"
+      },
+      "values": {
+        "belgium": "Belgija",
+        "ukraine": "Ukraina",
+        "years50": "50 metų",
+        "years20": "20 metų",
+        "years5": "5 metai",
+        "yes": "Taip",
+        "no": "Ne",
+        "min35": "min. 35 mikronai",
+        "mic35": "35 mikronai"
+      }
+    },
+    "seeThrough": {
+      "title": "Pramatomumas",
+      "aklina": "Aklina",
+      "nepramatoma": "Nepramatoma",
+      "vidutiniska": "Vidutiniška",
+      "pramatoma": "Pramatoma",
+      "pramatoma25": "25 % pramatomumas",
+      "pramatoma50": "50 % pramatomumas"
+    },
+    "boards": {
+      "title": "Tvoralenčių montavimas",
+      "oneSided": "Vienpusės",
+      "twoSided": "Dvipusės"
+    },
+    "color": {
+      "title": "Spalva",
+      "ecoNote": "Eco skarda būna trijų spalvų. Daugiau spalvų – su Premium skarda.",
+      "zinc": "Cinkuota"
+    },
+    "size": {
+      "height": "Aukštis",
+      "other": "Kitas",
+      "customHeight": "Aukštis, cm",
+      "heightHint": "Nuo {min} iki {max} cm",
+      "length": "Bendras tvoros ilgis, m",
+      "lengthHint": "Visų kraštinių ilgis be vartų ir vartelių. Nuo {min} iki {max} m, galima nurodyti pusmetrius, pvz. 25,5.",
+      "parts": "Komplektacija",
+      "full": "Su stulpais ir pamatėliais",
+      "fullText": "Pilnas komplektas",
+      "poles": "Tik su stulpais",
+      "polesText": "Be pamatėlių (bortelių)",
+      "none": "Be stulpų ir pamatėlių",
+      "noneText": "Tik tvoros užpildas"
+    },
+    "gates": {
+      "gate": "Įvažiavimo vartai",
+      "none": "Nereikia",
+      "sliding": "Stumdomi",
+      "swing": "Varstomi",
+      "width": "Vartų plotis",
+      "count": "Kiekis",
+      "automatics": "Automatika",
+      "withAutomatics": "Su automatika",
+      "withoutAutomatics": "Be automatikos",
+      "wickets": "Varteliai",
+      "wicketsHint": "Standartinis vartelių plotis – 1 m."
+    },
+    "install": {
+      "yes": "Su montavimu",
+      "yesText": "Atvežame ir sumontuojame",
+      "no": "Tik medžiagos",
+      "noText": "Montuosite patys"
+    },
+    "summary": {
+      "title": "Jūsų pasirinkimas",
+      "price": "Preliminari kaina su PVM",
+      "range": "{from} – {to} €",
+      "materials": "Tvora ir medžiagos",
+      "gates": "Vartai ir varteliai",
+      "works": "Darbai ir transportas",
+      "about": "apie {value} €",
+      "note": "Kaina preliminari: skaičiuojama pagal bendrą ilgį, todėl tiksli suma paaiškėja pamatavus sklypą.",
+      "calculating": "Skaičiuojama…",
+      "manual": "Šiam variantui kainą paskaičiuos vadybininkas – susisiekite, atsakysime greitai.",
+      "error": "Nepavyko paskaičiuoti. Pabandykite dar kartą arba susisiekite su mumis.",
+      "chooseModel": "Pasirinkite tvoros modelį",
+      "chooseColor": "Pasirinkite spalvą",
+      "chooseHeight": "Pasirinkite aukštį",
+      "enterLength": "Įveskite tvoros ilgį",
+      "chooseGates": "Pasirinkite vartus arba vartelius",
+      "cta": "Gauti tikslų pasiūlymą",
+      "custom": "Mano atvejis nestandartinis",
+      "show": "Santrauka",
+      "emailSubject": "Užklausa iš tvorų skaičiuoklės",
+      "emailCustomSubject": "Nestandartinė užklausa",
+      "emailIntro": "Sveiki, norėčiau gauti pasiūlymą:",
+      "gateLine": "{type} vartai {width} m × {count}, {automatics}",
+      "wicketLine": "Varteliai × {count}",
+      "lengthLine": "{value} m",
+      "heightLine": "{value} m aukščio"
+    }
+  },
   "blinds": {
     "intro": {
       "title": "Lauko žaliuzės terasoms, pavėsinėms ir fasadams",
@@ -454,8 +595,8 @@
       "description": "Skardinės lauko žaliuzės terasoms, pavėsinėms ir fasadams – gaminamos pagal jūsų ilgius per 1–2 savaites, pristatomos visoje Lietuvoje. Žaliuzių skaičiuoklė."
     },
     "tvoru-skaiciuokle": {
-      "title": "Tvorų skaičiuoklė",
-      "description": "Preliminariai apskaičiuokite tvoros kainą ir gaukite pasiūlymą."
+      "title": "Tvorų skaičiuoklė – tvoros kaina iškart",
+      "description": "Pasirinkite tvoros modelį, aukštį, ilgį, vartus ir iškart pamatykite preliminarią kainą su montavimu. Be registracijos ir kontaktų."
     },
     "galerija": {
       "title": "Galerija – įgyvendinti projektai",

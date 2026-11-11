@@ -2,6 +2,7 @@
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "#shared/site";
 
 useSeo("home");
+const { t } = useI18n();
 const localePath = useLocalePath();
 
 useHead({
@@ -31,17 +32,18 @@ useHead({
   ],
 });
 
+// name – nuotraukos aprašymas (alt); modelių pavadinimai neverčiami
 const images = [
-  { url: "/images/tvoros/daimond6090.jpg" },
-  { url: "/images/tvoros/daimond40105.jpg" },
-  { url: "/images/tvoros/daimond60140.jpg" },
-  { url: "/images/tvoros/daimondvertical.jpg" },
-  { url: "/images/tvoros/dilė.jpg" },
-  { url: "/images/tvoros/eglė.jpg" },
-  { url: "/images/tvoros/plank.jpg" },
-  { url: "/images/tvoros/žaliuzi.jpg" },
-  { url: "/images/zaliuzes/blinds.jpg" },
-  { url: "/images/zaliuzes/blinds2.jpg" },
+  { url: "/images/tvoros/daimond6090.jpg", name: "Daimond 60/90" },
+  { url: "/images/tvoros/daimond40105.jpg", name: "Daimond 40/105" },
+  { url: "/images/tvoros/daimond60140.jpg", name: "Daimond 60/140" },
+  { url: "/images/tvoros/daimondvertical.jpg", name: "Daimond Vertical" },
+  { url: "/images/tvoros/dilė.jpg", name: "Dilė" },
+  { url: "/images/tvoros/eglė.jpg", name: "Eglė" },
+  { url: "/images/tvoros/plank.jpg", name: "Plank" },
+  { url: "/images/tvoros/žaliuzi.jpg", name: "Žaliuzi" },
+  { url: "/images/zaliuzes/blinds.jpg", name: t("menu.lauko-zaliuzes") },
+  { url: "/images/zaliuzes/blinds2.jpg", name: t("menu.lauko-zaliuzes") },
 ];
 
 const reviews = [
@@ -93,7 +95,7 @@ const reviews = [
 
     <section class="flex flex-col gap-10 max-w-default px-4 m-auto">
       <div class="flex sm:justify-between justify-center flex-wrap gap-8 items-center">
-        <h3 class="text-4xl font-medium">{{ $t("home.projects") }}</h3>
+        <h2 class="text-4xl font-medium">{{ $t("home.projects") }}</h2>
         <BaseArrowButton
           :name="$t('home.seeMore')"
           :to="localePath('/galerija')"
@@ -117,13 +119,14 @@ const reviews = [
       <AboutCards />
     </section>
 
-    <section>
-      <ContactsBlock />
+    <section class="max-w-default w-full px-4 m-auto">
+      <HomeReviews :reviews="reviews" />
     </section>
 
-    <section class="hidden md:flex flex-col gap-10 max-w-default w-full px-4 m-auto h-fit">
-      <h3 class="text-4xl font-medium">{{ $t("home.reviews") }}</h3>
-      <HomeCrousel :arr="reviews" :images="false" :speed="5000" :gap="50" />
+    <HomeArticles />
+
+    <section>
+      <ContactsBlock />
     </section>
 
     <section>

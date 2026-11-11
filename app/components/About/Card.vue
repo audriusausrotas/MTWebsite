@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
         :alt="alt || title"
         sizes="sm:100vw md:50vw lg:300px"
         loading="lazy"
-        class="object-cover w-full"
+        class="object-cover w-full aspect-3/2"
       />
       <div
         class="flex items-center justify-center text-center -translate-y-1/2 bg-red-main text-white font-medium px-4 min-h-16 max-w-[85%]"
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
         {{ title }}
       </div>
     </div>
-    <p class="text-justify">{{ text }}</p>
+    <p>{{ text }}</p>
   </div>
 </template>
 

@@ -21,7 +21,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative w-full overflow-hidden" :style="{ height: height + 'px' }">
+  <!-- max-h-svh: aukštis niekada neviršija ekrano aukščio -->
+  <div class="relative w-full max-h-svh overflow-hidden" :style="{ height: height + 'px' }">
     <NuxtImg
       :src="POSTER"
       alt=""
