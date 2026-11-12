@@ -4,6 +4,8 @@ import { DEFAULT_OG_IMAGE, SITE_NAME, absoluteUrl } from "#shared/site";
 const { locale } = useI18n();
 const route = useRoute();
 const switchLocalePath = useSwitchLocalePath();
+const localePath = useLocalePath();
+const { gatewayBase } = useRuntimeConfig().public;
 
 const canonical = computed(() => absoluteUrl(route.path));
 
@@ -28,6 +30,16 @@ useHead(() => ({
   titleTemplate: (title?: string) =>
     !title ? SITE_NAME : /moderni\s*tvora/i.test(title) ? title : `${title} | ${SITE_NAME}`,
   link: [{ rel: "canonical", href: canonical.value }, ...alternates.value],
+  // MTSoft pokalbių langas (tas pats kaip sename tinklapyje): žinutės keliauja į MTSoft „Užklausas“, atsako AI
+  script: [
+    {
+      key: "mtsoft-chat",
+      src: `${gatewayBase}/web/chat/widget.js`,
+      async: true,
+      "data-privacy": absoluteUrl(localePath("/privatumo-politika")),
+      tagPosition: "bodyClose",
+    },
+  ],
 }));
 
 useSeoMeta({

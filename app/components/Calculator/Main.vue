@@ -34,6 +34,16 @@ const {
   removeFence,
 } = useCalculator();
 
+// Viršuje: skaičiuoti pačiam arba klausti AI (atidaromas MTSoft pokalbių langas – jame atsako AI)
+const mode = ref<"self" | "ai">("self");
+
+const openChat = () => window.dispatchEvent(new Event("mtsoft-chat-open"));
+
+const askAi = () => {
+  mode.value = "ai";
+  openChat();
+};
+
 const SCOPES = computed(() =>
   (
     [
@@ -143,7 +153,29 @@ const barText = computed(() => {
 </script>
 
 <template>
-  <div v-if="config" class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start pb-16 lg:pb-0">
+  <div v-if="config" class="flex flex-col gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <CalculatorCard
+        :title="$t('calc.mode.self')"
+        :text="$t('calc.mode.selfText')"
+        :selected="mode === 'self'"
+        @select="mode = 'self'"
+      />
+      <CalculatorCard
+        :title="$t('calc.mode.ai')"
+        :text="$t('calc.mode.aiText')"
+        :selected="mode === 'ai'"
+        @select="askAi"
+      />
+    </div>
+
+    <div v-if="mode === 'ai'" class="flex flex-col gap-6 max-w-200 p-6 sm:p-8 border border-gray-200 rounded-lg shadow-lg bg-white">
+      <h2 class="text-2xl font-bold">{{ $t("calc.mode.aiTitle") }}</h2>
+      <p>{{ $t("calc.mode.aiBody") }}</p>
+      <BaseButton width="w-full sm:w-60" @click="openChat">{{ $t("calc.mode.open") }}</BaseButton>
+    </div>
+
+    <div v-else class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start pb-16 lg:pb-0">
     <div class="flex flex-col gap-16">
       <p class="text-lg -mb-6">{{ $t("calc.intro") }}</p>
 
@@ -438,15 +470,16 @@ const barText = computed(() => {
       </CalculatorStep>
     </div>
 
-    <CalculatorSummary class="lg:sticky lg:top-6" />
+    <CalculatorSummary class="lg:sticky lg:top-24" />
 
     <!-- telefone – juosta apačioje su kaina ir nuoroda į santrauką -->
     <a
       href="#calc-summary"
-      class="lg:hidden fixed bottom-0 inset-x-0 z-30 flex items-center justify-between gap-4 px-4 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]"
+      class="lg:hidden fixed bottom-0 inset-x-0 z-30 flex items-center justify-between gap-4 pl-20 pr-4 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]"
     >
       <span class="font-bold" :class="loading ? 'opacity-40' : ''">{{ barText }}</span>
       <span class="shrink-0 px-4 py-2 bg-red-main text-white font-bold">{{ $t("calc.summary.show") }}</span>
     </a>
+    </div>
   </div>
 </template>

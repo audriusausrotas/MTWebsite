@@ -19,6 +19,11 @@ export default defineNuxtConfig({
   // MTSoft API adresas (naudojamas tik serveryje). Galima perrašyti per NUXT_API_BASE.
   runtimeConfig: {
     apiBase: process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://mtsoft.lt",
+    public: {
+      // MTSoft užklausų servisas (meta-gateway): pokalbių langas ir skaičiuoklės užklausos. Galima perrašyti per
+      // NUXT_PUBLIC_GATEWAY_BASE. Tinklapio adresas turi būti įrašytas serviso WEB_ORIGINS sąraše.
+      gatewayBase: "https://hooks.mtsoft.lt",
+    },
   },
 
   css: ["./app/assets/css/main.css"],

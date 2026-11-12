@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { FenceSelection } from "~/composables/useCalculator";
 
-// Santrauka su sąmatos kaina. Kol nėra užklausų formos, „Gauti pasiūlymą“ atidaro laišką su pasirinkimais.
+// Santrauka su sąmatos kaina. „Gauti pasiūlymą“ atidaro užklausos formą (Request.vue) – užklausa su pasirinkimais
+// ir ta pačia sąmata atsiranda MTSoft „Užklausose“.
 const { t, locale } = useI18n();
 const {
   selection,
@@ -17,8 +18,6 @@ const {
   hasAutomatics,
   wicketAvailable,
 } = useCalculator();
-
-const EMAIL = "info@modernitvora.lt";
 
 const number = (value: number, digits = 0) =>
   new Intl.NumberFormat(locale.value === "en" ? "en-GB" : "lt-LT", {
@@ -140,29 +139,14 @@ const parts = computed(() =>
         })),
 );
 
-const mail = (subject: string, body: string) =>
-  `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+// Užklausos laukai MTSoft „Užklausose“: tie patys pasirinkimai, kuriuos lankytojas mato santraukoje
+const requestOpen = ref(false);
 
-const offerLink = computed(() =>
-  mail(
-    t("calc.summary.emailSubject"),
-    [
-      t("calc.summary.emailIntro"),
-      "",
-      scopeLine.value,
-      ...groups.value.flatMap((group) => [
-        ...(group.title ? ["", `${group.title}:`] : []),
-        ...group.lines.map((line) => `- ${line}`),
-      ]),
-      "",
-      installLine.value,
-      ...(priceText.value ? ["", `${t("calc.summary.price")}: ${priceText.value}`] : []),
-      "",
-    ].join("\n"),
-  ),
-);
-
-const customLink = computed(() => mail(t("calc.summary.emailCustomSubject"), ""));
+const fields = computed(() => [
+  { label: t("calc.steps.scope"), values: [scopeLine.value] },
+  ...groups.value.map((group) => ({ label: group.title || scopeLine.value, values: group.lines })),
+  { label: t("calc.steps.install"), values: [installLine.value] },
+]);
 
 const phone = computed(() => t("contacts.ofisoTelNr"));
 </script>
@@ -210,13 +194,13 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
       <p v-else class="font-medium">{{ $t("calc.summary.error") }}</p>
     </div>
 
-    <BaseButton :href="offerLink" width="w-full">{{ $t("calc.summary.cta") }}</BaseButton>
+    <BaseButton width="w-full" :disabled="!!missing" @click="requestOpen = true">
+      {{ $t("calc.summary.cta") }}
+    </BaseButton>
 
     <div class="flex flex-col gap-2 text-center">
       <a :href="`tel:${phone.replaceAll(' ', '')}`" class="text-xl font-bold hover:underline">{{ phone }}</a>
-      <a :href="customLink" class="text-sm text-red-main font-semibold hover:underline">
-        {{ $t("calc.summary.custom") }}
-      </a>
     </div>
+    <CalculatorRequest v-model="requestOpen" :fields="fields" :price="price?.price ?? null" />
   </aside>
 </template>
