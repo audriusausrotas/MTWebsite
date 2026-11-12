@@ -1,5 +1,7 @@
 <script setup lang="ts">
 // Lauko žaliuzės: tipas, kryptis, spalva ir angų matmenys (cm). Žaliuzės skaičiuojamos atskirai nuo tvorų.
+// Tipai – iš MTSoft žaliuzių nustatymų; kai tipas tik vienas (dabar – 19x100), rinktis nėra iš ko: jis parenkamas
+// pasirinkus žaliuzes (selectScope) ir čia nerodomas.
 const { config, selection, openingValid, addOpening, removeOpening } = useCalculator();
 
 const blinds = computed(() => config.value!.blinds!);
@@ -14,7 +16,7 @@ const invalid = (opening: (typeof value.value.openings)[number]) =>
 
 <template>
   <div class="flex flex-col gap-10">
-    <div class="flex flex-col gap-4">
+    <div v-if="blinds.types.length > 1" class="flex flex-col gap-4">
       <CalculatorHeading>{{ $t("calc.blinds.type") }}</CalculatorHeading>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <CalculatorCard

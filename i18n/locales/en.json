@@ -597,25 +597,20 @@
       }
     },
     "models": {
-      "title": "Blind models",
-      "text": "We make sheet metal blinds in two thicknesses. Both are designed for sun and wind protection and for privacy; they differ only in the thickness of the blade and the brackets that fit it.",
+      "text": "We make sheet metal outdoor blinds in one standard size – 19x100 mm. They protect from sun, wind and prying eyes and are installed horizontally or vertically.",
       "name": "Outdoor blind {name}",
-      "m1Alt": "Pergola with 20x100 outdoor blinds",
-      "m2Alt": "Terrace roof and wall made of 18x100 outdoor blinds",
+      "alt": "Terrace roof and wall made of outdoor blinds",
       "thickness": "Thickness",
       "width": "Width",
-      "length": "Length",
-      "weight": "Weight",
-      "lengthValue": "made to order, up to 2000 mm",
-      "weightValue": "about 1 kg/m"
+      "lengthHorizontal": "Length when installed horizontally",
+      "lengthVertical": "Length when installed vertically",
+      "upTo": "up to {value} mm"
     },
     "features": {
       "f1": "Blades with grooves that drain rainwater to the ends",
       "f2": "Steel painted with a two-layer technology, UV resistant",
       "f3": "The set includes blinds, screws and locking latches",
-      "f4": "Brackets made of polypropylene with 30% glass fibre, sold in pairs",
-      "f5": "Brackets withstand wind of up to 110 km/h",
-      "f6": "Bracket colours – black (RAL 9005) and grey (RAL 7016)"
+      "f4": "Aluminium brackets"
     },
     "steel": {
       "title": "Steel information",
@@ -640,16 +635,6 @@
       "title": "Standard colours",
       "note": "Non-standard colours and coatings are available on request.",
       "alt": "Colour RAL {code}"
-    },
-    "more": {
-      "title": "Additional information",
-      "text": "Dimensions and composition of the brackets and blinds, accessories and installation tips (the sheets are in Lithuanian). Click a sheet to enlarge it.",
-      "s1": "Brackets for 18 mm blinds",
-      "s2": "Brackets for 20 mm blinds",
-      "s3": "Sheet metal blinds, 18 mm thick",
-      "s4": "Sheet metal blinds, 20 mm thick",
-      "s5": "Accessories",
-      "zoom": "Enlarge"
     },
     "cta": {
       "title": "Need outdoor blinds?",

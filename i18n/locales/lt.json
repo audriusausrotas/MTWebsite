@@ -605,25 +605,20 @@
       }
     },
     "models": {
-      "title": "Žaliuzių modeliai",
-      "text": "Gaminame dviejų storių skardines žaliuzes. Abi skirtos apsaugai nuo saulės ir vėjo bei privatumui, skiriasi tik mentės storis ir jai tinkantys laikikliai.",
+      "text": "Gaminame vieno standarto skardines lauko žaliuzes – 19x100 mm. Jos saugo nuo saulės, vėjo ir pašalinių žvilgsnių, montuojamos horizontaliai arba vertikaliai.",
       "name": "Lauko žaliuzė {name}",
-      "m1Alt": "Pavėsinė su 20x100 lauko žaliuzėmis",
-      "m2Alt": "Terasos stogelis ir sienelė iš 18x100 lauko žaliuzių",
+      "alt": "Terasos stogelis ir sienelė iš lauko žaliuzių",
       "thickness": "Storis",
       "width": "Plotis",
-      "length": "Ilgis",
-      "weight": "Svoris",
-      "lengthValue": "pagal užsakymą, iki 2000 mm",
-      "weightValue": "apie 1 kg/m"
+      "lengthHorizontal": "Ilgis montuojant horizontaliai",
+      "lengthVertical": "Ilgis montuojant vertikaliai",
+      "upTo": "iki {value} mm"
     },
     "features": {
       "f1": "Mentės su grioveliais, kuriais lietaus vanduo nuteka į galus",
       "f2": "Dvisluoksne technologija dažyta skarda, atspari UV spinduliams",
       "f3": "Rinkinyje – žaliuzės, varžtai ir fiksavimo skląsčiai",
-      "f4": "Laikikliai iš polipropileno su 30 % stiklo pluošto, parduodami poromis",
-      "f5": "Laikikliai atlaiko vėją iki 110 km/h",
-      "f6": "Laikiklių spalvos – juoda (RAL 9005) ir pilka (RAL 7016)"
+      "f4": "Laikikliai – aliuminiai"
     },
     "steel": {
       "title": "Skardos informacija",
@@ -648,16 +643,6 @@
       "title": "Standartinės spalvos",
       "note": "Nestandartinės spalvos ir dangos – teiraukitės.",
       "alt": "Spalva RAL {code}"
-    },
-    "more": {
-      "title": "Papildoma informacija",
-      "text": "Laikiklių ir žaliuzių matmenys, sudėtis, priedai ir montavimo patarimai. Paspauskite lapą, kad jį padidintumėte.",
-      "s1": "Laikikliai 18 mm žaliuzėms",
-      "s2": "Laikikliai 20 mm žaliuzėms",
-      "s3": "Skardinės žaliuzės, 18 mm storio",
-      "s4": "Skardinės žaliuzės, 20 mm storio",
-      "s5": "Priedai",
-      "zoom": "Padidinti"
     },
     "cta": {
       "title": "Reikia lauko žaliuzių?",
