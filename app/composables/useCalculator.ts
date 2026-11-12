@@ -23,6 +23,9 @@ export interface GateSelection {
   automatics: boolean;
   // tik gaminamiems varteliams
   lock: WicketLock;
+  // gatavam segmentiniam komplektui: aukštis cm ir (prie ne segmentinės tvoros) spalva
+  kitHeight: number | null;
+  color: string;
 }
 
 export interface FenceSelection {
@@ -177,26 +180,36 @@ export const useCalculator = () => {
     return [...new Set(list)];
   };
 
-  // Gatavi segmentiniai vartai / varteliai – tik segmentinei tvorai ir tik jos aukščio komplektai
-  const segmentGateWidths = (item: FenceSelection) => {
-    const height = heightOf(item);
-    if (modelOf(item)?.category !== "Segmentas" || !height || !config.value) return [];
-    return config.value.gates.segment.filter((kit) => kit.height === kitHeight(height)).map((kit) => kit.width);
+  // Gatavi segmentiniai vartai ir varteliai (komplektai) siūlomi prie bet kurios tvoros. Segmentinei tvorai komplekto
+  // aukštis ir spalva – pagal tvorą; prie kitos tvoros lankytojas juos pasirenka pats (iš to, kas yra kainyne).
+  const isKit = (type: GateType) => type === "segment" || type === "segmentWicket";
+  const isSegmentFence = (item: FenceSelection) => modelOf(item)?.category === "Segmentas";
+  const segmentModel = computed(() => config.value?.models.find((entry) => entry.category === "Segmentas") ?? null);
+
+  const kitHeightsOf = (item: FenceSelection, type: GateType): number[] => {
+    if (!config.value || !isKit(type)) return [];
+    const all =
+      type === "segment"
+        ? [...new Set(config.value.gates.segment.map((kit) => kit.height))].sort((a, b) => a - b)
+        : config.value.gates.segmentWickets;
+    if (isSegmentFence(item)) {
+      const height = heightOf(item);
+      return height && all.includes(kitHeight(height)) ? [kitHeight(height)] : [];
+    }
+    return segmentModel.value ? all : [];
   };
 
-  const segmentWicket = (item: FenceSelection) => {
-    const height = heightOf(item);
-    return (
-      modelOf(item)?.category === "Segmentas" && !!height && !!config.value?.gates.segmentWickets.includes(kitHeight(height))
-    );
-  };
+  // spalvos renkamos tik komplektui prie ne segmentinės tvoros
+  const kitColorsOf = (item: FenceSelection) => (isSegmentFence(item) ? [] : (segmentModel.value?.colors ?? []));
 
-  // vartų pločiai cm (varteliams pločio rinktis nereikia)
-  const gateWidthsOf = (item: FenceSelection, type: GateType) =>
+  // vartų pločiai cm (varteliams pločio rinktis nereikia); komplektui – pagal jo aukštį
+  const gateWidthsOf = (item: FenceSelection, type: GateType, height?: number | null) =>
     !config.value
       ? []
       : type === "segment"
-        ? segmentGateWidths(item)
+        ? config.value.gates.segment
+            .filter((kit) => kit.height === (height ?? kitHeightsOf(item, type)[0]))
+            .map((kit) => kit.width)
         : type === "sliding" || type === "swing"
           ? config.value.gates[type]
           : [];
@@ -206,20 +219,18 @@ export const useCalculator = () => {
     GATE_TYPES.filter((type) =>
       type === "wicket"
         ? !!config.value?.gates.wicket
-        : type === "segmentWicket"
-          ? segmentWicket(item)
+        : isKit(type)
+          ? kitHeightsOf(item, type).length > 0
           : gateWidthsOf(item, type).length > 0,
     );
 
   // automatikos pasirinkimas: gaminamiems vartams – visada, komplektui – tik jei ji kainyne yra
   const hasAutomatics = (item: FenceSelection, gate: GateSelection) => {
     if (gate.type === "sliding" || gate.type === "swing") return true;
-    const height = heightOf(item);
     return (
       gate.type === "segment" &&
-      !!height &&
       !!config.value?.gates.segment.some(
-        (kit) => kit.width === gate.width && kit.height === kitHeight(height) && kit.automation,
+        (kit) => kit.width === gate.width && kit.height === gate.kitHeight && kit.automation,
       )
     );
   };
@@ -235,7 +246,15 @@ export const useCalculator = () => {
         if (!types.includes(made)) return false;
         gate.type = made;
       }
-      const widths = gateWidthsOf(item, gate.type);
+      if (isKit(gate.type)) {
+        const heights = kitHeightsOf(item, gate.type);
+        if (!gate.kitHeight || !heights.includes(gate.kitHeight)) gate.kitHeight = closest(heights, kitHeight(heightOf(item) ?? 150));
+        const colors = kitColorsOf(item);
+        if (colors.length && !colors.includes(gate.color)) {
+          gate.color = colors.includes(item.color) ? item.color : colors.includes("7016") ? "7016" : colors[0]!;
+        }
+      }
+      const widths = gateWidthsOf(item, gate.type, gate.kitHeight);
       gate.width = !widths.length ? null : gate.width && widths.includes(gate.width) ? gate.width : widths[0]!;
       return true;
     });
@@ -302,6 +321,8 @@ export const useCalculator = () => {
         width: gate.width ?? undefined,
         automatics: hasAutomatics(item, gate) ? gate.automatics : undefined,
         lock: gate.type === "wicket" ? (hasLock(gate) ? gate.lock : "simple") : undefined,
+        // komplektas prie ne segmentinės tvoros – su savo aukščiu ir spalva
+        ...(isKit(gate.type) && !isSegmentFence(item) ? { height: gate.kitHeight ?? undefined, color: gate.color } : {}),
       })),
     };
   };
@@ -383,7 +404,10 @@ export const useCalculator = () => {
       width: gateWidthsOf(item, type)[0] ?? null,
       automatics: true,
       lock: "simple",
+      kitHeight: null,
+      color: "",
     });
+    fixGates(item);
   };
 
   const removeGate = (index: number) => {
@@ -392,6 +416,11 @@ export const useCalculator = () => {
 
   const setGateType = (gate: GateSelection, type: GateType) => {
     gate.type = type;
+    fixGates(fence.value);
+  };
+
+  const setKitHeight = (gate: GateSelection, height: number) => {
+    gate.kitHeight = height;
     fixGates(fence.value);
   };
 
@@ -472,6 +501,10 @@ export const useCalculator = () => {
     addGate,
     removeGate,
     setGateType,
+    setKitHeight,
+    isKit,
+    kitHeightsOf,
+    kitColorsOf,
     toggleNeed,
     openingValid,
     selectModel,

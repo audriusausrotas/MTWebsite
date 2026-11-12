@@ -16,6 +16,8 @@ const {
   lengthOf,
   hasAutomatics,
   hasLock,
+  isKit,
+  kitColorsOf,
 } = useCalculator();
 
 const number = (value: number, digits = 0) =>
@@ -31,6 +33,10 @@ const colorName = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `R
 const gateLine = (item: FenceSelection, gate: GateSelection) =>
   [
     gate.width ? `${t(`calc.gates.types.${gate.type}`)} ${meters(gate.width)} m` : t(`calc.gates.types.${gate.type}`),
+    // komplektas prie ne segmentinės tvoros – su savo aukščiu ir spalva
+    isKit(gate.type) && kitColorsOf(item).length && gate.kitHeight
+      ? `${t("calc.summary.kitHeightLine", { value: meters(gate.kitHeight) })}, ${colorName(gate.color)}`
+      : "",
     hasAutomatics(item, gate) ? t(gate.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase() : "",
     hasLock(gate) ? t(gate.lock === "electric" ? "calc.gates.lockElectric" : "calc.gates.lockSimple").toLowerCase() : "",
   ]

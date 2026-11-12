@@ -458,7 +458,7 @@
       "automatics": "Automatika",
       "withAutomatics": "Su automatika",
       "withoutAutomatics": "Be automatikos",
-      "kitText": "Gatavas gamyklinis segmentinis komplektas.",
+      "kitText": "Gatavas gamyklinis segmentinis komplektas (ne su tvoros profiliu).",
       "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai.",
       "empty": "Vartų ir vartelių dar nepridėta.",
       "add": "Pridėti vartus ar vartelius",
@@ -473,7 +473,9 @@
       "lock": "Spyna",
       "lockSimple": "Paprasta spyna",
       "lockElectric": "Elektromagnetinė spyna",
-      "lockElectricText": "Varteliai atrakinami nuotoliniu būdu, pvz. iš namų."
+      "lockElectricText": "Varteliai atrakinami nuotoliniu būdu, pvz. iš namų.",
+      "kitHeight": "Komplekto aukštis",
+      "kitColor": "Komplekto spalva"
     },
     "install": {
       "yes": "Su montavimu",
@@ -508,7 +510,8 @@
       "inFence": "Tvora {n}: {text}",
       "openingLine": "{width} × {height} cm × {count}",
       "blindMaterials": "Žaliuzės ir medžiagos",
-      "blindNote": "Kaina preliminari: tiksli sąmata sudaroma pamatavus angas."
+      "blindNote": "Kaina preliminari: tiksli sąmata sudaroma pamatavus angas.",
+      "kitHeightLine": "{value} m aukščio"
     },
     "fences": {
       "tab": "Tvora {n}",

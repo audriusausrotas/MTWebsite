@@ -450,7 +450,7 @@
       "automatics": "Automation",
       "withAutomatics": "With automation",
       "withoutAutomatics": "Without automation",
-      "kitText": "A ready-made factory segment kit.",
+      "kitText": "A ready-made factory segment kit (not filled with the fence profile).",
       "hint": "Add each gate or wicket separately.",
       "empty": "No gates or wickets added yet.",
       "add": "Add a gate or wicket",
@@ -465,7 +465,9 @@
       "lock": "Lock",
       "lockSimple": "Standard lock",
       "lockElectric": "Electromagnetic lock",
-      "lockElectricText": "The wicket is unlocked remotely, e.g. from the house."
+      "lockElectricText": "The wicket is unlocked remotely, e.g. from the house.",
+      "kitHeight": "Kit height",
+      "kitColor": "Kit colour"
     },
     "install": {
       "yes": "With installation",
@@ -500,7 +502,8 @@
       "inFence": "Fence {n}: {text}",
       "openingLine": "{width} × {height} cm × {count}",
       "blindMaterials": "Blinds and materials",
-      "blindNote": "The price is preliminary: the exact estimate is prepared after the openings are measured."
+      "blindNote": "The price is preliminary: the exact estimate is prepared after the openings are measured.",
+      "kitHeightLine": "{value} m high"
     },
     "fences": {
       "tab": "Fence {n}",

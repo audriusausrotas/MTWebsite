@@ -4,15 +4,32 @@ import type { GateType } from "#shared/types/calculator";
 // Vartai ir varteliai: kiekvieni kuriami atskirai (kaip tvoros) – savo tipas, plotis, automatika arba spyna.
 // Užpildas, aukštis ir spalva – redaguojamos tvoros.
 const { locale } = useI18n();
-const { fence, gateTypesOf, gateWidthsOf, hasAutomatics, hasLock, canAddGate, addGate, removeGate, setGateType } =
-  useCalculator();
+const {
+  fence,
+  gateTypesOf,
+  gateWidthsOf,
+  hasAutomatics,
+  hasLock,
+  canAddGate,
+  addGate,
+  removeGate,
+  setGateType,
+  setKitHeight,
+  isKit,
+  kitHeightsOf,
+  kitColorsOf,
+} = useCalculator();
 
 const types = computed(() => gateTypesOf(fence.value));
 
 const meters = (cm: number) =>
   `${new Intl.NumberFormat(locale.value === "en" ? "en-GB" : "lt-LT", { maximumFractionDigits: 2 }).format(cm / 100)} m`;
 
-const widths = (type: GateType) => gateWidthsOf(fence.value, type);
+const widths = (type: GateType, height: number | null) => gateWidthsOf(fence.value, type, height);
+
+// gatavo segmentinio komplekto aukščiai ir spalvos (spalva – tik prie ne segmentinės tvoros)
+const kitHeights = (type: GateType) => kitHeightsOf(fence.value, type);
+const kitColors = computed(() => kitColorsOf(fence.value));
 </script>
 
 <template>
@@ -50,16 +67,30 @@ const widths = (type: GateType) => gateWidthsOf(fence.value, type);
             {{ $t(`calc.gates.types.${type}`) }}
           </CalculatorChip>
         </div>
-        <p v-if="gate.type === 'segment' || gate.type === 'segmentWicket'" class="text-sm text-gray-600">
+        <p v-if="isKit(gate.type)" class="text-sm text-gray-600">
           {{ $t("calc.gates.kitText") }}
         </p>
       </div>
 
-      <div v-if="widths(gate.type).length" class="flex flex-col gap-2">
+      <div v-if="isKit(gate.type) && kitHeights(gate.type).length > 1" class="flex flex-col gap-2">
+        <p class="font-semibold">{{ $t("calc.gates.kitHeight") }}</p>
+        <div class="flex flex-wrap gap-2">
+          <CalculatorChip
+            v-for="height in kitHeights(gate.type)"
+            :key="height"
+            :selected="gate.kitHeight === height"
+            @select="setKitHeight(gate, height)"
+          >
+            {{ meters(height) }}
+          </CalculatorChip>
+        </div>
+      </div>
+
+      <div v-if="widths(gate.type, gate.kitHeight).length" class="flex flex-col gap-2">
         <p class="font-semibold">{{ $t("calc.gates.width") }}</p>
         <div class="flex flex-wrap gap-2">
           <CalculatorChip
-            v-for="width in widths(gate.type)"
+            v-for="width in widths(gate.type, gate.kitHeight)"
             :key="width"
             :selected="gate.width === width"
             @select="gate.width = width"
@@ -67,6 +98,11 @@ const widths = (type: GateType) => gateWidthsOf(fence.value, type);
             {{ meters(width) }}
           </CalculatorChip>
         </div>
+      </div>
+
+      <div v-if="isKit(gate.type) && kitColors.length" class="flex flex-col gap-2">
+        <p class="font-semibold">{{ $t("calc.gates.kitColor") }}</p>
+        <CalculatorColors v-model="gate.color" :colors="kitColors" />
       </div>
 
       <!-- gatavam komplektui – tik jei kainyne jam yra automatika -->

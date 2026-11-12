@@ -72,6 +72,9 @@ export interface EstimateGate {
   automatics?: boolean;
   // tik gaminamiems varteliams
   lock?: WicketLock;
+  // gatavam segmentiniam komplektui prie ne segmentinės tvoros: komplekto aukštis cm ir spalva
+  height?: number;
+  color?: string;
 }
 
 export interface EstimateFence {
