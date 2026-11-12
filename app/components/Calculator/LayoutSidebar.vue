@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { StepKey } from "~/composables/useCalculatorSteps";
 
-// 5 išdėstymas: meniu kairėje. Šone – visų žingsnių sąrašas su pasirinktomis reikšmėmis (galima šokti į bet kurį),
-// dešinėje – pasirinkto žingsnio turinys. Telefone sąrašas virsta slenkama juosta viršuje.
+// 5 išdėstymas: meniu kairėje. Vienas šoninis stulpelis: visų žingsnių sąrašas su pasirinktomis reikšmėmis (galima
+// šokti į bet kurį) ir po juo – kaina su užklausos mygtuku. Visas likęs plotis – pasirinkto žingsnio turiniui.
+// Atskiros santraukos dešinėje nėra (žr. Main.vue): pasirinkimai jau matomi žingsnių sąraše.
+// Telefone sąrašas virsta slenkama juosta viršuje, kaina – po turiniu.
 const { fence } = useCalculator();
 const { steps } = useCalculatorSteps();
 
@@ -19,46 +21,56 @@ const go = (offset: number) => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-[230px_minmax(0,1fr)] gap-4 md:gap-6 items-start">
-    <nav class="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0" :aria-label="$t('calc.layout.stepsNav')">
-      <button
-        v-for="step in steps"
-        :key="step.key"
-        type="button"
-        class="flex items-center gap-3 shrink-0 md:shrink px-3 py-2 border-2 text-left transition-colors hover:cursor-pointer"
-        :class="
-          step.key === current.key
-            ? 'border-red-main bg-red-main text-white'
-            : 'border-gray-300 bg-white hover:border-gray-500'
-        "
-        :aria-current="step.key === current.key ? 'step' : undefined"
-        @click="active = step.key"
+  <div class="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] gap-5 lg:gap-8 items-start">
+    <!-- šoninis stulpelis; telefone jo dalys – atskiri blokai (meniu viršuje, kaina po turiniu) -->
+    <div
+      class="contents lg:flex lg:flex-col lg:gap-4 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1"
+    >
+      <nav
+        class="order-1 flex lg:flex-col gap-2 lg:gap-1.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"
+        :aria-label="$t('calc.layout.stepsNav')"
       >
-        <span
-          class="flex items-center justify-center w-7 h-7 shrink-0 text-sm font-bold"
+        <button
+          v-for="step in steps"
+          :key="step.key"
+          type="button"
+          class="flex items-center gap-3 shrink-0 lg:shrink px-3 py-2 lg:py-1.5 border-2 text-left transition-colors hover:cursor-pointer"
           :class="
             step.key === current.key
-              ? 'bg-white text-red-main'
-              : step.done
-                ? 'bg-red-main text-white'
-                : 'border-2 border-gray-400 text-gray-600'
+              ? 'border-red-main bg-red-main text-white'
+              : 'border-gray-300 bg-white hover:border-gray-500'
           "
+          :aria-current="step.key === current.key ? 'step' : undefined"
+          @click="active = step.key"
         >
-          {{ step.number }}
-        </span>
-        <span class="flex flex-col min-w-0">
-          <span class="font-bold leading-tight whitespace-nowrap md:whitespace-normal">{{ step.title }}</span>
           <span
-            class="hidden md:block text-sm truncate"
-            :class="step.key === current.key ? 'text-white/90' : step.done && step.value ? 'text-gray-600' : 'text-red-main font-semibold'"
+            class="flex items-center justify-center w-7 h-7 shrink-0 text-sm font-bold"
+            :class="
+              step.key === current.key
+                ? 'bg-white text-red-main'
+                : step.done
+                  ? 'bg-red-main text-white'
+                  : 'border-2 border-gray-400 text-gray-600'
+            "
           >
-            {{ step.done && step.value ? step.value : $t("calc.layout.choose") }}
+            {{ step.number }}
           </span>
-        </span>
-      </button>
-    </nav>
+          <span class="flex flex-col min-w-0">
+            <span class="font-bold leading-tight whitespace-nowrap lg:whitespace-normal">{{ step.title }}</span>
+            <span
+              class="hidden lg:block text-sm leading-tight truncate"
+              :class="step.key === current.key ? 'text-white/90' : step.done && step.value ? 'text-gray-600' : 'text-red-main font-semibold'"
+            >
+              {{ step.done && step.value ? step.value : $t("calc.layout.choose") }}
+            </span>
+          </span>
+        </button>
+      </nav>
 
-    <div class="flex flex-col gap-5 min-w-0">
+      <CalculatorSummary compact class="order-3" />
+    </div>
+
+    <div class="order-2 flex flex-col gap-5 min-w-0">
       <CalculatorFenceTabs v-if="current.fence" />
 
       <CalculatorStep :number="current.number" :title="current.title" :hint="current.hint">

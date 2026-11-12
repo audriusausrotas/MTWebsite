@@ -184,9 +184,10 @@ const barText = computed(() => {
         </select>
       </label>
 
+      <!-- „meniu kairėje“ santrauką (kainą) turi savo šoniniame stulpelyje – čia ji nerodoma -->
       <div
         class="grid grid-cols-1 gap-10 items-start pb-16"
-        :class="wide ? '' : 'lg:grid-cols-[minmax(0,1fr)_340px] lg:pb-0'"
+        :class="wide ? '' : layout === 'sidebar' ? 'lg:pb-0' : 'lg:grid-cols-[minmax(0,1fr)_340px] lg:pb-0'"
       >
         <CalculatorLayoutAccordion v-if="layout === 'accordion'" />
         <CalculatorLayoutModal v-else-if="layout === 'modal'" />
@@ -199,7 +200,10 @@ const barText = computed(() => {
         <CalculatorLayoutSentence v-else-if="layout === 'sentence'" />
         <CalculatorLayoutSteps v-else />
 
-        <CalculatorSummary :class="wide ? 'w-full lg:max-w-xl lg:mx-auto' : 'lg:sticky lg:top-24'" />
+        <CalculatorSummary
+          v-if="layout !== 'sidebar'"
+          :class="wide ? 'w-full lg:max-w-xl lg:mx-auto' : 'lg:sticky lg:top-24'"
+        />
 
         <!-- juosta apačioje su kaina ir nuoroda į santrauką: telefone – visada, kompiuteryje – plačiame išdėstyme -->
         <a
