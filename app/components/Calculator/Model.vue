@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import type { CalculatorCategory, CalculatorModel } from "#shared/types/calculator";
 
-// Tvoros modelis (kortelės su objektų nuotraukomis) ir nuo jo priklausantys pasirinkimai:
-// pramatomumas, skarda, tvoralenčių montavimas, spalva.
-// Modelių daug, todėl rodoma tik viena grupė (skirtukai), o pasirinkus modelį sąrašas susiskleidžia.
+// Tvoros užpildo pasirinkimai, kiekvienas – atskirame skaičiuoklės žingsnyje (section):
+//   model – modelis (kortelės su objektų nuotraukomis; grupės skirtukais, pasirinkus sąrašas susiskleidžia),
+//   look  – pramatomumas (skardinėms tvoroms) arba tvoralenčių montavimas,
+//   color – skarda (Premium / Eco) ir spalva.
+const props = defineProps<{ section: "model" | "look" | "color" }>();
+
 const { t, locale } = useI18n();
 const { config, fence, model, colorsOf, selectModel, selectSteel } = useCalculator();
 
@@ -61,7 +64,8 @@ const showTable = ref(false);
 </script>
 
 <template>
-  <div class="flex flex-col gap-10">
+  <!-- ---------- modelis ---------- -->
+  <div v-if="props.section === 'model'" class="flex flex-col gap-5">
     <!-- pasirinktas modelis: viena eilutė vietoj viso sąrašo -->
     <div
       v-if="model && !expanded"
@@ -88,14 +92,14 @@ const showTable = ref(false);
       </div>
       <button
         type="button"
-        class="shrink-0 h-12 px-4 border-2 border-gray-300 font-bold hover:border-red-main hover:text-red-main hover:cursor-pointer"
+        class="shrink-0 min-h-12 px-4 py-2 border-2 border-gray-300 font-bold hover:border-red-main hover:text-red-main hover:cursor-pointer"
         @click="change"
       >
         {{ $t("calc.model.change") }}
       </button>
     </div>
 
-    <div v-else class="flex flex-col gap-5">
+    <template v-else>
       <div v-if="groups.length > 1" class="flex flex-wrap gap-2" role="tablist">
         <button
           v-for="group in groups"
@@ -141,77 +145,6 @@ const showTable = ref(false);
           </button>
         </CalculatorCard>
       </div>
-    </div>
-
-    <template v-if="model">
-      <div v-if="model.seeThrough.length" class="flex flex-col gap-4">
-        <CalculatorHeading>{{ $t("calc.seeThrough.title") }}</CalculatorHeading>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <CalculatorCard
-            v-for="key in model.seeThrough"
-            :key="key"
-            :title="$t(`calc.seeThrough.${key}`)"
-            :image="SEE_THROUGH_IMAGES[key]"
-            :placeholder="!SEE_THROUGH_IMAGES[key]"
-            :selected="fence.seeThrough === key"
-            @select="fence.seeThrough = key"
-          />
-        </div>
-      </div>
-
-      <div v-if="model.steel" class="flex flex-col gap-4">
-        <CalculatorHeading>{{ $t("calc.steel.title") }}</CalculatorHeading>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <CalculatorCard
-            :title="$t('calc.steel.premium')"
-            :text="$t('calc.steel.premiumText')"
-            :selected="fence.steel === 'premium'"
-            @select="selectSteel('premium')"
-          />
-          <CalculatorCard
-            v-if="model.eco"
-            :title="$t('calc.steel.eco')"
-            :text="$t('calc.steel.ecoText')"
-            :selected="fence.steel === 'eco'"
-            @select="selectSteel('eco')"
-          />
-        </div>
-        <button
-          type="button"
-          class="self-start text-red-main font-semibold hover:underline hover:cursor-pointer"
-          :aria-expanded="showTable"
-          @click="showTable = !showTable"
-        >
-          {{ showTable ? $t("calc.steel.hide") : $t("calc.steel.compare") }}
-        </button>
-        <CalculatorSteelTable v-if="showTable" />
-      </div>
-
-      <div v-if="model.twoSided" class="flex flex-col gap-4">
-        <CalculatorHeading>{{ $t("calc.boards.title") }}</CalculatorHeading>
-        <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
-          <CalculatorCard
-            :title="$t('calc.boards.oneSided')"
-            image="/images/tvoros/dilė.jpg"
-            :selected="!fence.twoSided"
-            @select="fence.twoSided = false"
-          />
-          <CalculatorCard
-            :title="$t('calc.boards.twoSided')"
-            image="/images/tvoros/tvora20.jpg"
-            :selected="fence.twoSided"
-            @select="fence.twoSided = true"
-          />
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <CalculatorHeading>{{ $t("calc.color.title") }}</CalculatorHeading>
-        <CalculatorColors v-model="fence.color" :colors="colors" />
-        <p v-if="model.steel && fence.steel === 'eco'" class="text-sm text-gray-600">
-          {{ $t("calc.color.ecoNote") }}
-        </p>
-      </div>
     </template>
 
     <BaseGalleryFullscreen
@@ -221,4 +154,76 @@ const showTable = ref(false);
       @closeModal="gallery = null"
     />
   </div>
+
+  <!-- kol modelis nepasirinktas, kiti žingsniai – tik užuomina -->
+  <p v-else-if="!model" class="text-gray-600">{{ $t("calc.model.first") }}</p>
+
+  <!-- ---------- pramatomumas arba tvoralenčių montavimas ---------- -->
+  <template v-else-if="props.section === 'look'">
+    <div v-if="model.seeThrough.length" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <CalculatorCard
+        v-for="key in model.seeThrough"
+        :key="key"
+        :title="$t(`calc.seeThrough.${key}`)"
+        :image="SEE_THROUGH_IMAGES[key]"
+        :placeholder="!SEE_THROUGH_IMAGES[key]"
+        :selected="fence.seeThrough === key"
+        @select="fence.seeThrough = key"
+      />
+    </div>
+
+    <div v-else-if="model.twoSided" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <CalculatorCard
+        :title="$t('calc.boards.oneSided')"
+        image="/images/tvoros/dilė.jpg"
+        :selected="!fence.twoSided"
+        @select="fence.twoSided = false"
+      />
+      <CalculatorCard
+        :title="$t('calc.boards.twoSided')"
+        image="/images/tvoros/tvora20.jpg"
+        :selected="fence.twoSided"
+        @select="fence.twoSided = true"
+      />
+    </div>
+  </template>
+
+  <!-- ---------- skarda ir spalva ---------- -->
+  <template v-else>
+    <div v-if="model.steel" class="flex flex-col gap-4">
+      <CalculatorHeading>{{ $t("calc.steel.title") }}</CalculatorHeading>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <CalculatorCard
+          :title="$t('calc.steel.premium')"
+          :text="$t('calc.steel.premiumText')"
+          :selected="fence.steel === 'premium'"
+          @select="selectSteel('premium')"
+        />
+        <CalculatorCard
+          v-if="model.eco"
+          :title="$t('calc.steel.eco')"
+          :text="$t('calc.steel.ecoText')"
+          :selected="fence.steel === 'eco'"
+          @select="selectSteel('eco')"
+        />
+      </div>
+      <button
+        type="button"
+        class="self-start text-red-main font-semibold hover:underline hover:cursor-pointer"
+        :aria-expanded="showTable"
+        @click="showTable = !showTable"
+      >
+        {{ showTable ? $t("calc.steel.hide") : $t("calc.steel.compare") }}
+      </button>
+      <CalculatorSteelTable v-if="showTable" />
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <CalculatorHeading v-if="model.steel">{{ $t("calc.color.title") }}</CalculatorHeading>
+      <CalculatorColors v-model="fence.color" :colors="colors" />
+      <p v-if="model.steel && fence.steel === 'eco'" class="text-sm text-gray-600">
+        {{ $t("calc.color.ecoNote") }}
+      </p>
+    </div>
+  </template>
 </template>

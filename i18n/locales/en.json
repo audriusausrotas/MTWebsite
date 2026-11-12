@@ -340,18 +340,22 @@
     }
   },
   "calc": {
-    "intro": "Put together your fence and gates in a few steps and see a preliminary estimate right away. No contact details needed.",
     "unavailable": "The calculator is unavailable right now. Write or call us and we will calculate the price ourselves.",
     "photos": "Photos",
     "steps": {
       "scope": "What are we calculating?",
-      "model": "Model and colour",
+      "model": "Fence model",
       "gates": "Gates and wickets",
       "install": "Installation",
       "blinds": "Blinds",
       "openings": "Opening sizes",
-      "height": "Height",
-      "fence": "Fence"
+      "need": "What do you need?",
+      "modelGates": "Gate infill",
+      "color": "Steel and colour",
+      "size": "Height and length",
+      "sizeGates": "Gate height",
+      "parts": "Posts and base panels",
+      "partsGates": "Gate posts"
     },
     "scope": {
       "fence": "Fence",
@@ -362,9 +366,11 @@
       "blindsText": "Blinds for a terrace or pergola"
     },
     "model": {
-      "hint": "The gates are filled with the same profile. Click “Photos” to see how it looks on real sites.",
+      "hint": "Click “Photos” to see how the fence looks on real sites.",
       "segment": "Segment fence",
-      "change": "Change model"
+      "change": "Change model",
+      "hintGates": "The gates are filled with the same profile. Click “Photos” to see how it looks on real sites.",
+      "first": "Choose a model first."
     },
     "steel": {
       "title": "Steel",
@@ -419,7 +425,6 @@
     "size": {
       "height": "Fence height, cm",
       "heightHint": "The height must be between {min} and {max} cm.",
-      "parts": "What is included",
       "full": "With posts and base panels",
       "fullText": "Complete set",
       "poles": "With posts only",
@@ -435,8 +440,6 @@
       "withBorder": "Height from the ground with the base panel:",
       "borders": "With base panels only",
       "bordersText": "The posts are already in place",
-      "needFence": "Fence needed",
-      "noFence": "No fence – gates only",
       "gatePoles": "With gate posts",
       "gatePolesText": "Posts for the gates and wickets",
       "noGatePoles": "Without posts",
@@ -448,7 +451,7 @@
       "withAutomatics": "With automation",
       "withoutAutomatics": "Without automation",
       "kitText": "A ready-made factory segment kit.",
-      "hint": "Add each gate or wicket separately. If you need no gates, add nothing.",
+      "hint": "Add each gate or wicket separately.",
       "empty": "No gates or wickets added yet.",
       "add": "Add a gate or wicket",
       "type": "Type",
@@ -524,10 +527,8 @@
       "self": "Calculate yourself",
       "selfText": "Choose a fence and see the price right away",
       "ai": "Ask AI",
-      "aiText": "Describe it in your own words – we will reply in the chat",
-      "aiTitle": "Describe what you need",
-      "aiBody": "Write in the chat window what fence, gate or blinds you want and their dimensions. You can attach a photo or a drawing. We will calculate the price and reply in the same chat.",
-      "open": "Open chat"
+      "aiText": "Describe it in your own words – we will reply right here",
+      "aiBody": "Write what fence, gate or blinds you want and their dimensions. You can attach a photo or a drawing – we will calculate the price and reply in this chat."
     },
     "request": {
       "title": "Send the enquiry to a manager",
@@ -554,6 +555,13 @@
       "errorConsent": "Please tick the consent box.",
       "errorTooMany": "Too many enquiries. Try again later or call us.",
       "error": "The enquiry could not be sent. Try again or call us."
+    },
+    "need": {
+      "hint": "Tick what you need – you can choose both.",
+      "fence": "A fence",
+      "fenceText": "A fence along the plot",
+      "gates": "Gates or wickets",
+      "gatesText": "Sliding or swing gates, wickets"
     }
   },
   "blinds": {

@@ -36,8 +36,10 @@ export interface FenceSelection {
   heightText: string;
   lengthText: string;
   parts: "full" | "poles" | "borders" | "none";
-  // tvoros nereikia – tik vartai su šiuo užpildu (ilgis nepildomas)
+  // „Ko reikia“: tvoros nereikia – tik vartai su šiuo užpildu (ilgis nepildomas)
   noFence: boolean;
+  // „Ko reikia“: vartų ar vartelių (be šio – vartų žingsnis nerodomas)
+  needGates: boolean;
   // vartai ir varteliai su šios tvoros užpildu, aukščiu ir spalva
   gates: GateSelection[];
 }
@@ -84,6 +86,7 @@ const newFence = (id: number): FenceSelection => ({
   lengthText: "",
   parts: "full",
   noFence: false,
+  needGates: false,
   gates: [],
 });
 
@@ -243,7 +246,7 @@ export const useCalculator = () => {
     if (!colorsOf(item).includes(item.color)) return "chooseColor";
     if (!heightValid(item)) return "enterHeight";
     if (!item.noFence && !lengthValid(item)) return "enterLength";
-    if (item.noFence && !item.gates.length) return "chooseGates";
+    if (item.needGates && !item.gates.length) return "chooseGates";
     return null;
   };
 
@@ -294,7 +297,7 @@ export const useCalculator = () => {
       height,
       length: item.noFence ? undefined : lengthOf(item)!,
       parts: item.noFence ? (wantsPoles(item) ? "full" : "none") : item.parts,
-      gates: item.gates.map((gate): EstimateGate => ({
+      gates: (item.needGates ? item.gates : []).map((gate): EstimateGate => ({
         type: gate.type,
         width: gate.width ?? undefined,
         automatics: hasAutomatics(item, gate) ? gate.automatics : undefined,
@@ -392,6 +395,20 @@ export const useCalculator = () => {
     fixGates(fence.value);
   };
 
+  // „Ko reikia“: tvoros, vartų arba abiejų – bent vienas visada pažymėtas
+  const toggleNeed = (key: "fence" | "gates") => {
+    const item = fence.value;
+    if (key === "fence") {
+      item.noFence = !item.noFence;
+      if (item.noFence) item.needGates = true;
+    } else {
+      item.needGates = !item.needGates;
+      if (!item.needGates) item.noFence = false;
+    }
+    // pažymėjus vartus – iš karto pirmi, kad nereikėtų spausti „Pridėti“
+    if (item.needGates && !item.gates.length) addGate();
+  };
+
   const selectScope = (scope: CalculatorScope) => {
     const value = selection.value;
     value.scope = scope;
@@ -455,6 +472,7 @@ export const useCalculator = () => {
     addGate,
     removeGate,
     setGateType,
+    toggleNeed,
     openingValid,
     selectModel,
     selectSteel,

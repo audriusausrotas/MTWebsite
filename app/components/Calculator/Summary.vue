@@ -62,11 +62,11 @@ const fenceLines = (item: FenceSelection) => {
   if (size.length) list.push(size.join(", "));
 
   if (!item.noFence) list.push(t(`calc.size.${item.parts}`));
-  else if (item.gates.length) list.push(t(wantsPoles(item) ? "calc.size.gatePoles" : "calc.size.noGatePoles"));
+  else if (item.needGates && item.gates.length) list.push(t(wantsPoles(item) ? "calc.size.gatePoles" : "calc.size.noGatePoles"));
 
   // vienodi vartai – viena eilutė su kiekiu
   const counts = new Map<string, number>();
-  item.gates.forEach((gate) => {
+  (item.needGates ? item.gates : []).forEach((gate) => {
     const line = gateLine(item, gate);
     counts.set(line, (counts.get(line) ?? 0) + 1);
   });
@@ -114,7 +114,7 @@ const scopeLine = computed(() => {
   const value = selection.value;
   if (value.scope === "blinds") return t("calc.scope.blinds");
   const fences = value.fences.some((item) => !item.noFence);
-  const gates = value.fences.some((item) => item.gates.length > 0);
+  const gates = value.fences.some((item) => item.needGates && item.gates.length > 0);
   return t(fences && gates ? "calc.scope.both" : gates ? "calc.scope.gates" : "calc.scope.fence");
 });
 const installLine = computed(() => t(selection.value.installation ? "calc.install.yes" : "calc.install.no"));

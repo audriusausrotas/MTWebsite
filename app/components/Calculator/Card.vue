@@ -14,8 +14,10 @@ withDefaults(
     placeholder?: boolean;
     // kelios kortelės vienoje eilėje ir telefone – aprašymas ten slepiamas
     compact?: boolean;
+    // plati kortelė (dvi per visą plotį) – nuotrauka žemesnė
+    wide?: boolean;
   }>(),
-  { text: "", image: "", alt: "", selected: false, contain: false, placeholder: false, compact: false },
+  { text: "", image: "", alt: "", selected: false, contain: false, placeholder: false, compact: false, wide: false },
 );
 
 defineEmits<{ select: [] }>();
@@ -39,8 +41,8 @@ defineEmits<{ select: [] }>();
           :alt="alt || title"
           sizes="sm:50vw md:33vw lg:260px"
           loading="lazy"
-          class="w-full aspect-4/3"
-          :class="contain ? 'object-contain scale-110' : 'object-cover'"
+          class="w-full"
+          :class="[contain ? 'object-contain scale-110' : 'object-cover', wide ? 'aspect-4/3 sm:aspect-5/2' : 'aspect-4/3']"
         />
         <div v-else class="w-full aspect-4/3 flex items-center justify-center text-gray-400">
           <svg class="w-10 h-10 fill-none stroke-current stroke-2" viewBox="0 0 24 24" aria-hidden="true">

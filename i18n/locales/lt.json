@@ -348,18 +348,22 @@
     }
   },
   "calc": {
-    "intro": "Susidėliokite tvorą ir vartus keliais žingsniais ir iškart pamatykite preliminarią sąmatos kainą. Kontaktų palikti nereikia.",
     "unavailable": "Skaičiuoklė šiuo metu nepasiekiama. Parašykite arba paskambinkite – kainą paskaičiuosime patys.",
     "photos": "Nuotraukos",
     "steps": {
       "scope": "Ką skaičiuojame?",
-      "model": "Modelis ir spalva",
+      "model": "Tvoros modelis",
       "gates": "Vartai ir varteliai",
       "install": "Montavimas",
       "blinds": "Žaliuzės",
       "openings": "Angų matmenys",
-      "height": "Aukštis",
-      "fence": "Tvora"
+      "need": "Ko reikia?",
+      "modelGates": "Vartų užpildas",
+      "color": "Skarda ir spalva",
+      "size": "Aukštis ir ilgis",
+      "sizeGates": "Vartų aukštis",
+      "parts": "Stulpai ir pamatėliai",
+      "partsGates": "Vartų stulpai"
     },
     "scope": {
       "fence": "Tvora",
@@ -370,9 +374,11 @@
       "blindsText": "Žaliuzės terasai ar pavėsinei"
     },
     "model": {
-      "hint": "Tuo pačiu profiliu užpildomi ir vartai. Paspauskite „Nuotraukos“, kad pamatytumėte, kaip jis atrodo objektuose.",
+      "hint": "Paspauskite „Nuotraukos“, kad pamatytumėte, kaip tvora atrodo objektuose.",
       "segment": "Segmentinė tvora",
-      "change": "Keisti modelį"
+      "change": "Keisti modelį",
+      "hintGates": "Tuo pačiu profiliu užpildomi ir vartai. Paspauskite „Nuotraukos“, kad pamatytumėte, kaip jis atrodo objektuose.",
+      "first": "Pirma pasirinkite modelį."
     },
     "steel": {
       "title": "Skarda",
@@ -427,7 +433,6 @@
     "size": {
       "height": "Tvoros aukštis, cm",
       "heightHint": "Aukštis turi būti nuo {min} iki {max} cm.",
-      "parts": "Komplektacija",
       "full": "Su stulpais ir pamatėliais",
       "fullText": "Pilnas komplektas",
       "poles": "Tik su stulpais",
@@ -443,8 +448,6 @@
       "withBorder": "Aukštis nuo žemės su pamatėliu:",
       "borders": "Tik su pamatėliais",
       "bordersText": "Stulpai jau pastatyti",
-      "needFence": "Tvoros reikia",
-      "noFence": "Tvoros nereikia – tik vartai",
       "gatePoles": "Su vartų stulpais",
       "gatePolesText": "Stulpai vartams ir varteliams",
       "noGatePoles": "Be stulpų",
@@ -456,7 +459,7 @@
       "withAutomatics": "Su automatika",
       "withoutAutomatics": "Be automatikos",
       "kitText": "Gatavas gamyklinis segmentinis komplektas.",
-      "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai. Jei vartų nereikia – nieko nepridėkite.",
+      "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai.",
       "empty": "Vartų ir vartelių dar nepridėta.",
       "add": "Pridėti vartus ar vartelius",
       "type": "Tipas",
@@ -532,10 +535,8 @@
       "self": "Skaičiuoti pačiam",
       "selfText": "Pasirinkite tvorą ir iškart matykite kainą",
       "ai": "Klausti AI",
-      "aiText": "Aprašykite savo žodžiais – atsakysime pokalbyje",
-      "aiTitle": "Aprašykite, ko jums reikia",
-      "aiBody": "Parašykite pokalbių lange, kokios tvoros, vartų ar žaliuzių norite ir kokie matmenys. Galite pridėti nuotrauką ar brėžinį. Kainą paskaičiuosime ir atsakysime tame pačiame pokalbyje.",
-      "open": "Atidaryti pokalbį"
+      "aiText": "Aprašykite savo žodžiais – atsakysime čia pat",
+      "aiBody": "Parašykite, kokios tvoros, vartų ar žaliuzių norite ir kokie matmenys. Galite pridėti nuotrauką ar brėžinį – kainą paskaičiuosime ir atsakysime šiame pokalbyje."
     },
     "request": {
       "title": "Perduoti užklausą vadybininkui",
@@ -562,6 +563,13 @@
       "errorConsent": "Pažymėkite sutikimą.",
       "errorTooMany": "Per daug užklausų. Pabandykite vėliau arba paskambinkite.",
       "error": "Nepavyko išsiųsti. Pabandykite dar kartą arba paskambinkite."
+    },
+    "need": {
+      "hint": "Pažymėkite, ko reikia – galima abu.",
+      "fence": "Tvoros",
+      "fenceText": "Tvora pagal sklypo ilgį",
+      "gates": "Vartų ar vartelių",
+      "gatesText": "Stumdomi ar varstomi vartai, varteliai"
     }
   },
   "blinds": {
