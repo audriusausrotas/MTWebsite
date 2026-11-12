@@ -572,7 +572,10 @@
       "fence": "Tvoros",
       "fenceText": "Tvora pagal sklypo ilgį",
       "gates": "Vartų ar vartelių",
-      "gatesText": "Stumdomi ar varstomi vartai, varteliai"
+      "gatesText": "Stumdomi ar varstomi vartai, varteliai",
+      "onlyFence": "tvoros",
+      "both": "tvoros ir vartų",
+      "onlyGates": "tik vartų"
     },
     "layout": {
       "label": "Išdėstymo variantas:",
@@ -588,7 +591,32 @@
       "done": "Gerai",
       "nextNamed": "Toliau: {title}",
       "progress": "{n} žingsnis iš {total}",
-      "fillFirst": "Pirma užpildykite šį žingsnį"
+      "fillFirst": "Pirma užpildykite šį žingsnį",
+      "sidebar": "Meniu kairėje",
+      "visual": "Konfigūratorius su nuotrauka",
+      "chat": "Klausimas po klausimo",
+      "form": "Kompaktiška forma",
+      "wide": "Platus, dviem stulpeliais",
+      "sentence": "Sakinys su laukais",
+      "stepsNav": "Žingsniai",
+      "chooseModel": "Pasirinkite modelį",
+      "allDone": "Viskas pasirinkta – kaina ir santrauka šalia. Bet kurį atsakymą galite pakeisti."
+    },
+    "sentence": {
+      "scope": "Skaičiuojame:",
+      "need": "Man reikia",
+      "model": "Tvoros modelis –",
+      "modelGates": "Vartų užpildas –",
+      "look": "pramatomumas –",
+      "boards": "montavimas –",
+      "steel": "skarda –",
+      "color": "spalva –",
+      "height": "Tvoros aukštis –",
+      "heightGates": "Vartų aukštis –",
+      "length": "bendras ilgis –",
+      "parts": "Komplektacija –",
+      "partsGates": "Vartų stulpai –",
+      "install": "Montavimas –"
     }
   },
   "blinds": {

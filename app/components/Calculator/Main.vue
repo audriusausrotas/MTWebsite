@@ -50,8 +50,22 @@ const calculate = () => {
 
 // ---------- išdėstymo variantas (bandymui: kuris patogiausias). Įsimenamas naršyklėje; galima nurodyti ir ?v=2
 
-const LAYOUTS = ["steps", "accordion", "modal", "wizard"] as const;
+const LAYOUTS = [
+  "steps",
+  "accordion",
+  "modal",
+  "wizard",
+  "sidebar",
+  "visual",
+  "chat",
+  "form",
+  "wide",
+  "sentence",
+] as const;
 type Layout = (typeof LAYOUTS)[number];
+
+// platus išdėstymas užima visą puslapio plotį: santrauka – po pasirinkimais, kaina – juostoje apačioje
+const wide = computed(() => layout.value === "wide");
 const LAYOUT_KEY = "calcLayout";
 
 const layout = useState<Layout>("calculatorLayout", () => "steps");
@@ -170,18 +184,28 @@ const barText = computed(() => {
         </select>
       </label>
 
-      <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start pb-16 lg:pb-0">
+      <div
+        class="grid grid-cols-1 gap-10 items-start pb-16"
+        :class="wide ? '' : 'lg:grid-cols-[minmax(0,1fr)_340px] lg:pb-0'"
+      >
         <CalculatorLayoutAccordion v-if="layout === 'accordion'" />
         <CalculatorLayoutModal v-else-if="layout === 'modal'" />
         <CalculatorLayoutWizard v-else-if="layout === 'wizard'" />
+        <CalculatorLayoutSidebar v-else-if="layout === 'sidebar'" />
+        <CalculatorLayoutVisual v-else-if="layout === 'visual'" />
+        <CalculatorLayoutChat v-else-if="layout === 'chat'" />
+        <CalculatorLayoutForm v-else-if="layout === 'form'" />
+        <CalculatorLayoutWide v-else-if="layout === 'wide'" />
+        <CalculatorLayoutSentence v-else-if="layout === 'sentence'" />
         <CalculatorLayoutSteps v-else />
 
-        <CalculatorSummary class="lg:sticky lg:top-24" />
+        <CalculatorSummary :class="wide ? 'w-full lg:max-w-xl lg:mx-auto' : 'lg:sticky lg:top-24'" />
 
-        <!-- telefone – juosta apačioje su kaina ir nuoroda į santrauką -->
+        <!-- juosta apačioje su kaina ir nuoroda į santrauką: telefone – visada, kompiuteryje – plačiame išdėstyme -->
         <a
           href="#calc-summary"
-          class="lg:hidden fixed bottom-0 inset-x-0 z-30 flex items-center justify-between gap-4 pl-20 pr-4 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]"
+          :class="wide ? '' : 'lg:hidden'"
+          class="fixed bottom-0 inset-x-0 z-30 flex items-center justify-between gap-4 pl-20 pr-4 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]"
         >
           <span class="font-bold" :class="loading ? 'opacity-40' : ''">{{ barText }}</span>
           <span class="shrink-0 px-4 py-2 bg-red-main text-white font-bold">{{ $t("calc.summary.show") }}</span>

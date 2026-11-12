@@ -438,6 +438,16 @@ export const useCalculator = () => {
     if (item.needGates && !item.gates.length) addGate();
   };
 
+  // tas pats vienu pasirinkimu (išskleidžiamam sąrašui): tvoros, tvoros ir vartų arba tik vartų
+  const needOf = (item: FenceSelection) => (item.noFence ? "gates" : item.needGates ? "both" : "fence");
+
+  const setNeed = (kind: string) => {
+    const item = fence.value;
+    item.noFence = kind === "gates";
+    item.needGates = kind !== "fence";
+    if (item.needGates && !item.gates.length) addGate();
+  };
+
   const selectScope = (scope: CalculatorScope) => {
     const value = selection.value;
     value.scope = scope;
@@ -506,6 +516,8 @@ export const useCalculator = () => {
     kitHeightsOf,
     kitColorsOf,
     toggleNeed,
+    needOf,
+    setNeed,
     openingValid,
     selectModel,
     selectSteel,

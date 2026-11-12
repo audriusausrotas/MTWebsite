@@ -564,7 +564,10 @@
       "fence": "A fence",
       "fenceText": "A fence along the plot",
       "gates": "Gates or wickets",
-      "gatesText": "Sliding or swing gates, wickets"
+      "gatesText": "Sliding or swing gates, wickets",
+      "onlyFence": "a fence",
+      "both": "a fence and gates",
+      "onlyGates": "gates only"
     },
     "layout": {
       "label": "Layout variant:",
@@ -580,7 +583,32 @@
       "done": "OK",
       "nextNamed": "Next: {title}",
       "progress": "Step {n} of {total}",
-      "fillFirst": "Fill in this step first"
+      "fillFirst": "Fill in this step first",
+      "sidebar": "Menu on the left",
+      "visual": "Configurator with a photo",
+      "chat": "One question after another",
+      "form": "Compact form",
+      "wide": "Wide, two columns",
+      "sentence": "Sentence with fields",
+      "stepsNav": "Steps",
+      "chooseModel": "Choose a model",
+      "allDone": "Everything is chosen – the price and summary are next to it. You can change any answer."
+    },
+    "sentence": {
+      "scope": "We are calculating:",
+      "need": "I need",
+      "model": "Fence model –",
+      "modelGates": "Gate infill –",
+      "look": "privacy –",
+      "boards": "installation –",
+      "steel": "steel –",
+      "color": "colour –",
+      "height": "Fence height –",
+      "heightGates": "Gate height –",
+      "length": "total length –",
+      "parts": "Included –",
+      "partsGates": "Gate posts –",
+      "install": "Installation –"
     }
   },
   "blinds": {
