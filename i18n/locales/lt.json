@@ -573,6 +573,22 @@
       "fenceText": "Tvora pagal sklypo ilgį",
       "gates": "Vartų ar vartelių",
       "gatesText": "Stumdomi ar varstomi vartai, varteliai"
+    },
+    "layout": {
+      "label": "Išdėstymo variantas:",
+      "steps": "Visi žingsniai viename puslapyje",
+      "accordion": "Sutraukiami blokai",
+      "modal": "Mygtukai ir iššokantys langai",
+      "wizard": "Po vieną žingsnį",
+      "choose": "Pasirinkite",
+      "pick": "Pasirinkti",
+      "change": "Keisti",
+      "next": "Toliau",
+      "back": "Atgal",
+      "done": "Gerai",
+      "nextNamed": "Toliau: {title}",
+      "progress": "{n} žingsnis iš {total}",
+      "fillFirst": "Pirma užpildykite šį žingsnį"
     }
   },
   "blinds": {

@@ -565,6 +565,22 @@
       "fenceText": "A fence along the plot",
       "gates": "Gates or wickets",
       "gatesText": "Sliding or swing gates, wickets"
+    },
+    "layout": {
+      "label": "Layout variant:",
+      "steps": "All steps on one page",
+      "accordion": "Collapsible blocks",
+      "modal": "Buttons and pop-up windows",
+      "wizard": "One step at a time",
+      "choose": "Choose",
+      "pick": "Choose",
+      "change": "Change",
+      "next": "Next",
+      "back": "Back",
+      "done": "OK",
+      "nextNamed": "Next: {title}",
+      "progress": "Step {n} of {total}",
+      "fillFirst": "Fill in this step first"
     }
   },
   "blinds": {
