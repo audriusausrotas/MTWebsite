@@ -14,6 +14,12 @@ export default defineNuxtConfig({
     },
   },
 
+  // Metalinių tvorų nebesiūlome – senos nuorodos (ir iš paieškos sistemų) nukreipiamos į tvorų puslapį
+  routeRules: {
+    "/tvoros/metalines-tvoros": { redirect: { to: "/tvoros", statusCode: 301 } },
+    "/en/fences/metal-fence": { redirect: { to: "/en/fences", statusCode: 301 } },
+  },
+
   devtools: { enabled: true },
 
   // MTSoft API adresas (naudojamas tik serveryje). Galima perrašyti per NUXT_API_BASE.
@@ -64,7 +70,6 @@ export default defineNuxtConfig({
       straipsniai: { en: "/articles", lt: "/straipsniai" },
       "kiemo-vartai": { en: "/yard-gates", lt: "/kiemo-vartai" },
       "lauko-zaliuzes": { en: "/outdoor-blinds", lt: "/lauko-zaliuzes" },
-      "tvoros-metalines-tvoros": { en: "/fences/metal-fence", lt: "/tvoros/metalines-tvoros" },
       "apie-mus": { en: "/about-us", lt: "/apie-mus" },
       "tvoros-tvoralentes": { en: "/fences/fenceboards", lt: "/tvoros/tvoralentes" },
       "tvoru-skaiciuokle": { en: "/fence-calculator", lt: "/tvoru-skaiciuokle" },

@@ -55,7 +55,7 @@ const others = computed(() => FENCE_CATEGORIES.filter((item) => item.key !== pro
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("fences.other") }}</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <FencesCategoryCard
           v-for="item in others"
           :key="item.key"

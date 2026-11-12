@@ -4,7 +4,6 @@ import type { WebsiteFence } from "#shared/types/website";
 // category – MTSoft tvoros kategorija, image – kategorijos kortelės nuotrauka
 export const FENCE_CATEGORIES = [
   { key: "skardines-tvoros", category: "Tvora", image: "/images/tvoros/daimond6090.jpg" },
-  { key: "metalines-tvoros", category: "Metalinė", image: "/images/tvoros/metalines-tvoros.jpg" },
   { key: "tvoralentes", category: "Tvoralentė", image: "/images/tvoros/dilė.jpg" },
   { key: "segmentines-tvoros", category: "Segmentas", image: "/images/tvoros/tvora22.jpg" },
 ] as const;

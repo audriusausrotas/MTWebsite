@@ -3,7 +3,6 @@
     "pagrindinis": "Pradžia",
     "tvoros": "Tvoros",
     "skardines-tvoros": "Skardinės tvoros",
-    "metalines-tvoros": "Metalinės tvoros",
     "segmentines-tvoros": "Segmentinės tvoros",
     "tvoralentes": "Tvoralentės",
     "kiemo-vartai": "Kiemo vartai",
@@ -141,7 +140,7 @@
     "other": "Kitos tvoros",
     "intro": {
       "title": "Tvoros jūsų namams ir verslui",
-      "text": "Gaminame ir montuojame skardines bei metalines tvoras, tvoralentes ir segmentines tvoras – privatiems kiemams ir įmonių teritorijoms. Padedame išsirinkti modelį ir spalvą, sklypą išmatuojame 3D įranga ir pasirūpiname visais darbais – nuo pirmo matavimo iki sumontuotos tvoros.",
+      "text": "Gaminame ir montuojame skardines tvoras, tvoralentes ir segmentines tvoras – privatiems kiemams ir įmonių teritorijoms. Padedame išsirinkti modelį ir spalvą, sklypą išmatuojame 3D įranga ir pasirūpiname visais darbais – nuo pirmo matavimo iki sumontuotos tvoros.",
       "alt": "Skardinė tvora ir varteliai prie šiuolaikinio namo"
     },
     "types": {
@@ -152,11 +151,6 @@
         "short": "Plieno profilių tvoros – aklinos ir pramatomos, įvairių RAL spalvų. Šiuolaikiškas sprendimas tiems, kam svarbus privatumas.",
         "title": "Skardinės tvoros – privatumas ir šiuolaikiškas vaizdas",
         "text": "Skardinės tvoros surenkamos iš cinkuoto ir milteliniu būdu dažyto plieno profilių, todėl yra atsparios korozijai ir nereikalauja sudėtingos priežiūros. Profiliai skiriasi forma ir pralaidumu – nuo rombo formos Daimond iki langų žaliuzes primenančios Žaliuzi tvoros, tad galite rinktis, kiek privatumo ir šviesos norite savo kieme."
-      },
-      "metalines-tvoros": {
-        "short": "Patvarios ir estetiškos metalo tvoros tiems, kam svarbiausia tvirtumas ir ilgaamžiškumas.",
-        "title": "Metalinės tvoros – tvirtas ir ilgaamžis sprendimas",
-        "text": "Metalinės tvoros – patvarus ir estetiškas sprendimas privatiems sklypams ir įmonių teritorijoms. Padėsime parinkti konstrukciją, aukštį ir spalvą, pagaminsime tvorą ir ją sumontuosime."
       },
       "tvoralentes": {
         "short": "Metalinės tvoralentės – lentų tvoros vaizdas be dažymo ir priežiūros rūpesčių. Montuojamos vienpusiai arba dvipusiai.",
@@ -655,16 +649,12 @@
       "description": "Moderni Tvora – skardinės ir segmentinės tvoros, tvoralentės, kiemo vartai ir lauko žaliuzės. Gamyba, 3D matavimas ir montavimas – viskas vienoje vietoje."
     },
     "tvoros": {
-      "title": "Tvoros – skardinės, metalinės, segmentinės, tvoralentės",
-      "description": "Išsirinkite tvorą savo sklypui: skardinės tvoros, metalinės tvoros, tvoralentės ir segmentinės tvoros. Gamyba ir montavimas – Moderni Tvora."
+      "title": "Tvoros – skardinės, segmentinės, tvoralentės",
+      "description": "Išsirinkite tvorą savo sklypui: skardinės tvoros, tvoralentės ir segmentinės tvoros. Gamyba ir montavimas – Moderni Tvora."
     },
     "skardines-tvoros": {
       "title": "Skardinės tvoros",
       "description": "Skardinės tvoros Daimond, Plank, Eglė, Žaliuzi ir kiti profiliai – aklinos ir pramatomos, įvairių RAL spalvų, su montavimu."
-    },
-    "metalines-tvoros": {
-      "title": "Metalinės tvoros",
-      "description": "Metalinės tvoros jūsų sklypui – patvarūs ir estetiški sprendimai su gamyba ir montavimu."
     },
     "tvoralentes": {
       "title": "Tvoralentės",

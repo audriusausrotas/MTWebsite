@@ -7,7 +7,6 @@ const PAGES: [string, string][] = [
   ["/", "/en"],
   ["/tvoros", "/en/fences"],
   ["/tvoros/skardines-tvoros", "/en/fences/sheet-metal-fence"],
-  ["/tvoros/metalines-tvoros", "/en/fences/metal-fence"],
   ["/tvoros/tvoralentes", "/en/fences/fenceboards"],
   ["/tvoros/segmentines-tvoros", "/en/fences/segment-fence"],
   ["/kiemo-vartai", "/en/yard-gates"],

@@ -92,7 +92,7 @@ useHead(() => ({
 
     <section class="flex flex-col gap-8">
       <h2 class="text-4xl font-medium text-center sm:text-left">{{ $t("fences.types.title") }}</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
         <FencesCategoryCard v-for="category in categories" :key="category.key" v-bind="category" />
       </div>
     </section>

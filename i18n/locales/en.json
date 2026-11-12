@@ -3,7 +3,6 @@
     "pagrindinis": "Home",
     "tvoros": "Fences",
     "skardines-tvoros": "Sheet metal fence",
-    "metalines-tvoros": "Metal fence",
     "segmentines-tvoros": "Segment fence",
     "tvoralentes": "Fence boards",
     "kiemo-vartai": "Gates",
@@ -133,7 +132,7 @@
     "other": "Other fences",
     "intro": {
       "title": "Fences for your home and business",
-      "text": "We manufacture and install sheet metal and metal fences, fence boards and segment fences – for private yards and business premises. We help you choose the model and colour, measure the plot with 3D equipment and take care of all the work – from the first measurement to the installed fence.",
+      "text": "We manufacture and install sheet metal fences, fence boards and segment fences – for private yards and business premises. We help you choose the model and colour, measure the plot with 3D equipment and take care of all the work – from the first measurement to the installed fence.",
       "alt": "Sheet metal fence and wicket next to a modern house"
     },
     "types": {
@@ -144,11 +143,6 @@
         "short": "Steel profile fences – solid or see-through, in various RAL colours. A modern solution for those who value privacy.",
         "title": "Sheet metal fences – privacy and a modern look",
         "text": "Sheet metal fences are assembled from galvanized and powder-coated steel profiles, so they resist corrosion and need no complicated maintenance. The profiles differ in shape and openness – from the diamond-shaped Daimond to the Žaliuzi fence that resembles window louvres – so you can choose how much privacy and light you want in your yard."
-      },
-      "metalines-tvoros": {
-        "short": "Durable and good-looking metal fences for those who value strength and a long service life above all.",
-        "title": "Metal fences – a strong and long-lasting solution",
-        "text": "Metal fences are a durable and good-looking solution for private plots and business premises. We will help you choose the construction, height and colour, then manufacture the fence and install it."
       },
       "tvoralentes": {
         "short": "Metal fence boards – the look of a board fence without painting or maintenance. Installed one-sided or two-sided.",
@@ -647,16 +641,12 @@
       "description": "Moderni Tvora – sheet metal and segment fences, fence boards, yard gates and outdoor blinds. Production, 3D measuring and installation – all in one place."
     },
     "tvoros": {
-      "title": "Fences – sheet metal, metal, segment, fence boards",
-      "description": "Choose a fence for your plot: sheet metal fences, metal fences, fence boards and segment fences. Production and installation by Moderni Tvora."
+      "title": "Fences – sheet metal, segment, fence boards",
+      "description": "Choose a fence for your plot: sheet metal fences, fence boards and segment fences. Production and installation by Moderni Tvora."
     },
     "skardines-tvoros": {
       "title": "Sheet metal fences",
       "description": "Sheet metal fences Daimond, Plank, Eglė, Žaliuzi and other profiles – solid or see-through, in various RAL colours, with installation."
-    },
-    "metalines-tvoros": {
-      "title": "Metal fences",
-      "description": "Metal fences for your plot – durable and good-looking solutions with production and installation."
     },
     "tvoralentes": {
       "title": "Fence boards",
