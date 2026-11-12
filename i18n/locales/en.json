@@ -340,34 +340,29 @@
     }
   },
   "calc": {
-    "intro": "Put your fence together in a few steps and see a preliminary estimate right away. No contact details needed.",
+    "intro": "Put together your fence and gates in a few steps and see a preliminary estimate right away. No contact details needed.",
     "unavailable": "The calculator is unavailable right now. Write or call us and we will calculate the price ourselves.",
     "photos": "Photos",
     "steps": {
-      "scope": "What do you need?",
-      "model": "Fence model",
-      "modelGates": "Gate infill",
-      "size": "Height and length",
-      "sizeGates": "Gate height",
+      "scope": "What are we calculating?",
+      "model": "Model and colour",
       "gates": "Gates and wickets",
       "install": "Installation",
       "blinds": "Blinds",
       "openings": "Opening sizes",
-      "parts": "What is included"
+      "height": "Height",
+      "fence": "Fence"
     },
     "scope": {
       "fence": "Fence",
-      "fenceText": "Fence only, no gates",
       "both": "Fence and gates",
-      "bothText": "Fence with a gate or wickets",
-      "gates": "Gates only",
-      "gatesText": "A gate or wicket for an existing fence",
+      "bothText": "Fence, gates and wickets",
+      "gates": "Gates",
       "blinds": "Outdoor blinds",
       "blindsText": "Blinds for a terrace or pergola"
     },
     "model": {
-      "hint": "Click “Photos” to see how the fence looks on real sites.",
-      "hintGates": "Gates and wickets are filled with the chosen fence profile.",
+      "hint": "The gates are filled with the same profile. Click “Photos” to see how it looks on real sites.",
       "segment": "Segment fence",
       "change": "Change model"
     },
@@ -439,7 +434,13 @@
       "withoutBorder": "Fence height without the base panel:",
       "withBorder": "Height from the ground with the base panel:",
       "borders": "With base panels only",
-      "bordersText": "The posts are already in place"
+      "bordersText": "The posts are already in place",
+      "needFence": "Fence needed",
+      "noFence": "No fence – gates only",
+      "gatePoles": "With gate posts",
+      "gatePolesText": "Posts for the gates and wickets",
+      "noGatePoles": "Without posts",
+      "noGatePolesText": "The posts are already in place"
     },
     "gates": {
       "width": "Gate width",
@@ -447,7 +448,7 @@
       "withAutomatics": "With automation",
       "withoutAutomatics": "Without automation",
       "kitText": "A ready-made factory segment kit.",
-      "hint": "Add each gate or wicket separately. They will be filled with the chosen fence profile.",
+      "hint": "Add each gate or wicket separately. If you need no gates, add nothing.",
       "empty": "No gates or wickets added yet.",
       "add": "Add a gate or wicket",
       "type": "Type",
@@ -482,7 +483,7 @@
       "chooseModel": "Choose a fence model",
       "chooseColor": "Choose a colour",
       "enterLength": "Enter the fence length",
-      "chooseGates": "Choose a gate or wickets",
+      "chooseGates": "Add a gate or a wicket",
       "cta": "Send the enquiry to a manager",
       "show": "Summary",
       "lengthLine": "{value} m",
@@ -500,11 +501,10 @@
     },
     "fences": {
       "tab": "Fence {n}",
-      "gatesTab": "Gate group {n}",
+      "gatesTab": "Gates {n}",
       "add": "Add another fence",
-      "addGates": "Add gates with another infill",
       "remove": "Remove",
-      "hint": "If you want different fences on different sides of the plot, add each one separately."
+      "hint": "If you want different fences, or gates with another infill, on different sides of the plot, add each one separately."
     },
     "blinds": {
       "type": "Blind type",

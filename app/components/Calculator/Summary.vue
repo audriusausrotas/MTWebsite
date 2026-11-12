@@ -9,8 +9,7 @@ const {
   result,
   loading,
   missing,
-  hasFence,
-  hasGates,
+  wantsPoles,
   isBlinds,
   modelOf,
   heightOf,
@@ -58,21 +57,20 @@ const fenceLines = (item: FenceSelection) => {
   const length = lengthOf(item);
   const size = [
     height ? t("calc.summary.heightLine", { value: height }) : "",
-    hasFence.value && length ? t("calc.summary.lengthLine", { value: number(length, 1) }) : "",
+    !item.noFence && length ? t("calc.summary.lengthLine", { value: number(length, 1) }) : "",
   ].filter(Boolean);
   if (size.length) list.push(size.join(", "));
 
-  if (hasFence.value) list.push(t(`calc.size.${item.parts}`));
+  if (!item.noFence) list.push(t(`calc.size.${item.parts}`));
+  else if (item.gates.length) list.push(t(wantsPoles(item) ? "calc.size.gatePoles" : "calc.size.noGatePoles"));
 
-  if (hasGates.value) {
-    // vienodi vartai – viena eilutė su kiekiu
-    const counts = new Map<string, number>();
-    item.gates.forEach((gate) => {
-      const line = gateLine(item, gate);
-      counts.set(line, (counts.get(line) ?? 0) + 1);
-    });
-    counts.forEach((count, line) => list.push(count > 1 ? `${count} × ${line}` : line));
-  }
+  // vienodi vartai – viena eilutė su kiekiu
+  const counts = new Map<string, number>();
+  item.gates.forEach((gate) => {
+    const line = gateLine(item, gate);
+    counts.set(line, (counts.get(line) ?? 0) + 1);
+  });
+  counts.forEach((count, line) => list.push(count > 1 ? `${count} × ${line}` : line));
 
   return list;
 };
@@ -106,12 +104,19 @@ const groups = computed(() => {
 
   return value.fences.map((item, index) => ({
     title:
-      value.fences.length > 1 ? t(hasFence.value ? "calc.fences.tab" : "calc.fences.gatesTab", { n: index + 1 }) : "",
+      value.fences.length > 1 ? t(item.noFence ? "calc.fences.gatesTab" : "calc.fences.tab", { n: index + 1 }) : "",
     lines: fenceLines(item),
   }));
 });
 
-const scopeLine = computed(() => t(`calc.scope.${selection.value.scope}`));
+// Kas skaičiuojama: tvora, vartai arba abu – pagal tai, ką lankytojas susidėjo
+const scopeLine = computed(() => {
+  const value = selection.value;
+  if (value.scope === "blinds") return t("calc.scope.blinds");
+  const fences = value.fences.some((item) => !item.noFence);
+  const gates = value.fences.some((item) => item.gates.length > 0);
+  return t(fences && gates ? "calc.scope.both" : gates ? "calc.scope.gates" : "calc.scope.fence");
+});
 const installLine = computed(() => t(selection.value.installation ? "calc.install.yes" : "calc.install.no"));
 
 const missingText = computed(() => {

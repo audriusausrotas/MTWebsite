@@ -36,6 +36,8 @@ export interface FenceSelection {
   heightText: string;
   lengthText: string;
   parts: "full" | "poles" | "borders" | "none";
+  // tvoros nereikia – tik vartai su šiuo užpildu (ilgis nepildomas)
+  noFence: boolean;
   // vartai ir varteliai su šios tvoros užpildu, aukščiu ir spalva
   gates: GateSelection[];
 }
@@ -81,11 +83,12 @@ const newFence = (id: number): FenceSelection => ({
   heightText: "",
   lengthText: "",
   parts: "full",
+  noFence: false,
   gates: [],
 });
 
 const initialSelection = (): CalculatorSelection => ({
-  scope: "fence",
+  scope: "both",
   fences: [newFence(1)],
   active: 0,
   blinds: { type: "", direction: "Horizontali", color: "", openings: [{ id: 2, widthText: "", heightText: "", count: 1 }] },
@@ -115,8 +118,6 @@ export const useCalculator = () => {
   const result = useState<EstimateResponse | null>("calculatorResult", () => null);
   const loading = useState<boolean>("calculatorLoading", () => false);
 
-  const hasFence = computed(() => selection.value.scope === "fence" || selection.value.scope === "both");
-  const hasGates = computed(() => selection.value.scope === "both" || selection.value.scope === "gates");
   const isBlinds = computed(() => selection.value.scope === "blinds");
 
   // redaguojama tvora
@@ -126,6 +127,12 @@ export const useCalculator = () => {
     config.value?.models.find((entry) => entry.id === item.modelId) ?? null;
 
   const model = computed(() => modelOf(fence.value));
+
+  // ar redaguojamai tvorai skaičiuojama pati tvora (ne tik vartai)
+  const hasFence = computed(() => !fence.value.noFence);
+
+  // Komplektacija be tvoros lemia tik vartų stulpus: su jais arba be jų
+  const wantsPoles = (item: FenceSelection) => item.parts === "full" || item.parts === "poles";
 
   // Eco skarda būna tik kelių spalvų
   const colorsFor = (item: CalculatorModel | null, steel: "premium" | "eco") =>
@@ -235,8 +242,8 @@ export const useCalculator = () => {
     if (!modelOf(item)) return "chooseModel";
     if (!colorsOf(item).includes(item.color)) return "chooseColor";
     if (!heightValid(item)) return "enterHeight";
-    if (hasFence.value && !lengthValid(item)) return "enterLength";
-    if (selection.value.scope === "gates" && !item.gates.length) return "chooseGates";
+    if (!item.noFence && !lengthValid(item)) return "enterLength";
+    if (item.noFence && !item.gates.length) return "chooseGates";
     return null;
   };
 
@@ -285,16 +292,14 @@ export const useCalculator = () => {
       twoSided: entry.twoSided ? item.twoSided : undefined,
       color: item.color,
       height,
-      length: hasFence.value ? lengthOf(item)! : undefined,
-      parts: item.parts,
-      gates: hasGates.value
-        ? item.gates.map((gate): EstimateGate => ({
-            type: gate.type,
-            width: gate.width ?? undefined,
-            automatics: hasAutomatics(item, gate) ? gate.automatics : undefined,
-            lock: gate.type === "wicket" ? (hasLock(gate) ? gate.lock : "simple") : undefined,
-          }))
-        : [],
+      length: item.noFence ? undefined : lengthOf(item)!,
+      parts: item.noFence ? (wantsPoles(item) ? "full" : "none") : item.parts,
+      gates: item.gates.map((gate): EstimateGate => ({
+        type: gate.type,
+        width: gate.width ?? undefined,
+        automatics: hasAutomatics(item, gate) ? gate.automatics : undefined,
+        lock: gate.type === "wicket" ? (hasLock(gate) ? gate.lock : "simple") : undefined,
+      })),
     };
   };
 
@@ -396,17 +401,6 @@ export const useCalculator = () => {
       if (blinds && !blinds.colors.includes(value.blinds.color)) {
         value.blinds.color = blinds.colors.includes("7016") ? "7016" : (blinds.colors[0] ?? "");
       }
-      return;
-    }
-    // „Tik vartai“ be vartų neturi prasmės – iš karto sukuriami pirmi
-    if (scope === "gates") {
-      value.fences.forEach((item) => {
-        if (item.gates.length) return;
-        const type = gateTypesOf(item)[0];
-        if (type) {
-          item.gates.push({ id: value.nextId++, type, width: gateWidthsOf(item, type)[0] ?? null, automatics: true, lock: "simple" });
-        }
-      });
     }
   };
 
@@ -415,7 +409,6 @@ export const useCalculator = () => {
     if (!config.value || value.fences.length >= config.value.maxFences) return;
     value.fences.push(newFence(value.nextId++));
     value.active = value.fences.length - 1;
-    if (value.scope === "gates") addGate();
   };
 
   const removeFence = (index: number) => {
@@ -443,7 +436,7 @@ export const useCalculator = () => {
     fence,
     model,
     hasFence,
-    hasGates,
+    wantsPoles,
     isBlinds,
     missing,
     request,

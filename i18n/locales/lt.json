@@ -348,34 +348,29 @@
     }
   },
   "calc": {
-    "intro": "Susidėliokite tvorą keliais žingsniais ir iškart pamatykite preliminarią sąmatos kainą. Kontaktų palikti nereikia.",
+    "intro": "Susidėliokite tvorą ir vartus keliais žingsniais ir iškart pamatykite preliminarią sąmatos kainą. Kontaktų palikti nereikia.",
     "unavailable": "Skaičiuoklė šiuo metu nepasiekiama. Parašykite arba paskambinkite – kainą paskaičiuosime patys.",
     "photos": "Nuotraukos",
     "steps": {
-      "scope": "Ko jums reikia?",
-      "model": "Tvoros modelis",
-      "modelGates": "Vartų užpildas",
-      "size": "Aukštis ir ilgis",
-      "sizeGates": "Vartų aukštis",
+      "scope": "Ką skaičiuojame?",
+      "model": "Modelis ir spalva",
       "gates": "Vartai ir varteliai",
       "install": "Montavimas",
       "blinds": "Žaliuzės",
       "openings": "Angų matmenys",
-      "parts": "Komplektacija"
+      "height": "Aukštis",
+      "fence": "Tvora"
     },
     "scope": {
       "fence": "Tvora",
-      "fenceText": "Tik tvora, be vartų",
       "both": "Tvora ir vartai",
-      "bothText": "Tvora su vartais ar varteliais",
-      "gates": "Tik vartai",
-      "gatesText": "Vartai ar varteliai prie esamos tvoros",
+      "bothText": "Tvora, vartai ir varteliai",
+      "gates": "Vartai",
       "blinds": "Lauko žaliuzės",
       "blindsText": "Žaliuzės terasai ar pavėsinei"
     },
     "model": {
-      "hint": "Paspauskite „Nuotraukos“, kad pamatytumėte, kaip tvora atrodo objektuose.",
-      "hintGates": "Vartai ir varteliai užpildomi pasirinktu tvoros profiliu.",
+      "hint": "Tuo pačiu profiliu užpildomi ir vartai. Paspauskite „Nuotraukos“, kad pamatytumėte, kaip jis atrodo objektuose.",
       "segment": "Segmentinė tvora",
       "change": "Keisti modelį"
     },
@@ -447,7 +442,13 @@
       "withoutBorder": "Tvoros aukštis be pamatėlio:",
       "withBorder": "Aukštis nuo žemės su pamatėliu:",
       "borders": "Tik su pamatėliais",
-      "bordersText": "Stulpai jau pastatyti"
+      "bordersText": "Stulpai jau pastatyti",
+      "needFence": "Tvoros reikia",
+      "noFence": "Tvoros nereikia – tik vartai",
+      "gatePoles": "Su vartų stulpais",
+      "gatePolesText": "Stulpai vartams ir varteliams",
+      "noGatePoles": "Be stulpų",
+      "noGatePolesText": "Stulpai jau pastatyti"
     },
     "gates": {
       "width": "Vartų plotis",
@@ -455,7 +456,7 @@
       "withAutomatics": "Su automatika",
       "withoutAutomatics": "Be automatikos",
       "kitText": "Gatavas gamyklinis segmentinis komplektas.",
-      "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai. Jie bus užpildyti pasirinktu tvoros profiliu.",
+      "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai. Jei vartų nereikia – nieko nepridėkite.",
       "empty": "Vartų ir vartelių dar nepridėta.",
       "add": "Pridėti vartus ar vartelius",
       "type": "Tipas",
@@ -490,7 +491,7 @@
       "chooseModel": "Pasirinkite tvoros modelį",
       "chooseColor": "Pasirinkite spalvą",
       "enterLength": "Įveskite tvoros ilgį",
-      "chooseGates": "Pasirinkite vartus arba vartelius",
+      "chooseGates": "Pridėkite vartus arba vartelius",
       "cta": "Perduoti užklausą vadybininkui",
       "show": "Santrauka",
       "lengthLine": "{value} m",
@@ -508,11 +509,10 @@
     },
     "fences": {
       "tab": "Tvora {n}",
-      "gatesTab": "Vartų grupė {n}",
+      "gatesTab": "Vartai {n}",
       "add": "Pridėti kitą tvorą",
-      "addGates": "Pridėti vartus su kitu užpildu",
       "remove": "Pašalinti",
-      "hint": "Jei skirtingose sklypo pusėse norite skirtingų tvorų, pridėkite kiekvieną atskirai."
+      "hint": "Jei skirtingose sklypo pusėse norite skirtingų tvorų ar vartų su kitu užpildu, pridėkite kiekvieną atskirai."
     },
     "blinds": {
       "type": "Žaliuzių tipas",
