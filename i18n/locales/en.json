@@ -526,12 +526,9 @@
       "remove": "Remove opening",
       "range": "Width from {wmin} to {wmax} cm, height from {hmin} to {hmax} cm."
     },
-    "mode": {
-      "self": "Calculate yourself",
-      "selfText": "Choose a fence and see the price right away",
-      "ai": "Ask AI",
-      "aiText": "Describe it in your own words – we will reply right here",
-      "aiBody": "Write what fence, gate or blinds you want and their dimensions. You can attach a photo or a drawing – we will calculate the price and reply in this chat."
+    "help": {
+      "title": "Need help?",
+      "text": "The AI assistant will calculate an estimate from your description"
     },
     "request": {
       "title": "Send the enquiry to a manager",
@@ -570,45 +567,10 @@
       "onlyGates": "gates only"
     },
     "layout": {
-      "label": "Layout variant:",
-      "steps": "All steps on one page",
-      "accordion": "Collapsible blocks",
-      "modal": "Buttons and pop-up windows",
-      "wizard": "One step at a time",
       "choose": "Choose",
-      "pick": "Choose",
-      "change": "Change",
       "next": "Next",
       "back": "Back",
-      "done": "OK",
-      "nextNamed": "Next: {title}",
-      "progress": "Step {n} of {total}",
-      "fillFirst": "Fill in this step first",
-      "sidebar": "Menu on the left",
-      "visual": "Configurator with a photo",
-      "chat": "One question after another",
-      "form": "Compact form",
-      "wide": "Wide, two columns",
-      "sentence": "Sentence with fields",
-      "stepsNav": "Steps",
-      "chooseModel": "Choose a model",
-      "allDone": "Everything is chosen – the price and summary are next to it. You can change any answer."
-    },
-    "sentence": {
-      "scope": "We are calculating:",
-      "need": "I need",
-      "model": "Fence model –",
-      "modelGates": "Gate infill –",
-      "look": "privacy –",
-      "boards": "installation –",
-      "steel": "steel –",
-      "color": "colour –",
-      "height": "Fence height –",
-      "heightGates": "Gate height –",
-      "length": "total length –",
-      "parts": "Included –",
-      "partsGates": "Gate posts –",
-      "install": "Installation –"
+      "stepsNav": "Steps"
     }
   },
   "blinds": {

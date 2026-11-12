@@ -3,9 +3,8 @@ import type { FenceSelection, GateSelection } from "~/composables/useCalculator"
 
 // Santrauka su sąmatos kaina. „Gauti pasiūlymą“ atidaro užklausos formą (Request.vue) – užklausa su pasirinkimais
 // ir ta pačia sąmata atsiranda MTSoft „Užklausose“.
-// compact – tik kaina ir mygtukas (pasirinkimų sąrašas nerodomas: jis jau matomas šalia, žingsnių meniu)
-const props = defineProps<{ compact?: boolean }>();
-
+// Kompiuteryje rodoma tik kaina ir mygtukas (pasirinkimai jau matomi šalia, žingsnių meniu); telefone, kur meniu –
+// tik pavadinimų juosta, rodomas ir pasirinkimų sąrašas.
 const { t, locale } = useI18n();
 const {
   selection,
@@ -164,12 +163,11 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
 <template>
   <aside
     id="calc-summary"
-    class="flex flex-col border border-gray-200 rounded-lg shadow-lg bg-white"
-    :class="props.compact ? 'gap-4 p-4' : 'gap-5 p-6'"
+    class="flex flex-col gap-5 p-6 lg:gap-4 lg:p-4 border border-gray-200 rounded-lg shadow-lg bg-white"
   >
-    <h2 v-if="!props.compact" class="text-2xl font-bold">{{ $t("calc.summary.title") }}</h2>
+    <h2 class="lg:hidden text-2xl font-bold">{{ $t("calc.summary.title") }}</h2>
 
-    <div v-if="!props.compact" class="flex flex-col gap-4">
+    <div class="lg:hidden flex flex-col gap-4">
       <p class="font-bold">{{ scopeLine }}</p>
       <div v-for="(group, index) in groups" :key="index" class="flex flex-col gap-2">
         <p v-if="group.title" class="text-sm font-bold uppercase tracking-wide text-red-main">{{ group.title }}</p>
@@ -183,11 +181,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
       <p class="font-medium">{{ installLine }}</p>
     </div>
 
-    <div
-      class="flex flex-col gap-3"
-      :class="props.compact ? '' : 'pt-5 border-t border-gray-200'"
-      aria-live="polite"
-    >
+    <div class="flex flex-col gap-3 pt-5 border-t border-gray-200 lg:pt-0 lg:border-t-0" aria-live="polite">
       <p v-if="missing" class="font-medium text-gray-600">{{ missingText }}</p>
 
       <template v-else-if="price">
@@ -214,7 +208,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
 
     <BaseButton
       width="w-full"
-      :height="props.compact ? 'min-h-12 py-2 text-center leading-tight' : 'h-12'"
+      height="min-h-12 py-2 text-center leading-tight"
       :disabled="!!missing"
       @click="requestOpen = true"
     >

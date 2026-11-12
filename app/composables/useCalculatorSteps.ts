@@ -1,7 +1,7 @@
 import type { CalculatorScope } from "#shared/types/calculator";
 
-// Skaičiuoklės žingsniai iš eilės – bendri visiems išdėstymo variantams (Layout*.vue): pavadinimas, užuomina,
-// trumpa pasirinkta reikšmė (rodoma sutrauktame bloke ar eilutėje) ir ar žingsnis jau užpildytas.
+// Skaičiuoklės žingsniai iš eilės (žingsnių meniu – Calculator/Layout.vue): pavadinimas, užuomina,
+// trumpa pasirinkta reikšmė (rodoma meniu) ir ar žingsnis jau užpildytas.
 // Žingsnio turinys – Calculator/Section.vue.
 
 export type StepKey = "scope" | "blinds" | "need" | "model" | "look" | "color" | "size" | "gates" | "parts" | "install";
@@ -170,10 +170,5 @@ export const useCalculatorSteps = () => {
     return list.map((step, index) => ({ ...step, number: index + 1 }));
   });
 
-  // žingsniai prieš tvorų rėmą, jame ir po jo
-  const before = computed(() => steps.value.filter((step) => !step.fence && step.key !== "install"));
-  const inFence = computed(() => steps.value.filter((step) => step.fence));
-  const after = computed(() => steps.value.filter((step) => step.key === "install"));
-
-  return { steps, before, inFence, after, scopes, lookStep };
+  return { steps, scopes };
 };

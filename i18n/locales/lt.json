@@ -534,12 +534,9 @@
       "remove": "Pašalinti angą",
       "range": "Plotis nuo {wmin} iki {wmax} cm, aukštis nuo {hmin} iki {hmax} cm."
     },
-    "mode": {
-      "self": "Skaičiuoti pačiam",
-      "selfText": "Pasirinkite tvorą ir iškart matykite kainą",
-      "ai": "Klausti AI",
-      "aiText": "Aprašykite savo žodžiais – atsakysime čia pat",
-      "aiBody": "Parašykite, kokios tvoros, vartų ar žaliuzių norite ir kokie matmenys. Galite pridėti nuotrauką ar brėžinį – kainą paskaičiuosime ir atsakysime šiame pokalbyje."
+    "help": {
+      "title": "Reikia pagalbos?",
+      "text": "AI asistentas paskaičiuos sąmatą pagal jūsų aprašymą"
     },
     "request": {
       "title": "Perduoti užklausą vadybininkui",
@@ -578,45 +575,10 @@
       "onlyGates": "tik vartų"
     },
     "layout": {
-      "label": "Išdėstymo variantas:",
-      "steps": "Visi žingsniai viename puslapyje",
-      "accordion": "Sutraukiami blokai",
-      "modal": "Mygtukai ir iššokantys langai",
-      "wizard": "Po vieną žingsnį",
       "choose": "Pasirinkite",
-      "pick": "Pasirinkti",
-      "change": "Keisti",
       "next": "Toliau",
       "back": "Atgal",
-      "done": "Gerai",
-      "nextNamed": "Toliau: {title}",
-      "progress": "{n} žingsnis iš {total}",
-      "fillFirst": "Pirma užpildykite šį žingsnį",
-      "sidebar": "Meniu kairėje",
-      "visual": "Konfigūratorius su nuotrauka",
-      "chat": "Klausimas po klausimo",
-      "form": "Kompaktiška forma",
-      "wide": "Platus, dviem stulpeliais",
-      "sentence": "Sakinys su laukais",
-      "stepsNav": "Žingsniai",
-      "chooseModel": "Pasirinkite modelį",
-      "allDone": "Viskas pasirinkta – kaina ir santrauka šalia. Bet kurį atsakymą galite pakeisti."
-    },
-    "sentence": {
-      "scope": "Skaičiuojame:",
-      "need": "Man reikia",
-      "model": "Tvoros modelis –",
-      "modelGates": "Vartų užpildas –",
-      "look": "pramatomumas –",
-      "boards": "montavimas –",
-      "steel": "skarda –",
-      "color": "spalva –",
-      "height": "Tvoros aukštis –",
-      "heightGates": "Vartų aukštis –",
-      "length": "bendras ilgis –",
-      "parts": "Komplektacija –",
-      "partsGates": "Vartų stulpai –",
-      "install": "Montavimas –"
+      "stepsNav": "Žingsniai"
     }
   },
   "blinds": {

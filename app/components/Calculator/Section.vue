@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { StepKey } from "~/composables/useCalculatorSteps";
 
-// Vieno skaičiuoklės žingsnio turinys (redaguojamai tvorai). Tas pats turinys naudojamas visuose išdėstymo
-// variantuose (Layout*.vue) – skiriasi tik tai, kaip žingsniai sudėti puslapyje.
+// Vieno skaičiuoklės žingsnio turinys (redaguojamai tvorai); žingsniai puslapyje sudėti Layout.vue.
 const props = defineProps<{ step: StepKey }>();
 
 const { locale } = useI18n();
