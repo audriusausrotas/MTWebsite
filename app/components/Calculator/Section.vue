@@ -17,6 +17,7 @@ const {
   heightOptions,
   lengthValid,
   setHeight,
+  scopePending,
   selectScope,
   toggleNeed,
 } = useCalculator();
@@ -62,7 +63,7 @@ const withBorder = computed(() => fence.value.parts === "full" || fence.value.pa
       :title="$t(`calc.scope.${scope}`)"
       :text="$t(`calc.scope.${scope}Text`)"
       :image="SCOPE_IMAGES[scope]"
-      :selected="selection.scope === scope"
+      :selected="!scopePending && selection.scope === scope"
       @select="selectScope(scope)"
     />
   </div>

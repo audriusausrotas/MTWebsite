@@ -64,6 +64,8 @@ export interface BlindSelection {
 
 export interface CalculatorSelection {
   scope: CalculatorScope;
+  // ar lankytojas jau pasirinko, ką skaičiuoja (tvora ir vartai ar žaliuzės); atsidarius – nepasirinkta
+  scopeChosen: boolean;
   fences: FenceSelection[];
   // rodomos (redaguojamos) tvoros indeksas
   active: number;
@@ -95,6 +97,7 @@ const newFence = (id: number): FenceSelection => ({
 
 const initialSelection = (): CalculatorSelection => ({
   scope: "both",
+  scopeChosen: false,
   fences: [newFence(1)],
   active: 0,
   blinds: { type: "", direction: "Horizontali", color: "", openings: [{ id: 2, widthText: "", heightText: "", count: 1 }] },
@@ -125,6 +128,8 @@ export const useCalculator = () => {
   const loading = useState<boolean>("calculatorLoading", () => false);
 
   const isBlinds = computed(() => selection.value.scope === "blinds");
+  // Kol nepasirinkta, ką skaičiuojame, kiti žingsniai nerodomi (kai žaliuzių nėra – rinktis nėra iš ko)
+  const scopePending = computed(() => !selection.value.scopeChosen && !!config.value?.blinds);
 
   // redaguojama tvora
   const fence = computed(() => selection.value.fences[selection.value.active] ?? selection.value.fences[0]!);
@@ -287,6 +292,8 @@ export const useCalculator = () => {
   const missing = computed<Missing | null>(() => {
     const value = selection.value;
 
+    if (scopePending.value) return { key: "chooseScope" };
+
     if (value.scope === "blinds") {
       const blinds = config.value?.blinds;
       if (!blinds?.types.some((type) => type.name === value.blinds.type)) return { key: "chooseBlindType" };
@@ -441,6 +448,7 @@ export const useCalculator = () => {
   const selectScope = (scope: CalculatorScope) => {
     const value = selection.value;
     value.scope = scope;
+    value.scopeChosen = true;
     if (scope === "blinds") {
       const blinds = config.value?.blinds;
       if (blinds && !value.blinds.type) value.blinds.type = blinds.types[0]?.name ?? "";
@@ -484,6 +492,7 @@ export const useCalculator = () => {
     hasFence,
     wantsPoles,
     isBlinds,
+    scopePending,
     missing,
     request,
     modelOf,

@@ -26,6 +26,7 @@ export const useCalculatorSteps = () => {
     fence,
     model,
     isBlinds,
+    scopePending,
     hasFence,
     wantsPoles,
     missing,
@@ -58,11 +59,14 @@ export const useCalculatorSteps = () => {
         key: "scope",
         title: t("calc.steps.scope"),
         hint: "",
-        value: t(isBlinds.value ? "calc.scope.blinds" : "calc.scope.both"),
-        done: true,
+        value: scopePending.value ? "" : t(isBlinds.value ? "calc.scope.blinds" : "calc.scope.both"),
+        done: !scopePending.value,
         fence: false,
       });
     }
+
+    // kol nepasirinkta, ką skaičiuojame – tik šis vienas žingsnis
+    if (scopePending.value) return list.map((step, index) => ({ ...step, number: index + 1 }));
 
     if (isBlinds.value) {
       const blinds = selection.value.blinds;

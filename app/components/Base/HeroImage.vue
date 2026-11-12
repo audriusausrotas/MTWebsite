@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <div>
     <!-- pavadinimas prispaustas prie apačios: ilgas pavadinimas auga į viršų, o ne išlenda iš juostos -->
-    <div class="relative w-full min-h-80 flex items-end overflow-hidden">
+    <div class="relative w-full min-h-56 flex items-end overflow-hidden">
       <NuxtImg
         :src="url"
         alt=""
@@ -27,8 +27,9 @@ const props = withDefaults(defineProps<Props>(), {
         class="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div class="absolute inset-0 bg-linear-to-t from-black/75 via-black/50 to-black/40"></div>
-      <div class="relative max-w-default w-full mx-auto px-4 pt-28 pb-12">
+      <!-- užtamsinimas: apačioje – pavadinimui, viršuje – meniu; per vidurį nuotrauka lieka šviesi -->
+      <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/25 to-black/35"></div>
+      <div class="relative max-w-default w-full mx-auto px-4 pt-28 pb-8">
         <component
           :is="heading ? 'h1' : 'p'"
           class="font-medium text-white tracking-wide text-balance max-w-220"

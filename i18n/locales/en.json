@@ -485,6 +485,7 @@
       "calculating": "Calculating…",
       "manual": "A manager will calculate the price for this option – get in touch and we will reply quickly.",
       "error": "The price could not be calculated. Try again or contact us.",
+      "chooseScope": "Choose what to calculate",
       "chooseModel": "Choose a fence model",
       "chooseColor": "Choose a colour",
       "enterLength": "Enter the fence length",

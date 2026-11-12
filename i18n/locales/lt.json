@@ -493,6 +493,7 @@
       "calculating": "Skaičiuojama…",
       "manual": "Šiam variantui kainą paskaičiuos vadybininkas – susisiekite, atsakysime greitai.",
       "error": "Nepavyko paskaičiuoti. Pabandykite dar kartą arba susisiekite su mumis.",
+      "chooseScope": "Pasirinkite, ką skaičiuojame",
       "chooseModel": "Pasirinkite tvoros modelį",
       "chooseColor": "Pasirinkite spalvą",
       "enterLength": "Įveskite tvoros ilgį",

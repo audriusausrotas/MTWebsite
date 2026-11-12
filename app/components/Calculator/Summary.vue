@@ -13,6 +13,7 @@ const {
   missing,
   wantsPoles,
   isBlinds,
+  scopePending,
   modelOf,
   heightOf,
   lengthOf,
@@ -167,7 +168,7 @@ const phone = computed(() => t("contacts.ofisoTelNr"));
   >
     <h2 class="lg:hidden text-2xl font-bold">{{ $t("calc.summary.title") }}</h2>
 
-    <div class="lg:hidden flex flex-col gap-4">
+    <div v-if="!scopePending" class="lg:hidden flex flex-col gap-4">
       <p class="font-bold">{{ scopeLine }}</p>
       <div v-for="(group, index) in groups" :key="index" class="flex flex-col gap-2">
         <p v-if="group.title" class="text-sm font-bold uppercase tracking-wide text-red-main">{{ group.title }}</p>
