@@ -352,7 +352,8 @@
       "gates": "Gates and wickets",
       "install": "Installation",
       "blinds": "Blinds",
-      "openings": "Opening sizes"
+      "openings": "Opening sizes",
+      "parts": "What is included"
     },
     "scope": {
       "fence": "Fence",
@@ -367,7 +368,8 @@
     "model": {
       "hint": "Click “Photos” to see how the fence looks on real sites.",
       "hintGates": "Gates and wickets are filled with the chosen fence profile.",
-      "segment": "Segment fence"
+      "segment": "Segment fence",
+      "change": "Change model"
     },
     "steel": {
       "title": "Steel",
@@ -375,7 +377,7 @@
       "premiumText": "Arcelor Ultramatt (Belgium). 50-year technical warranty, 20-year colour warranty. All colours, identical shade guaranteed.",
       "eco": "Eco",
       "ecoText": "The more affordable choice. 20-year technical warranty, 5-year colour warranty. Three colours: RAL 7016, 8019 and 8017.",
-      "compare": "Compare steel types",
+      "compare": "Compare the technical specifications of the steel",
       "hide": "Hide comparison",
       "type": "Steel type",
       "rows": {
@@ -421,7 +423,7 @@
     },
     "size": {
       "height": "Fence height, cm",
-      "heightHint": "From {min} to {max} cm.",
+      "heightHint": "The height must be between {min} and {max} cm.",
       "parts": "What is included",
       "full": "With posts and base panels",
       "fullText": "Complete set",
@@ -430,31 +432,36 @@
       "none": "No posts or base panels",
       "noneText": "Fence infill only",
       "gateHeight": "Gate height, cm",
-      "suggested": "Heights for the chosen profile and privacy level (slat pitch {step} cm):",
+      "suggested": "We recommend a standard height – it matches the profile and privacy level (slat pitch {step} cm):",
       "segmentHeights": "Segment heights, cm:",
       "length": "Total fence length, m",
-      "lengthHint": "Length of all sides of this fence without gates and wickets. From {min} to {max} m, half metres allowed, e.g. 25.5."
+      "lengthHint": "Length of all sides of this fence without gates and wickets. From {min} to {max} m, half metres allowed, e.g. 25.5.",
+      "withoutBorder": "Fence height without the base panel:",
+      "withBorder": "Height from the ground with the base panel:",
+      "borders": "With base panels only",
+      "bordersText": "The posts are already in place"
     },
     "gates": {
-      "gate": "Driveway gate",
-      "none": "Not needed",
-      "sliding": "Sliding",
-      "swing": "Swing",
       "width": "Gate width",
-      "count": "Quantity",
       "automatics": "Automation",
       "withAutomatics": "With automation",
       "withoutAutomatics": "Without automation",
-      "wickets": "Wickets",
-      "wicketsHint": "The standard wicket width is 1 m.",
-      "made": "Made to order",
-      "madeText": "A frame with your fence infill, made to the exact width.",
-      "kit": "Ready-made kit",
-      "kitText": "Factory-made segment gates – swing only.",
-      "segment": "Segment swing gate",
-      "wicketType": "Wicket type",
-      "wicketMade": "Made to order",
-      "wicketKit": "Segment (kit)"
+      "kitText": "A ready-made factory segment kit.",
+      "hint": "Add each gate or wicket separately. They will be filled with the chosen fence profile.",
+      "empty": "No gates or wickets added yet.",
+      "add": "Add a gate or wicket",
+      "type": "Type",
+      "types": {
+        "sliding": "Sliding gate",
+        "swing": "Swing gate",
+        "wicket": "Wicket",
+        "segment": "Segment swing gate",
+        "segmentWicket": "Segment wicket"
+      },
+      "lock": "Lock",
+      "lockSimple": "Standard lock",
+      "lockElectric": "Electromagnetic lock",
+      "lockElectricText": "The wicket is unlocked remotely, e.g. from the house."
     },
     "install": {
       "yes": "With installation",
@@ -476,10 +483,8 @@
       "chooseColor": "Choose a colour",
       "enterLength": "Enter the fence length",
       "chooseGates": "Choose a gate or wickets",
-      "cta": "Get an exact offer",
+      "cta": "Send the enquiry to a manager",
       "show": "Summary",
-      "gateLine": "{type} gate {width} m × {count}, {automatics}",
-      "wicketLine": "Wickets × {count}",
       "lengthLine": "{value} m",
       "heightLine": "{value} cm high",
       "total": "{value} €",
@@ -489,17 +494,15 @@
       "chooseBlindType": "Choose a blind type",
       "enterOpening": "Enter the opening sizes",
       "inFence": "Fence {n}: {text}",
-      "segmentGateLine": "Segment swing gate {width} m × {count}",
-      "wicketKitLine": "Segment wickets × {count}",
       "openingLine": "{width} × {height} cm × {count}",
       "blindMaterials": "Blinds and materials",
       "blindNote": "The price is preliminary: the exact estimate is prepared after the openings are measured."
     },
     "fences": {
       "tab": "Fence {n}",
-      "gatesTab": "Gate {n}",
+      "gatesTab": "Gate group {n}",
       "add": "Add another fence",
-      "addGates": "Add another gate",
+      "addGates": "Add gates with another infill",
       "remove": "Remove",
       "hint": "If you want different fences on different sides of the plot, add each one separately."
     },
@@ -527,7 +530,7 @@
       "open": "Open chat"
     },
     "request": {
-      "title": "Get an exact offer",
+      "title": "Send the enquiry to a manager",
       "intro": "Your selections and the calculated price will be passed to a manager – you will not need to explain anything again.",
       "want": "What would you like?",
       "measure": "Book a measurement",

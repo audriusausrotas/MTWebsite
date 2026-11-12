@@ -360,7 +360,8 @@
       "gates": "Vartai ir varteliai",
       "install": "Montavimas",
       "blinds": "Žaliuzės",
-      "openings": "Angų matmenys"
+      "openings": "Angų matmenys",
+      "parts": "Komplektacija"
     },
     "scope": {
       "fence": "Tvora",
@@ -375,7 +376,8 @@
     "model": {
       "hint": "Paspauskite „Nuotraukos“, kad pamatytumėte, kaip tvora atrodo objektuose.",
       "hintGates": "Vartai ir varteliai užpildomi pasirinktu tvoros profiliu.",
-      "segment": "Segmentinė tvora"
+      "segment": "Segmentinė tvora",
+      "change": "Keisti modelį"
     },
     "steel": {
       "title": "Skarda",
@@ -383,7 +385,7 @@
       "premiumText": "Arcelor Ultramatt (Belgija). Techninė garantija 50 metų, spalvos – 20 metų. Visos spalvos, identiško atspalvio garantija.",
       "eco": "Eco",
       "ecoText": "Pigesnis pasirinkimas. Techninė garantija 20 metų, spalvos – 5 metai. Trys spalvos: RAL 7016, 8019 ir 8017.",
-      "compare": "Palyginti skardas",
+      "compare": "Palyginti skardų technines specifikacijas",
       "hide": "Slėpti palyginimą",
       "type": "Skardos tipas",
       "rows": {
@@ -429,7 +431,7 @@
     },
     "size": {
       "height": "Tvoros aukštis, cm",
-      "heightHint": "Nuo {min} iki {max} cm.",
+      "heightHint": "Aukštis turi būti nuo {min} iki {max} cm.",
       "parts": "Komplektacija",
       "full": "Su stulpais ir pamatėliais",
       "fullText": "Pilnas komplektas",
@@ -438,31 +440,36 @@
       "none": "Be stulpų ir pamatėlių",
       "noneText": "Tik tvoros užpildas",
       "gateHeight": "Vartų aukštis, cm",
-      "suggested": "Aukščiai pagal pasirinktą profilį ir pramatomumą (lamelių žingsnis {step} cm):",
+      "suggested": "Rekomenduojame rinktis standartinį aukštį – jis parinktas pagal profilį ir pramatomumą (lamelių žingsnis {step} cm):",
       "segmentHeights": "Segmentų aukščiai, cm:",
       "length": "Bendras tvoros ilgis, m",
-      "lengthHint": "Visų šios tvoros kraštinių ilgis be vartų ir vartelių. Nuo {min} iki {max} m, galima nurodyti pusmetrius, pvz. 25,5."
+      "lengthHint": "Visų šios tvoros kraštinių ilgis be vartų ir vartelių. Nuo {min} iki {max} m, galima nurodyti pusmetrius, pvz. 25,5.",
+      "withoutBorder": "Tvoros aukštis be pamatėlio:",
+      "withBorder": "Aukštis nuo žemės su pamatėliu:",
+      "borders": "Tik su pamatėliais",
+      "bordersText": "Stulpai jau pastatyti"
     },
     "gates": {
-      "gate": "Įvažiavimo vartai",
-      "none": "Nereikia",
-      "sliding": "Stumdomi",
-      "swing": "Varstomi",
       "width": "Vartų plotis",
-      "count": "Kiekis",
       "automatics": "Automatika",
       "withAutomatics": "Su automatika",
       "withoutAutomatics": "Be automatikos",
-      "wickets": "Varteliai",
-      "wicketsHint": "Standartinis vartelių plotis – 1 m.",
-      "made": "Gaminami pagal užsakymą",
-      "madeText": "Rėmas su jūsų tvoros užpildu, tikslaus pločio.",
-      "kit": "Gatavas komplektas",
-      "kitText": "Gamykliniai segmentiniai vartai – tik varstomi.",
-      "segment": "Segmentiniai varstomi",
-      "wicketType": "Vartelių tipas",
-      "wicketMade": "Gaminami pagal užsakymą",
-      "wicketKit": "Segmentiniai (komplektas)"
+      "kitText": "Gatavas gamyklinis segmentinis komplektas.",
+      "hint": "Kiekvienus vartus ar vartelius pridėkite atskirai. Jie bus užpildyti pasirinktu tvoros profiliu.",
+      "empty": "Vartų ir vartelių dar nepridėta.",
+      "add": "Pridėti vartus ar vartelius",
+      "type": "Tipas",
+      "types": {
+        "sliding": "Stumdomi vartai",
+        "swing": "Varstomi vartai",
+        "wicket": "Varteliai",
+        "segment": "Segmentiniai varstomi vartai",
+        "segmentWicket": "Segmentiniai varteliai"
+      },
+      "lock": "Spyna",
+      "lockSimple": "Paprasta spyna",
+      "lockElectric": "Elektromagnetinė spyna",
+      "lockElectricText": "Varteliai atrakinami nuotoliniu būdu, pvz. iš namų."
     },
     "install": {
       "yes": "Su montavimu",
@@ -484,10 +491,8 @@
       "chooseColor": "Pasirinkite spalvą",
       "enterLength": "Įveskite tvoros ilgį",
       "chooseGates": "Pasirinkite vartus arba vartelius",
-      "cta": "Gauti tikslų pasiūlymą",
+      "cta": "Perduoti užklausą vadybininkui",
       "show": "Santrauka",
-      "gateLine": "{type} vartai {width} m × {count}, {automatics}",
-      "wicketLine": "Varteliai × {count}",
       "lengthLine": "{value} m",
       "heightLine": "{value} cm aukščio",
       "total": "{value} €",
@@ -497,17 +502,15 @@
       "chooseBlindType": "Pasirinkite žaliuzių tipą",
       "enterOpening": "Įveskite angų matmenis",
       "inFence": "Tvora {n}: {text}",
-      "segmentGateLine": "Segmentiniai varstomi vartai {width} m × {count}",
-      "wicketKitLine": "Segmentiniai varteliai × {count}",
       "openingLine": "{width} × {height} cm × {count}",
       "blindMaterials": "Žaliuzės ir medžiagos",
       "blindNote": "Kaina preliminari: tiksli sąmata sudaroma pamatavus angas."
     },
     "fences": {
       "tab": "Tvora {n}",
-      "gatesTab": "Vartai {n}",
+      "gatesTab": "Vartų grupė {n}",
       "add": "Pridėti kitą tvorą",
-      "addGates": "Pridėti kitus vartus",
+      "addGates": "Pridėti vartus su kitu užpildu",
       "remove": "Pašalinti",
       "hint": "Jei skirtingose sklypo pusėse norite skirtingų tvorų, pridėkite kiekvieną atskirai."
     },
@@ -535,7 +538,7 @@
       "open": "Atidaryti pokalbį"
     },
     "request": {
-      "title": "Gauti tikslų pasiūlymą",
+      "title": "Perduoti užklausą vadybininkui",
       "intro": "Jūsų pasirinkimai ir paskaičiuota kaina bus perduoti vadybininkui – nieko iš naujo pasakoti nereikės.",
       "want": "Ko pageidaujate?",
       "measure": "Registruoti matavimą",

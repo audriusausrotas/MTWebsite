@@ -8,7 +8,7 @@ defineEmits<{ select: [] }>();
   <button
     type="button"
     :aria-pressed="selected"
-    class="min-w-16 h-12 px-4 border-2 font-bold transition-colors hover:cursor-pointer"
+    class="min-w-16 min-h-12 px-4 py-2 border-2 font-bold transition-colors hover:cursor-pointer"
     :class="
       selected
         ? 'border-red-main bg-red-main text-white'

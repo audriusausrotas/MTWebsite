@@ -47,19 +47,32 @@ export interface CalculatorConfig {
     sliding: number[];
     swing: number[];
     wicket: boolean;
+    // ar varteliams galima rinktis elektromagnetinę spyną
+    electricLock: boolean;
     // gatavi segmentiniai komplektai (tik varstomi, tik segmentinei tvorai): plotis × aukštis cm;
     // automation – ar komplektui galima automatika
     segment: { width: number; height: number; automation: boolean }[];
     segmentWickets: number[];
-    maxGates: number;
-    maxWickets: number;
+    // vartų ir vartelių vienai tvorai
+    maxItems: number;
   };
   // null – lauko žaliuzės neskaičiuojamos
   blinds: CalculatorBlinds | null;
 }
 
 export type CalculatorScope = "fence" | "both" | "gates" | "blinds";
-export type GateType = "sliding" | "swing" | "segment";
+// Vartai ir varteliai: gaminami pagal užsakymą (sliding, swing, wicket) arba gatavi segmentiniai komplektai
+export type GateType = "sliding" | "swing" | "segment" | "wicket" | "segmentWicket";
+export type WicketLock = "simple" | "electric";
+
+export interface EstimateGate {
+  type: GateType;
+  // cm – tik vartams (varteliai standartiniai)
+  width?: number;
+  automatics?: boolean;
+  // tik gaminamiems varteliams
+  lock?: WicketLock;
+}
 
 export interface EstimateFence {
   name: string;
@@ -71,10 +84,8 @@ export interface EstimateFence {
   height: number;
   // m
   length?: number;
-  parts?: "full" | "poles" | "none";
-  gate?: { type: GateType; width: number; automatics: boolean; count: number } | null;
-  wickets?: number;
-  wicketType?: "made" | "segment";
+  parts?: "full" | "poles" | "borders" | "none";
+  gates?: EstimateGate[];
 }
 
 export interface EstimateRequest {

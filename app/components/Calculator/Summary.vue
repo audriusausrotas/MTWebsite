@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FenceSelection } from "~/composables/useCalculator";
+import type { FenceSelection, GateSelection } from "~/composables/useCalculator";
 
 // Santrauka su sąmatos kaina. „Gauti pasiūlymą“ atidaro užklausos formą (Request.vue) – užklausa su pasirinkimais
 // ir ta pačia sąmata atsiranda MTSoft „Užklausose“.
@@ -16,7 +16,7 @@ const {
   heightOf,
   lengthOf,
   hasAutomatics,
-  wicketAvailable,
+  hasLock,
 } = useCalculator();
 
 const number = (value: number, digits = 0) =>
@@ -27,6 +27,16 @@ const number = (value: number, digits = 0) =>
 
 const meters = (cm: number) => number(cm / 100, 2);
 const colorName = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `RAL ${color}`);
+
+// Vieni vartai ar varteliai: tipas, plotis, automatika arba spyna
+const gateLine = (item: FenceSelection, gate: GateSelection) =>
+  [
+    gate.width ? `${t(`calc.gates.types.${gate.type}`)} ${meters(gate.width)} m` : t(`calc.gates.types.${gate.type}`),
+    hasAutomatics(item, gate) ? t(gate.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase() : "",
+    hasLock(gate) ? t(gate.lock === "electric" ? "calc.gates.lockElectric" : "calc.gates.lockSimple").toLowerCase() : "",
+  ]
+    .filter(Boolean)
+    .join(", ");
 
 // Vienos tvoros pasirinkimų eilutės
 const fenceLines = (item: FenceSelection) => {
@@ -55,27 +65,13 @@ const fenceLines = (item: FenceSelection) => {
   if (hasFence.value) list.push(t(`calc.size.${item.parts}`));
 
   if (hasGates.value) {
-    if (item.gateType === "segment" && item.gateWidth) {
-      const line = t("calc.summary.segmentGateLine", { width: meters(item.gateWidth), count: item.gateCount });
-      const automatics = t(item.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase();
-      list.push(hasAutomatics(item) ? `${line}, ${automatics}` : line);
-    } else if (item.gateType !== "none" && item.gateWidth) {
-      list.push(
-        t("calc.summary.gateLine", {
-          type: t(`calc.gates.${item.gateType}`),
-          width: meters(item.gateWidth),
-          count: item.gateCount,
-          automatics: t(item.automatics ? "calc.gates.withAutomatics" : "calc.gates.withoutAutomatics").toLowerCase(),
-        }),
-      );
-    }
-    if (item.wickets > 0 && wicketAvailable(item)) {
-      list.push(
-        t(item.wicketType === "segment" ? "calc.summary.wicketKitLine" : "calc.summary.wicketLine", {
-          count: item.wickets,
-        }),
-      );
-    }
+    // vienodi vartai – viena eilutė su kiekiu
+    const counts = new Map<string, number>();
+    item.gates.forEach((gate) => {
+      const line = gateLine(item, gate);
+      counts.set(line, (counts.get(line) ?? 0) + 1);
+    });
+    counts.forEach((count, line) => list.push(count > 1 ? `${count} × ${line}` : line));
   }
 
   return list;

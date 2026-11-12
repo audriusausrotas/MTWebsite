@@ -15,7 +15,7 @@ const invalid = (opening: (typeof value.value.openings)[number]) =>
 <template>
   <div class="flex flex-col gap-10">
     <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium">{{ $t("calc.blinds.type") }}</h3>
+      <CalculatorHeading>{{ $t("calc.blinds.type") }}</CalculatorHeading>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <CalculatorCard
           v-for="type in blinds.types"
@@ -29,7 +29,7 @@ const invalid = (opening: (typeof value.value.openings)[number]) =>
     </div>
 
     <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium">{{ $t("calc.blinds.direction") }}</h3>
+      <CalculatorHeading>{{ $t("calc.blinds.direction") }}</CalculatorHeading>
       <div class="flex flex-wrap gap-3">
         <CalculatorChip
           v-for="direction in blinds.directions"
@@ -43,12 +43,12 @@ const invalid = (opening: (typeof value.value.openings)[number]) =>
     </div>
 
     <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium">{{ $t("calc.color.title") }}</h3>
+      <CalculatorHeading>{{ $t("calc.color.title") }}</CalculatorHeading>
       <CalculatorColors v-model="value.color" :colors="blinds.colors" />
     </div>
 
     <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium">{{ $t("calc.steps.openings") }}</h3>
+      <CalculatorHeading>{{ $t("calc.steps.openings") }}</CalculatorHeading>
       <p class="text-gray-600">{{ $t("calc.blinds.openingsHint") }}</p>
 
       <div

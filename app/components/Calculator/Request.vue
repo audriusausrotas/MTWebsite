@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// „Gauti tikslų pasiūlymą“: lankytojo kontaktai ir pageidavimas. Užklausa keliauja į MTSoft „Užklausas“
+// „Perduoti užklausą vadybininkui“: lankytojo kontaktai ir pageidavimas. Užklausa keliauja į MTSoft „Užklausas“
 // (meta-gateway /web/calculations, kanalas „tinklapio forma“) kartu su pasirinkimais; MTSoft prie jos prisega
 // tokią pačią sąmatą, kokią lankytojas matė, ir perduoda vadybininkui. AI šios užklausos neskaičiuoja.
 const props = defineProps<{
@@ -137,10 +137,22 @@ const inputClass = "h-12 w-full px-4 border-2 border-gray-300 bg-white focus:out
 
           <fieldset class="flex flex-col gap-2">
             <legend class="font-medium mb-2">{{ $t("calc.request.want") }}</legend>
-            <div class="flex flex-wrap gap-2">
-              <CalculatorChip v-for="type in TYPES" :key="type" :selected="form.type === type" @select="form.type = type">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <button
+                v-for="type in TYPES"
+                :key="type"
+                type="button"
+                :aria-pressed="form.type === type"
+                class="min-h-12 px-2 py-2 border-2 text-sm font-bold leading-tight transition-colors hover:cursor-pointer"
+                :class="
+                  form.type === type
+                    ? 'border-red-main bg-red-main text-white'
+                    : 'border-gray-300 bg-white hover:border-red-main hover:text-red-main'
+                "
+                @click="form.type = type"
+              >
                 {{ $t(`calc.request.${type}`) }}
-              </CalculatorChip>
+              </button>
             </div>
           </fieldset>
 

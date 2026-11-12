@@ -3,14 +3,27 @@ import type {
   CalculatorModel,
   CalculatorScope,
   EstimateFence,
+  EstimateGate,
   EstimateRequest,
   EstimateResponse,
   GateType,
+  WicketLock,
 } from "#shared/types/calculator";
 
 // Tinklapio skaičiuoklės būsena: parinktys iš MTSoft, lankytojo pasirinkimai ir paskaičiuota kaina.
 // Kaina skaičiuojama MTSoft'e (/api/estimate) – čia tik pasirinkimai ir jų tarpusavio taisyklės.
 // Viename skaičiavime gali būti kelios tvoros (pvz. priekyje viena, gale – kita) arba lauko žaliuzės.
+
+// Vieni vartai arba varteliai: kiekvieni kuriami atskirai (kaip tvoros), su savo tipu, pločiu, automatika ar spyna
+export interface GateSelection {
+  id: number;
+  type: GateType;
+  // cm – tik vartams
+  width: number | null;
+  automatics: boolean;
+  // tik gaminamiems varteliams
+  lock: WicketLock;
+}
 
 export interface FenceSelection {
   id: number;
@@ -22,15 +35,9 @@ export interface FenceSelection {
   // lankytojo įvestas tekstas: aukštis cm, ilgis m
   heightText: string;
   lengthText: string;
-  parts: "full" | "poles" | "none";
-  gateType: "none" | GateType;
-  // cm
-  gateWidth: number | null;
-  gateCount: number;
-  automatics: boolean;
-  wickets: number;
-  // gaminami pagal užsakymą arba gatavas segmentinis komplektas
-  wicketType: "made" | "segment";
+  parts: "full" | "poles" | "borders" | "none";
+  // vartai ir varteliai su šios tvoros užpildu, aukščiu ir spalva
+  gates: GateSelection[];
 }
 
 export interface OpeningSelection {
@@ -74,12 +81,7 @@ const newFence = (id: number): FenceSelection => ({
   heightText: "",
   lengthText: "",
   parts: "full",
-  gateType: "none",
-  gateWidth: null,
-  gateCount: 1,
-  automatics: true,
-  wickets: 0,
-  wicketType: "made",
+  gates: [],
 });
 
 const initialSelection = (): CalculatorSelection => ({
@@ -99,6 +101,10 @@ export const parseNumber = (value: string) => {
 
 const closest = (list: number[], value: number) =>
   list.reduce((best, item) => (Math.abs(item - value) < Math.abs(best - value) ? item : best), list[0] ?? value);
+
+export const isWicket = (type: GateType) => type === "wicket" || type === "segmentWicket";
+
+const GATE_TYPES: GateType[] = ["sliding", "swing", "wicket", "segment", "segmentWicket"];
 
 // Gatavų segmentinių komplektų aukštis parenkamas pagal tvoros aukštį (kaip MTSoft skaičiuoklėje)
 const kitHeight = (height: number) => Math.floor(height / 10) * 10;
@@ -168,22 +174,6 @@ export const useCalculator = () => {
     return config.value.gates.segment.filter((kit) => kit.height === kitHeight(height)).map((kit) => kit.width);
   };
 
-  // ar pasirinktam segmentiniam komplektui kainyne yra automatika
-  const kitAutomation = (item: FenceSelection) => {
-    const height = heightOf(item);
-    return (
-      item.gateType === "segment" &&
-      !!height &&
-      !!config.value?.gates.segment.some(
-        (kit) => kit.width === item.gateWidth && kit.height === kitHeight(height) && kit.automation,
-      )
-    );
-  };
-
-  // automatikos pasirinkimas: gaminamiems vartams – visada, komplektui – tik jei ji yra
-  const hasAutomatics = (item: FenceSelection) =>
-    item.gateType !== "none" && (item.gateType !== "segment" || kitAutomation(item));
-
   const segmentWicket = (item: FenceSelection) => {
     const height = heightOf(item);
     return (
@@ -191,20 +181,54 @@ export const useCalculator = () => {
     );
   };
 
-  const gateWidthsOf = (item: FenceSelection, type: "none" | GateType = item.gateType) =>
-    type === "none" || !config.value ? [] : type === "segment" ? segmentGateWidths(item) : config.value.gates[type];
+  // vartų pločiai cm (varteliams pločio rinktis nereikia)
+  const gateWidthsOf = (item: FenceSelection, type: GateType) =>
+    !config.value
+      ? []
+      : type === "segment"
+        ? segmentGateWidths(item)
+        : type === "sliding" || type === "swing"
+          ? config.value.gates[type]
+          : [];
 
-  const wicketAvailable = (item: FenceSelection) =>
-    item.wicketType === "segment" ? segmentWicket(item) : !!config.value?.gates.wicket;
+  // Kokius vartus ir vartelius galima rinktis šiai tvorai
+  const gateTypesOf = (item: FenceSelection) =>
+    GATE_TYPES.filter((type) =>
+      type === "wicket"
+        ? !!config.value?.gates.wicket
+        : type === "segmentWicket"
+          ? segmentWicket(item)
+          : gateWidthsOf(item, type).length > 0,
+    );
 
-  // Po modelio ar aukščio pakeitimo vartų pasirinkimas gali nebetikti – pataisomas
+  // automatikos pasirinkimas: gaminamiems vartams – visada, komplektui – tik jei ji kainyne yra
+  const hasAutomatics = (item: FenceSelection, gate: GateSelection) => {
+    if (gate.type === "sliding" || gate.type === "swing") return true;
+    const height = heightOf(item);
+    return (
+      gate.type === "segment" &&
+      !!height &&
+      !!config.value?.gates.segment.some(
+        (kit) => kit.width === gate.width && kit.height === kitHeight(height) && kit.automation,
+      )
+    );
+  };
+
+  const hasLock = (gate: GateSelection) => gate.type === "wicket" && !!config.value?.gates.electricLock;
+
+  // Po modelio ar aukščio pakeitimo vartai gali nebetikti: gatavas komplektas keičiamas gaminamais, plotis – pirmu galimu
   const fixGates = (item: FenceSelection) => {
-    if (item.gateType !== "none") {
-      const widths = gateWidthsOf(item);
-      if (!widths.length) item.gateType = "none";
-      else if (!item.gateWidth || !widths.includes(item.gateWidth)) item.gateWidth = widths[0]!;
-    }
-    if (item.wicketType === "segment" && !segmentWicket(item)) item.wicketType = "made";
+    const types = gateTypesOf(item);
+    item.gates = item.gates.filter((gate) => {
+      if (!types.includes(gate.type)) {
+        const made: GateType = isWicket(gate.type) ? "wicket" : "swing";
+        if (!types.includes(made)) return false;
+        gate.type = made;
+      }
+      const widths = gateWidthsOf(item, gate.type);
+      gate.width = !widths.length ? null : gate.width && widths.includes(gate.width) ? gate.width : widths[0]!;
+      return true;
+    });
   };
 
   const missingOf = (item: FenceSelection): string | null => {
@@ -212,7 +236,7 @@ export const useCalculator = () => {
     if (!colorsOf(item).includes(item.color)) return "chooseColor";
     if (!heightValid(item)) return "enterHeight";
     if (hasFence.value && !lengthValid(item)) return "enterLength";
-    if (selection.value.scope === "gates" && item.gateType === "none" && item.wickets === 0) return "chooseGates";
+    if (selection.value.scope === "gates" && !item.gates.length) return "chooseGates";
     return null;
   };
 
@@ -263,12 +287,14 @@ export const useCalculator = () => {
       height,
       length: hasFence.value ? lengthOf(item)! : undefined,
       parts: item.parts,
-      gate:
-        hasGates.value && item.gateType !== "none" && item.gateWidth
-          ? { type: item.gateType, width: item.gateWidth, automatics: item.automatics, count: item.gateCount }
-          : null,
-      wickets: hasGates.value && wicketAvailable(item) ? item.wickets : 0,
-      wicketType: item.wicketType,
+      gates: hasGates.value
+        ? item.gates.map((gate): EstimateGate => ({
+            type: gate.type,
+            width: gate.width ?? undefined,
+            automatics: hasAutomatics(item, gate) ? gate.automatics : undefined,
+            lock: gate.type === "wicket" ? (hasLock(gate) ? gate.lock : "simple") : undefined,
+          }))
+        : [],
     };
   };
 
@@ -336,13 +362,29 @@ export const useCalculator = () => {
     fixGates(fence.value);
   };
 
-  const firstGateType = (item: FenceSelection): "none" | GateType =>
-    (["sliding", "swing", "segment"] as const).find((type) => gateWidthsOf(item, type).length) ?? "none";
+  const canAddGate = (item: FenceSelection) =>
+    !!config.value && item.gates.length < (config.value.gates.maxItems ?? 6) && gateTypesOf(item).length > 0;
 
-  const selectGate = (type: "none" | GateType) => {
+  const addGate = () => {
     const item = fence.value;
-    item.gateType = type;
-    fixGates(item);
+    if (!canAddGate(item)) return;
+    const type = gateTypesOf(item)[0]!;
+    item.gates.push({
+      id: selection.value.nextId++,
+      type,
+      width: gateWidthsOf(item, type)[0] ?? null,
+      automatics: true,
+      lock: "simple",
+    });
+  };
+
+  const removeGate = (index: number) => {
+    fence.value.gates.splice(index, 1);
+  };
+
+  const setGateType = (gate: GateSelection, type: GateType) => {
+    gate.type = type;
+    fixGates(fence.value);
   };
 
   const selectScope = (scope: CalculatorScope) => {
@@ -356,12 +398,13 @@ export const useCalculator = () => {
       }
       return;
     }
-    // „Tik vartai“ be vartų neturi prasmės – iš karto parenkami pirmi galimi
+    // „Tik vartai“ be vartų neturi prasmės – iš karto sukuriami pirmi
     if (scope === "gates") {
       value.fences.forEach((item) => {
-        if (item.gateType === "none" && item.wickets === 0) {
-          item.gateType = firstGateType(item);
-          fixGates(item);
+        if (item.gates.length) return;
+        const type = gateTypesOf(item)[0];
+        if (type) {
+          item.gates.push({ id: value.nextId++, type, width: gateWidthsOf(item, type)[0] ?? null, automatics: true, lock: "simple" });
         }
       });
     }
@@ -370,10 +413,9 @@ export const useCalculator = () => {
   const addFence = () => {
     const value = selection.value;
     if (!config.value || value.fences.length >= config.value.maxFences) return;
-    const item = newFence(value.nextId++);
-    if (value.scope === "gates") item.gateType = firstGateType(item);
-    value.fences.push(item);
+    value.fences.push(newFence(value.nextId++));
     value.active = value.fences.length - 1;
+    if (value.scope === "gates") addGate();
   };
 
   const removeFence = (index: number) => {
@@ -413,15 +455,17 @@ export const useCalculator = () => {
     lengthOf,
     lengthValid,
     gateWidthsOf,
-    segmentGateWidths,
-    segmentWicket,
+    gateTypesOf,
     hasAutomatics,
-    wicketAvailable,
+    hasLock,
+    canAddGate,
+    addGate,
+    removeGate,
+    setGateType,
     openingValid,
     selectModel,
     selectSteel,
     setHeight,
-    selectGate,
     selectScope,
     addFence,
     removeFence,

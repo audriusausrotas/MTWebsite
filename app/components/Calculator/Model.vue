@@ -2,7 +2,8 @@
 import type { CalculatorCategory, CalculatorModel } from "#shared/types/calculator";
 
 // Tvoros modelis (kortelės su objektų nuotraukomis) ir nuo jo priklausantys pasirinkimai:
-// skarda, pramatomumas, tvoralenčių montavimas, spalva
+// pramatomumas, skarda, tvoralenčių montavimas, spalva.
+// Modelių daug, todėl rodoma tik viena grupė (skirtukai), o pasirinkus modelį sąrašas susiskleidžia.
 const { t, locale } = useI18n();
 const { config, fence, model, colorsOf, selectModel, selectSteel } = useCalculator();
 
@@ -20,6 +21,22 @@ const groups = computed(() =>
     models: (config.value?.models ?? []).filter((item) => item.category === group.category),
   })).filter((group) => group.models.length),
 );
+
+// rodoma grupė ir ar sąrašas išskleistas (kol modelis nepasirinktas – visada)
+const category = ref<CalculatorCategory>(model.value?.category ?? groups.value[0]?.category ?? "Tvora");
+const changing = ref(false);
+const expanded = computed(() => !model.value || changing.value);
+const shown = computed(() => groups.value.find((group) => group.category === category.value) ?? groups.value[0]);
+
+const choose = (id: string) => {
+  selectModel(id);
+  changing.value = false;
+};
+
+const change = () => {
+  if (model.value) category.value = model.value.category;
+  changing.value = true;
+};
 
 // Segmentai MTSoft'e – atskiros tvoros kiekvienam aukščiui, čia – vienas modelis
 const nameOf = (item: CalculatorModel) => (item.category === "Segmentas" ? t("calc.model.segment") : item.name);
@@ -45,18 +62,70 @@ const showTable = ref(false);
 
 <template>
   <div class="flex flex-col gap-10">
-    <div v-for="group in groups" :key="group.category" class="flex flex-col gap-4">
-      <h3 class="text-xl font-medium">{{ $t(group.title) }}</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+    <!-- pasirinktas modelis: viena eilutė vietoj viso sąrašo -->
+    <div
+      v-if="model && !expanded"
+      class="flex items-center gap-4 p-3 border-2 border-red-main rounded-lg bg-white shadow-lg"
+    >
+      <NuxtImg
+        v-if="model.images[0]"
+        :src="model.images[0].url"
+        :alt="altOf(model)"
+        sizes="160px"
+        class="w-24 sm:w-36 aspect-4/3 shrink-0 object-cover rounded"
+      />
+      <div class="flex flex-col gap-1 min-w-0 flex-1">
+        <span class="text-sm text-gray-600">{{ $t(GROUPS.find((group) => group.category === model!.category)!.title) }}</span>
+        <span class="text-xl font-bold text-red-main">{{ nameOf(model) }}</span>
+        <button
+          v-if="model.images.length"
+          type="button"
+          class="self-start text-sm font-semibold text-gray-700 hover:text-red-main hover:underline hover:cursor-pointer"
+          @click="gallery = model"
+        >
+          {{ $t("calc.photos") }} ({{ model.images.length }})
+        </button>
+      </div>
+      <button
+        type="button"
+        class="shrink-0 h-12 px-4 border-2 border-gray-300 font-bold hover:border-red-main hover:text-red-main hover:cursor-pointer"
+        @click="change"
+      >
+        {{ $t("calc.model.change") }}
+      </button>
+    </div>
+
+    <div v-else class="flex flex-col gap-5">
+      <div v-if="groups.length > 1" class="flex flex-wrap gap-2" role="tablist">
+        <button
+          v-for="group in groups"
+          :key="group.category"
+          type="button"
+          role="tab"
+          :aria-selected="category === group.category"
+          class="min-h-12 px-4 py-2 border-2 font-bold transition-colors hover:cursor-pointer"
+          :class="
+            category === group.category
+              ? 'border-black bg-black text-white'
+              : 'border-gray-300 bg-white hover:border-black'
+          "
+          @click="category = group.category"
+        >
+          {{ $t(group.title) }}
+          <span class="font-normal opacity-70">({{ group.models.length }})</span>
+        </button>
+      </div>
+
+      <div v-if="shown" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         <CalculatorCard
-          v-for="item in group.models"
+          v-for="item in shown.models"
           :key="item.id"
           :title="nameOf(item)"
           :image="item.images[0]?.url"
           :alt="altOf(item)"
           :placeholder="!item.images.length"
           :selected="fence.modelId === item.id"
-          @select="selectModel(item.id)"
+          @select="choose(item.id)"
         >
           <button
             v-if="item.images.length"
@@ -75,8 +144,23 @@ const showTable = ref(false);
     </div>
 
     <template v-if="model">
+      <div v-if="model.seeThrough.length" class="flex flex-col gap-4">
+        <CalculatorHeading>{{ $t("calc.seeThrough.title") }}</CalculatorHeading>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <CalculatorCard
+            v-for="key in model.seeThrough"
+            :key="key"
+            :title="$t(`calc.seeThrough.${key}`)"
+            :image="SEE_THROUGH_IMAGES[key]"
+            :placeholder="!SEE_THROUGH_IMAGES[key]"
+            :selected="fence.seeThrough === key"
+            @select="fence.seeThrough = key"
+          />
+        </div>
+      </div>
+
       <div v-if="model.steel" class="flex flex-col gap-4">
-        <h3 class="text-xl font-medium">{{ $t("calc.steel.title") }}</h3>
+        <CalculatorHeading>{{ $t("calc.steel.title") }}</CalculatorHeading>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <CalculatorCard
             :title="$t('calc.steel.premium')"
@@ -103,23 +187,8 @@ const showTable = ref(false);
         <CalculatorSteelTable v-if="showTable" />
       </div>
 
-      <div v-if="model.seeThrough.length" class="flex flex-col gap-4">
-        <h3 class="text-xl font-medium">{{ $t("calc.seeThrough.title") }}</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <CalculatorCard
-            v-for="key in model.seeThrough"
-            :key="key"
-            :title="$t(`calc.seeThrough.${key}`)"
-            :image="SEE_THROUGH_IMAGES[key]"
-            :placeholder="!SEE_THROUGH_IMAGES[key]"
-            :selected="fence.seeThrough === key"
-            @select="fence.seeThrough = key"
-          />
-        </div>
-      </div>
-
       <div v-if="model.twoSided" class="flex flex-col gap-4">
-        <h3 class="text-xl font-medium">{{ $t("calc.boards.title") }}</h3>
+        <CalculatorHeading>{{ $t("calc.boards.title") }}</CalculatorHeading>
         <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
           <CalculatorCard
             :title="$t('calc.boards.oneSided')"
@@ -137,7 +206,7 @@ const showTable = ref(false);
       </div>
 
       <div class="flex flex-col gap-4">
-        <h3 class="text-xl font-medium">{{ $t("calc.color.title") }}</h3>
+        <CalculatorHeading>{{ $t("calc.color.title") }}</CalculatorHeading>
         <CalculatorColors v-model="fence.color" :colors="colors" />
         <p v-if="model.steel && fence.steel === 'eco'" class="text-sm text-gray-600">
           {{ $t("calc.color.ecoNote") }}
