@@ -85,11 +85,11 @@ const legal = [
         </div>
       </div>
 
-      <!-- Teisiniai puslapiai ir Facebook -->
+      <!-- Teisiniai puslapiai ir Facebook: vienas blokas per vidurį -->
       <div
-        class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-sm text-stone-400"
+        class="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 pt-6 border-t border-white/10 text-sm text-stone-400"
       >
-        <nav class="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2">
+        <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
           <NuxtLinkLocale
             v-for="page in legal"
             :key="page"

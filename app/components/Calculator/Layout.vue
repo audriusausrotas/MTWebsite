@@ -46,15 +46,38 @@ const openChat = (tries = 0) => {
   }
 };
 
-onBeforeUnmount(() => clearTimeout(chatTimer));
+// Šoninis stulpelis slenkant lieka matomas (sticky), bet vidinio slinkimo neturi – auga tiek, kiek reikia, ir išstumia
+// puslapį. Kai jis aukštesnis už langą, prisitvirtina ne viršumi, o apačia: kaina ir mygtukai lieka matomi.
+const STICKY_TOP = 96;
+const STICKY_GAP = 16;
+const sidebar = ref<HTMLElement | null>(null);
+const stickyTop = ref<string>();
+let observer: ResizeObserver | undefined;
+
+const placeSidebar = () => {
+  const height = sidebar.value?.offsetHeight ?? 0;
+  stickyTop.value = `${Math.min(STICKY_TOP, window.innerHeight - height - STICKY_GAP)}px`;
+};
+
+onMounted(() => {
+  if (!sidebar.value) return;
+  observer = new ResizeObserver(placeSidebar);
+  observer.observe(sidebar.value);
+  window.addEventListener("resize", placeSidebar);
+  placeSidebar();
+});
+
+onBeforeUnmount(() => {
+  clearTimeout(chatTimer);
+  observer?.disconnect();
+  window.removeEventListener("resize", placeSidebar);
+});
 </script>
 
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] gap-5 lg:gap-8 items-start">
     <!-- šoninis stulpelis; telefone jo dalys – atskiri blokai (meniu viršuje, kaina ir pagalba po turiniu) -->
-    <div
-      class="contents lg:flex lg:flex-col lg:gap-4 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1"
-    >
+    <div ref="sidebar" class="contents lg:flex lg:flex-col lg:gap-4 lg:sticky lg:top-24" :style="{ top: stickyTop }">
       <nav
         class="order-1 flex lg:flex-col gap-2 lg:gap-1.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"
         :aria-label="$t('calc.layout.stepsNav')"
