@@ -1,12 +1,23 @@
 <script setup lang="ts">
-// Spalvų pasirinkimas (RAL). Pavyzdžiai – public/images/colors; kitoms spalvoms – apytikslė RAL spalva
+// Spalvų pasirinkimas (RAL). Langelis – vientisa spalva; atspalviai paimti iš gamintojo pavyzdžių
+// (public/images/colors, tie patys kaip žaliuzių puslapyje), kitoms spalvoms – apytikslė RAL spalva.
 defineProps<{ colors: string[] }>();
 const selected = defineModel<string>({ required: true });
 
 const { t } = useI18n();
 
-const COLOR_IMAGES = ["3009", "6020", "7016", "7024", "8004", "8017", "8019", "9005"];
-const COLOR_HEX: Record<string, string> = { "6005": "#114232", Zn: "#c4c8cc" };
+const COLOR_HEX: Record<string, string> = {
+  "3009": "#7d362f",
+  "6020": "#19422a",
+  "7016": "#262e38",
+  "7024": "#474a51",
+  "8004": "#8d4d35",
+  "8017": "#463832",
+  "8019": "#252a22",
+  "9005": "#000002",
+  "6005": "#114232",
+  Zn: "#c4c8cc",
+};
 
 const label = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `RAL ${color}`);
 </script>
@@ -22,18 +33,7 @@ const label = (color: string) => (color === "Zn" ? t("calc.color.zinc") : `RAL $
       :class="selected === color ? 'border-red-main' : 'border-transparent hover:border-gray-300'"
       @click="selected = color"
     >
-      <!-- pavyzdžio kampe – gamintojo užrašas, todėl rodoma priartinta apatinė dalis -->
-      <span v-if="COLOR_IMAGES.includes(color)" class="block w-24 h-16 overflow-hidden rounded-md">
-        <NuxtImg
-          :src="`/images/colors/${color}.png`"
-          alt=""
-          width="192"
-          height="128"
-          class="w-full h-full object-cover scale-[2] origin-bottom-right"
-        />
-      </span>
       <span
-        v-else
         class="w-24 h-16 rounded-md border border-gray-200"
         :style="{ backgroundColor: COLOR_HEX[color] ?? '#9ca3af' }"
       ></span>
