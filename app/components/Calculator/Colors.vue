@@ -1,21 +1,22 @@
 <script setup lang="ts">
-// Spalvų pasirinkimas (RAL). Langelis – vientisa spalva; atspalviai paimti iš gamintojo pavyzdžių
-// (public/images/colors, tie patys kaip žaliuzių puslapyje), kitoms spalvoms – apytikslė RAL spalva.
+// Spalvų pasirinkimas (RAL). Langelis – vientisa spalva. Atspalviai – tie patys, kuriuos MTSoft naudoja gamyboje
+// (MTSoft data/initialValues.ts, RALcolors): parinkti taip, kad ekrane spalvos aiškiai skirtųsi viena nuo kitos.
+// Keičiant atspalvį – pakeisti abiejose vietose.
 defineProps<{ colors: string[] }>();
 const selected = defineModel<string>({ required: true });
 
 const { t } = useI18n();
 
 const COLOR_HEX: Record<string, string> = {
-  "3009": "#7d362f",
-  "6020": "#19422a",
-  "7016": "#262e38",
-  "7024": "#474a51",
-  "8004": "#8d4d35",
-  "8017": "#463832",
-  "8019": "#252a22",
-  "9005": "#000002",
-  "6005": "#114232",
+  "7016": "#686B7A",
+  "7024": "#7E8394",
+  "8019": "#785853",
+  "8017": "#8C4F45",
+  "6020": "#4D7849",
+  "6005": "#289E4B",
+  "9005": "#0A0A0A",
+  "3009": "#D15441",
+  "8004": "#D15C3B",
   Zn: "#c4c8cc",
 };
 
