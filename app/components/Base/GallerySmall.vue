@@ -69,7 +69,7 @@ watch(currentImageIndex, (i) => {
           <NuxtImg
             v-if="image.url"
             :src="image.url"
-            alt=""
+            :alt="altOf(image)"
             width="240"
             height="160"
             fit="inside"

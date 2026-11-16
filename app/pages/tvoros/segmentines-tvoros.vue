@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "segmentines-tvoros",
 });
 
-useSeo("segmentines-tvoros");
+useSeo("segmentines-tvoros", "/images/tvoros/tvora22.jpg");
 
 await loadSiteData("fences");
 </script>

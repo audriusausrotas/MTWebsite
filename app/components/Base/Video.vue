@@ -27,12 +27,13 @@ onMounted(() => {
       :src="POSTER"
       alt=""
       sizes="sm:100vw md:100vw lg:100vw xl:100vw"
+      fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover"
     />
+    <!-- be poster: kol video kraunasi, matoma po juo esanti nuotrauka (kitaip ji atsisiųstų antrą kartą) -->
     <video
       v-if="showVideo"
       :src="VIDEO"
-      :poster="POSTER"
       autoplay
       muted
       loop

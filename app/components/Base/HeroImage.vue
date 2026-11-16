@@ -24,6 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
         :src="url"
         alt=""
         sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        fetchpriority="high"
         class="absolute inset-0 w-full h-full object-cover"
       />
 

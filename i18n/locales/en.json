@@ -566,6 +566,12 @@
       "next": "Next",
       "back": "Back",
       "stepsNav": "Steps"
+    },
+    "about": {
+      "title": "How the fence price is calculated",
+      "p1": "The price of a fence depends on the model, steel, height and total length you choose, and on whether you need gates, wickets, posts with base panels and installation. The calculator adds it all up and shows a preliminary price including VAT right away.",
+      "p2": "The price is indicative: an exact estimate is prepared after measuring the plot, because the terrain and other site conditions change it. You can send your choices to a manager – we will get in touch and answer your questions.",
+      "link": "More: what the fence price depends on"
     }
   },
   "blinds": {
@@ -666,15 +672,18 @@
     },
     "tvoru-skaiciuokle": {
       "title": "Fence calculator – instant fence price",
-      "description": "Choose the fence model, height, length and gates and see a preliminary price with installation right away. No registration or contact details."
+      "description": "Choose the fence model, height, length and gates and see a preliminary price with installation right away. No registration or contact details.",
+      "h1": "Fence calculator"
     },
     "galerija": {
       "title": "Gallery – completed projects",
-      "description": "Photos of fences, gates and fence boards installed by Moderni Tvora. Get ideas for your plot."
+      "description": "Photos of fences, gates and fence boards installed by Moderni Tvora. Get ideas for your plot.",
+      "h1": "Gallery of completed projects"
     },
     "straipsniai": {
       "title": "Articles about fences",
-      "description": "Advice on choosing a fence, foundations, installation, maintenance and price."
+      "description": "Advice on choosing a fence, foundations, installation, maintenance and price.",
+      "h1": "Articles about fences"
     },
     "apie-mus": {
       "title": "About us",

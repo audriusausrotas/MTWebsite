@@ -574,6 +574,12 @@
       "next": "Toliau",
       "back": "Atgal",
       "stepsNav": "Žingsniai"
+    },
+    "about": {
+      "title": "Kaip skaičiuojama tvoros kaina",
+      "p1": "Tvoros kaina priklauso nuo pasirinkto modelio, skardos, aukščio ir bendro ilgio, taip pat nuo to, ar reikia vartų, vartelių, stulpų su pamatėliais ir montavimo. Skaičiuoklė visa tai susumuoja ir iškart parodo preliminarią kainą su PVM.",
+      "p2": "Kaina yra orientacinė: tiksli sąmata sudaroma pamatavus sklypą, nes ją keičia sklypo reljefas ir kitos vietos sąlygos. Savo pasirinkimus galite perduoti vadybininkui – susisieksime ir atsakysime į klausimus.",
+      "link": "Plačiau: nuo ko priklauso tvoros kaina"
     }
   },
   "blinds": {
@@ -674,15 +680,18 @@
     },
     "tvoru-skaiciuokle": {
       "title": "Tvorų skaičiuoklė – tvoros kaina iškart",
-      "description": "Pasirinkite tvoros modelį, aukštį, ilgį, vartus ir iškart pamatykite preliminarią kainą su montavimu. Be registracijos ir kontaktų."
+      "description": "Pasirinkite tvoros modelį, aukštį, ilgį, vartus ir iškart pamatykite preliminarią kainą su montavimu. Be registracijos ir kontaktų.",
+      "h1": "Tvorų skaičiuoklė"
     },
     "galerija": {
       "title": "Galerija – įgyvendinti projektai",
-      "description": "Moderni Tvora sumontuotų tvorų, vartų ir tvoralenčių nuotraukos. Pasisemkite idėjų savo sklypui."
+      "description": "Moderni Tvora sumontuotų tvorų, vartų ir tvoralenčių nuotraukos. Pasisemkite idėjų savo sklypui.",
+      "h1": "Įgyvendintų projektų galerija"
     },
     "straipsniai": {
       "title": "Straipsniai apie tvoras",
-      "description": "Patarimai apie tvoros pasirinkimą, pamatus, montavimą, priežiūrą ir kainą."
+      "description": "Patarimai apie tvoros pasirinkimą, pamatus, montavimą, priežiūrą ir kainą.",
+      "h1": "Straipsniai apie tvoras"
     },
     "apie-mus": {
       "title": "Apie mus",

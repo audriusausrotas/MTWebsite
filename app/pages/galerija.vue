@@ -4,7 +4,7 @@ definePageMeta({
   hero: "/images/tvoros/tvora12.jpg",
 });
 
-useSeo("galerija");
+useSeo("galerija", "/images/tvoros/tvora12.jpg");
 
 await loadSiteData("gallery");
 </script>

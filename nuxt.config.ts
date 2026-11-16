@@ -18,6 +18,13 @@ export default defineNuxtConfig({
   routeRules: {
     "/tvoros/metalines-tvoros": { redirect: { to: "/tvoros", statusCode: 301 } },
     "/en/fences/metal-fence": { redirect: { to: "/en/fences", statusCode: 301 } },
+
+    // Statiniai failai (ikonos, nuotraukos, video) naršyklės podėlyje laikomi 30 d. (failų vardai be versijos,
+    // todėl ne ilgiau; pakeitus nuotrauką tuo pačiu vardu lankytojas naują pamatys vėliausiai po 30 d.)
+    "/icons/**": { headers: { "cache-control": "public, max-age=2592000" } },
+    "/images/**": { headers: { "cache-control": "public, max-age=2592000" } },
+    "/video/**": { headers: { "cache-control": "public, max-age=2592000" } },
+    "/favicon.ico": { headers: { "cache-control": "public, max-age=2592000" } },
   },
 
   devtools: { enabled: true },
@@ -45,6 +52,12 @@ export default defineNuxtConfig({
   image: {
     format: ["webp"],
     quality: 80,
+    ipx: {
+      // sumažintos nuotraukos naršyklės podėlyje – 30 d. (numatyta buvo 60 s)
+      maxAge: 60 * 60 * 24 * 30,
+      // visos <NuxtImg> nuotraukos siunčiamos WebP (viršuje esantis `format` galioja tik <NuxtPicture>)
+      modifiers: { format: "webp" },
+    },
   },
 
   i18n: {

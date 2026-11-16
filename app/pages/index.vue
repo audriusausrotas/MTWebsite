@@ -1,36 +1,8 @@
 <script setup lang="ts">
-import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "#shared/site";
-
 useSeo("home");
+useBusinessSchema();
 const { t } = useI18n();
 const localePath = useLocalePath();
-
-useHead({
-  script: [
-    {
-      type: "application/ld+json",
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        name: SITE_NAME,
-        legalName: "MB „Moderni tvora“",
-        url: SITE_URL,
-        logo: SITE_URL + "/images/logo.png",
-        image: SITE_URL + DEFAULT_OG_IMAGE,
-        telephone: "+37066347011",
-        email: "info@modernitvora.lt",
-        vatID: "LT100013165913",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Lauko g. 1",
-          addressLocality: "Trakiškių k., Marijampolės sav.",
-          addressCountry: "LT",
-        },
-        sameAs: ["https://www.facebook.com/ModerniTvora"],
-      }),
-    },
-  ],
-});
 
 // name – nuotraukos aprašymas (alt); modelių pavadinimai neverčiami
 const images = [

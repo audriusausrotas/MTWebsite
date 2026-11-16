@@ -84,6 +84,7 @@ const openModal = (index: number) => {
           :src="image.url"
           :alt="altOf(image)"
           sizes="sm:50vw md:50vw lg:600px"
+          quality="70"
           loading="lazy"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

@@ -27,13 +27,21 @@ const escapeXml = (value: string) =>
 
 const loc = (path: string) => escapeXml(SITE_URL + encodeURI(path));
 
-const pageEntry = ([lt, en]: [string, string]) => {
+// Straipsnio data (frontmatter `date`) -> <lastmod>; puslapiams be datos nerašoma
+const lastmod = (date?: unknown) => {
+  const value = date ? new Date(date as string) : null;
+  return value && !Number.isNaN(value.getTime()) ? `<lastmod>${value.toISOString().slice(0, 10)}</lastmod>` : "";
+};
+
+const pageEntry = ([lt, en]: [string, string], dates: Record<string, unknown> = {}) => {
   const alternates = [
     `<xhtml:link rel="alternate" hreflang="lt" href="${loc(lt)}"/>`,
     `<xhtml:link rel="alternate" hreflang="en" href="${loc(en)}"/>`,
     `<xhtml:link rel="alternate" hreflang="x-default" href="${loc(lt)}"/>`,
   ].join("");
-  return [lt, en].map((path) => `<url><loc>${loc(path)}</loc>${alternates}</url>`).join("\n");
+  return [lt, en]
+    .map((path) => `<url><loc>${loc(path)}</loc>${lastmod(dates[path])}${alternates}</url>`)
+    .join("\n");
 };
 
 // content kelias -> svetainės adresas (/articles/x -> /en/articles/x)
@@ -42,9 +50,14 @@ const sitePath = (contentPath: string) =>
 
 export default defineEventHandler(async (event) => {
   const [lt, en] = await Promise.all([
-    queryCollection(event, "content_lt").select("path", "translation").all(),
-    queryCollection(event, "content_en").select("path", "translation").all(),
+    queryCollection(event, "content_lt").select("path", "translation", "date").all(),
+    queryCollection(event, "content_en").select("path", "translation", "date").all(),
   ]);
+
+  // svetainės adresas -> straipsnio data
+  const dates: Record<string, unknown> = Object.fromEntries(
+    [...lt, ...en].map((item) => [sitePath(item.path), item.date]),
+  );
 
   const ltArticles = lt.filter((item) => item.path.startsWith("/straipsniai/"));
   const enArticles = en.filter((item) => item.path.startsWith("/articles/"));
@@ -62,9 +75,9 @@ export default defineEventHandler(async (event) => {
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-    ...PAGES.map(pageEntry),
-    ...linked.map(pageEntry),
-    ...single.map((path) => `<url><loc>${loc(path)}</loc></url>`),
+    ...PAGES.map((pair) => pageEntry(pair)),
+    ...linked.map((pair) => pageEntry(pair, dates)),
+    ...single.map((path) => `<url><loc>${loc(path)}</loc>${lastmod(dates[path])}</url>`),
     "</urlset>",
   ].join("\n");
 

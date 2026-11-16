@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "tvoralentes",
 });
 
-useSeo("tvoralentes");
+useSeo("tvoralentes", "/images/tvoros/dilė.jpg");
 
 await loadSiteData("fences");
 </script>

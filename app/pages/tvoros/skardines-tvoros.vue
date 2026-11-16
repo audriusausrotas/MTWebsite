@@ -4,7 +4,7 @@ definePageMeta({
   breadcrumb: "skardines-tvoros",
 });
 
-useSeo("skardines-tvoros");
+useSeo("skardines-tvoros", "/images/tvoros/daimond6090.jpg");
 
 await loadSiteData("fences");
 </script>

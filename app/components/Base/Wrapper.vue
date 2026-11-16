@@ -10,10 +10,15 @@ const props = defineProps<{
 }>();
 
 const route = useRoute();
-const { t } = useI18n();
+const { t, te } = useI18n();
 
-// Pavadinimas imamas iš definePageMeta({ breadcrumb }) – tas pats šaltinis kaip ir trupiniams
-const title = computed(() => props.title || t(`menu.${route.meta.breadcrumb as string}`));
+// Pavadinimas (h1) – pagal definePageMeta({ breadcrumb }): tikslesnė antraštė `seo.<raktas>.h1`, jei tokia yra,
+// kitaip – meniu pavadinimas (tas pats šaltinis kaip ir trupiniams)
+const title = computed(() => {
+  if (props.title) return props.title;
+  const key = route.meta.breadcrumb as string;
+  return te(`seo.${key}.h1`) ? t(`seo.${key}.h1`) : t(`menu.${key}`);
+});
 
 // Hero nuotrauka – definePageMeta({ hero }); be jos lieka numatytoji
 const hero = computed(() => (route.meta.hero as string | undefined) || undefined);

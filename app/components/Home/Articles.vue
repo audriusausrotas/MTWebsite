@@ -57,7 +57,7 @@ const { data: articles } = await useFetch("/api/articles", {
           <NuxtImg
             v-if="article.image"
             :src="article.image"
-            alt=""
+            :alt="article.title"
             sizes="sm:100vw md:33vw lg:400px"
             loading="lazy"
             class="w-full aspect-3/2 object-cover transition-transform duration-300 group-hover:scale-105"

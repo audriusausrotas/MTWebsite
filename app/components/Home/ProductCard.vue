@@ -14,7 +14,7 @@ const props = defineProps<Props>();
   <NuxtLink :to="to" class="group relative block h-80 overflow-hidden">
     <NuxtImg
       :src="url"
-      alt=""
+      :alt="title"
       sizes="sm:100vw md:50vw lg:600px"
       loading="lazy"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

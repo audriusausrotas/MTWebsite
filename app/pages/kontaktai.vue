@@ -5,6 +5,7 @@ definePageMeta({
 });
 
 useSeo("kontaktai");
+useBusinessSchema();
 </script>
 
 <template>
