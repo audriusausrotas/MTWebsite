@@ -1,7 +1,7 @@
 ---
 title: "7 „Arcelor UltraMatt“ skardos privalumai tvoroms: kodėl verta rinktis?"
-description: "Belgijoje gaminama „Arcelor UltraMatt“ skarda – vienas patikimiausių pasirinkimų tvoroms. 50 metų garantija, išskirtinis matinis paviršius ir aukščiausia apsauga nuo korozijos."
-seoTitle: "Arcelor UltraMatt skarda tvoroms – ilgaamžiškumas, estetika ir 50 metų garantija"
+description: "Belgijoje gaminama „Arcelor UltraMatt“ skarda – vienas patikimiausių pasirinkimų tvoroms. 45 metų garantija, išskirtinis matinis paviršius ir aukščiausia apsauga nuo korozijos."
+seoTitle: "Arcelor UltraMatt skarda tvoroms – ilgaamžiškumas, estetika ir 45 metų garantija"
 seoDescription: "Išsamiai aptariame, kodėl „Arcelor UltraMatt“ skarda yra vienas geriausių pasirinkimų tvoroms: 0,5 mm storis, 35 mikronų dažų sluoksnis, 275 g/m² cinko danga ir modernus matinis dizainas."
 keywords:
   - Arcelor UltraMatt
@@ -17,7 +17,7 @@ translation: "/articles/7-arcelor-ultramatt-steel-advantages-for-fences-why-wort
 # 7 „Arcelor UltraMatt“ skardos privalumai tvoroms: kodėl verta rinktis?
 
 Renkantis tvorą, svarbiausia rasti sprendimą, kuris būtų ne tik gražus, bet ir patikimas.  
-**„Arcelor UltraMatt“** – tai aukščiausios kokybės skarda, gaminama Belgijoje, pasižyminti išskirtiniu dizainu, tvirtumu ir net **50 metų garantija**.  
+**„Arcelor UltraMatt“** – tai aukščiausios kokybės skarda, gaminama Belgijoje, pasižyminti išskirtiniu dizainu, tvirtumu ir net **45 metų garantija**.  
 Tai vienas moderniausių ir patikimiausių pasirinkimų šiuolaikinėms tvoroms, ypač tiems, kurie nori ilgalaikio rezultato be nuolatinės priežiūros.
 
 Toliau – išsamiai apie tai, kodėl ši skarda laikoma premium klasės produktu.
@@ -39,9 +39,9 @@ Tai reiškia, kad gaunate ne atsitiktinį produktą, o **aukštos klasės skard�
 
 ---
 
-## 2. 50 metų garantija – ilgaamžiškumas, kuris išsiskiria rinkoje
+## 2. 45 metų garantija – ilgaamžiškumas, kuris išsiskiria rinkoje
 
-„Arcelor UltraMatt“ suteikiama **iki 50 metų garantija**.  
+„Arcelor UltraMatt“ suteikiama **iki 45 metų garantija**.  
 Tai viena ilgiausių garantijų tarp visų skardinių tvorų medžiagų.
 
 Ką tai reiškia jums?
@@ -126,7 +126,7 @@ Tai idealus pasirinkimas tiems, kurie nori **gražios, bet nereikalaujančios pr
 
 „Arcelor UltraMatt“ skarda – tai:
 
-- **50 metų garantija**,
+- **45 metų garantija**,
 - **Belgijos gamybos kokybė**,
 - **0,5 mm storis**,
 - **35 mikronų dažų sluoksnis**,

@@ -369,7 +369,7 @@
     "steel": {
       "title": "Steel",
       "premium": "Premium",
-      "premiumText": "Arcelor Ultramatt (Belgium). 50-year technical warranty, 20-year colour warranty. All colours, identical shade guaranteed.",
+      "premiumText": "Arcelor Ultramatt (Belgium). 45-year technical warranty, 20-year colour warranty. All colours, identical shade guaranteed.",
       "eco": "Eco",
       "ecoText": "The more affordable choice. 20-year technical warranty, 5-year colour warranty. Three colours: RAL 7016, 8019 and 8017.",
       "compare": "Compare the technical specifications of the steel",
@@ -388,7 +388,7 @@
       "values": {
         "belgium": "Belgium",
         "ukraine": "Ukraine",
-        "years50": "50 years",
+        "years45": "45 years",
         "years20": "20 years",
         "years5": "5 years",
         "yes": "Yes",
@@ -620,7 +620,7 @@
       "country": "Country of manufacture",
       "countryValue": "Belgium",
       "techWarranty": "Technical warranty",
-      "techWarrantyValue": "50 years",
+      "techWarrantyValue": "45 years",
       "colorWarranty": "Colour warranty",
       "colorWarrantyValue": "20 years",
       "thickness": "Steel thickness",

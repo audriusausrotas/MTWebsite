@@ -377,7 +377,7 @@
     "steel": {
       "title": "Skarda",
       "premium": "Premium",
-      "premiumText": "Arcelor Ultramatt (Belgija). Techninė garantija 50 metų, spalvos – 20 metų. Visos spalvos, identiško atspalvio garantija.",
+      "premiumText": "Arcelor Ultramatt (Belgija). Techninė garantija 45 metai, spalvos – 20 metų. Visos spalvos, identiško atspalvio garantija.",
       "eco": "Eco",
       "ecoText": "Pigesnis pasirinkimas. Techninė garantija 20 metų, spalvos – 5 metai. Trys spalvos: RAL 7016, 8019 ir 8017.",
       "compare": "Palyginti skardų technines specifikacijas",
@@ -396,7 +396,7 @@
       "values": {
         "belgium": "Belgija",
         "ukraine": "Ukraina",
-        "years50": "50 metų",
+        "years45": "45 metai",
         "years20": "20 metų",
         "years5": "5 metai",
         "yes": "Taip",
@@ -628,7 +628,7 @@
       "country": "Gamintojo šalis",
       "countryValue": "Belgija",
       "techWarranty": "Techninė garantija",
-      "techWarrantyValue": "50 metų",
+      "techWarrantyValue": "45 metai",
       "colorWarranty": "Spalvos garantija",
       "colorWarrantyValue": "20 metų",
       "thickness": "Skardos storis",

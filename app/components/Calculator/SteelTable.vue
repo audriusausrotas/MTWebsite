@@ -11,7 +11,7 @@ const rows = computed(() => [
   },
   {
     label: t("calc.steel.rows.warranty"),
-    premium: t("calc.steel.values.years50"),
+    premium: t("calc.steel.values.years45"),
     eco: t("calc.steel.values.years20"),
   },
   {

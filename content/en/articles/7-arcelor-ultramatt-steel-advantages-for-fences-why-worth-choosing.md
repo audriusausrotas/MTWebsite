@@ -1,7 +1,7 @@
 ---
 title: "7 Advantages of Arcelor UltraMatt Steel for Fences: Why Worth Choosing?"
-description: "Belgian-made Arcelor UltraMatt steel – one of the most reliable choices for fences. 50-year warranty, exclusive matte surface and highest corrosion protection."
-seoTitle: "Arcelor UltraMatt steel for fences – durability, aesthetics and 50-year warranty"
+description: "Belgian-made Arcelor UltraMatt steel – one of the most reliable choices for fences. 45-year warranty, exclusive matte surface and highest corrosion protection."
+seoTitle: "Arcelor UltraMatt steel for fences – durability, aesthetics and 45-year warranty"
 seoDescription: "Comprehensive discussion of why Arcelor UltraMatt steel is one of the best choices for fences: 0.5 mm thickness, 35 micron paint layer, 275 g/m² zinc coating and modern matte design."
 keywords:
   - Arcelor UltraMatt
@@ -17,7 +17,7 @@ translation: "/straipsniai/7-arcelor-ultramatt-skardos-privalumai-tvoroms-kodel-
 # 7 Advantages of Arcelor UltraMatt Steel for Fences: Why Worth Choosing?
 
 When choosing a fence, the most important thing is to find a solution that is not only beautiful but also reliable.  
-**Arcelor UltraMatt** – this is highest quality steel, made in Belgium, characterized by exclusive design, durability and even a **50-year warranty**.  
+**Arcelor UltraMatt** – this is highest quality steel, made in Belgium, characterized by exclusive design, durability and even a **45-year warranty**.  
 This is one of the most modern and reliable choices for contemporary fences, especially for those who want long-term results without constant maintenance.
 
 Below – comprehensive discussion of why this steel is considered a premium class product.
@@ -39,9 +39,9 @@ This means you get not a random product, but a **premium class steel** chosen by
 
 ---
 
-## 2. 50-year warranty – durability that stands out in the market
+## 2. 45-year warranty – durability that stands out in the market
 
-Arcelor UltraMatt is provided with a **up to 50-year warranty**.  
+Arcelor UltraMatt is provided with a **up to 45-year warranty**.  
 This is one of the longest warranties among all steel fence materials.
 
 What does this mean for you?
@@ -126,7 +126,7 @@ This is the ideal choice for those who want a **beautiful but maintenance-free**
 
 Arcelor UltraMatt steel is:
 
-- **50-year warranty**,
+- **45-year warranty**,
 - **Belgian production quality**,
 - **0.5 mm thickness**,
 - **35 micron paint layer**,
